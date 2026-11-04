@@ -8,10 +8,12 @@
 |---|---|
 | M1 数据接入 | [PR #1](https://github.com/wonderbench/mianguang/pull/1) 已合并；迁移、鉴权、幂等/顺序、绑定事务、模拟器及 PostgreSQL 并发验证 |
 | M2 管理闭环 | [PR #2](https://github.com/wonderbench/mianguang/pull/2) 已合并；两角色、Admin、总览、历史趋势、受限 CSV 与审计 |
-| M3 真机接入 | [联网固件与USB工具](firmware/README.md) 已实现；独立任务、HTTPS/SNTP、持久boot计数、最新快照及受控配置；三台真机24小时尚待[现场执行](docs/field_trial.md) |
-| M4 运行交付 | `deploy/` 提供三容器、网络边界、日清理、加密备份与隔离恢复；100台/10会话和604.8万行历史的[短时检查已通过](reports/README.md)，24小时持续负载与实际机构部署仍待执行 |
+| M3 真机接入 | [PR #5](https://github.com/wonderbench/mianguang/pull/5) 已合并；[联网固件与USB工具](firmware/README.md)、双环境构建及关键host检查通过；三台真机24小时尚待[现场执行](docs/field_trial.md) |
+| M4 运行交付 | [PR #3](https://github.com/wonderbench/mianguang/pull/3) 的部署/恢复及[PR #4](https://github.com/wonderbench/mianguang/pull/4) 的容量工具已合并；100台/10会话和604.8万行历史的[短时检查已通过](reports/README.md)，24小时持续负载与实际机构部署仍待执行 |
 
 实际部署入口为 [运行与恢复](docs/operations.md)。[合成容量验收](docs/capacity.md) 提供100台设备、10个会话、同步突发及完整历史规模的执行命令，并保存实际测量报告。开发文档中的100台/24小时、605万行查询性能和生产恢复RTO/RPO均是验收目标；短时CI不代表这些目标已通过。
+
+完整的软件交付清单、验证来源和剩余现场条件见[交付状态](docs/delivery.md)。
 
 ## 开发运行
 

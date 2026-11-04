@@ -14,7 +14,7 @@
 | 入口 | Nginx、TLS证书、访问限流 | 同一个域名分设备入口和人员入口；数据库不暴露公网 |
 | 定时工作 | 宿主机定时器调用管理命令、备份工具 | 仅每日清理与备份；无常驻任务队列或调度服务 |
 
-开发开始时锁定上述系列中仍受支持的补丁版本、依赖哈希和镜像摘要；本轮不虚构已生成的锁文件。Django 5.2 的延长支持到2028年4月，版本选择依据见[官方支持表](https://www.djangoproject.com/download/)。PostgreSQL的大版本与补丁维护依据[官方版本政策](https://www.postgresql.org/support/versioning/)。
+实现已生成[Python依赖锁文件](../requirements.txt)，官方镜像摘要和更新步骤见[运行与恢复](operations.md)。Django 5.2 的延长支持到2028年4月，版本选择依据见[官方支持表](https://www.djangoproject.com/download/)。PostgreSQL的大版本与补丁维护依据[官方版本政策](https://www.postgresql.org/support/versioning/)。
 
 一个部署对应一个机构。`Site` 只是该机构内部地点，例如楼栋、社区服务点；房间/住户单元存为床位的文字字段。跨机构隔离采用独立部署与数据库，不增加租户表、共享租户数据库或跨租户权限框架。一个部署内查看员能够看到全部床位，试点授权必须与这一范围一致。
 

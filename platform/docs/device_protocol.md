@@ -1,6 +1,6 @@
 # 设备接入契约 v1
 
-服务端已按本契约实现；联网固件仍待接入。它与现有USB日志`schema=1`是不同契约。类型见[JSON Schema](../contracts/telemetry.schema.json)，完整载荷见[有效合成例](../examples/telemetry.synthetic.valid.json)与[未启用合成例](../examples/telemetry.synthetic.unavailable.json)。样例不是已发布固件输出，身份和历史时间不能原样提交到真实平台。
+服务端与[联网开发固件](../firmware/README.md)已按本契约实现；真实设备联调仍须现场执行。它与现有USB日志`schema=1`是不同契约。类型见[JSON Schema](../contracts/telemetry.schema.json)，完整载荷见[有效合成例](../examples/telemetry.synthetic.valid.json)与[未启用合成例](../examples/telemetry.synthetic.unavailable.json)。样例不是实机输出，身份和历史时间不能原样提交到真实平台。
 
 ## 1. 唯一设备写入口
 
