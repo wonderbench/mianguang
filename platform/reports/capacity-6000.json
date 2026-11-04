@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "run_id": "7335dbfe37f0",
+  "revision": "7794667d1a943f5b0680ba9b1c5e869611e9b1a0",
+  "started_at": "2026-11-04T14:48:28.119411+00:00",
+  "finished_at": "2026-11-04T14:48:59.132279+00:00",
+  "load_duration_seconds": 30.005,
+  "requested_duration_seconds": 30,
+  "devices": 100,
+  "viewer_sessions": 10,
+  "device_interval_seconds": 10,
+  "viewer_interval_seconds": 15,
+  "burst_devices": 100,
+  "history_seed_rows": 6000,
+  "history_seed_seconds": 1.532,
+  "run_observation_rows": 6400,
+  "live_accepted": 400,
+  "session_source": "local Django SessionStore; HTTP session polling, no HTTP login or browser rendering",
+  "http_logins": 0,
+  "sessions_created": 11,
+  "session_renewals": 0,
+  "latency_scope": "app is Django Server-Timing, excludes proxy queue/network; client includes TLS/network/body transfer",
+  "p95_resolution_ms": 1,
+  "measurements": {
+    "burst": {
+      "requests": 100,
+      "status_counts": {
+        "200": 100
+      },
+      "errors": {},
+      "response_bytes": 9200,
+      "client_p95_ms": 451,
+      "app_p95_ms": 31,
+      "app_timed_requests": 100
+    },
+    "telemetry": {
+      "requests": 300,
+      "status_counts": {
+        "200": 300
+      },
+      "errors": {},
+      "response_bytes": 27600,
+      "client_p95_ms": 13,
+      "app_p95_ms": 8,
+      "app_timed_requests": 300
+    },
+    "series": {
+      "requests": 2,
+      "status_counts": {
+        "200": 2
+      },
+      "errors": {},
+      "response_bytes": 378108,
+      "client_p95_ms": 22,
+      "app_p95_ms": 17,
+      "app_timed_requests": 2
+    },
+    "csv": {
+      "requests": 2,
+      "status_counts": {
+        "200": 2
+      },
+      "errors": {},
+      "response_bytes": 36156,
+      "client_p95_ms": 36,
+      "app_p95_ms": 11,
+      "app_timed_requests": 2
+    },
+    "overview": {
+      "requests": 20,
+      "status_counts": {
+        "200": 20
+      },
+      "errors": {},
+      "response_bytes": 3202020,
+      "client_p95_ms": 48,
+      "app_p95_ms": 43,
+      "app_timed_requests": 20
+    }
+  },
+  "expected_requests": {
+    "burst": 100,
+    "telemetry": 300,
+    "overview": 20,
+    "series": 2,
+    "csv": 2
+  },
+  "missed_schedules": {},
+  "checks": {
+    "all_http_requests_succeeded": true,
+    "server_timing_complete": true,
+    "each_device_accepted": true,
+    "scheduled_requests_completed": true,
+    "stored_row_count_matches": true,
+    "watermarks_match_latest": true,
+    "no_missed_schedules": true,
+    "cleanup_completed": true
+  },
+  "observed_app_thresholds": {
+    "telemetry": true,
+    "overview": true,
+    "series": true,
+    "csv": true
+  },
+  "full_capacity_scope": false,
+  "full_capacity_passed": false,
+  "result": "smoke_passed",
+  "machine": {
+    "os": "Linux",
+    "kernel": "7.0.0-1017-azure",
+    "architecture": "x86_64",
+    "python": "3.12.16",
+    "cpu_count": 2,
+    "host_memory_bytes": 8317034496,
+    "django": "5.2.19",
+    "psycopg": "3.3.8",
+    "cgroup_cpu_max": "max 100000",
+    "cgroup_memory_max": "max"
+  },
+  "database_before": {
+    "database_bytes": 9098931,
+    "observations_bytes": 131072,
+    "postgres_version": "17.11 (Debian 17.11-1.pgdg12+2)"
+  },
+  "database_after_seed": {
+    "database_bytes": 19175091,
+    "observations_bytes": 9936896,
+    "postgres_version": "17.11 (Debian 17.11-1.pgdg12+2)"
+  },
+  "database_after_load": {
+    "database_bytes": 19969715,
+    "observations_bytes": 10600448,
+    "postgres_version": "17.11 (Debian 17.11-1.pgdg12+2)"
+  },
+  "not_verified": [
+    "physical devices and UART/lamp behavior",
+    "real browser rendering",
+    "institution network and off-host recovery",
+    "100 devices, 10 sessions, 24 hours and 6048000 historical rows together"
+  ]
+}
