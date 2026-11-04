@@ -1,6 +1,6 @@
 # 数据模型与接口
 
-状态：待开发。以下是Django模型/迁移与视图的实现依据，不是已执行的数据库脚本。业务时间一律UTC `timestamptz`，显示时区在部署中配置，首版默认`Asia/Shanghai`。
+以下是Django模型/迁移与视图的设计依据；对应实现位于`platform/app/`，实际交付与验收状态见[平台入口](../README.md)。业务时间一律UTC `timestamptz`，显示时区在部署中配置，首版默认`Asia/Shanghai`。
 
 ## 1. 最少数据表
 

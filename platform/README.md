@@ -1,6 +1,17 @@
-# 眠光多设备管理平台 · MVP 设计
+# 眠光多设备管理平台 · MVP
 
 设计基线：2026-11-04；对接 PCB V0.2 / 固件 V0.2.0。平台实现独立放在本目录：`app/` 为 Django 单体，`contracts/` 为接入契约。已发布硬件、模型和固件保持原版本；当前固件尚不能联网，平台模拟结果不代表真机结果。
+
+## 实现状态
+
+| 阶段 | 当前交付 |
+|---|---|
+| M1 数据接入 | [PR #1](https://github.com/wonderbench/mianguang/pull/1) 已合并；迁移、鉴权、幂等/顺序、绑定事务、模拟器及 PostgreSQL 并发验证 |
+| M2 管理闭环 | [PR #2](https://github.com/wonderbench/mianguang/pull/2) 已合并；两角色、Admin、总览、历史趋势、受限 CSV 与审计 |
+| M3 真机接入 | 尚未实施联网固件；没有三台真机24小时结果 |
+| M4 运行交付 | `deploy/` 提供三容器、网络边界、日清理、加密备份与隔离恢复；CI 合成冒烟结果以仓库工作流为准，实际机构部署与容量验收仍待执行 |
+
+实际部署入口为 [运行与恢复](docs/operations.md)。开发文档中的100台/24小时、605万行查询性能和生产恢复RTO/RPO均是验收目标，不是本轮达成数据。
 
 ## 开发运行
 
@@ -84,7 +95,7 @@ flowchart LR
 
 [JSON Schema](contracts/telemetry.schema.json)和[合成样例](examples/)用于后续联调，不是实测资料。[文档复核](docs/review.md)记录本轮一致性检查；外部技术依据在[来源与决策](docs/sources.md)。
 
-本轮[协议文档自检](docs/validation.json)覆盖36个正反例及本地文件链接，全部通过；只验证文档产物。可在安装`jsonschema==4.26.0`的独立Python虚拟环境中运行以下命令复核，不连接服务器或设备：
+设计阶段的[协议文档自检](docs/validation.json)覆盖36个正反例及当时的本地文件链接，只验证文档产物。当前实现继续复用这一检查，另由 CI 运行数据库集成测试与容器部署/恢复冒烟。可在上述虚拟环境中运行以下命令复核契约，不连接服务器或设备：
 
 ```sh
 python platform/tools/validate_contract.py

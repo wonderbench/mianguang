@@ -1,6 +1,6 @@
 # 最小部署与运维方案
 
-状态：部署设计，尚未创建/启动服务。候选配置是一台4 vCPU、8 GiB内存、100 GiB SSD的Linux主机，运行Nginx、Django/Gunicorn、PostgreSQL三个容器；容量是否足够以[压测验收](development.md#5-性能与试点门槛)为准。
+本页为部署设计基线，实际三容器配置与执行步骤见[运行与恢复](operations.md)。尚未部署到机构主机或连接真机。候选配置是一台4 vCPU、8 GiB内存、100 GiB SSD的Linux主机，运行Nginx、Django/Gunicorn、PostgreSQL三个容器；容量是否足够以[压测验收](development.md#5-性能与试点门槛)为准。
 
 ## 1. 两类现场共用一个应用
 

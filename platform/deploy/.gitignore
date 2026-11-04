@@ -1,0 +1,6 @@
+.env
+tls/
+staff-networks.conf
+*.dump
+*.age
+*.sha256

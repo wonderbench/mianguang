@@ -1,0 +1,12 @@
+.git
+.venv
+**/__pycache__
+**/*.pyc
+**/.env
+deploy/tls
+deploy/staff-networks.conf
+**/*.age
+**/*.dump
+**/*.pem
+**/*.key
+**/*.crt
