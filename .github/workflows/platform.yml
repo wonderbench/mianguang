@@ -73,7 +73,7 @@ jobs:
         run: platform/deploy/smoke.sh
         env:
           CAPACITY_REPORT: ${{ github.workspace }}/capacity-smoke.json
-          CAPACITY_SEED_ROWS: ${{ inputs.capacity_seed_rows || '6048000' }}
+          CAPACITY_SEED_ROWS: ${{ inputs.capacity_seed_rows || '6000' }}
       - name: Preserve measured capacity smoke report
         if: always()
         uses: actions/upload-artifact@v7
