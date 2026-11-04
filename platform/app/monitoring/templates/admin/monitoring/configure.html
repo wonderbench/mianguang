@@ -1,0 +1,6 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<h1>设备 {{ device.display_code }} · 安装与凭证</h1>
+<p>换人/换床前请先现场停止使用。操作完成后现场写入新配置并重启，平台不能远程启用雷达。</p>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">执行</button></form>
+{% endblock %}

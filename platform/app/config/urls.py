@@ -1,10 +1,11 @@
-from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
+from monitoring.admin import platform_admin
 from monitoring.views.device import healthz, telemetry
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("admin/", platform_admin.urls),
     path("api/device/v1/telemetry", telemetry),
     path("healthz", healthz),
+    path("", include("monitoring.page_urls")),
 ]
