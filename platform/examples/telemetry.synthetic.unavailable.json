@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "device_id": "4b9635de-4522-4fd1-8a6b-5eb3e4adba53",
+  "binding_id": "5adf1692-09c4-4b8c-8e71-d06cd72a9a54",
+  "boot_id": 7,
+  "seq": 0,
+  "captured_at": "2026-11-04T22:00:00Z",
+  "uptime_ms": 1000,
+  "firmware_version": "0.3.0-dev",
+  "sample": {
+    "radar_enabled": false,
+    "ready": false,
+    "installation_confirmed": false,
+    "transport_ok": false,
+    "presence": {
+      "raw": 0,
+      "available": false,
+      "valid": false,
+      "reason": "transport_fault",
+      "age_ms": 0
+    },
+    "bed": {
+      "raw": 0,
+      "available": false,
+      "valid": false,
+      "reason": "transport_fault",
+      "age_ms": 0
+    },
+    "rr": {
+      "raw": 0,
+      "available": false,
+      "valid": false,
+      "reason": "transport_fault",
+      "age_ms": 0
+    },
+    "hr": {
+      "raw": 0,
+      "available": false,
+      "valid": false,
+      "reason": "transport_fault",
+      "age_ms": 0
+    },
+    "low_motion": {
+      "raw": 0,
+      "available": false,
+      "valid": false
+    },
+    "lamp": {
+      "mode": "auto",
+      "pwm": 0,
+      "target": 0
+    }
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-04",
+  "scope": "Documentation contract checks only; no server, firmware network or hardware tests",
+  "jsonschema_version": "4.26.0",
+  "explicit_UTC_format_checker": true,
+  "cases": [
+    {
+      "case": "telemetry.synthetic.unavailable.json",
+      "expected_valid": true,
+      "passed": true
+    },
+    {
+      "case": "telemetry.synthetic.valid.json",
+      "expected_valid": true,
+      "passed": true
+    },
+    {
+      "case": "extra_top",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "extra_sample",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "bad_device_uuid",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "bad_binding_uuid",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "uuid_boot_rejected",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "zero_boot",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "overflow_boot",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "boolean_boot",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "negative_seq",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "overflow_seq",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "boolean_seq",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "overflow_uptime",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "invalid_month",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "invalid_day",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "no_UTC_Z",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "bad_schema_version",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "string_boolean",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "unavailable_but_valid",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "valid_wrong_reason",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "stale_but_valid",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "RR_out_of_range",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "HR_invalid_zero",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "HR_high",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "motion_with_valid_vitals",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "no_installation_with_valid_fields",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "no_transport_with_valid_fields",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "radar_disabled_with_valid_fields",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "bad_lamp_pwm",
+      "expected_valid": false,
+      "passed": true
+    },
+    {
+      "case": "unbound",
+      "expected_valid": true,
+      "passed": true
+    },
+    {
+      "case": "first_boot",
+      "expected_valid": true,
+      "passed": true
+    },
+    {
+      "case": "last_boot_number",
+      "expected_valid": true,
+      "passed": true
+    },
+    {
+      "case": "last_seq",
+      "expected_valid": true,
+      "passed": true
+    },
+    {
+      "case": "millisecond_UTC",
+      "expected_valid": true,
+      "passed": true
+    },
+    {
+      "case": "integration_json_1",
+      "expected_valid": true,
+      "passed": true
+    }
+  ],
+  "case_count": 36,
+  "passed": 36,
+  "failed": 0,
+  "local_link_count": 54,
+  "broken_links": [],
+  "inputs": [
+    {
+      "path": "contracts/telemetry.schema.json",
+      "sha256": "77395ebc7674b1f76a896a2efa84d1b2ff3ad1db5818902eab1cdb64b8d1a5d3"
+    },
+    {
+      "path": "examples/telemetry.synthetic.unavailable.json",
+      "sha256": "c1c51773f4c85d3e62a03ec8c7c00feafb134d7f57c51bc3f7351cd57145a4c3"
+    },
+    {
+      "path": "examples/telemetry.synthetic.valid.json",
+      "sha256": "b38b7e8f26581f095cb450870e448f3764d0708e4a901b4624a3b6d24583f13b"
+    },
+    {
+      "path": "docs/firmware_integration.md",
+      "sha256": "54af7ec208715b06399f4de2bb2bf8890e9b1f53fefce3686f74d328509e8111"
+    },
+    {
+      "path": "tools/validate_contract.py",
+      "sha256": "ecb6669b48baa3befb4740125361eb1099a7220de8445c8e19abf7534610327c"
+    }
+  ],
+  "not_executed": [
+    "HTTP authentication and freshness",
+    "database concurrency/idempotency/binding",
+    "deployment/load/restore",
+    "network firmware and real devices"
+  ],
+  "status": "PASS"
+}

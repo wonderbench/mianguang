@@ -11,6 +11,7 @@
 | [pcb/](pcb/) | 嘉立创EDA工程、原理图、PCB、BOM、Gerber、坐标和检查程序 | [PCB设计说明](pcb/README.md) |
 | [firmware/](firmware/) | ESP32固件、雷达协议、监测与夜灯算法、日志工具、测试及编译产物 | [编译与使用](firmware/README.md) |
 | [models/](models/) | V0.2 Blender模型、11个STL、4张效果图、尺寸依据及检查程序 | [模型说明](models/README.md) |
+| [platform/](platform/) | 多设备管理平台MVP技术架构、开发计划、数据模型与设备接入契约 | [平台设计入口](platform/README.md) |
 | [docs/](docs/) | 方案书PDF/DOCX、版本说明和历史复核记录 | [文档索引](docs/README.md) |
 | [research/](research/) | 官方资料、选型依据、尺寸图、参考STEP与厂商库 | [资料索引](research/README.md) |
 | [tools/](tools/) | 文档生成等项目辅助脚本 | [工具说明](tools/README.md) |
@@ -20,6 +21,7 @@
 - **PCB V0.2，2026-11-04：** [完整交付ZIP](pcb/releases/眠光雷达_PCB_V0.2_2026-11-04.zip)、[嘉立创完整工程](pcb/release_v02/Mianguang_V0.2.epro2)、[BOM](pcb/release_v02/BOM_Mianguang_V0.2.xlsx)、[Gerber与钻孔](pcb/release_v02/Gerber_Mianguang_V0.2.zip)。66 × 56 mm双面载板，23个元件、18个网络；PCB DRC为0错误，独立验收44/44通过。[验收报告](pcb/release_v02_acceptance.json)
 - **固件 V0.2.0：** [源码](firmware/src/)、[固定构建配置](firmware/platformio.ini)、[编译产物及校验](firmware/releases/v0.2.0/)。已完成目标板编译和模拟测试，未烧录实机。
 - **外壳 V0.2，2026-11-04：** [Blender模型](models/v0.2/Mianguang_Enclosure_V0.2.blend)、[11个STL](models/v0.2/stl/)、[壁挂预览](models/v0.2/renders/03_wall_45deg.png)、[爆炸预览](models/v0.2/renders/04_exploded.png)。按冻结PCB对齐四孔和23个元件，补充雷达固定、按钮、灯板、USB压条及共用转轴；桌面0–30°、壁挂0–45°。数字几何检查见[检查记录](models/v0.2/geometry_checks.json)，采购尺寸约束和实物待验项见[装配说明](models/mechanical/assembly_v02.md)。
+- **管理平台MVP设计，2026-11-04：** [技术架构](platform/docs/architecture.md)、[接入契约](platform/docs/device_protocol.md)、[开发计划](platform/docs/development.md)。采用Django单体、PostgreSQL和HTTPS上报，覆盖一机构多床位设备管理、最近状态与趋势。本轮交付文档和Schema样例，平台应用及联网固件尚未开发。
 
 首次接线请阅读[交付与装配说明](pcb/release_v02/README_交付与装配.md)。USB烧录前断开外部5 V，取下JP1、JP2和JP3。夜灯使用5 V自带限流、功率不超过0.5 W的灯板。当前雷达通信需确认供电后人工执行 `radar on`；自动掉电禁能、脱机自动启动和整夜实测尚未完成。
 
