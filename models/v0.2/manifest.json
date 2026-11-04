@@ -1,0 +1,178 @@
+{
+  "version": "V0.2",
+  "date": "2026-11-04",
+  "scope": "PCB-referenced engineering prototype; physical qualification pending",
+  "pcb_manifest_sha256": "fd4339bd425b36fa923e9319b0f9c951d6cbc97a1826351783002f241a004e31",
+  "blender_version": "5.2.1 LTS",
+  "geometry_summary": {
+    "pass": 15,
+    "fail": 0
+  },
+  "limitations": [
+    "Purchased components remain conditional envelopes, especially XIAO stack/C1001 rear height/USB receiver/light sensor.",
+    "No actual hardware, RF, strength, heat, print-shrinkage or tipping validation.",
+    "Sampled penetration and discrete angle checks do not constitute an exact continuous collision proof."
+  ],
+  "files": [
+    {
+      "path": "models/README.md",
+      "bytes": 3942,
+      "sha256": "ee2cec744ea837b0b9d9dc8495c8f197c59e9ce7d8384a1d3a70350fefdbb696"
+    },
+    {
+      "path": "models/mechanical/assembly_v02.md",
+      "bytes": 14188,
+      "sha256": "654d60cc0ab97dbfdd4fb685f75b3b4d68bd423548c725581bccb0bb45032d9f"
+    },
+    {
+      "path": "models/mechanical/interface_evidence.md",
+      "bytes": 11923,
+      "sha256": "2c86e6f21d93666a7cbd1eee3e98f9dd9f95a78e26159d27f9ba7ed5f5f76b55"
+    },
+    {
+      "path": "models/mechanical/mount_notes.md",
+      "bytes": 4220,
+      "sha256": "5db3355774435af365c8a8ec37b628169c421af636aafe6cf103e60b8c5febfc"
+    },
+    {
+      "path": "models/mechanical/pcb_v02_reference.json",
+      "bytes": 96266,
+      "sha256": "704f5fde3cc05bb9bede3c9ef24e4fb8259d6165729f7eb80ccde9e2f4cb7b7e"
+    },
+    {
+      "path": "models/mechanical/review_v02.md",
+      "bytes": 4797,
+      "sha256": "560741794f1ef37bbd17e4369715c6d2bda950179e1956a3783b8ce5b56ee17e"
+    },
+    {
+      "path": "models/scripts/build_enclosure_v02.py",
+      "bytes": 27696,
+      "sha256": "ceeb35f19361b2728ccab4127ab6cdf2d2e5a65d2a7408ba3664654905ec4b81"
+    },
+    {
+      "path": "models/scripts/draw_layout_v02.py",
+      "bytes": 13499,
+      "sha256": "21fec523c8f8f5944a8a4b632e38af13e9ec86d57fef247a50130f63f69fe990"
+    },
+    {
+      "path": "models/scripts/mount_v02.py",
+      "bytes": 12862,
+      "sha256": "b250a7bb4262d40f8adb3df562cb1b44228d0e94f432fb50037cae5d806b4209"
+    },
+    {
+      "path": "models/scripts/package_v02.py",
+      "bytes": 3370,
+      "sha256": "be2ae5b4ab2911ae140e744de8c4c08d4b2d8df297acbd54c895923eeb3f12bd"
+    },
+    {
+      "path": "models/scripts/render_enclosure_v02.py",
+      "bytes": 829,
+      "sha256": "be41d8cfb5fb0f8ba4f827e4f7edc1e5fe694c8329debce4de35d1b3c4d262a8"
+    },
+    {
+      "path": "models/scripts/verify_enclosure_v02.py",
+      "bytes": 16397,
+      "sha256": "16d988a679115df3a4dadbafeaa85a12c89fa00c03f19bfb462160318ef33da0"
+    },
+    {
+      "path": "models/v0.2/Mechanical_Layout_V0.2.svg",
+      "bytes": 23373,
+      "sha256": "8350b72be7e8491fa1eff5e32ab50fabe350c76f1598a95180a0e2fa726c302e"
+    },
+    {
+      "path": "models/v0.2/Mianguang_Enclosure_V0.2.blend",
+      "bytes": 641391,
+      "sha256": "ac4f19d308f535fb3ac228d6c6f5e865014e69b46b43829d7eb3abe2b98e2112"
+    },
+    {
+      "path": "models/v0.2/fit_parameters.json",
+      "bytes": 5185,
+      "sha256": "ba96e7cbd2d8cec0a4bb9e178721af8ca13389c43ede82204c05f938dae0c48e"
+    },
+    {
+      "path": "models/v0.2/geometry_checks.json",
+      "bytes": 18853,
+      "sha256": "4cc2487cfc653cd2003312084a01f1b98b1ebd7e0d43c8a333ab7e8d07b1ce22"
+    },
+    {
+      "path": "models/v0.2/mesh_checks.json",
+      "bytes": 3835,
+      "sha256": "36b8cf404cb649e68906394775aead1a8bcb0ee95ebbcd51a34a97a53375c030"
+    },
+    {
+      "path": "models/v0.2/renders/01_hero.png",
+      "bytes": 1805260,
+      "sha256": "eb5c3e7031438d9b1505da2997ef2fe340b5cd004bba0129a8b035c0f61c7970"
+    },
+    {
+      "path": "models/v0.2/renders/02_rear.png",
+      "bytes": 1817596,
+      "sha256": "bf7b3a49507a19f55d9be2cf7f2af6116854e14852e6b582c0469bf8ff59a9d5"
+    },
+    {
+      "path": "models/v0.2/renders/03_wall_45deg.png",
+      "bytes": 1822743,
+      "sha256": "094b764551a080f2a0ac6f164740b4ea4f945e90752f8f5d03438038112086b6"
+    },
+    {
+      "path": "models/v0.2/renders/04_exploded.png",
+      "bytes": 1932460,
+      "sha256": "c9e35c5f48e0ad2dd12818b1184d89de3a85897c778fbba4fe27afd6c0339240"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_01_Rear_Tub.stl",
+      "bytes": 2447284,
+      "sha256": "908d6fb5ef7968b04b5886973a18c2e61c3884e9eec45d66412efba345b2ca3b"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_02_Front_Radome.stl",
+      "bytes": 150584,
+      "sha256": "15549e0556575f4c16bffcb01e4b3893c4e43e1d62417291f6912426fc3c0f8e"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_03_Light_Diffuser.stl",
+      "bytes": 27084,
+      "sha256": "758676bb22cf8d8ece5a34519b5150931f0ff72ba67e865d3cf1f52ddf86f415"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_04_Captive_Top_Key.stl",
+      "bytes": 2284,
+      "sha256": "9719b0c04d1c677b1a7852e82a2dec8037339245d1df428a131fe31eb663f9c1"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_05_Radar_Carrier.stl",
+      "bytes": 93484,
+      "sha256": "108e59c3443d9ac1990f4d32fe3e0bd4bb7d6293aae9414704b8d478703e1dbf"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_06_LED_Baffle.stl",
+      "bytes": 52584,
+      "sha256": "e530ff29837d5c63f558a898e8d9336d3cdb3861554e0a073cf46a2f59f25249"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_07_Common_Dock_Yoke.stl",
+      "bytes": 132684,
+      "sha256": "1400d6509ab6a0ec8f8cc8b9fb17c3a313cadfece6218eba3523b79dc2cc971b"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_08_Desk_Stand_Base.stl",
+      "bytes": 132784,
+      "sha256": "8da4bfd8a833edd48b5497ba1b94061627a8b925bef731e7dc6713a26079ad37"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_09_Wall_Bracket_Plate.stl",
+      "bytes": 146084,
+      "sha256": "40b4462521029114c9068f68b7cc6e05aeb81e8e21cdb5572b4237392c93eaf9"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_12_Key_Switch_Bridge.stl",
+      "bytes": 26884,
+      "sha256": "b1ced3f0bdb249ad048205f574eda4d373b4516ee67751e6e61aa53ae33f1dba"
+    },
+    {
+      "path": "models/v0.2/stl/SR02_14_USB_Retainer.stl",
+      "bytes": 28284,
+      "sha256": "826ddcc984fe2c03733135ee16dae6543a1da8326972217a850a978bba0eed80"
+    }
+  ]
+}

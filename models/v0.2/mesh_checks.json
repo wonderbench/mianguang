@@ -1,0 +1,145 @@
+[
+  {
+    "part": "SR02_01_Rear_Tub",
+    "stl": "stl/SR02_01_Rear_Tub.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 76778.273,
+    "bounds_mm": [
+      100.0,
+      44.0,
+      116.0
+    ],
+    "note": "2.4 mm wall. M2.5 insert pilots 3.3 mm are a procurement target; print coupon first."
+  },
+  {
+    "part": "SR02_14_USB_Retainer",
+    "stl": "stl/SR02_14_USB_Retainer.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 212.819,
+    "bounds_mm": [
+      23.0,
+      3.0,
+      4.0
+    ],
+    "note": "Two M2x6 screws into rail pilots; 18x12x1.6 mm board plus 0.4 mm pad."
+  },
+  {
+    "part": "SR02_12_Key_Switch_Bridge",
+    "stl": "stl/SR02_12_Key_Switch_Bridge.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 1139.855,
+    "bounds_mm": [
+      40.0,
+      18.0,
+      1.6
+    ],
+    "note": "M2x6 underside screws; 10x10 switch board retained with thin adhesive pad. Switch stack is conditional."
+  },
+  {
+    "part": "SR02_04_Captive_Top_Key",
+    "stl": "stl/SR02_04_Captive_Top_Key.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 1550.097,
+    "bounds_mm": [
+      25.0,
+      15.0,
+      6.9
+    ],
+    "note": "Nominal 0.3 mm side clearance. Flange-to-roof 0.8 mm; switch travel target 0.25 mm, adjust after procurement."
+  },
+  {
+    "part": "SR02_02_Front_Radome",
+    "stl": "stl/SR02_02_Front_Radome.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 16683.29,
+    "bounds_mm": [
+      100.0,
+      9.2,
+      116.0
+    ],
+    "note": "1.6 mm unfilled polymer experiment; RF performance must be measured."
+  },
+  {
+    "part": "SR02_03_Light_Diffuser",
+    "stl": "stl/SR02_03_Light_Diffuser.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 5463.042,
+    "bounds_mm": [
+      82.0,
+      2.8,
+      28.0
+    ],
+    "note": "0.3 mm perimeter clearance; 1.2 mm rear flange, thin adhesive gasket bonds flange to front cover. No floating insert."
+  },
+  {
+    "part": "SR02_05_Radar_Carrier",
+    "stl": "stl/SR02_05_Radar_Carrier.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 1392.972,
+    "bounds_mm": [
+      84.0,
+      10.3,
+      28.0
+    ],
+    "note": "C1001 two M1.6x14 through bolts/nuts. Right-edge posts respect 18mm pitch. Carrier M2x6 to shell. Remove before USB service."
+  },
+  {
+    "part": "SR02_06_LED_Baffle",
+    "stl": "stl/SR02_06_LED_Baffle.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 4171.613,
+    "bounds_mm": [
+      76.0,
+      5.0,
+      20.0
+    ],
+    "note": "Opaque baffle; 65x9x1 mm current-limited LED strip fixed with adhesive pad, lead exits through side slot."
+  },
+  {
+    "part": "SR02_07_Common_Dock_Yoke",
+    "stl": "stl/SR02_07_Common_Dock_Yoke.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 7860.162,
+    "bounds_mm": [
+      49.0,
+      28.5,
+      30.0
+    ],
+    "note": "M3 side-loading nut pockets and M4 pivot holes; print-fit and pullout load remain untested"
+  },
+  {
+    "part": "SR02_08_Desk_Stand_Base",
+    "stl": "stl/SR02_08_Desk_Stand_Base.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 94635.037,
+    "bounds_mm": [
+      100.0,
+      120.0,
+      104.0
+    ],
+    "note": "0 to 30deg hard stops; rear upright clears body sweep; verify foot fit, holding torque and stability"
+  },
+  {
+    "part": "SR02_09_Wall_Bracket_Plate",
+    "stl": "stl/SR02_09_Wall_Bracket_Plate.stl",
+    "nonmanifold_edges": 0,
+    "connected_islands": 1,
+    "volume_mm3": 56381.795,
+    "bounds_mm": [
+      68.0,
+      68.7,
+      88.0
+    ],
+    "note": "0 to 45deg hard stops; keyholes plus anti-lift screw; verify actual anchor heads and wall strength"
+  }
+]

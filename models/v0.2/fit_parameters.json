@@ -1,0 +1,303 @@
+{
+  "record_type": "DESIGN PARAMETERS, not independent verification; see geometry_checks.json",
+  "coordinate_map": "PCB(x,y)->Blender_mm(x-33,12.2,y+56)",
+  "source_sha256": "fd4339bd425b36fa923e9319b0f9c951d6cbc97a1826351783002f241a004e31",
+  "positions": [
+    {
+      "ref": "C4",
+      "pcb_mm": [
+        54.0,
+        28.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "C5",
+      "pcb_mm": [
+        54.0,
+        31.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "F1",
+      "pcb_mm": [
+        25.0,
+        8.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "C3",
+      "pcb_mm": [
+        17.0,
+        34.0
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "D1",
+      "pcb_mm": [
+        37.0,
+        8.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "D2",
+      "pcb_mm": [
+        24.0,
+        14.0
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "Q1",
+      "pcb_mm": [
+        49.0,
+        17.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "U1",
+      "pcb_mm": [
+        33.0,
+        30.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "C1",
+      "pcb_mm": [
+        31.0,
+        14.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "C2",
+      "pcb_mm": [
+        37.0,
+        14.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "J1",
+      "pcb_mm": [
+        17.0,
+        8.0
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "J2",
+      "pcb_mm": [
+        56.0,
+        35.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "J3",
+      "pcb_mm": [
+        56.0,
+        17.0
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "J4",
+      "pcb_mm": [
+        11.0,
+        29.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "J5",
+      "pcb_mm": [
+        14.0,
+        44.0
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "JP1",
+      "pcb_mm": [
+        47.0,
+        8.0
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "JP2",
+      "pcb_mm": [
+        48.0,
+        36.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "JP3",
+      "pcb_mm": [
+        48.0,
+        41.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R1",
+      "pcb_mm": [
+        45.0,
+        24.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R2",
+      "pcb_mm": [
+        49.0,
+        22.0
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "ref": "R3",
+      "pcb_mm": [
+        17.0,
+        29.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R4",
+      "pcb_mm": [
+        49.0,
+        27.0
+      ],
+      "rotation_deg": 0.0
+    },
+    {
+      "ref": "R5",
+      "pcb_mm": [
+        49.0,
+        31.0
+      ],
+      "rotation_deg": 0.0
+    }
+  ],
+  "design_conditions": [
+    {
+      "check": "carrier_holes",
+      "pcb_mm": [
+        [
+          5,
+          5
+        ],
+        [
+          61,
+          5
+        ],
+        [
+          5,
+          51
+        ],
+        [
+          61,
+          51
+        ]
+      ],
+      "model_xz_mm": [
+        [
+          -28,
+          61
+        ],
+        [
+          28,
+          61
+        ],
+        [
+          -28,
+          107
+        ],
+        [
+          28,
+          107
+        ]
+      ],
+      "diameter_mm": 2.7,
+      "pitch_mm": [
+        56,
+        46
+      ],
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "all_placements_present",
+      "count": 23,
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "XIAO_pin_registration",
+      "row_pitch_mm": 15.24,
+      "pin_pitch_mm": 2.54,
+      "module_bottom_standoff_budget_mm": 11,
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "carrier_back_solder_to_wall",
+      "clearance_mm": 3.6,
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "carrier_edge_to_roof",
+      "clearance_mm": 33.6,
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "antenna_front_gap",
+      "nominal_mm": 4.5,
+      "status": "GEOMETRY ONLY; no RF validation",
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "C1001_holes",
+      "diameter_mm": 2,
+      "pitch_mm": 18,
+      "source": "research/datasheets/C1001_step/JQC1001.step",
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "USB_receiver_panel_allowance",
+      "opening_mm": [
+        11.4,
+        6.4
+      ],
+      "socket_mm": [
+        9.2,
+        3.4
+      ],
+      "per_side_mm": [
+        1.1,
+        1.5
+      ],
+      "status": "CONDITIONAL on selected receiver",
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "XIAO_service_radar_budget_separation",
+      "clearance_mm": 1.5,
+      "status": "Remove radar tray for cable insertion; height budgets only",
+      "design_condition_satisfied": true
+    },
+    {
+      "check": "key_side_clearance",
+      "per_side_mm": 0.3,
+      "roof_flange_gap_mm": 0.8,
+      "design_condition_satisfied": true
+    }
+  ],
+  "purchased_part_policy": "Conditional fit to envelopes; procurement and physical checks required"
+}

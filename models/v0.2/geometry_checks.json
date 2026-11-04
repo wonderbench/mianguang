@@ -1,0 +1,739 @@
+{
+  "schema": "mianguang.enclosure.geometry_checks.v1",
+  "date": "2026-11-04",
+  "blender_version": "5.2.1 LTS",
+  "source_blend": "Mianguang_Enclosure_V0.2.blend",
+  "source_blend_sha256": "ac4f19d308f535fb3ac228d6c6f5e865014e69b46b43829d7eb3abe2b98e2112",
+  "reference_sha256": "704f5fde3cc05bb9bede3c9ef24e4fb8259d6165729f7eb80ccde9e2f4cb7b7e",
+  "checker_sha256": "16d988a679115df3a4dadbafeaa85a12c89fa00c03f19bfb462160318ef33da0",
+  "read_only": true,
+  "classification_tolerance_mm": 0.05,
+  "checks": [
+    {
+      "check": "frozen_reference_hashes",
+      "status": "PASS",
+      "files": 8
+    },
+    {
+      "check": "carrier_outline_and_thickness",
+      "status": "PASS",
+      "measured_xyz_mm": [
+        65.99999964237213,
+        1.5999991446733475,
+        55.9999980032444
+      ]
+    },
+    {
+      "check": "all_23_PCB_component_registrations",
+      "status": "PASS",
+      "placements": [
+        {
+          "ref": "C1",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            30.999999905005097,
+            14.000000298023224
+          ],
+          "error_mm": 9.450050981740787e-07
+        },
+        {
+          "ref": "C2",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            37.000000189989805,
+            14.000000298023224
+          ],
+          "error_mm": 5.299898049315743e-07
+        },
+        {
+          "ref": "C3",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            16.99999924004078,
+            34.00000357627869
+          ],
+          "error_mm": 2.996278688272014e-06
+        },
+        {
+          "ref": "C4",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            54.00000157952309,
+            28.000006318092346
+          ],
+          "error_mm": 6.43809234546211e-06
+        },
+        {
+          "ref": "C5",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            54.00000157952309,
+            31.000004947185516
+          ],
+          "error_mm": 5.987185517142279e-06
+        },
+        {
+          "ref": "D1",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            37.000000189989805,
+            8.000003039836884
+          ],
+          "error_mm": 3.799836883366936e-06
+        },
+        {
+          "ref": "D2",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            23.999999456107616,
+            14.000000298023224
+          ],
+          "error_mm": 8.038923837716538e-07
+        },
+        {
+          "ref": "F1",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            24.99999962002039,
+            8.000003039836884
+          ],
+          "error_mm": 3.799836883366936e-06
+        },
+        {
+          "ref": "J1",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            16.99999924004078,
+            8.000003039836884
+          ],
+          "error_mm": 3.799836883366936e-06
+        },
+        {
+          "ref": "J2",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            56.00000190734863,
+            35.00000560283661
+          ],
+          "error_mm": 4.482836608588059e-06
+        },
+        {
+          "ref": "J3",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            56.00000190734863,
+            17.00000637769699
+          ],
+          "error_mm": 7.357696990339946e-06
+        },
+        {
+          "ref": "J4",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            10.99999825656414,
+            29.00000089406967
+          ],
+          "error_mm": 2.6034358597826213e-06
+        },
+        {
+          "ref": "J5",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            13.99999874830246,
+            44.00000149011612
+          ],
+          "error_mm": 1.1916975406478514e-06
+        },
+        {
+          "ref": "JP1",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            47.000000432133675,
+            8.000003039836884
+          ],
+          "error_mm": 3.799836883366936e-06
+        },
+        {
+          "ref": "JP2",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            48.00000059604645,
+            36.00000762939453
+          ],
+          "error_mm": 8.509394533007253e-06
+        },
+        {
+          "ref": "JP3",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            48.00000059604645,
+            41.00000286102295
+          ],
+          "error_mm": 3.5810229519483983e-06
+        },
+        {
+          "ref": "Q1",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            49.00000075995922,
+            17.00000637769699
+          ],
+          "error_mm": 7.357696990339946e-06
+        },
+        {
+          "ref": "R1",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            45.00000010430813,
+            24.000005662441254
+          ],
+          "error_mm": 5.402441253465895e-06
+        },
+        {
+          "ref": "R2",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            49.00000075995922,
+            22.00000160932541
+          ],
+          "error_mm": 2.429325409281091e-06
+        },
+        {
+          "ref": "R3",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            16.99999924004078,
+            29.00000089406967
+          ],
+          "error_mm": 4.7406967240704034e-07
+        },
+        {
+          "ref": "R4",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            49.00000075995922,
+            27.000004291534424
+          ],
+          "error_mm": 4.951534425146065e-06
+        },
+        {
+          "ref": "R5",
+          "ok": true,
+          "measured_pcb_xy_mm": [
+            49.00000075995922,
+            31.000004947185516
+          ],
+          "error_mm": 5.987185517142279e-06
+        },
+        {
+          "ref": "U1",
+          "ok": true,
+          "measured_pad_count": 14,
+          "max_pad_error_mm": 6.154505769018215e-06
+        }
+      ]
+    },
+    {
+      "check": "four_carrier_holes_and_boss_axes",
+      "status": "PASS",
+      "holes": [
+        {
+          "ok": true,
+          "pcb": {
+            "center_xz_mm": [
+              -28.000000828125,
+              61.000004328125
+            ],
+            "diameter_mm": 2.699999793377393,
+            "rim_points": 64,
+            "radial_spread_mm": 4.705394371695704e-06
+          },
+          "shell_insert_pilot": {
+            "center_xz_mm": [
+              -28.000000882352943,
+              61.00000445588235
+            ],
+            "diameter_mm": 3.300001514654057,
+            "rim_points": 136,
+            "radial_spread_mm": 8.234224520897726e-06
+          },
+          "centre_error_mm": 4.168125002479428e-06,
+          "coaxial_error_mm": 1.3878980247404563e-07
+        },
+        {
+          "ok": true,
+          "pcb": {
+            "center_xz_mm": [
+              28.000000828125,
+              61.000004328125
+            ],
+            "diameter_mm": 2.699999793377393,
+            "rim_points": 64,
+            "radial_spread_mm": 4.705394371695704e-06
+          },
+          "shell_insert_pilot": {
+            "center_xz_mm": [
+              28.000000882352943,
+              61.00000445588235
+            ],
+            "diameter_mm": 3.300001514654057,
+            "rim_points": 136,
+            "radial_spread_mm": 8.234224520897726e-06
+          },
+          "centre_error_mm": 4.168125002479428e-06,
+          "coaxial_error_mm": 1.3878980247404563e-07
+        },
+        {
+          "ok": true,
+          "pcb": {
+            "center_xz_mm": [
+              -28.000000828125,
+              107.000008046875
+            ],
+            "diameter_mm": 2.7000007501537633,
+            "rim_points": 64,
+            "radial_spread_mm": 7.5040377742752185e-06
+          },
+          "shell_insert_pilot": {
+            "center_xz_mm": [
+              -28.00000087878788,
+              107.00000781060606
+            ],
+            "diameter_mm": 3.30000167712999,
+            "rim_points": 132,
+            "radial_spread_mm": 1.016438000478459e-05
+          },
+          "centre_error_mm": 8.446875000345244e-06,
+          "coaxial_error_mm": 2.416396809879233e-07
+        },
+        {
+          "ok": true,
+          "pcb": {
+            "center_xz_mm": [
+              28.000000828125,
+              107.000008046875
+            ],
+            "diameter_mm": 2.7000007501537633,
+            "rim_points": 64,
+            "radial_spread_mm": 7.5040377742752185e-06
+          },
+          "shell_insert_pilot": {
+            "center_xz_mm": [
+              28.00000087878788,
+              107.00000781060606
+            ],
+            "diameter_mm": 3.30000167712999,
+            "rim_points": 132,
+            "radial_spread_mm": 1.016438000478459e-05
+          },
+          "centre_error_mm": 8.446875000345244e-06,
+          "coaxial_error_mm": 2.416396809879233e-07
+        }
+      ]
+    },
+    {
+      "check": "C1001_holes_and_tray_axes",
+      "status": "PASS",
+      "holes": [
+        {
+          "ok": true,
+          "module": {
+            "center_xz_mm": [
+              9.000000515625,
+              112.00000321875
+            ],
+            "diameter_mm": 2.00000063433065,
+            "rim_points": 64,
+            "radial_spread_mm": 6.918036581593512e-06
+          },
+          "tray": {
+            "center_xz_mm": [
+              9.000000546875,
+              112.000003484375
+            ],
+            "diameter_mm": 1.7000000398722381,
+            "rim_points": 64,
+            "radial_spread_mm": 4.80739815655884e-06
+          }
+        },
+        {
+          "ok": true,
+          "module": {
+            "center_xz_mm": [
+              9.000000515625,
+              130.0000100625
+            ],
+            "diameter_mm": 2.000000842846536,
+            "rim_points": 64,
+            "radial_spread_mm": 1.3055420946317398e-05
+          },
+          "tray": {
+            "center_xz_mm": [
+              9.000000546875,
+              130.000009125
+            ],
+            "diameter_mm": 1.6999986132834308,
+            "rim_points": 64,
+            "radial_spread_mm": 1.4578456212666069e-05
+          }
+        }
+      ]
+    },
+    {
+      "check": "eleven_printable_meshes",
+      "status": "PASS",
+      "meshes": [
+        {
+          "part": "SR02_01_Rear_Tub",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 76778.26404239993,
+          "ok": true
+        },
+        {
+          "part": "SR02_02_Front_Radome",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 16683.29986446301,
+          "ok": true
+        },
+        {
+          "part": "SR02_03_Light_Diffuser",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 5463.041653687711,
+          "ok": true
+        },
+        {
+          "part": "SR02_04_Captive_Top_Key",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 1550.0953485348705,
+          "ok": true
+        },
+        {
+          "part": "SR02_05_Radar_Carrier",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 1392.9718018448566,
+          "ok": true
+        },
+        {
+          "part": "SR02_06_LED_Baffle",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 4171.612285958234,
+          "ok": true
+        },
+        {
+          "part": "SR02_07_Common_Dock_Yoke",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 7860.163403620812,
+          "ok": true
+        },
+        {
+          "part": "SR02_08_Desk_Stand_Base",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 94635.03751493778,
+          "ok": true
+        },
+        {
+          "part": "SR02_09_Wall_Bracket_Plate",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 56381.766521185746,
+          "ok": true
+        },
+        {
+          "part": "SR02_12_Key_Switch_Bridge",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 1139.8534682209893,
+          "ok": true
+        },
+        {
+          "part": "SR02_14_USB_Retainer",
+          "nonmanifold_edges": 0,
+          "connected_islands": 1,
+          "volume_mm3": 212.8189856448105,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "static_printed_parts_and_electronic_budgets",
+      "status": "PASS",
+      "penetrations": [],
+      "method": "mesh vertices/triangulated face centres, nearest distance + three-direction ray parity; 0.05mm classification threshold; wire samples tested only against closed printed solid"
+    },
+    {
+      "check": "J2_to_JP2_narrow_plug_clearance",
+      "status": "PASS",
+      "measured_x_clearance_mm": 0.2600010484457016,
+      "qualification": "Conditional on purchased connector fitting the reserved envelope"
+    },
+    {
+      "check": "XIAO_reserved_stack",
+      "status": "PASS",
+      "reserved_carrier_to_module_bottom_mm": 11.00000003920868,
+      "qualification": "8.5mm female housing + 2.5mm male spacer; physically verify purchased header mating"
+    },
+    {
+      "check": "radar_antenna_to_radome_gap",
+      "status": "PASS",
+      "measured_gap_mm": 4.4999998062849045,
+      "qualification": "Geometry only, no RF performance conclusion"
+    },
+    {
+      "check": "external_USB_receiver_opening",
+      "status": "PASS",
+      "penetrations": [],
+      "qualification": "Conditional USB receiver envelope and cable selected later"
+    },
+    {
+      "check": "desk_0_to_30_and_wall_0_to_45_motion",
+      "status": "PASS",
+      "sweeps": [
+        {
+          "mode": "desk",
+          "angles_deg": [
+            0,
+            0.1,
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0,
+            3.5,
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5,
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5,
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5,
+            16.0,
+            16.5,
+            17.0,
+            17.5,
+            18.0,
+            18.5,
+            19.0,
+            19.5,
+            20.0,
+            20.5,
+            21.0,
+            21.5,
+            22.0,
+            22.5,
+            23.0,
+            23.5,
+            24.0,
+            24.5,
+            25.0,
+            25.5,
+            26.0,
+            26.5,
+            27.0,
+            27.5,
+            28.0,
+            28.5,
+            29.0,
+            29.5,
+            29.9,
+            30
+          ],
+          "pose_count": 63,
+          "failure_count": 0,
+          "failures": [],
+          "min_body_to_base_plane_mm": 3.9705282375216484,
+          "min_body_and_USB_plug_to_wall_plane_mm": null
+        },
+        {
+          "mode": "wall",
+          "angles_deg": [
+            0,
+            0.1,
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0,
+            3.5,
+            4.0,
+            4.5,
+            5.0,
+            5.5,
+            6.0,
+            6.5,
+            7.0,
+            7.5,
+            8.0,
+            8.5,
+            9.0,
+            9.5,
+            10.0,
+            10.5,
+            11.0,
+            11.5,
+            12.0,
+            12.5,
+            13.0,
+            13.5,
+            14.0,
+            14.5,
+            15.0,
+            15.5,
+            16.0,
+            16.5,
+            17.0,
+            17.5,
+            18.0,
+            18.5,
+            19.0,
+            19.5,
+            20.0,
+            20.5,
+            21.0,
+            21.5,
+            22.0,
+            22.5,
+            23.0,
+            23.5,
+            24.0,
+            24.5,
+            25.0,
+            25.5,
+            26.0,
+            26.5,
+            27.0,
+            27.5,
+            28.0,
+            28.5,
+            29.0,
+            29.5,
+            30.0,
+            30.5,
+            31.0,
+            31.5,
+            32.0,
+            32.5,
+            33.0,
+            33.5,
+            34.0,
+            34.5,
+            35.0,
+            35.5,
+            36.0,
+            36.5,
+            37.0,
+            37.5,
+            38.0,
+            38.5,
+            39.0,
+            39.5,
+            40.0,
+            40.5,
+            41.0,
+            41.5,
+            42.0,
+            42.5,
+            43.0,
+            43.5,
+            44.0,
+            44.5,
+            44.9,
+            45
+          ],
+          "pose_count": 93,
+          "failure_count": 0,
+          "failures": [],
+          "min_body_to_base_plane_mm": null,
+          "min_body_and_USB_plug_to_wall_plane_mm": 11.148960590362549
+        }
+      ],
+      "qualification": "Discrete 0.5deg sweep plus endpoints and 0.1deg near stops; not continuous proof, load test or cable-bend validation"
+    },
+    {
+      "check": "mechanical_stops_beyond_limits",
+      "status": "PASS",
+      "samples": [
+        {
+          "mode": "desk",
+          "angle_deg": -0.1,
+          "intersecting_face_pairs": 17
+        },
+        {
+          "mode": "desk",
+          "angle_deg": 30.1,
+          "intersecting_face_pairs": 11
+        },
+        {
+          "mode": "wall",
+          "angle_deg": -0.1,
+          "intersecting_face_pairs": 18
+        },
+        {
+          "mode": "wall",
+          "angle_deg": 45.1,
+          "intersecting_face_pairs": 11
+        }
+      ]
+    },
+    {
+      "check": "key_reserved_stroke",
+      "status": "PASS",
+      "stroke_mm": [
+        0,
+        0.2,
+        0.45
+      ],
+      "penetrations": [],
+      "qualification": "Switch spring/actuation force and actual stack are not verified"
+    },
+    {
+      "check": "XIAO_USB_service_envelope",
+      "status": "PASS",
+      "plug_xyz_budget_mm": [
+        12.000000104308128,
+        8.000000612810254,
+        24.000003933906555
+      ],
+      "penetrations": [],
+      "qualification": "Front cover and radar carrier removed; real cable bend and finger access must be checked"
+    }
+  ],
+  "status": "PASS",
+  "failure_count": 0,
+  "checked_model_sha256": "ac4f19d308f535fb3ac228d6c6f5e865014e69b46b43829d7eb3abe2b98e2112",
+  "summary": {
+    "pass": 15,
+    "fail": 0
+  },
+  "limitations": [
+    "Purchased components remain conditional envelopes, especially XIAO stack/C1001 rear height/USB receiver/light sensor.",
+    "No actual hardware, RF, strength, heat, print-shrinkage or tipping validation.",
+    "Sampled penetration and discrete angle checks do not constitute an exact continuous collision proof."
+  ]
+}

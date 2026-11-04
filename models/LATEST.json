@@ -1,0 +1,10 @@
+{
+  "version": "V0.2",
+  "directory": "v0.2",
+  "blend": "v0.2/Mianguang_Enclosure_V0.2.blend",
+  "archive": "releases/Mianguang_Enclosure_V0.2_2026-11-04.zip",
+  "archive_bytes": 8949611,
+  "archive_sha256": "5a94bd275576b7c4f5f36b5f752e15abf76ef220b839dacecb54d607a6109f03",
+  "manifest": "v0.2/manifest.json",
+  "manifest_sha256": "434d8e0ca1e07c8a740e2c541dbd3026e95f8a6dea4221f16df9c4a3ec0a05d2"
+}

@@ -1,101 +1,40 @@
-# 睡眠雷达夜灯外观与结构初稿
+# 眠光 V0.2 外壳与安装支架
 
-本目录交付白色简约机身的 Blender 可编辑模型、四个观察场景、渲染图和十个独立 STL。方案采用上部雷达、下部暖白夜灯、顶部大按键、后下侧 USB-C 供电，并为桌面支座和壁挂背板共用后部连接座预留位置。
+最新入口是 [Mianguang_Enclosure_V0.2.blend](v0.2/Mianguang_Enclosure_V0.2.blend)。本版按冻结 PCB V0.2 调整四孔、23 个元件位置、XIAO 插座和 USB 检修空间，保持白色简约机身、独立暖白夜灯与顶部按键。共用后座兼容桌面 0–30°、壁挂 0–45° 的俯角范围；桌面基座为 100×120×5 mm。
 
-这是可讨论外形、内部空间和安装姿态的首版结构。壳体网格已经检查闭合；转轴锁紧、卡扣、按键传动、零件固定和装配公差仍需机械细化。STL 用于外形与空间样件，不能按已验证功能壳体直接量产。
+这是供打印配合验证的工程样机结构。采购件尺寸、线束、打印公差和实物测试尚未冻结；数字检查不等于装配、透波、温升、抗倾覆或墙面承载通过。
 
-## 主要文件
+## 最新文件
 
-| 文件 | 内容 |
-| --- | --- |
-| `Sleep_Radar_Nightlight_Concept.blend` | 可编辑机身、四个场景、材质、摄像机和灯光 |
-| `renders/01_hero.png` | 桌面摆放正面效果 |
-| `renders/02_rear.png` | 后部供电口与支架 |
-| `renders/03_wall_45deg.png` | 壁挂向下 45° 的概念姿态 |
-| `renders/04_exploded.png` | 前面板、电子占位与后壳的展开关系 |
-| `stl/` | 十个以毫米为单位的独立实体网格 |
-| `mesh_checks.json` | 各网格边数、体积与外包尺寸检查结果 |
-| `scripts/build_sleep_radar.py` | 几何构建源代码；新建独立场景，不修改旧工程 |
-| `scripts/finish_views.py` | 构建后续观察场景；请在独立项目文件内运行 |
-| `scripts/render_views.py` | 批量生成四张渲染图 |
+| 文件 | 用途 |
+|---|---|
+| [Blender 工程](v0.2/Mianguang_Enclosure_V0.2.blend) | 可编辑模型及桌面、后侧、壁挂、展开四个场景 |
+| [完整模型包](releases/Mianguang_Enclosure_V0.2_2026-11-04.zip)、[版本索引](LATEST.json) | 模型、STL、效果图、依据、脚本和装配文档；附 SHA-256 清单 |
+| [11 个 STL](v0.2/stl/) | 毫米制打印零件；两种支架均包含，使用时择一安装 |
+| [桌面效果](v0.2/renders/01_hero.png)、[后侧](v0.2/renders/02_rear.png)、[壁挂](v0.2/renders/03_wall_45deg.png)、[展开](v0.2/renders/04_exploded.png) | 四张观察图；不代表实测光效或量产效果 |
+| [装配与结构 BOM](mechanical/assembly_v02.md) | 装配次序、紧固件、采购尺寸约束和检修步骤 |
+| [PCB 机械基准](mechanical/pcb_v02_reference.json)、[接口证据](mechanical/interface_evidence.md) | 四孔、针位、平面包络、来源 SHA-256，以及已确认尺寸与设计假设 |
+| [几何检查](v0.2/geometry_checks.json)、[网格检查](v0.2/mesh_checks.json) | 按报告逐项查看核对范围、结果及未覆盖事项 |
+| [机械尺寸示意图](v0.2/Mechanical_Layout_V0.2.svg) | PCB 孔位、叠层和两种支架的主要空间关系 |
+| [设计参数](v0.2/fit_parameters.json) | 构建参数与 PCB 清单指纹；其中的 `design_conditions` 不能代替独立几何复核 |
+| [构建脚本](scripts/build_enclosure_v02.py)、[支架脚本](scripts/mount_v02.py)、[支架说明](mechanical/mount_notes.md) | 可追溯模型来源 |
 
-## 脚本运行
+Blender 使用米作为内部单位、界面显示毫米；STL 顶点为毫米，每件最低点平移至 Z=0，仍需自行选择打印朝向与支撑。PCB 到外壳的映射为 `X=x−33`、`Z=y+56`，板中心 Y=12.2 mm，元件面朝 −Y。
 
-脚本通过自身文件位置定位 `models/`，不依赖原作者电脑路径。请从仓库根目录使用 Blender 的 `--background --python` 方式运行；不要把脚本正文直接粘贴进控制台，因为相对路径依赖 `__file__`。将 `blender` 替换为本机 Blender 可执行文件即可。
+本次独立复核为 **15 项通过、0 项失败**；11 件均闭合且单一连通。桌面 63 个、壁挂 93 个离散姿态检查通过；桌面最小避让约 3.97 mm，壁挂机身及外接 USB 插头预算至墙面最小约 11.15 mm。方法、模型指纹和条件限制见[复核记录](mechanical/review_v02.md)。
 
-已有模型的渲染与检查示例：
+## 重建与查看
 
-```sh
-blender --background models/Sleep_Radar_Nightlight_Concept.blend --python models/scripts/render_views.py
-blender --background models/Sleep_Radar_Nightlight_Concept.blend --python models/scripts/verify_saved_project.py
-```
+在独立仓库副本中，从仓库根目录运行以下命令；将 `blender` 换成本机可执行文件。构建会更新 `v0.2/` 的工程、STL 和构建记录，渲染会更新四张图片；重建后需重新生成独立几何检查报告，不能沿用旧报告。
 
-渲染脚本会更新 `renders/`。检查脚本会更新 `mesh_checks.json`、`project_checks.json` 并保存 `.blend`；在要保留已交付文件时，先复制整个仓库到独立工作目录再运行。
-
-从源码重建需在独立副本中依次执行下列命令。构建脚本会写入模型、STL 和网格记录；后两步补齐观察场景与父子变换。它们是按顺序执行的一次性建模过程，不能在已有模型上反复执行来替代日常编辑。
+模型包解压后可直接打开 Blender 和 STL；从源码重建还需要本仓库的冻结 `pcb/release_v02/`，应在完整仓库副本中运行。
 
 ```sh
-blender --background --factory-startup --python models/scripts/build_sleep_radar.py
-blender --background models/Sleep_Radar_Nightlight_Concept.blend --python models/scripts/finish_views.py
-blender --background models/Sleep_Radar_Nightlight_Concept.blend --python models/scripts/repair_scene_parenting.py
+blender --background --factory-startup --python models/scripts/build_enclosure_v02.py
+blender --background models/v0.2/Mianguang_Enclosure_V0.2.blend --python models/scripts/verify_enclosure_v02.py
+blender --background models/v0.2/Mianguang_Enclosure_V0.2.blend --python models/scripts/render_enclosure_v02.py
 ```
 
-本次仓库整理只修改了五个脚本的路径和使用说明，并做 Python 语法检查；没有运行 Blender、重新生成模型或重新验证网格。`project_checks.json` 保留原检查结果，其文件路径已改为相对 `models/` 的归档路径。
+安装后仍须对准胸部并验证距离和角度；支架机械可调范围不等于所有姿态均适用于睡眠检测。前板 1.6 mm 白色无金属聚合物、雷达间隙和夜灯扩散效果均为样件起点。
 
-## 空间与坐标约定
-
-Blender 场景采用米作为真实世界单位，界面长度显示毫米。模型中的 X 为左右，Y 正向为后侧，Z 正向为上方，正面朝 Y 负向。代码参数使用毫米并转换为米。STL 顶点输出为毫米，每件沿 Z 平移至最低点为零；切片前仍应选择合适朝向和支撑。
-
-| 项目 | 初稿尺寸或位置 |
-| --- | --- |
-| 主机身 | 宽 100 × 高 116 × 深 44 mm，外圆角 14 mm |
-| 桌面底座 | 94 × 78 × 7 mm；含脚垫和支架的总高约 146 mm，随倾角变化 |
-| 主板占位 | 66 × 56 × 1.6 mm，竖直安装，孔径暂设 2.8 mm |
-| 主板四孔 | 距相邻板边 5 mm，孔距 56 × 46 mm；与硬件约定一致 |
-| 主板模型位置 | 中心 `(0, 10.2, 78)` mm；四孔 `X=±28`，`Z=55/101` mm |
-| 雷达模块占位 | C1001，22 × 22 mm；上部独立托盘 30 × 30 mm |
-| 雷达模型位置 | 中心 `(0, -11, 115)` mm，天线朝前；器件高度仅示意 |
-| 雷达前板 | 1.6 mm 可更换无金属聚合物实验样片 |
-| 天线面至前板内侧 | 初稿约 9.7 mm，需以实物天线参考面重新确认 |
-| 夜灯光窗 | 78 × 24 mm，乳白扩散片名义厚 2 mm |
-| 夜灯灯板占位 | 65 × 9 mm，5 V、带限流、最大 0.5 W 的外接灯板 |
-| 手动键 | 顶部 22 × 12 mm 大键帽；运动、回弹和开孔尚未细化 |
-| 外部 USB-C | 后下方偏左，中心 `X=-27, Z=42` mm，11.4 × 5.8 mm 壳体开口；避开中央支架，用独立受电小板接主板 |
-| 壁挂背板 | 68 × 88 × 5 mm；两处钥匙孔名义中心距 56 mm |
-| 壁挂支臂 | 长度占位 50 mm，使机身俯转时有后侧空间 |
-
-电子件是尺寸占位模型，并非从嘉立创 EDA 导出的精确三维装配。主控使用 XIAO ESP32C3 的 21 × 17.8 mm 板框；连接器、USB-C 小板、线束和灯板应在采购冻结后替换为真实模型。C1001 官方 STEP 位于 `../research/datasheets/C1001_step/JQC1001.step`，后续应据此落实模块孔位与元件高度。
-
-最新 PCB 交付位于 [`../pcb/release_v02/`](../pcb/release_v02/)。PCB V0.2 的四个安装孔实际为 **2.7 mm**，本模型中的主板占位孔仍为 **2.8 mm**；模型孔径不能作为 PCB 加工尺寸。V0.2 的 XIAO 使用两条 1×7 排母插座，实际插座高度、模块底部间隙和 USB 插头空间尚未适配到此概念模型，打印装配件前需按采购实物复核。
-
-## 外观与使用方式
-
-机身使用低反射白色材料，正面保留完整的上部雷达区，下部小面积暖白光窗避免整面发光。环境光孔位于光窗右上方，应通过遮光套抑制夜灯串光；状态灯应允许在睡眠模式关闭。夜灯亮度、色温和光学均匀性仍需实体测试，渲染图不代表照度或色温测量。
-
-桌面场景表现可移动摆放方式。实际需要让天线朝向胸部，并验证距离、床垫高度和被褥遮挡；普通低矮床头柜不能自动满足睡眠模式安装条件。壁挂场景以向下 45° 展示优先验证姿态。根据 [DFRobot C1001 官方使用说明](https://wiki.dfrobot.com/sen0623/docs/21502)，睡眠模式需要向下 30–45°、对准胸部；睡眠视场为 40° × 40°。本模型未把该视场等同于整床有效覆盖。
-
-## 透波与光学实验
-
-前板选无金属填料、无导电镀层的白色聚合物。1.6 mm 厚度和约 9.7 mm 空隙只是便于开始实验的参数，不是经验证的射频最优点。建议对 1.0、1.6、2.2 mm 三组实物样片以及多组天线间隙进行空板/装壳对比。测试时保留模块相同位置、距离、姿态和光照，比较有效数据比例、呼吸与心率稳定性、误检及安装偏角敏感性。
-
-LED、金属紧固件和主板集中在天线投影区以外；线束不得绕过天线正前方。雷达托盘和灯板需要独立固定，避免夜灯按键动作传到雷达。白色树脂打印件的材料配方和含水率可能影响射频结果，装饰渲染中的白色材质不能代替材料验证。
-
-## 已完成的检查
-
-- 十个 STL 单件均为零条非流形边，体积为正，外包尺寸写入 `mesh_checks.json`。
-- 主板板框和四孔中心与硬件约定匹配。
-- 四个场景分别检查正面、后侧、壁挂姿态和内部层次。
-- 原有 Blender UWB 项目的原文件未覆盖，本项目保存到独立路径。
-
-网格拓扑检查不验证零件间的接触、装配、打印收缩或承载能力，也不证明产品具备防水等级、散热能力或量产可制造性。
-
-## 打样前需要细化
-
-1. 把主板、C1001、USB-C 受电板和灯板替换为采购件的准确外形，核对线束弯曲半径和插拔空间。
-2. 细化转轴轴孔、衬套、锁紧、限位和全角度干涉；当前桌面和壁挂支座是占位结构，尚无可装配铰链细节。
-3. 增加雷达托盘、扩散片、按键和 USB-C 小板的可靠固定及止挡；顶部键帽尚无穿壳传动结构。
-4. 核对前盖螺钉长度、柱孔工艺、热熔螺母或自攻方案；按目标打印设备调整配合间隙。
-5. 测试夜灯满亮温升、透波性能、光窗均匀性、环境光传感器串光及暗室可见状态灯。
-6. 核对桌面抗倾倒、墙面紧固承载、线缆拉力及拔插动作，再确定底座配重和墙面固定件。
-
-首轮建议先打印外形样件和独立透波片，完成安装位置与雷达有效数据验证，再细化可完整装配的工程外壳。
+`Sleep_Radar_Nightlight_Concept.blend`、根目录旧 `stl/`、旧 `renders/` 及旧检查记录作为历史概念版保留；新打样与装配请使用上述 `v0.2/` 文件，避免混用旧版孔径和支架尺寸。

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+<title id="title">眠光 V0.2 外壳关键机械空间示意</title>
+<desc id="desc">三栏工程示意：冻结载板孔位和接口、侧剖叠层和雷达间距、桌面壁挂共用转轴与前盖固定孔。采购包络带星号，实物未验证。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#627776"/></marker><pattern id="wallHatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0,8 L8,0" stroke="#bcc8c6" stroke-width="1"/></pattern></defs>
+<g font-family="Noto Sans CJK SC, PingFang SC, Microsoft YaHei, sans-serif">
+<rect x="0.00" y="0.00" width="1600.00" height="1000.00" rx="0" fill="#f7f8f5" stroke="none" stroke-width="1" opacity="1"/>
+<text x="40.00" y="62.00" font-size="34" fill="#243a3b" font-weight="650" text-anchor="start">眠光 V0.2 · 外壳关键机械空间</text>
+<text x="40.00" y="96.00" font-size="19" fill="#627776" font-weight="400" text-anchor="start">PCB 孔位来自冻结工程；单位 mm；正投影 / 剖面示意</text>
+<text x="1560.00" y="94.00" font-size="18" fill="#627776" font-weight="400" text-anchor="end">2026-11-04</text>
+<rect x="40.00" y="126.00" width="480.00" height="794.00" rx="18" fill="white" stroke="#dbe3dc" stroke-width="1.2" opacity="1"/>
+<rect x="560.00" y="126.00" width="480.00" height="794.00" rx="18" fill="white" stroke="#dbe3dc" stroke-width="1.2" opacity="1"/>
+<rect x="1080.00" y="126.00" width="480.00" height="794.00" rx="18" fill="white" stroke="#dbe3dc" stroke-width="1.2" opacity="1"/>
+<text x="64.00" y="168.00" font-size="24" fill="#243a3b" font-weight="650" text-anchor="start">01  载板孔位与接口</text>
+<text x="64.00" y="198.00" font-size="16" fill="#627776" font-weight="400" text-anchor="start">元件面朝观察者；原点在板左下</text>
+<rect x="96.00" y="236.40" width="369.60" height="313.60" rx="0" fill="#eef4ee" stroke="#5d937d" stroke-width="2" opacity="1"/>
+<line x1="96.00" y1="222.00" x2="465.60" y2="222.00" stroke="#627776" stroke-width="1.4"/>
+<line x1="96.00" y1="217.00" x2="96.00" y2="227.00" stroke="#627776" stroke-width="1.4"/>
+<line x1="465.60" y1="217.00" x2="465.60" y2="227.00" stroke="#627776" stroke-width="1.4"/>
+<text x="280.80" y="214.00" font-size="16" fill="#627776" font-weight="400" text-anchor="middle">66</text>
+<line x1="96.00" y1="232.00" x2="96.00" y2="214.00" stroke="#627776" stroke-width="1.4"/>
+<line x1="465.60" y1="232.00" x2="465.60" y2="214.00" stroke="#627776" stroke-width="1.4"/>
+<line x1="78.00" y1="236.40" x2="78.00" y2="550.00" stroke="#627776" stroke-width="1.4"/>
+<line x1="73.00" y1="236.40" x2="83.00" y2="236.40" stroke="#627776" stroke-width="1.4"/>
+<line x1="73.00" y1="550.00" x2="83.00" y2="550.00" stroke="#627776" stroke-width="1.4"/>
+<text x="72.00" y="400.00" font-size="16" fill="#627776" font-weight="400" text-anchor="end">56</text>
+<circle cx="124.00" cy="522.00" r="7.56" fill="white" stroke="#243a3b" stroke-width="1.7"/>
+<line x1="113.00" y1="522.00" x2="135.00" y2="522.00" stroke="#a1b1a7" stroke-width="1"/>
+<line x1="124.00" y1="511.00" x2="124.00" y2="533.00" stroke="#a1b1a7" stroke-width="1"/>
+<circle cx="437.60" cy="522.00" r="7.56" fill="white" stroke="#243a3b" stroke-width="1.7"/>
+<line x1="426.60" y1="522.00" x2="448.60" y2="522.00" stroke="#a1b1a7" stroke-width="1"/>
+<line x1="437.60" y1="511.00" x2="437.60" y2="533.00" stroke="#a1b1a7" stroke-width="1"/>
+<circle cx="124.00" cy="264.40" r="7.56" fill="white" stroke="#243a3b" stroke-width="1.7"/>
+<line x1="113.00" y1="264.40" x2="135.00" y2="264.40" stroke="#a1b1a7" stroke-width="1"/>
+<line x1="124.00" y1="253.40" x2="124.00" y2="275.40" stroke="#a1b1a7" stroke-width="1"/>
+<circle cx="437.60" cy="264.40" r="7.56" fill="white" stroke="#243a3b" stroke-width="1.7"/>
+<line x1="426.60" y1="264.40" x2="448.60" y2="264.40" stroke="#a1b1a7" stroke-width="1"/>
+<line x1="437.60" y1="253.40" x2="437.60" y2="275.40" stroke="#a1b1a7" stroke-width="1"/>
+<rect x="231.02" y="325.67" width="99.57" height="117.35" rx="6" fill="#dae6df" stroke="#5d937d" stroke-width="1.5" opacity="1"/>
+<rect x="234.13" y="423.37" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="234.13" y="409.15" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="234.13" y="394.93" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="234.13" y="380.70" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="234.13" y="366.48" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="234.13" y="352.25" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="234.13" y="338.03" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="319.47" y="423.37" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="319.47" y="409.15" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="319.47" y="394.93" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="319.47" y="380.70" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="319.47" y="366.48" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="319.47" y="352.25" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<rect x="319.47" y="338.03" width="8.00" height="8.00" rx="1" fill="#c7a46a" stroke="#9e8252" stroke-width="1" opacity="1"/>
+<text x="280.80" y="386.70" font-size="18" fill="#217e79" font-weight="600" text-anchor="middle">U1</text>
+<text x="280.80" y="408.70" font-size="14" fill="#217e79" font-weight="400" text-anchor="middle">XIAO</text>
+<rect x="258.40" y="316.48" width="44.80" height="16.80" rx="3" fill="#a7b7b3" stroke="#607b76" stroke-width="1.2" opacity="1"/>
+<line x1="280.80" y1="310.48" x2="280.80" y2="274.00" stroke="#217e79" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="280.80" y="261.00" font-size="16" fill="#217e79" font-weight="600" text-anchor="middle">USB 朝 +Y</text>
+<line x1="238.13" y1="462.00" x2="323.47" y2="462.00" stroke="#217e79" stroke-width="1.4"/>
+<line x1="238.13" y1="457.00" x2="238.13" y2="467.00" stroke="#217e79" stroke-width="1.4"/>
+<line x1="323.47" y1="457.00" x2="323.47" y2="467.00" stroke="#217e79" stroke-width="1.4"/>
+<text x="280.80" y="454.00" font-size="16" fill="#217e79" font-weight="400" text-anchor="middle">15.24 排距</text>
+<rect x="183.92" y="490.81" width="14.56" height="28.78" rx="2" fill="#d0ddd6" stroke="#7c9688" stroke-width="1" opacity="1"/>
+<circle cx="191.20" cy="512.31" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="191.20" cy="498.09" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<text x="173.20" y="523.20" font-size="14" fill="#243a3b" font-weight="600" text-anchor="middle">J1</text>
+<rect x="380.98" y="346.72" width="57.23" height="14.56" rx="2" fill="#d0ddd6" stroke="#7c9688" stroke-width="1" opacity="1"/>
+<circle cx="388.26" cy="354.00" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="402.49" cy="354.00" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="416.71" cy="354.00" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="430.94" cy="354.00" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<text x="414.60" y="342.00" font-size="14" fill="#243a3b" font-weight="600" text-anchor="middle">J2</text>
+<rect x="402.32" y="440.41" width="14.56" height="28.78" rx="2" fill="#d0ddd6" stroke="#7c9688" stroke-width="1" opacity="1"/>
+<circle cx="409.60" cy="461.91" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="409.60" cy="447.69" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<text x="424.60" y="459.80" font-size="14" fill="#243a3b" font-weight="600" text-anchor="middle">J3</text>
+<rect x="143.21" y="380.32" width="28.78" height="14.56" rx="2" fill="#d0ddd6" stroke="#7c9688" stroke-width="1" opacity="1"/>
+<circle cx="150.49" cy="387.60" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="164.71" cy="387.60" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<text x="147.60" y="373.60" font-size="14" fill="#243a3b" font-weight="600" text-anchor="middle">J4</text>
+<rect x="167.12" y="274.98" width="14.56" height="57.23" rx="2" fill="#d0ddd6" stroke="#7c9688" stroke-width="1" opacity="1"/>
+<circle cx="174.40" cy="324.94" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="174.40" cy="310.71" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="174.40" cy="296.49" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="174.40" cy="282.26" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<text x="169.40" y="272.60" font-size="14" fill="#243a3b" font-weight="600" text-anchor="middle">J5</text>
+<rect x="351.92" y="490.81" width="14.56" height="28.78" rx="2" fill="#d0ddd6" stroke="#7c9688" stroke-width="1" opacity="1"/>
+<circle cx="359.20" cy="512.31" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="359.20" cy="498.09" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<text x="357.20" y="528.20" font-size="14" fill="#243a3b" font-weight="600" text-anchor="middle">JP1</text>
+<rect x="350.41" y="341.12" width="28.78" height="14.56" rx="2" fill="#d0ddd6" stroke="#7c9688" stroke-width="1" opacity="1"/>
+<circle cx="357.69" cy="348.40" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="371.91" cy="348.40" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<text x="355.80" y="371.40" font-size="14" fill="#243a3b" font-weight="600" text-anchor="middle">JP2</text>
+<rect x="350.41" y="313.12" width="28.78" height="14.56" rx="2" fill="#d0ddd6" stroke="#7c9688" stroke-width="1" opacity="1"/>
+<circle cx="357.69" cy="320.40" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<circle cx="371.91" cy="320.40" r="2.20" fill="#c7a46a" stroke="#967a45" stroke-width="0.8"/>
+<text x="362.80" y="308.40" font-size="14" fill="#243a3b" font-weight="600" text-anchor="middle">JP3</text>
+<text x="64.00" y="588.00" font-size="20" fill="#217e79" font-weight="600" text-anchor="start">4 × Ø2.7 通孔 · 孔距 56 × 46</text>
+<text x="64.00" y="618.00" font-size="17" fill="#627776" font-weight="400" text-anchor="start">(5,5)  (61,5)  (5,51)  (61,51)</text>
+<line x1="64.00" y1="642.00" x2="496.00" y2="642.00" stroke="#e1e8e1" stroke-width="1.4"/>
+<text x="64.00" y="674.00" font-size="18" fill="#243a3b" font-weight="600" text-anchor="start">接口中心坐标（载板 X / Y）</text>
+<text x="64.00" y="711.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">J1 5V  (17,8)</text>
+<text x="286.00" y="711.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">J2 雷达  (56,35)</text>
+<text x="64.00" y="745.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">J3 夜灯  (56,17)</text>
+<text x="286.00" y="745.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">J4 按键  (11,29)</text>
+<text x="64.00" y="779.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">J5 光照  (14,44)</text>
+<text x="286.00" y="779.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">JP1 电源隔离  (47,8)</text>
+<text x="64.00" y="813.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">JP2 TX  (48,36)</text>
+<text x="286.00" y="813.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">JP3 RX  (48,41)</text>
+<text x="64.00" y="875.00" font-size="16" fill="#627776" font-weight="400" text-anchor="start">仅标接口与孔；其余元件未展开。</text>
+<text x="584.00" y="168.00" font-size="24" fill="#243a3b" font-weight="650" text-anchor="start">02  侧剖与叠层</text>
+<text x="584.00" y="198.00" font-size="16" fill="#627776" font-weight="400" text-anchor="start">前侧 ← 机身 Y 轴 → 后侧</text>
+<rect x="620.00" y="252.00" width="11.52" height="288.00" rx="0" fill="#e1e5df" stroke="#96a79d" stroke-width="1" opacity="1"/>
+<rect x="931.04" y="252.00" width="17.28" height="288.00" rx="0" fill="#e1e5df" stroke="#96a79d" stroke-width="1" opacity="1"/>
+<text x="623.00" y="571.00" font-size="16" fill="#627776" font-weight="400" text-anchor="middle">前板</text>
+<text x="941.00" y="571.00" font-size="16" fill="#627776" font-weight="400" text-anchor="middle">背壳</text>
+<rect x="631.52" y="276.00" width="32.40" height="74.00" rx="0" fill="#e8f3f1" stroke="none" stroke-width="1" opacity="1"/>
+<line x1="631.52" y1="240.00" x2="663.92" y2="240.00" stroke="#217e79" stroke-width="1.4"/>
+<line x1="631.52" y1="235.00" x2="631.52" y2="245.00" stroke="#217e79" stroke-width="1.4"/>
+<line x1="663.92" y1="235.00" x2="663.92" y2="245.00" stroke="#217e79" stroke-width="1.4"/>
+<text x="647.72" y="232.00" font-size="16" fill="#217e79" font-weight="400" text-anchor="middle">4.5</text>
+<line x1="663.92" y1="258.00" x2="663.92" y2="358.00" stroke="#217e79" stroke-width="2.8"/>
+<rect x="665.36" y="268.00" width="7.20" height="80.00" rx="0" fill="#5d937d" stroke="#426e5b" stroke-width="1" opacity="1"/>
+<rect x="672.56" y="278.00" width="57.60" height="60.00" rx="0" fill="#eef2f5" stroke="#486a9d" stroke-width="1.5" opacity="1" stroke-dasharray="6 4"/>
+<text x="701.36" y="313.00" font-size="18" fill="#486a9d" font-weight="600" text-anchor="middle">8*</text>
+<text x="666.92" y="379.00" font-size="16" fill="#217e79" font-weight="600" text-anchor="middle">雷达</text>
+<text x="717.92" y="362.00" font-size="15" fill="#486a9d" font-weight="400" text-anchor="middle">背面预留</text>
+<line x1="631.52" y1="252.00" x2="631.52" y2="552.00" stroke="#aebeb4" stroke-width="1" stroke-dasharray="4 4"/>
+<rect x="872.00" y="395.00" width="11.52" height="135.00" rx="0" fill="#5d937d" stroke="#426e5b" stroke-width="1" opacity="1"/>
+<rect x="810.80" y="423.00" width="61.20" height="31.00" rx="0" fill="#c7a46a" stroke="#987b48" stroke-width="1" opacity="1"/>
+<rect x="792.80" y="423.00" width="18.00" height="31.00" rx="0" fill="#c0c7c1" stroke="#829087" stroke-width="1" opacity="1"/>
+<rect x="781.28" y="406.00" width="11.52" height="83.00" rx="0" fill="#5d937d" stroke="#426e5b" stroke-width="1" opacity="1"/>
+<rect x="758.24" y="420.00" width="23.04" height="53.00" rx="0" fill="#566a66" stroke="#3c504b" stroke-width="1" opacity="1"/>
+<text x="841.40" y="444.00" font-size="16" fill="#654d24" font-weight="600" text-anchor="middle">8.5*</text>
+<text x="768.32" y="511.00" font-size="16" fill="#217e79" font-weight="600" text-anchor="middle">XIAO 叠层*</text>
+<text x="886.76" y="389.00" font-size="16" fill="#217e79" font-weight="600" text-anchor="middle">载板</text>
+<line x1="758.24" y1="550.00" x2="872.00" y2="550.00" stroke="#217e79" stroke-width="1.4"/>
+<line x1="758.24" y1="545.00" x2="758.24" y2="555.00" stroke="#217e79" stroke-width="1.4"/>
+<line x1="872.00" y1="545.00" x2="872.00" y2="555.00" stroke="#217e79" stroke-width="1.4"/>
+<text x="815.12" y="542.00" font-size="16" fill="#217e79" font-weight="400" text-anchor="middle">总预留 15.8*</text>
+<line x1="584.00" y1="597.00" x2="1016.00" y2="597.00" stroke="#e1e8e1" stroke-width="1.4"/>
+<rect x="585.00" y="617.00" width="10.00" height="10.00" rx="2" fill="#5d937d" stroke="none" stroke-width="1" opacity="1"/>
+<text x="605.00" y="630.00" font-size="16" fill="#5d937d" font-weight="600" text-anchor="start">载板</text>
+<text x="652.00" y="630.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">中心 Y12.2；顶面11.4 / 背面13.0</text>
+<rect x="585.00" y="651.00" width="10.00" height="10.00" rx="2" fill="#c7a46a" stroke="none" stroke-width="1" opacity="1"/>
+<text x="605.00" y="664.00" font-size="16" fill="#c7a46a" font-weight="600" text-anchor="start">插接</text>
+<text x="652.00" y="664.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">排母8.5* + 排针塑胶2.5* = 11.0*</text>
+<rect x="585.00" y="685.00" width="10.00" height="10.00" rx="2" fill="#5d937d" stroke="none" stroke-width="1" opacity="1"/>
+<text x="605.00" y="698.00" font-size="16" fill="#5d937d" font-weight="600" text-anchor="start">模组</text>
+<text x="652.00" y="698.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">XIAO板厚1.6* + 元件高3.2*</text>
+<rect x="585.00" y="719.00" width="10.00" height="10.00" rx="2" fill="#566a66" stroke="none" stroke-width="1" opacity="1"/>
+<text x="605.00" y="732.00" font-size="16" fill="#566a66" font-weight="600" text-anchor="start">前界</text>
+<text x="652.00" y="732.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">最前元件到 Y−4.4</text>
+<rect x="585.00" y="753.00" width="10.00" height="10.00" rx="2" fill="#217e79" stroke="none" stroke-width="1" opacity="1"/>
+<text x="605.00" y="766.00" font-size="16" fill="#217e79" font-weight="600" text-anchor="start">雷达</text>
+<text x="652.00" y="766.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">天线前面−17.5；前板内面−22</text>
+<rect x="585.00" y="787.00" width="10.00" height="10.00" rx="2" fill="#486a9d" stroke="none" stroke-width="1" opacity="1"/>
+<text x="605.00" y="800.00" font-size="16" fill="#486a9d" font-weight="600" text-anchor="start">背界</text>
+<text x="652.00" y="800.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">雷达背面−16.3 + 8* → Y−8.3</text>
+<rect x="584.00" y="841.00" width="432.00" height="52.00" rx="8" fill="#faf4e7" stroke="none" stroke-width="1" opacity="1"/>
+<text x="598.00" y="863.00" font-size="16" fill="#8a6327" font-weight="400" text-anchor="start">* 采购 / 插接包络，待到货量测。</text>
+<text x="598.00" y="884.00" font-size="14" fill="#8a6327" font-weight="400" text-anchor="start">高度方向为示意；深度按同一比例绘制。</text>
+<text x="1104.00" y="168.00" font-size="24" fill="#243a3b" font-weight="650" text-anchor="start">03  桌面与壁挂</text>
+<text x="1104.00" y="198.00" font-size="16" fill="#627776" font-weight="400" text-anchor="start">两种安装叠图；壁挂不使用底座</text>
+<line x1="1106.00" y1="225.00" x2="1132.00" y2="225.00" stroke="#84968e" stroke-width="3"/>
+<text x="1139.00" y="231.00" font-size="16" fill="#627776" font-weight="400" text-anchor="start">0°</text>
+<line x1="1212.00" y1="225.00" x2="1238.00" y2="225.00" stroke="#217e79" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="1245.00" y="231.00" font-size="16" fill="#217e79" font-weight="400" text-anchor="start">桌面30°</text>
+<line x1="1378.00" y1="225.00" x2="1404.00" y2="225.00" stroke="#486a9d" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="1411.00" y="231.00" font-size="16" fill="#486a9d" font-weight="400" text-anchor="start">壁挂45°</text>
+<rect x="1449.00" y="274.00" width="12.00" height="361.00" rx="0" fill="url(#wallHatch)" stroke="none" stroke-width="1" opacity="1"/>
+<line x1="1449.00" y1="274.00" x2="1449.00" y2="635.00" stroke="#a3b0aa" stroke-width="2"/>
+<text x="1446.00" y="268.00" font-size="16" fill="#627776" font-weight="400" text-anchor="end">墙面 Y95</text>
+<polygon points="1188.08,564.60 1288.40,564.60 1288.40,309.40 1188.08,309.40" fill="#f1f3ee" stroke="#84968e" stroke-width="1.8" stroke-linejoin="round" opacity="1"/>
+<polygon points="1268.86,610.86 1355.74,560.70 1228.14,339.70 1141.26,389.86" fill="none" stroke="#217e79" stroke-width="2" stroke-linejoin="round" opacity="1" stroke-dasharray="7 5"/>
+<polygon points="1315.42,616.83 1386.36,545.89 1205.91,365.44 1134.97,436.38" fill="none" stroke="#486a9d" stroke-width="2" stroke-linejoin="round" opacity="1" stroke-dasharray="7 5"/>
+<line x1="1314.80" y1="437.00" x2="1449.00" y2="437.00" stroke="#aab7b0" stroke-width="5"/>
+<line x1="1411.60" y1="437.00" x2="1411.60" y2="619.60" stroke="#8c9e95" stroke-width="7"/>
+<rect x="1156.40" y="619.60" width="264.00" height="11.00" rx="3" fill="#d9e2db" stroke="#83998c" stroke-width="1.4" opacity="1"/>
+<line x1="1110.00" y1="635.00" x2="1497.00" y2="635.00" stroke="#c5cec8" stroke-width="1.2"/>
+<circle cx="1314.80" cy="437.00" r="5.20" fill="white" stroke="#243a3b" stroke-width="2"/>
+<line x1="1302.80" y1="437.00" x2="1326.80" y2="437.00" stroke="#243a3b" stroke-width="1"/>
+<line x1="1314.80" y1="425.00" x2="1314.80" y2="449.00" stroke="#243a3b" stroke-width="1"/>
+<text x="1326.80" y="419.00" font-size="15" fill="#243a3b" font-weight="600" text-anchor="start">转轴</text>
+<line x1="1156.40" y1="665.00" x2="1420.40" y2="665.00" stroke="#627776" stroke-width="1.4"/>
+<line x1="1156.40" y1="660.00" x2="1156.40" y2="670.00" stroke="#627776" stroke-width="1.4"/>
+<line x1="1420.40" y1="660.00" x2="1420.40" y2="670.00" stroke="#627776" stroke-width="1.4"/>
+<text x="1288.40" y="657.00" font-size="16" fill="#627776" font-weight="400" text-anchor="middle">底座深120 / 宽100</text>
+<line x1="1104.00" y1="702.00" x2="1536.00" y2="702.00" stroke="#e1e8e1" stroke-width="1.4"/>
+<text x="1104.00" y="734.00" font-size="17" fill="#627776" font-weight="400" text-anchor="start">转轴中心 (0,34,90)，转轴沿 X</text>
+<text x="1104.00" y="766.00" font-size="17" fill="#627776" font-weight="400" text-anchor="start">桌面 0–30°；壁挂 0–45°</text>
+<text x="1104.00" y="798.00" font-size="17" fill="#217e79" font-weight="400" text-anchor="start">30°时前下角到底座顶面 ≈3.97</text>
+<text x="1104.00" y="830.00" font-size="17" fill="#627776" font-weight="400" text-anchor="start">前盖孔（机身 X / Z）：</text>
+<text x="1104.00" y="862.00" font-size="17" fill="#627776" font-weight="400" text-anchor="start">上侧 (±39,137)；下侧 (±42,39)</text>
+<text x="1104.00" y="893.00" font-size="15" fill="#627776" font-weight="400" text-anchor="start">先固定支架，再装载板；限位需试装。</text>
+<text x="40.00" y="958.00" font-size="18" fill="#627776" font-weight="400" text-anchor="start">示意图未绘制全部实体；不是制件加工图。实物装配、承载与射频性能尚未验证。</text>
+</g>
+<metadata>{&quot;generator&quot;: &quot;models/scripts/draw_layout_v02.py&quot;, &quot;pcb_placement_sha256&quot;: &quot;e606ba203e43fe6af33b6836d30a4253de79c5992be454ca68045de4488c9eaf&quot;, &quot;mechanical_reference_sha256&quot;: &quot;704f5fde3cc05bb9bede3c9ef24e4fb8259d6165729f7eb80ccde9e2f4cb7b7e&quot;, &quot;coordinate_frames&quot;: &quot;Panel1 PCB XY; panel2 enclosureY; panel3 enclosureYZ and labelled XZ holes&quot;, &quot;label_count&quot;: 72, &quot;label_bounds_checked&quot;: true, &quot;scope&quot;: &quot;Simplified illustration, not a complete solid or fabrication drawing&quot;}</metadata>
+</svg>
