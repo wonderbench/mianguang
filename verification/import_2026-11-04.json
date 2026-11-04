@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-04",
+  "scope": "Repository organization and relocation verification; no new board build, flashing, Blender geometry edit or physical test",
+  "pcb_manifest_sha256": "fd4339bd425b36fa923e9319b0f9c951d6cbc97a1826351783002f241a004e31",
+  "checks": {
+    "pcb_acceptance": {
+      "passed": 44,
+      "failed": 0,
+      "unverified": 0
+    },
+    "firmware_source_and_artifact_hashes": {
+      "matched": 31
+    },
+    "reference_file_hashes": {
+      "matched": 13
+    },
+    "local_markdown_links": {
+      "resolved": 66
+    },
+    "python_syntax": "PASS",
+    "native_cpp_tests": {
+      "passed": 6,
+      "sanitizers": [
+        "ASAN",
+        "UBSAN"
+      ]
+    },
+    "actual_main_mock": "PASS",
+    "python_unit_tests": {
+      "passed": 15
+    },
+    "model_assets": {
+      "unchanged": 15
+    },
+    "model_script_syntax": {
+      "passed": 5
+    }
+  }
+}

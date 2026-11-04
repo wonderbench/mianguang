@@ -1,0 +1,10 @@
+{
+  "release": "V0.2",
+  "archive": "releases/眠光雷达_PCB_V0.2_2026-11-04.zip",
+  "archive_sha256": "042a2bbeab79de3b09fc9665539ff2e633e581ce381f8a3a80deaf75e17bc7d6",
+  "payload": "release_v02",
+  "manifest_sha256": "fd4339bd425b36fa923e9319b0f9c951d6cbc97a1826351783002f241a004e31",
+  "acceptance": "release_v02_acceptance.json",
+  "acceptance_status": "44/44 PASS",
+  "physical_hardware_validation": false
+}

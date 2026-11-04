@@ -1,0 +1,19 @@
+BUILD test_client.cpp
+RUN   test_client.cpp
+RadarClient tests passed
+BUILD test_monitor.cpp
+RUN   test_monitor.cpp
+monitor_logic: all assertions passed
+BUILD test_pipeline.cpp
+RUN   test_pipeline.cpp
+Serial-to-light pipeline tests passed
+BUILD test_protocol.cpp
+RUN   test_protocol.cpp
+C1001 protocol tests passed
+BUILD test_replay.cpp
+RUN   test_replay.cpp
+replay: 8-hour night, 25-day fault and 50-day clock assertions passed
+BUILD test_user_input.cpp
+RUN   test_user_input.cpp
+user input and ambient tests passed
+PASS: 6 native test executables (C++17, ASAN, UBSAN)

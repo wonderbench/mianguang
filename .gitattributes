@@ -1,0 +1,18 @@
+# Preserve checksummed exports and firmware sources byte-for-byte on all systems.
+* -text
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.zip binary
+*.epro2 binary
+*.png binary
+*.webp binary
+*.otf binary
+*.bin binary
+*.elf binary
+*.blend binary
+*.stl binary
+*.DWG binary
+*.step -diff
+*.epcb -diff
+*.esch -diff

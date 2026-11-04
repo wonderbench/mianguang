@@ -1,0 +1,2 @@
+main mock: I2C expiry, UART, manual/button routing and logs passed
+PASS: actual main.cpp mock assertions and 3 parsed JSON log fixtures (ASAN, UBSAN)

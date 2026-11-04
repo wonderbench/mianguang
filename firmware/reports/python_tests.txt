@@ -1,0 +1,20 @@
+test_available_and_valid_distributions_are_separate (test_log_summary.LogSummaryTests) ... ok
+test_bad_json_and_non_samples_break_continuity (test_log_summary.LogSummaryTests) ... ok
+test_conflicting_occupancy_is_unknown (test_log_summary.LogSummaryTests) ... ok
+test_conflicting_raw_same_timestamp_excluded_from_median (test_log_summary.LogSummaryTests) ... ok
+test_decrease_splits_segments_without_merging_observation_keys (test_log_summary.LogSummaryTests) ... ok
+test_duplicate_time_is_reported_and_next_interval_excluded (test_log_summary.LogSummaryTests) ... ok
+test_empty_and_single_record_have_no_time_coverage (test_log_summary.LogSummaryTests) ... ok
+test_fixture_and_cli_outputs_are_traceable_and_marked_synthetic (test_log_summary.LogSummaryTests) ... ok
+test_invalid_structure_rejected_not_coerced (test_log_summary.LogSummaryTests) ... ok
+test_left_endpoint_and_last_record_not_extrapolated (test_log_summary.LogSummaryTests) ... ok
+test_nonstandard_json_numbers_and_duplicate_keys_rejected (test_log_summary.LogSummaryTests) ... ok
+test_occupancy_unknown_is_distinct_from_not_in_bed (test_log_summary.LogSummaryTests) ... ok
+test_raw_dedup_is_per_field_and_not_trend_medians (test_log_summary.LogSummaryTests) ... ok
+test_two_second_limit_never_fills_large_gaps (test_log_summary.LogSummaryTests) ... ok
+test_uint64_timestamps_do_not_wrap_at_uint32_boundary (test_log_summary.LogSummaryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.029s
+
+OK

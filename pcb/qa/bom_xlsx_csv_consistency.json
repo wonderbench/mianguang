@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": [
+    "XLSX and CSV agree for all nonempty rows/columns; formatting-only blank Excel row ignored",
+    "BOM quantities total 23 components"
+  ],
+  "data_rows": 12,
+  "components": 23,
+  "inputs": {
+    "BOM_Mianguang_V0.2.xlsx": "ea21af675ff0f214bf05032c17b673c9199e2c384bd9a5caae36c45ef14e4e0a",
+    "BOM_Mianguang_V0.2.csv": "ec123c07fdffcc1a422fdac34d5140f67d5df404ad6c0e5fd122b268b563254a"
+  }
+}

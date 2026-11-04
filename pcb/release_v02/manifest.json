@@ -1,0 +1,96 @@
+{
+  "release": "V0.2",
+  "created_at": "2026-11-04T11:57:41.401722+00:00",
+  "project_name": "眠光 睡眠雷达夜灯 V0.2",
+  "project_uuid": "8955499269fd1ac3a71ec0ff5dc961906055730dccf1062637e2bf1a70a879b8",
+  "eda_version": "嘉立创EDA专业版 4.1.78",
+  "scope": "Controlled engineering prototype; no physical hardware validation",
+  "pcb_drc_passed": true,
+  "schematic_drc_passed": false,
+  "retained_warning": {
+    "rule": "ATTRMATCHCODE",
+    "groups": 1,
+    "designators": [
+      "J1",
+      "J2",
+      "J3",
+      "J4",
+      "J5",
+      "JP1",
+      "JP2",
+      "JP3"
+    ]
+  },
+  "files": [
+    {
+      "path": "BOM_Mianguang_V0.2.csv",
+      "bytes": 1097,
+      "sha256": "ec123c07fdffcc1a422fdac34d5140f67d5df404ad6c0e5fd122b268b563254a"
+    },
+    {
+      "path": "BOM_Mianguang_V0.2.xlsx",
+      "bytes": 7722,
+      "sha256": "ea21af675ff0f214bf05032c17b673c9199e2c384bd9a5caae36c45ef14e4e0a"
+    },
+    {
+      "path": "Gerber_Mianguang_V0.2.zip",
+      "bytes": 39870,
+      "sha256": "663cf9db40d43defeba6dd79a99d8856211062c604a15fb8657d6bc7a798bc77"
+    },
+    {
+      "path": "Mianguang_V0.2.epcb",
+      "bytes": 132482,
+      "sha256": "1cc1c4cba7115e438fbd0bac56380e4d36e0445491d1454f6da5bd68f7b3f74f"
+    },
+    {
+      "path": "Mianguang_V0.2.epro2",
+      "bytes": 98189,
+      "sha256": "4eb70110e04e7c353f97750ac7644401175efcc098e2bfd465b6daf8d8106603"
+    },
+    {
+      "path": "Mianguang_V0.2.esch",
+      "bytes": 362292,
+      "sha256": "bdcc5f9afaf1f6d79f4eb2cb3bf3876bbd90be94883b1a4bf630049cf22d2376"
+    },
+    {
+      "path": "PCB_Review_V0.2.pdf",
+      "bytes": 261730,
+      "sha256": "e02919db54af4119d8172b944772e65490b4e75d73707db042fe29c02c1bd950"
+    },
+    {
+      "path": "PickPlace_Mianguang_V0.2.csv",
+      "bytes": 3327,
+      "sha256": "e606ba203e43fe6af33b6836d30a4253de79c5992be454ca68045de4488c9eaf"
+    },
+    {
+      "path": "README_交付与装配.md",
+      "bytes": 14760,
+      "sha256": "c297ffe9cb8d8de3dd1741a3de4af1682943b6dbbc863be644320158e0cf5332"
+    },
+    {
+      "path": "Schematic_V0.2.png",
+      "bytes": 1325994,
+      "sha256": "ac1c829fe97dba37584be4adcc7ed8b15ec1089ad8cb506aae7902b8be24a26b"
+    },
+    {
+      "path": "native_checks.json",
+      "bytes": 1560,
+      "sha256": "f40aa0f0b6e3399b6ace8926bb4b43c57da3adef6cc10618d8a8851d0248d4e1"
+    },
+    {
+      "path": "pcb_netlist.json",
+      "bytes": 45099,
+      "sha256": "68414b97785aabda69dd246518c05718599e544622ef9a82384166a21f50df4e"
+    },
+    {
+      "path": "schematic_netlist.json",
+      "bytes": 63003,
+      "sha256": "0cd507fa019d5437c3fb75870f5d7a938985190fa035250f35e1a46c4da110d5"
+    },
+    {
+      "path": "外接件与装配BOM.csv",
+      "bytes": 5467,
+      "sha256": "dfe77b837808215f7fc68af2dea061c7a1951a799cb918a04fd0437475089316"
+    }
+  ]
+}

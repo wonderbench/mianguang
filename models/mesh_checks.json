@@ -1,0 +1,142 @@
+[
+  {
+    "part": "SR01_01_Rear_Tub",
+    "stl": "stl/SR01_01_Rear_Tub.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 74722.84,
+    "bounding_box_mm": [
+      100.0,
+      44.0,
+      116.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 18936,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_02_Front_Radome_Frame",
+    "stl": "stl/SR01_02_Front_Radome_Frame.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 14004.53,
+    "bounding_box_mm": [
+      96.0,
+      1.6,
+      112.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 6900,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_03_Light_Diffuser",
+    "stl": "stl/SR01_03_Light_Diffuser.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 3564.7,
+    "bounding_box_mm": [
+      78.0,
+      2.0,
+      24.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 828,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_04_Top_Key_22x12",
+    "stl": "stl/SR01_04_Top_Key_22x12.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 546.3,
+    "bounding_box_mm": [
+      22.0,
+      12.0,
+      2.2
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 188,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_05_Radar_Tray",
+    "stl": "stl/SR01_05_Radar_Tray.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 1782.1,
+    "bounding_box_mm": [
+      30.0,
+      2.0,
+      30.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 828,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_06_Rear_Dock",
+    "stl": "stl/SR01_06_Rear_Dock.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 6136.07,
+    "bounding_box_mm": [
+      44.0,
+      4.0,
+      36.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 1348,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_07_Desk_Riser",
+    "stl": "stl/SR01_07_Desk_Riser.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 17982.97,
+    "bounding_box_mm": [
+      18.0,
+      14.0,
+      75.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 188,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_08_Desk_Base",
+    "stl": "stl/SR01_08_Desk_Base.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 48819.78,
+    "bounding_box_mm": [
+      94.0,
+      78.0,
+      7.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 828,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_09_Wall_Plate",
+    "stl": "stl/SR01_09_Wall_Plate.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 28709.91,
+    "bounding_box_mm": [
+      68.0,
+      5.0,
+      88.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 1484,
+    "binary_size_valid": true
+  },
+  {
+    "part": "SR01_10_Wall_Standoff",
+    "stl": "stl/SR01_10_Wall_Standoff.stl",
+    "nonmanifold_edges": 0,
+    "mesh_volume_mm3": 16000.0,
+    "bounding_box_mm": [
+      20.0,
+      50.0,
+      16.0
+    ],
+    "status": "Closed manifold mesh; mechanical fit unverified",
+    "stl_triangles": 12,
+    "binary_size_valid": true
+  }
+]

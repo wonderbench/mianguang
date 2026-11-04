@@ -1,0 +1,50 @@
+{
+  "blender_version": "5.2.1 LTS",
+  "file": "Sleep_Radar_Nightlight_Concept.blend",
+  "scenes": [
+    {
+      "name": "SleepRadar_01_Desk",
+      "objects": 75,
+      "camera": "SR01_Hero_Camera",
+      "body_center_mm": [
+        0.0,
+        0.11,
+        86.528
+      ]
+    },
+    {
+      "name": "SleepRadar_02_Rear",
+      "objects": 75,
+      "camera": "SR01_Hero_Camera.001",
+      "body_center_mm": [
+        0.0,
+        0.11,
+        86.528
+      ]
+    },
+    {
+      "name": "SleepRadar_03_Wall_45deg",
+      "objects": 76,
+      "camera": "SR01_Hero_Camera.002",
+      "body_center_mm": [
+        0.0,
+        8.494,
+        63.494
+      ]
+    },
+    {
+      "name": "SleepRadar_04_Exploded",
+      "objects": 75,
+      "camera": "SR01_Hero_Camera.003",
+      "body_center_mm": [
+        50.0,
+        44.0,
+        84.0
+      ]
+    }
+  ],
+  "missing_external_assets": [],
+  "scope": "Geometry and file checks only; assembly and RF not validated",
+  "file_path_base": "models directory",
+  "archive_note": "2026-11-04 repository organization only: absolute file path changed to a path relative to models/. Existing Blender/mesh checks are retained from the original verification; Blender was not re-run for this relocation and geometry/assets were not modified."
+}

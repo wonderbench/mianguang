@@ -1,0 +1,189 @@
+{
+  "version": "0.2.0",
+  "created_at": "2026-10-28T17:29:32.587028+08:00",
+  "board": "seeed_xiao_esp32c3",
+  "mcu": "esp32c3",
+  "firmware_flashed": false,
+  "radar_hardware_validated": false,
+  "build": {
+    "platformio_core": "6.1.18",
+    "platform": "espressif32@6.12.0",
+    "arduino_package": "3.20017.241212+sha.dcc1105b",
+    "arduino_core": "2.0.17",
+    "riscv_gcc": "8.4.0+2021r2-patch5",
+    "esptool": "4.9.0"
+  },
+  "memory": {
+    "static_ram_bytes": 16852,
+    "program_bytes": 289732,
+    "application_image_bytes": 314432,
+    "application_partition_bytes": 1310720
+  },
+  "tests": {
+    "native_executables": 6,
+    "asan_ubsan": true,
+    "actual_main_mock": true,
+    "python_tests": 15,
+    "synthetic_only": true
+  },
+  "source_files": [
+    {
+      "path": "include/board_config.h",
+      "bytes": 612,
+      "sha256": "2637b3e3789438b6352ad51853eab37cbf17ce77820b143b0dce3ae716df45df"
+    },
+    {
+      "path": "lib/sleep_core/include/c1001_protocol.h",
+      "bytes": 1598,
+      "sha256": "3852af484bc30e1f3439bedd3659d977456388bfeb88ae36d5639ed80ae2f350"
+    },
+    {
+      "path": "lib/sleep_core/include/monitor_logic.h",
+      "bytes": 5439,
+      "sha256": "01b161146263155a1e10f450bfd95776507a2d5c70ef7598e4b5eb0dc7d4cab9"
+    },
+    {
+      "path": "lib/sleep_core/include/radar_client.h",
+      "bytes": 2625,
+      "sha256": "1ff3265ea31f966f5455a7fbc45c176504f420ba5c344639394262156c5c3f44"
+    },
+    {
+      "path": "lib/sleep_core/include/user_input.h",
+      "bytes": 1092,
+      "sha256": "a3aaedba1bf1e6b0546e63c1c1443e7b3ab5f290d51505b2ab780cb1c4bfc055"
+    },
+    {
+      "path": "lib/sleep_core/src/c1001_protocol.cpp",
+      "bytes": 4190,
+      "sha256": "09fe8193d838a41f5309a474f0c469ef2026fdd512062d46f1575692a93bcaad"
+    },
+    {
+      "path": "lib/sleep_core/src/monitor_logic.cpp",
+      "bytes": 12537,
+      "sha256": "67dac3cfeadefd58d751f23fdf8054b97f67a48f788a3002c6145a354e1c303f"
+    },
+    {
+      "path": "lib/sleep_core/src/radar_client.cpp",
+      "bytes": 8099,
+      "sha256": "7e275c54b9435fa9e67ed79ce5c073264f286a88ed3780f12f4315bd7a022878"
+    },
+    {
+      "path": "lib/sleep_core/src/user_input.cpp",
+      "bytes": 1647,
+      "sha256": "25d226b99ce2a755a8e7488bceb413db3d2890bbe088d8fbfac92f2eb8de45a2"
+    },
+    {
+      "path": "platformio.ini",
+      "bytes": 408,
+      "sha256": "0f866396f4f16bff788403a1642acd6a6d419ba3ecd0cb4eda54d34ec3182d40"
+    },
+    {
+      "path": "src/main.cpp",
+      "bytes": 13020,
+      "sha256": "353e760ddc396d5df9f5237d941614703134b338874d490d711cce56567d5528"
+    },
+    {
+      "path": "tests/integration/mocks/Arduino.h",
+      "bytes": 2138,
+      "sha256": "7ac685a3dcb5c8cf45561a23d07eec8ea5b3228672c3ede1e6e3d11abd8ed65c"
+    },
+    {
+      "path": "tests/integration/mocks/Wire.h",
+      "bytes": 1069,
+      "sha256": "c3f47572ea6b7b5e421f16e288a2f9d04b44a07bf3631f9ec39ee53a6e5933bc"
+    },
+    {
+      "path": "tests/integration/test_main.cpp",
+      "bytes": 6520,
+      "sha256": "f1765bc7f346fc6df66052257d0c564b0670d13b25055599596f073242724513"
+    },
+    {
+      "path": "tests/run_main_mock.py",
+      "bytes": 4418,
+      "sha256": "5e82a363ae01650e97baa23e022624a9dd294e416f69855b40e916200c538122"
+    },
+    {
+      "path": "tests/test_client.cpp",
+      "bytes": 16045,
+      "sha256": "5da545de90120f5c3c9c0cb948a32639b74d2afd7e65125c06b2259d538bc347"
+    },
+    {
+      "path": "tests/test_log_summary.py",
+      "bytes": 9778,
+      "sha256": "ef0a9198d6fdb61771b03a70b41ef1917c9730746088221a48631a9c25f56d89"
+    },
+    {
+      "path": "tests/test_monitor.cpp",
+      "bytes": 13266,
+      "sha256": "1ccf06eb5e5309bb92443ba37fc36f50d07e68b5034cfceb8937d59403c22c36"
+    },
+    {
+      "path": "tests/test_pipeline.cpp",
+      "bytes": 9945,
+      "sha256": "06bc265afa3171834417df8d2bfe7f72cfbea1f22e52d804d55cac38be6c9ab8"
+    },
+    {
+      "path": "tests/test_protocol.cpp",
+      "bytes": 10030,
+      "sha256": "5247ac2c1097d8badd97bca7b9bd615c0a1f94820832a6bfedb6732286ffd975"
+    },
+    {
+      "path": "tests/test_replay.cpp",
+      "bytes": 10261,
+      "sha256": "36740375aa1de56acca00a5a8cd111dc437ac8d59b8c80f6e1aa20a45bbb75be"
+    },
+    {
+      "path": "tests/test_user_input.cpp",
+      "bytes": 2034,
+      "sha256": "ad85da09bb03be4221515b3d1e0db8e8d3229de825b0c76032a3892721971f18"
+    },
+    {
+      "path": "tools/capture_serial.py",
+      "bytes": 3461,
+      "sha256": "dea0403321c1e85db862a87aac904ae8b872596396c9fa48464346225a3ff32c"
+    },
+    {
+      "path": "tools/run_native_tests.py",
+      "bytes": 3044,
+      "sha256": "87eff2158f5e32042520a305d51e45bc829c40800263a3d9d4b2a82b59717e65"
+    },
+    {
+      "path": "tools/summarize_log.py",
+      "bytes": 17153,
+      "sha256": "f83dff7b3b3805b6f137f4d4d517f01c75eb0e1b21026ea357398a2e5225146f"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "releases/v0.2.0/boot_app0.bin",
+      "bytes": 8192,
+      "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+    },
+    {
+      "path": "releases/v0.2.0/bootloader.bin",
+      "bytes": 13248,
+      "sha256": "30d47ab1f344cfa69f6b2f718ffa72fc7baea6db047eaabefea162db29e6821c"
+    },
+    {
+      "path": "releases/v0.2.0/firmware.bin",
+      "bytes": 314432,
+      "sha256": "e534b0517e50158168460d1cade5eb6d60c70fa031e3f93d7df9893cc40c6726"
+    },
+    {
+      "path": "releases/v0.2.0/firmware.elf",
+      "bytes": 7051864,
+      "sha256": "bbc080bdfb2ef3e1588f13b16738a096877ea6575cd652b106c437f8c97f9eba"
+    },
+    {
+      "path": "releases/v0.2.0/mianguang_v0.2.0_full.bin",
+      "bytes": 379968,
+      "sha256": "3026f5faa06760e6cad74da785865fb0bf1741a1219152664118b1c628ce1c83"
+    },
+    {
+      "path": "releases/v0.2.0/partitions.bin",
+      "bytes": 3072,
+      "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+    }
+  ],
+  "full_image_verified_against_segments": true
+}

@@ -1,0 +1,457 @@
+{
+  "report_schema": 1,
+  "report_type": "engineering_log_summary",
+  "synthetic": true,
+  "notice": "合成模拟非实测 — 仅用于工具验证",
+  "source": {
+    "path": "<project>/firmware/fixtures/demo_synthetic.jsonl",
+    "sha256": "b06ec00be3675a69ca47d01a035d6e8733191f3152256c597300977b0d793199",
+    "bytes": 12517,
+    "firmware_versions": [
+      "synthetic-demo"
+    ]
+  },
+  "method": {
+    "max_interval_ms": 2000,
+    "time_rule": "按文件顺序，只计同段相邻有效 sample 的 0<dt<=2000 ms 区间，使用左端标志；末行不外推。",
+    "barrier_rule": "坏行、非 sample 记录以及重复时间记录后的区间均不计时；空白行忽略。",
+    "segment_rule": "t_ms 为 64 位开机相对时间；每次下降切段，重启与乱序无法区分；不排序、不跨段拼接。",
+    "coverage_denominator": "observed_ms（可积分观察时间）；另报其占各段首末跨度之和的比例。",
+    "dedup_rule": "RR/HR 独立使用 (segment_id,t_ms-age_ms)；同键不同 raw 排除；同键任一有效标志可纳入 valid_raw。",
+    "validity_rule": "沿用日志 available/valid 标志，不重算固件质量门控。presence/bed 冲突计 unknown。",
+    "median_rule": "对去重后的原始读数算中位数，不对 trend.rr_median/hr_median 再求中位数；不按时间加权。"
+  },
+  "counts": {
+    "physical_lines": 15,
+    "blank_lines": 0,
+    "total_records": 15,
+    "valid_sample_records": 13,
+    "invalid_json_records": 1,
+    "invalid_schema_records": 0,
+    "non_sample_records": 1,
+    "duplicate_timestamp_records": 1,
+    "timestamp_decrease_records": 1,
+    "segment_count": 2,
+    "restart_or_out_of_order_boundaries": 1
+  },
+  "time": {
+    "observed_ms": 8000,
+    "in_bed_ms": 6000,
+    "not_in_bed_ms": 0,
+    "unknown_ms": 2000,
+    "rr_valid_ms": 6000,
+    "hr_valid_ms": 6000,
+    "both_valid_ms": 6000,
+    "segment_span_ms": 14000,
+    "excluded_forward_ms": 6000,
+    "observed_fraction_of_segment_spans": 0.5714285714285714
+  },
+  "coverage": {
+    "rr": {
+      "valid_ms": 6000,
+      "fraction_of_observed": 0.75
+    },
+    "hr": {
+      "valid_ms": 6000,
+      "fraction_of_observed": 0.75
+    },
+    "both": {
+      "valid_ms": 6000,
+      "fraction_of_observed": 0.75
+    }
+  },
+  "segments": [
+    {
+      "id": 1,
+      "start_line": 2,
+      "end_line": 11,
+      "first_t_ms": 1000,
+      "last_t_ms": 11000,
+      "sample_records": 9,
+      "boundary": "start",
+      "span_ms": 10000
+    },
+    {
+      "id": 2,
+      "start_line": 12,
+      "end_line": 15,
+      "first_t_ms": 500,
+      "last_t_ms": 4500,
+      "sample_records": 4,
+      "boundary": "restart_or_out_of_order",
+      "span_ms": 4000
+    }
+  ],
+  "fields": {
+    "rr": {
+      "unit": "次/分钟",
+      "unique_observation_keys": 6,
+      "conflicting_observation_keys": 0,
+      "available_raw": {
+        "count": 6,
+        "min": 14,
+        "max": 22,
+        "median": 17.0
+      },
+      "valid_raw": {
+        "count": 6,
+        "min": 14,
+        "max": 22,
+        "median": 17.0
+      },
+      "observations": [
+        {
+          "segment_id": 1,
+          "observation_t_ms": 1000,
+          "raw_values": [
+            16
+          ],
+          "source_lines": [
+            2,
+            3
+          ],
+          "valid_source_lines": [
+            2,
+            3
+          ]
+        },
+        {
+          "segment_id": 1,
+          "observation_t_ms": 3000,
+          "raw_values": [
+            18
+          ],
+          "source_lines": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "valid_source_lines": [
+            4,
+            5
+          ]
+        },
+        {
+          "segment_id": 1,
+          "observation_t_ms": 9000,
+          "raw_values": [
+            20
+          ],
+          "source_lines": [
+            8,
+            10
+          ],
+          "valid_source_lines": [
+            8,
+            10
+          ]
+        },
+        {
+          "segment_id": 1,
+          "observation_t_ms": 11000,
+          "raw_values": [
+            22
+          ],
+          "source_lines": [
+            11
+          ],
+          "valid_source_lines": [
+            11
+          ]
+        },
+        {
+          "segment_id": 2,
+          "observation_t_ms": 1500,
+          "raw_values": [
+            14
+          ],
+          "source_lines": [
+            13,
+            14
+          ],
+          "valid_source_lines": [
+            13,
+            14
+          ]
+        },
+        {
+          "segment_id": 2,
+          "observation_t_ms": 4500,
+          "raw_values": [
+            16
+          ],
+          "source_lines": [
+            15
+          ],
+          "valid_source_lines": [
+            15
+          ]
+        }
+      ]
+    },
+    "hr": {
+      "unit": "次/分钟",
+      "unique_observation_keys": 6,
+      "conflicting_observation_keys": 0,
+      "available_raw": {
+        "count": 6,
+        "min": 68,
+        "max": 82,
+        "median": 71.0
+      },
+      "valid_raw": {
+        "count": 6,
+        "min": 68,
+        "max": 82,
+        "median": 71.0
+      },
+      "observations": [
+        {
+          "segment_id": 1,
+          "observation_t_ms": 1000,
+          "raw_values": [
+            70
+          ],
+          "source_lines": [
+            2
+          ],
+          "valid_source_lines": [
+            2
+          ]
+        },
+        {
+          "segment_id": 1,
+          "observation_t_ms": 2000,
+          "raw_values": [
+            72
+          ],
+          "source_lines": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "valid_source_lines": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "segment_id": 1,
+          "observation_t_ms": 9000,
+          "raw_values": [
+            80
+          ],
+          "source_lines": [
+            8,
+            10
+          ],
+          "valid_source_lines": [
+            8,
+            10
+          ]
+        },
+        {
+          "segment_id": 1,
+          "observation_t_ms": 11000,
+          "raw_values": [
+            82
+          ],
+          "source_lines": [
+            11
+          ],
+          "valid_source_lines": [
+            11
+          ]
+        },
+        {
+          "segment_id": 2,
+          "observation_t_ms": 1500,
+          "raw_values": [
+            68
+          ],
+          "source_lines": [
+            13,
+            14
+          ],
+          "valid_source_lines": [
+            13,
+            14
+          ]
+        },
+        {
+          "segment_id": 2,
+          "observation_t_ms": 4500,
+          "raw_values": [
+            70
+          ],
+          "source_lines": [
+            15
+          ],
+          "valid_source_lines": [
+            15
+          ]
+        }
+      ]
+    }
+  },
+  "issues": [
+    {
+      "line": 1,
+      "kind": "non_sample",
+      "type": "meta"
+    },
+    {
+      "line": 5,
+      "previous_line": 4,
+      "kind": "duplicate_timestamp",
+      "t_ms": 3000
+    },
+    {
+      "line": 9,
+      "kind": "invalid_json",
+      "detail": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+    },
+    {
+      "line": 12,
+      "previous_line": 11,
+      "kind": "restart_or_out_of_order",
+      "delta_ms": -10500
+    }
+  ],
+  "intervals": [
+    {
+      "segment_id": 1,
+      "left_line": 2,
+      "right_line": 3,
+      "start_t_ms": 1000,
+      "end_t_ms": 2000,
+      "duration_ms": 1000,
+      "included": true,
+      "exclusion": null,
+      "occupancy": "in_bed",
+      "rr_valid": true,
+      "hr_valid": true
+    },
+    {
+      "segment_id": 1,
+      "left_line": 3,
+      "right_line": 4,
+      "start_t_ms": 2000,
+      "end_t_ms": 3000,
+      "duration_ms": 1000,
+      "included": true,
+      "exclusion": null,
+      "occupancy": "in_bed",
+      "rr_valid": true,
+      "hr_valid": true
+    },
+    {
+      "segment_id": 1,
+      "left_line": 5,
+      "right_line": 6,
+      "start_t_ms": 3000,
+      "end_t_ms": 4000,
+      "duration_ms": 1000,
+      "included": false,
+      "exclusion": "duplicate_left_timestamp"
+    },
+    {
+      "segment_id": 1,
+      "left_line": 6,
+      "right_line": 7,
+      "start_t_ms": 4000,
+      "end_t_ms": 5000,
+      "duration_ms": 1000,
+      "included": true,
+      "exclusion": null,
+      "occupancy": "unknown",
+      "rr_valid": false,
+      "hr_valid": false
+    },
+    {
+      "segment_id": 1,
+      "left_line": 7,
+      "right_line": 8,
+      "start_t_ms": 5000,
+      "end_t_ms": 9000,
+      "duration_ms": 4000,
+      "included": false,
+      "exclusion": "gap_over_2000_ms"
+    },
+    {
+      "segment_id": 1,
+      "left_line": 8,
+      "right_line": 10,
+      "start_t_ms": 9000,
+      "end_t_ms": 10000,
+      "duration_ms": 1000,
+      "included": false,
+      "exclusion": "intervening_invalid_or_non_sample_record"
+    },
+    {
+      "segment_id": 1,
+      "left_line": 10,
+      "right_line": 11,
+      "start_t_ms": 10000,
+      "end_t_ms": 11000,
+      "duration_ms": 1000,
+      "included": true,
+      "exclusion": null,
+      "occupancy": "in_bed",
+      "rr_valid": true,
+      "hr_valid": true
+    },
+    {
+      "segment_id": 2,
+      "left_line": 12,
+      "right_line": 13,
+      "start_t_ms": 500,
+      "end_t_ms": 1500,
+      "duration_ms": 1000,
+      "included": true,
+      "exclusion": null,
+      "occupancy": "unknown",
+      "rr_valid": false,
+      "hr_valid": false
+    },
+    {
+      "segment_id": 2,
+      "left_line": 13,
+      "right_line": 14,
+      "start_t_ms": 1500,
+      "end_t_ms": 2500,
+      "duration_ms": 1000,
+      "included": true,
+      "exclusion": null,
+      "occupancy": "in_bed",
+      "rr_valid": true,
+      "hr_valid": true
+    },
+    {
+      "segment_id": 2,
+      "left_line": 14,
+      "right_line": 15,
+      "start_t_ms": 2500,
+      "end_t_ms": 4500,
+      "duration_ms": 2000,
+      "included": true,
+      "exclusion": null,
+      "occupancy": "in_bed",
+      "rr_valid": true,
+      "hr_valid": true
+    }
+  ],
+  "limitations": [
+    "这是工程观察摘要，不是临床睡眠报告；在床观察时长不等于睡眠时长。",
+    "日志记录数不等于独立雷达读数数；RR 与 HR 分别按分段内 t_ms-age_ms 去重。",
+    "去重统计仅覆盖日志可见的观测时间键，不代表模组全部采样或 UART 帧总数。",
+    "非在床观察时长不等于真实离床时长或离床次数；unknown 不计作非在床。",
+    "t_ms 下降仅表明重启或乱序边界，不能单凭该日志确认实际重启次数。",
+    "各段时长独立相加，没有绝对时间轴；乱序分段可能重叠，不能据此宣称真实整夜时长。",
+    "不推断模组睡眠阶段、睡眠质量、医学事件或医学报警。"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "project_uuid": "8955499269fd1ac3a71ec0ff5dc961906055730dccf1062637e2bf1a70a879b8",
+  "release": "V0.2",
+  "exported_at": "2026-11-04T11:53:40.584602+00:00",
+  "schematic": {
+    "details": [
+      {
+        "type": "warn",
+        "rule": "ATTRMATCHCODE",
+        "primitives": [
+          {
+            "primitiveId": "4aae6b7c0d1b96b4",
+            "sheet": "a83dc430db547724",
+            "name": "J1($1I125)"
+          },
+          {
+            "primitiveId": "00e344f5ed6323f6",
+            "sheet": "a83dc430db547724",
+            "name": "J3($1I126)"
+          },
+          {
+            "primitiveId": "71710f8e8d21c70a",
+            "sheet": "a83dc430db547724",
+            "name": "J4($1I127)"
+          },
+          {
+            "primitiveId": "84ac771bd6bdc42b",
+            "sheet": "a83dc430db547724",
+            "name": "JP1($1I128)"
+          },
+          {
+            "primitiveId": "5217a57e0706ccad",
+            "sheet": "a83dc430db547724",
+            "name": "J2($1I131)"
+          },
+          {
+            "primitiveId": "eaf6a3132e04d76e",
+            "sheet": "a83dc430db547724",
+            "name": "J5($1I132)"
+          },
+          {
+            "primitiveId": "4f6c4947a95eb6ff",
+            "sheet": "a83dc430db547724",
+            "name": "JP2($1I138)"
+          },
+          {
+            "primitiveId": "cd0558411cb147c7",
+            "sheet": "a83dc430db547724",
+            "name": "JP3($1I139)"
+          }
+        ]
+      }
+    ],
+    "passed": false
+  },
+  "pcb": {
+    "details": [],
+    "passed": true
+  }
+}

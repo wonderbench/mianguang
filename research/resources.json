@@ -1,0 +1,204 @@
+{
+  "project": "老年人睡眠健康监测毫米波雷达与夜灯",
+  "selected_module": "DFRobot C1001 SEN0623",
+  "status": "prototype_baseline_not_production_release",
+  "sources": [
+    {
+      "id": "R01",
+      "title": "C1001 产品规格与机械资源",
+      "vendor": "DFRobot",
+      "url": "https://wiki.dfrobot.com/sen0623",
+      "supporting_urls": [
+        "https://www.dfrobot.com/product-2861.html",
+        "https://dfimg.dfrobot.com/5ea64bf6cf1d8c7738ad2881/wiki/4dca8a50b5a8a87f953c4d4a5ff854c6.png",
+        "https://dfimg.dfrobot.com/wiki/21119/SEN0623_c1001-mmwave-human-detection-sensor_stpfile_v1.zip"
+      ],
+      "facts": [
+        "5 V ≤100 mA；22×22 mm；2.54 mm单排6孔。",
+        "胸部睡眠0.4–2.5 m；呼吸/心率0.4–1.5 m。",
+        "呼吸10–25/min；心率60–100/min。"
+      ],
+      "unknowns": [
+        "UART绝对最大额定值、实际器件总高、孔径与到货版本",
+        "采购库存、交货期和国内含税价"
+      ],
+      "decision": "首版主选",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R02",
+      "title": "C1001 安装与模式",
+      "vendor": "DFRobot",
+      "url": "https://wiki.dfrobot.com/sen0623/docs/21502",
+      "supporting_urls": [
+        "https://wiki.dfrobot.com.cn/SKU_SEN0623_C1001_mmWave_Human_Detection_Sensor"
+      ],
+      "facts": [
+        "睡眠视场40×40度，跌倒100×100度。",
+        "睡眠向下30–45度；图示床上方1 m、胸部斜距≤1.5 m。"
+      ],
+      "unknowns": [
+        "床头柜模式整夜有效性"
+      ],
+      "decision": "兼容壁挂/桌面机械，独立验证性能",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R03",
+      "title": "C1001 ESP32示例与库",
+      "vendor": "DFRobot",
+      "url": "https://github.com/DFRobot/DFRobot_HumanDetection",
+      "supporting_urls": [
+        "https://wiki.dfrobot.com/sen0623/docs/21572",
+        "https://wiki.dfrobot.com/sen0623/docs/21573",
+        "https://raw.githubusercontent.com/DFRobot/DFRobot_HumanDetection/master/DFRobot_HumanDetection.cpp"
+      ],
+      "facts": [
+        "UART115200 8N1；ESP32直接连接RX/TX。",
+        "存在/体动/睡眠及统计接口。",
+        "smHumanData通信失败可返回0；composite可返回全0；心率/呼吸标量多返回0xFF。"
+      ],
+      "unknowns": [
+        "算法分期和apneaEvents定义与临床效度"
+      ],
+      "decision": "加入帧校验、通信状态和数据有效期",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R04",
+      "title": "MR60BHA2 模块与套件",
+      "vendor": "Seeed Studio",
+      "url": "https://wiki.seeedstudio.com/getting_started_with_mr60bha2_mmwave_kit/",
+      "supporting_urls": [
+        "https://files.seeedstudio.com/wiki/mmwave-for-xiao/mr60/datasheet/MR60BHA2_Breathing_and_Heartbeat_Module.pdf",
+        "https://files.seeedstudio.com/wiki/mmwave-for-xiao/mr60/datasheet/Seeed_Studio_Tiny_Frame_Interface_Breathing_and_Heartbeat.pdf"
+      ],
+      "facts": [
+        "裸模组25×31.5 mm，3.3 V；套件5 V，含XIAO ESP32C6。",
+        "Beta规格列600 mA项并要求供电能力大于1 A。",
+        "算法闭源。"
+      ],
+      "unknowns": [
+        "Beta文档与到货固件波特率差异"
+      ],
+      "decision": "对照备选kit；不能把裸模组直接5 V",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R05",
+      "title": "MR60BHA2 数据报告限制",
+      "vendor": "Seeed Studio",
+      "url": "https://wiki.seeedstudio.com/ha_with_mr60bha2/",
+      "facts": [
+        "单人静止生命体征约1.5 m。",
+        "超范围可保持最后呼吸/心率值；人数估计为实验性。"
+      ],
+      "unknowns": [
+        "真实老年睡眠场景有效数据占比"
+      ],
+      "decision": "如采用须有距离、有人和新鲜度联合门控",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R06",
+      "title": "旧款MR60BHA1与MR24BSD1",
+      "vendor": "Seeed Studio",
+      "url": "https://wiki.seeedstudio.com/Radar_MR60BHA1/",
+      "supporting_urls": [
+        "https://www.seeedstudio.com/60GHz-mmWave-Radar-Sensor-Breathing-and-Heartbeat-Module-p-5305.html",
+        "https://www.seeedstudio.com/24GHz-mmWave-Radar-Sensor-Sleep-Breathing-Monitoring-Module-p-5304.html"
+      ],
+      "facts": [
+        "MR60BHA1 5 V/典型150 mA，0.4–1.5 m，单人。",
+        "官网搜索结果标MR60BHA1与MR24BSD1停产/缺货；BHA1商品正文返回403。"
+      ],
+      "unknowns": [
+        "MR60SLEEP1未找到足够官方型号证据"
+      ],
+      "decision": "不进入新设计BOM",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R07",
+      "title": "TI算法研发平台与结构参考",
+      "vendor": "Texas Instruments",
+      "url": "https://www.ti.com/product/IWRL6432",
+      "supporting_urls": [
+        "https://www.ti.com/lit/ds/symlink/iwrl6432.pdf",
+        "https://dev.ti.com/tirex/explore/content/radar_toolbox_4_00_00_05/source/ti/examples/Industrial_and_Personal_Electronics/Vital_Signs/Vital_Signs_With_People_Tracking/docs/vital_signs_with_people_tracking_user_guide.html",
+        "https://www.ti.com/lit/an/swra705/swra705.pdf"
+      ],
+      "facts": [
+        "IWRL6432 57–64 GHz，2TX/3RX，M4F+HWA。",
+        "IWR6843生命体征加人员跟踪例程明确仅二进制。",
+        "透波罩材料、厚度与形状影响方向图。"
+      ],
+      "unknowns": [
+        "具体SDK版本许可与编译验证"
+      ],
+      "decision": "第二阶段算法平台，首版不自绘60 GHz射频",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R08",
+      "title": "BGT60TR13C 芯片与伙伴方案",
+      "vendor": "Infineon",
+      "url": "https://www.infineon.com/part/BGT60TR13C",
+      "supporting_urls": [
+        "https://www.infineon.cn/partners/partner-ecosystems/greater-china/powersensor/solution/smart-life-health/vital-signs-monitoring-program"
+      ],
+      "facts": [
+        "58–63.5 GHz；1TX/3RX；封装天线；SPI；active and preferred。"
+      ],
+      "unknowns": [
+        "合作伙伴算法授权、验证与采购条件"
+      ],
+      "decision": "自研/合作算法备选",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R09",
+      "title": "A121 呼吸参考应用和XM125",
+      "vendor": "Acconeer",
+      "url": "https://docs.acconeer.com/en/latest/ref_apps/a121/breathing.html",
+      "supporting_urls": [
+        "https://developer.acconeer.com/home/a121-docs-software/xm125-xe125/",
+        "https://acconeer.com/products/"
+      ],
+      "facts": [
+        "静止人体呼吸参考应用；距离定位、相位、带通和频谱估计。",
+        "XM125有M4主控和I2C呼吸应用资料。"
+      ],
+      "unknowns": [
+        "不是完整睡眠分期或心率成品算法"
+      ],
+      "decision": "呼吸与低功耗研发备选",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    },
+    {
+      "id": "R10",
+      "title": "透波罩机械集成",
+      "vendor": "Acconeer",
+      "url": "https://docs.acconeer.com/en/latest/hw_integration/a121/radome_and_mechanical_design.html",
+      "facts": [
+        "PC在60 GHz示例最佳厚度约1.5 mm整数倍。",
+        "材料、厚度、形状会改变反射和波束。"
+      ],
+      "unknowns": [
+        "C1001实际白色材料与色母插损"
+      ],
+      "decision": "1.5 mm仅作样片起点，测实物",
+      "accessed": "2026-10-28",
+      "source_type": "official_manufacturer"
+    }
+  ]
+}

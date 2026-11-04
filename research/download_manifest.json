@@ -1,0 +1,70 @@
+{
+  "retrieved": "2026-10-28",
+  "files": [
+    {
+      "path": "datasheets/C1001_dimensions.png",
+      "bytes": 373587,
+      "sha256": "221a93c36e9908340f5e083d6ba3b4e5144f02bf990134016940414713dc0130"
+    },
+    {
+      "path": "datasheets/C1001_sleep_installation.webp",
+      "bytes": 11554,
+      "sha256": "65cd882c22d8873ea80e19b12bef0c035070e788dc8ef0eaab5100a5877dff27"
+    },
+    {
+      "path": "datasheets/C1001_step/JQC1001.DWG",
+      "bytes": 48896,
+      "sha256": "3056cc5611b7f72869a1ad32671012b8b543547efc91d8181eac51a243dacdcd"
+    },
+    {
+      "path": "datasheets/C1001_step/JQC1001.step",
+      "bytes": 1045578,
+      "sha256": "8e2c76e44df98a1f32d43bad3ae7bf83f0e4d73102cc5e6e15412d7ff26e2b06"
+    },
+    {
+      "path": "datasheets/C1001_step.zip",
+      "bytes": 203699,
+      "sha256": "d91569cae7a9e02081a37cab6c2348376af120cb54746a416315291f78ff590d"
+    },
+    {
+      "path": "datasheets/MR60BHA1_user_manual_V2.3.pdf",
+      "bytes": 890750,
+      "sha256": "b75be5c3a44185c382e3d3aa61e74dece577d7aab8838084bbec00860d78741e"
+    },
+    {
+      "path": "datasheets/MR60BHA2_datasheet.pdf",
+      "bytes": 1500132,
+      "sha256": "1a63bdc5e5dc602cfce1023db66a311e62665b5ae57c33b06a14d2c9efd2b41f"
+    },
+    {
+      "path": "datasheets/MR60BHA2_protocol.pdf",
+      "bytes": 811735,
+      "sha256": "c5753ced60904c21d9c2a03e10887d96131d25a19482dbb49e4ff839fdc4569a"
+    },
+    {
+      "path": "datasheets/TI_IWRL6432_datasheet.pdf",
+      "bytes": 2223619,
+      "sha256": "ff9e987fd7bdcc9253a2b75b2b4b10eb1024ff4f6adb07a899459a1e9b80ee82"
+    },
+    {
+      "path": "datasheets/TI_mmWave_Radome_Design_Guide.pdf",
+      "bytes": 2760848,
+      "sha256": "804b94932405b693b6f3b1bec660987a1c10726cc1bac74090fc310429227890"
+    },
+    {
+      "path": "vendor_library/DFRobot_HumanDetection.cpp",
+      "bytes": 21626,
+      "sha256": "6c6b31078db7998ef43ed23947d66bf2ba57ed862ba915e733c8171096fe19c2"
+    },
+    {
+      "path": "vendor_library/DFRobot_HumanDetection.h",
+      "bytes": 13269,
+      "sha256": "a49c423411cbe44f4bb2723247a7ae5ba3e934405ed8f704a41e8ace59413627"
+    },
+    {
+      "path": "vendor_library/LICENSE",
+      "bytes": 1064,
+      "sha256": "8939f7d9da45b4d4d34a60e0f612e5dcd0de2226268482f042bb5ce2e050f699"
+    }
+  ]
+}
