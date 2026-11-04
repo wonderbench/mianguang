@@ -1,0 +1,56 @@
+name: Platform
+
+on:
+  push:
+    branches: [main]
+    paths: ["platform/**", ".github/workflows/platform.yml"]
+  pull_request:
+    paths: ["platform/**", ".github/workflows/platform.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  platform:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17.11-bookworm@sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5
+        env:
+          POSTGRES_DB: mianguang
+          POSTGRES_USER: mianguang
+          POSTGRES_PASSWORD: ci-ephemeral-only
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U mianguang -d mianguang"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    env:
+      DJANGO_SETTINGS_MODULE: config.test_settings
+      PGHOST: 127.0.0.1
+      PGPORT: "5432"
+      PGDATABASE: mianguang
+      PGUSER: mianguang
+      PGPASSWORD: ci-ephemeral-only
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: platform/requirements.txt
+      - name: Install locked dependencies
+        run: python -m pip install --require-hashes -r platform/requirements.txt
+      - name: Validate telemetry contract and document links
+        run: python platform/tools/validate_contract.py
+      - name: Check Django configuration
+        working-directory: platform/app
+        run: python manage.py check
+      - name: Check migrations are committed
+        working-directory: platform/app
+        run: python manage.py makemigrations --check --dry-run
+      - name: Run PostgreSQL integration tests
+        working-directory: platform/app
+        run: python manage.py test monitoring.tests --verbosity 2

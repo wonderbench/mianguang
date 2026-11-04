@@ -1,0 +1,5 @@
+Django==5.2.19
+psycopg[binary]==3.3.8
+jsonschema==4.26.0
+rfc3339-validator==0.1.4
+gunicorn==23.0.0
