@@ -9,6 +9,9 @@
 #include "radar_client.h"
 #include "monitor_logic.h"
 #include "user_input.h"
+#ifdef MIANGUANG_PLATFORM
+#include "platform_network.h"
+#endif
 
 namespace {
 using namespace board_config;
@@ -26,7 +29,11 @@ uint32_t parser_errors_seen = 0;
 uint32_t previous_ms = 0;
 uint64_t uptime_ms = 0;
 uint32_t log_ms = 0;
+#ifdef MIANGUANG_PLATFORM
+char command_buffer[8192]{};
+#else
 char command_buffer[64]{};
+#endif
 size_t command_length = 0;
 bool command_overflow = false;
 const char* command_result = "boot_uart_high_z";
@@ -147,6 +154,12 @@ void updateAmbient(uint32_t now) {
 }
 
 void command(const char* text, uint32_t now) {
+#ifdef MIANGUANG_PLATFORM
+  if (platform_network::command(text, uart_enabled)) {
+    command_result = "network_command";
+    return;
+  }
+#endif
   if (!std::strcmp(text, "radar on")) {
     setRadarEnabled(true, now); command_result = "radar_enabled_wait_10s";
   } else if (!std::strcmp(text, "radar off")) {
@@ -185,6 +198,10 @@ void readConsole(uint32_t now) {
       }
       command_length = 0;
       command_overflow = false;
+#ifdef MIANGUANG_PLATFORM
+      // Configuration includes credentials; never retain or echo the USB line.
+      std::memset(command_buffer, 0, sizeof(command_buffer));
+#endif
     } else if (byte >= 32 && byte <= 126 && !command_overflow) {
       if (command_length + 1 < sizeof(command_buffer)) command_buffer[command_length++] = byte;
       else command_overflow = true;
@@ -198,6 +215,16 @@ unsigned long age(const sleep_core::TimedField<T>& field, uint32_t now) {
 }
 
 void queueLog(uint32_t now, const sleep_core::DataQuality& quality) {
+#ifdef MIANGUANG_PLATFORM
+  if (Serial && log_length == log_offset &&
+      platform_network::takeDiagnostic(log_buffer, sizeof(log_buffer) - 2)) {
+    log_length = std::strlen(log_buffer);
+    if (!log_length || log_buffer[log_length - 1] != '\n') log_buffer[log_length++] = '\n';
+    log_buffer[log_length] = 0;
+    log_offset = 0;
+    return;
+  }
+#endif
   if (!Serial || log_length != log_offset || static_cast<uint32_t>(now - log_ms) < 1000) return;
   log_ms = now;
   const auto& s = radar.snapshot();
@@ -264,6 +291,9 @@ void setup() {
   setRadarEnabled(false, previous_ms);
   Wire.begin(kSda, kScl, 100000);
   Wire.setTimeOut(25);
+#ifdef MIANGUANG_PLATFORM
+  platform_network::begin();
+#endif
 }
 
 void loop() {
@@ -307,6 +337,10 @@ void loop() {
   const auto a = ambient.state(now);
   const auto night = sleep_core::makeNightInputs(radar.snapshot(), quality, a.known, a.dark);
   ledcWrite(kPwmChannel, lamp.update(now, night));
+#ifdef MIANGUANG_PLATFORM
+  platform_network::capture(now, uptime_ms, radar.snapshot(), quality,
+      uart_enabled, radar.ready(), lamp.mode(), lamp.output(), lamp.target());
+#endif
   queueLog(now, quality);
   flushLog();
   delay(1);  // Yield to ESP32 system tasks; no sensor waits in the main loop.

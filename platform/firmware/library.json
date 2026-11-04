@@ -1,0 +1,7 @@
+{
+  "name": "MianguangPlatform",
+  "version": "0.3.0-dev",
+  "description": "Bounded HTTPS telemetry adapter for the local Mianguang firmware",
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32"]
+}

@@ -1,0 +1,44 @@
+name: Firmware
+
+on:
+  push:
+    branches: [main]
+    paths: ["firmware/**", "platform/firmware/**", "platform/tools/provision_device.py", ".github/workflows/firmware.yml"]
+  pull_request:
+    paths: ["firmware/**", "platform/firmware/**", "platform/tools/provision_device.py", ".github/workflows/firmware.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  firmware:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install fixed build tools
+        run: |
+          python -m pip install platformio==6.1.19 pyserial==3.5
+          python -m pip install --require-hashes -r platform/requirements.txt
+      - name: Existing native and main-loop regressions
+        run: |
+          python firmware/tools/run_native_tests.py
+          python firmware/tests/run_main_mock.py
+          python -m unittest discover -s firmware/tests -p test_log_summary.py
+      - name: Check actual telemetry serialization and controlled USB flow
+        run: |
+          python platform/firmware/tests/run_host.py --compiler clang++ --sanitizers
+          python platform/firmware/tests/test_provision_device.py
+      - name: Build original and network development firmware
+        run: pio run -d firmware -e xiao_esp32c3 -e xiao_esp32c3_platform
+      - name: Preserve development build for controlled hardware trials
+        uses: actions/upload-artifact@v7
+        with:
+          name: platform-firmware-${{ github.sha }}
+          path: |
+            firmware/.pio/build/xiao_esp32c3_platform/*.bin
+            firmware/.pio/build/xiao_esp32c3_platform/firmware.elf
+          if-no-files-found: error
