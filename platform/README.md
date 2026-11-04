@@ -1,6 +1,43 @@
 # 眠光多设备管理平台 · MVP 设计
 
-设计基线：2026-11-04；对接 PCB V0.2 / 固件 V0.2.0。**本目录目前是技术架构、开发规范及协议样例，尚无可运行平台、联网固件或部署实例。** 本轮不改已发布硬件、模型和固件。
+设计基线：2026-11-04；对接 PCB V0.2 / 固件 V0.2.0。平台实现独立放在本目录：`app/` 为 Django 单体，`contracts/` 为接入契约。已发布硬件、模型和固件保持原版本；当前固件尚不能联网，平台模拟结果不代表真机结果。
+
+## 开发运行
+
+需要 Python 3.12 和 PostgreSQL 17；不提供 SQLite 替代配置。依赖完整锁定于 `requirements.txt`（含哈希），直接依赖记录于 `requirements.in`。
+
+```sh
+cd platform
+python3.12 -m venv .venv
+.venv/bin/pip install --require-hashes -r requirements.txt
+export DJANGO_SECRET_KEY="$(.venv/bin/python -c 'import secrets; print(secrets.token_urlsafe(48))')"
+export DJANGO_DEBUG=true DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+export PGHOST=127.0.0.1 PGPORT=5432 PGDATABASE=mianguang PGUSER=mianguang
+# PGPASSWORD 由本机受控环境提供，不写入仓库。
+.venv/bin/python app/manage.py migrate
+.venv/bin/python app/manage.py init_roles
+.venv/bin/python app/manage.py createsuperuser
+.venv/bin/python app/manage.py runserver 127.0.0.1:8000
+```
+
+专用演示数据库可设置 `DEMO_MODE=true`，在另一个终端运行三设备模拟器：
+
+```sh
+DEMO_MODE=true .venv/bin/python app/manage.py simulate_devices \
+  --url http://127.0.0.1:8000 --allow-local-http --actor admin --count 3 --duration 60
+```
+
+模拟器每次新登记带“模拟”标记的设备/床位，经过绑定隔离期后通过真实 HTTP 入口上报当前快照；默认要求 HTTPS，本地 HTTP 必须显式启用且仅允许回环地址。它不会修改实机配置，令牌不打印到日志。此命令的延迟是客户端请求耗时，不等同于容量验收中的服务端处理耗时。
+
+本地及 CI 验证使用 PostgreSQL：
+
+```sh
+.venv/bin/python tools/validate_contract.py
+DJANGO_SETTINGS_MODULE=config.test_settings .venv/bin/python app/manage.py check
+DJANGO_SETTINGS_MODULE=config.test_settings .venv/bin/python app/manage.py test monitoring.tests
+```
+
+`config.test_settings` 只为隔离测试关闭 HTTPS 重定向并使用测试密码哈希；不能作为部署配置。数据库测试账号需要创建测试库的权限。GitHub Actions 使用独立 PostgreSQL 服务执行迁移检查及少量跨层回归。
 
 首版面向一个社区服务团队或疗养院的一组床位：让工作人员知道设备装在哪里、是否持续上报、最近观测是否可用，并查看单床趋势。采用 **Django 单体 + PostgreSQL + HTTPS 主动上报**；业务页面由服务端生成，复用 Django Admin 管理基础资料。
 
