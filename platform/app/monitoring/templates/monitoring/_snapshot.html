@@ -1,0 +1,13 @@
+<div class="snapshot" data-snapshot data-state="{{ snapshot.state }}" data-received-ms="{{ snapshot.received_ms }}" data-captured-ms="{{ snapshot.captured_ms }}">
+  <div class="state-row"><span class="badge state-{{ snapshot.state }}" data-connectivity>{{ snapshot.label }}</span><span class="work-state">最近工作条件：{{ snapshot.work_label }}</span></div>
+  <div class="metric-grid">
+    <div class="metric"><span>占用观测</span><strong class="occupancy" data-occupancy>{{ snapshot.occupancy }}</strong></div>
+    <div class="metric"><span>呼吸频率 <small>次/分</small></span><strong data-rr>{{ snapshot.rr|default_if_none:'—' }}</strong><small class="muted" data-metric-note>{{ snapshot.rr_reason }}</small></div>
+    <div class="metric"><span>心率 <small>次/分</small></span><strong data-hr>{{ snapshot.hr|default_if_none:'—' }}</strong><small class="muted" data-metric-note>{{ snapshot.hr_reason }}</small></div>
+  </div>
+  <p class="lamp">灯状态：<span data-lamp>{% if snapshot.lamp %}{% if snapshot.lamp.mode == "auto" %}自动{% else %}手动{% endif %} · 亮度 {{ snapshot.lamp.pwm }} / 255 · 目标 {{ snapshot.lamp.target }}{% else %}—{% endif %}</span></p>
+  <div class="timestamps">
+    <span>采集：{% if snapshot.captured_at %}<time datetime="{{ snapshot.captured_at|date:'c' }}">{{ snapshot.captured_at|date:'Y-m-d H:i:s T' }}</time>{% else %}—{% endif %}</span>
+    <span>接收：{% if snapshot.received_at %}<time datetime="{{ snapshot.received_at|date:'c' }}">{{ snapshot.received_at|date:'Y-m-d H:i:s T' }}</time>{% else %}—{% endif %}</span>
+  </div>
+</div>

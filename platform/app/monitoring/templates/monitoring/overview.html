@@ -1,0 +1,19 @@
+{% extends 'monitoring/base.html' %}
+{% block title %}床位总览 · 眠光平台{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><p class="eyebrow">设备观测</p><h1>床位总览</h1><p class="muted">查看最近上报与工作条件，每 15 秒更新。</p></div>
+  <form method="get" class="site-filter">
+    <label for="site">地点</label>
+    <select name="site" id="site">
+      <option value="">全部地点</option>
+      {% for site in sites %}<option value="{{ site.pk }}" {% if site.pk == selected_site %}selected{% endif %}>{{ site.name }}</option>{% endfor %}
+    </select>
+    <button type="submit">筛选</button>
+  </form>
+</div>
+<p class="notice" data-refresh-error role="status" hidden></p>
+<div data-overview data-refresh-url="{% url 'overview_fragment' %}{% if selected_site %}?site={{ selected_site }}{% endif %}">
+  {% include 'monitoring/_overview.html' %}
+</div>
+{% endblock %}

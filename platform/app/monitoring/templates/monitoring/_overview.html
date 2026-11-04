@@ -1,0 +1,35 @@
+<section data-overview-content data-server-ms="{{ server_ms }}">
+  <div class="summary-grid">
+    <div class="panel summary"><span>已绑定设备</span><strong>{{ counts.bound }}</strong></div>
+    <div class="panel summary"><span>需现场处理</span><strong data-attention-count>{{ counts.attention }}</strong></div>
+    <div class="panel summary"><span>无新鲜观测</span><strong data-not-fresh-count>{{ counts.not_fresh }}</strong></div>
+  </div>
+  <p class="status-counts">
+    最近有上报 <strong data-count="fresh">{{ counts.fresh }}</strong> ·
+    观测过期 <strong data-count="expired">{{ counts.expired }}</strong> ·
+    超过 60 秒无新上报 <strong data-count="no_report">{{ counts.no_report }}</strong> ·
+    等待首包 <strong data-count="waiting">{{ counts.waiting }}</strong> ·
+    已停用 <strong data-count="disabled">{{ counts.disabled }}</strong>
+  </p>
+  <p class="muted small">连接状态分别计数；需现场处理按最近工作条件计数，可能与连接状态重叠。服务端更新：<time datetime="{{ server_time }}">{{ server_time }}</time></p>
+  <div class="bed-grid">
+  {% for row in rows %}
+    <article class="panel bed-card">
+      <div class="card-heading">
+        <div><h2><a href="{% url 'binding_detail' row.binding.pk %}">{{ row.binding.location_label_snapshot }}</a></h2><p>{{ row.binding.resident_alias }} <span class="muted">· {{ row.binding.device.display_code }}</span></p></div>
+        {% if row.binding.device.is_simulator %}<span class="badge simulator">模拟</span>{% endif %}
+      </div>
+      {% include 'monitoring/_snapshot.html' with snapshot=row.snapshot %}
+      <a class="detail-link" href="{% url 'binding_detail' row.binding.pk %}">查看本次绑定趋势 →</a>
+    </article>
+  {% empty %}
+    <div class="panel empty"><h2>暂无绑定床位</h2><p class="muted">此地点没有当前绑定。管理员可在平台管理中分配设备。</p></div>
+  {% endfor %}
+  </div>
+  {% if can_manage %}
+  <details class="panel diagnostics">
+    <summary>未绑定设备（仅管理员）</summary>
+    <ul>{% for device in unbound_devices %}<li>{{ device.display_code }}{% if device.is_simulator %} <span class="badge simulator">模拟</span>{% endif %} · {% if device.enabled %}待绑定{% else %}已停用{% endif %}</li>{% empty %}<li>没有未绑定设备。</li>{% endfor %}</ul>
+  </details>
+  {% endif %}
+</section>
