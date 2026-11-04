@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "firmware_ci",
+  "physical_hardware_tested": false,
+  "repository": "wonderbench/mianguang",
+  "pull_request": 5,
+  "head_commit": "4d0f5972bf7a1a0a84bc7aebeff4289cdb43d553",
+  "workflow_run": 41855225085,
+  "workflow_url": "https://github.com/wonderbench/mianguang/actions/runs/41855225085",
+  "job_id": 126661908068,
+  "platformio_core": "6.1.19",
+  "espressif32": "6.12.0",
+  "arduino_framework": "3.20017.241212+sha.dcc1105b",
+  "builds": [
+    {
+      "environment": "xiao_esp32c3",
+      "version": "0.2.0",
+      "static_ram_bytes": 16852,
+      "linker_flash_bytes": 289680
+    },
+    {
+      "environment": "xiao_esp32c3_platform",
+      "version": "0.3.0-dev",
+      "static_ram_bytes": 77940,
+      "linker_flash_bytes": 936796
+    }
+  ],
+  "limits": {
+    "ram_bytes": 327680,
+    "application_flash_bytes": 1310720
+  },
+  "checks": {
+    "native_executables": 6,
+    "main_mock_json_fixtures": 3,
+    "log_tests": 15,
+    "actual_telemetry_contract_fixtures": 3,
+    "usb_flow_test": 1,
+    "address_sanitizer": "passed",
+    "undefined_behavior_sanitizer": "passed",
+    "both_builds": "passed"
+  },
+  "artifact": {
+    "id": 13337282093,
+    "name": "platform-firmware-39fa30f59cce4a2f6378ba4d29f5ba445fa4f1c5",
+    "size_bytes": 5577781,
+    "sha256": "3c5d06ea1b03c290ac2dbf7d40ef882b98d3f6ca5d7675f77a243608cd54443c",
+    "expires_at": "2027-02-02T15:11:57Z",
+    "url": "https://github.com/wonderbench/mianguang/actions/runs/41855225085/artifacts/13337282093"
+  },
+  "not_verified": [
+    "physical NVS power-loss fault injection",
+    "Wi-Fi and slow TLS/HTTP wall-clock timing on ESP32",
+    "live heap and task stack peak usage",
+    "UART/button/lamp behavior with networking",
+    "three real devices for 24 hours"
+  ]
+}
