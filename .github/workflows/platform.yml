@@ -54,3 +54,13 @@ jobs:
       - name: Run PostgreSQL integration tests
         working-directory: platform/app
         run: python manage.py test monitoring.tests --verbosity 2
+
+  deployment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install backup encryption tool
+        run: sudo apt-get update && sudo apt-get install -y age
+      - name: Build, ingest synthetic data, back up and restore isolated containers
+        run: platform/deploy/smoke.sh

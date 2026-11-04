@@ -1,6 +1,6 @@
 # 开发计划与验收
 
-本轮交付设计和协议，不包含Django应用、镜像、compose文件、联网固件或可运行命令承诺。以下为下一轮实施顺序。每一阶段完成一个可演示闭环后再继续，不预先做扩展平台。
+本页保留2026-11-04的开发顺序与验收基线。Django应用、迁移、页面和部署材料已按阶段落地，最新交付状态见[平台入口](../README.md)，运行步骤见[运行与恢复](operations.md)。联网固件、真机与完整容量验收仍未完成。每一阶段先完成可演示闭环，不预先做扩展平台。
 
 ## 1. 建议源码布局
 
@@ -10,7 +10,7 @@ platform/
   docs/                       # 当前设计文档
   contracts/telemetry.schema.json
   examples/                   # 当前合成协议样例
-  app/                        # 下一轮创建
+  app/                        # Django单体实现
     manage.py
     config/                   # settings、urls、WSGI
     monitoring/
@@ -22,7 +22,7 @@ platform/
       static/monitoring/      # 本地CSS与原生JS
       management/commands/
       tests/
-  deploy/                     # 下一轮创建Dockerfile/Compose/Nginx说明
+  deploy/                     # Dockerfile/Compose/Nginx与备份恢复脚本
 ```
 
 仅一个业务Django app；先用内置User，角色用Group/Permission，不为未来猜测自定义用户域。schema及样例是协议文档产物，不等于服务端校验代码已经实现。

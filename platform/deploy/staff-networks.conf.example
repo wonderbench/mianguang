@@ -1,0 +1,5 @@
+# Replace with the institution's actual public egress or VPN CIDRs.
+# Multiple allow lines are supported; keep deny all last.
+# allow 192.0.2.0/24;
+# allow 2001:db8::/32;
+deny all;
