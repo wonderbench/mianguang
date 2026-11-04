@@ -6,6 +6,13 @@ on:
     paths: ["platform/**", ".github/workflows/platform.yml"]
   pull_request:
     paths: ["platform/**", ".github/workflows/platform.yml"]
+  workflow_dispatch:
+    inputs:
+      capacity_seed_rows:
+        description: Synthetic historical rows for the 30-second capacity run
+        type: choice
+        options: ["6000", "6048000"]
+        default: "6000"
 
 permissions:
   contents: read
@@ -57,10 +64,20 @@ jobs:
 
   deployment:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7
       - name: Install backup encryption tool
         run: sudo apt-get update && sudo apt-get install -y age
       - name: Build, ingest synthetic data, back up and restore isolated containers
         run: platform/deploy/smoke.sh
+        env:
+          CAPACITY_REPORT: ${{ github.workspace }}/capacity-smoke.json
+          CAPACITY_SEED_ROWS: ${{ inputs.capacity_seed_rows || '6000' }}
+      - name: Preserve measured capacity smoke report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: capacity-smoke
+          path: capacity-smoke.json
+          if-no-files-found: warn

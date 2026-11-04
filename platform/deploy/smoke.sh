@@ -91,3 +91,18 @@ restored=$(docker exec "$restore_name" psql -U postgres -d mianguang_restore -At
     "SELECT EXISTS (SELECT 1 FROM auth_user WHERE username='ci') AND (SELECT count(*) FROM monitoring_binding)=3 AND (SELECT count(DISTINCT device_id) FROM monitoring_observation)=3")
 [[ "$restored" == t ]]
 echo 'PASS: synthetic HTTPS ingestion, personnel boundary, cleanup, encrypted backup and isolated restore.'
+
+# Run after the three-device recovery assertion; the benchmark creates its own
+# synthetic devices and leaves their observations for the report.
+if [[ -n "${CAPACITY_REPORT:-}" ]]; then
+    printf 'allow all;\n' > "$temporary/staff-networks.conf"
+    docker compose exec -T nginx nginx -s reload
+    sleep 1
+    benchmark_status=0
+    docker compose exec -T -e DEMO_MODE=true app python manage.py benchmark_platform \
+        --actor ci --url https://nginx --ca-file /tmp/ci-ca.pem \
+        --devices 100 --viewers 10 --duration 30 --seed-rows "${CAPACITY_SEED_ROWS:-6000}" \
+        --revision "${GITHUB_SHA:-local}" --output /tmp/capacity.json || benchmark_status=$?
+    docker cp "$(docker compose ps -q app):/tmp/capacity.json" "$CAPACITY_REPORT"
+    (( benchmark_status == 0 )) || exit "$benchmark_status"
+fi
