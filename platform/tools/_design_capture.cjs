@@ -169,21 +169,37 @@ async function main() {
   // Offline freshness must still progress using the browser's own timer.
   const offline = await browser.newContext({ locale: 'zh-CN', timezoneId: 'UTC' });
   page = await offline.newPage();
-  await page.clock.install();
   await open(after + '/', 390, 844);
   const snapshot = page.locator('[data-snapshot]').first();
   assert.equal(await snapshot.getAttribute('data-state'), 'fresh');
+  // Playwright 1.62.1 lazily initializes its fake timeOrigin. Keep the real
+  // origin and native intervals, and advance wall/monotonic readings together.
+  const clockBasis = await page.evaluate(() => {
+    const wallNow = Date.now.bind(Date);
+    const monotonicNow = performance.now.bind(performance);
+    const basis = { timeOrigin: performance.timeOrigin, wall: wallNow(), monotonic: monotonicNow() };
+    let elapsed = 0;
+    window.advancePreviewClock = ms => { elapsed += ms; };
+    Date.now = () => wallNow() + elapsed;
+    Object.defineProperty(performance, 'now', { configurable: true, value: () => monotonicNow() + elapsed });
+    return basis;
+  });
+  passed('offline-initial-fresh-with-native-clock', clockBasis);
   await offline.setOffline(true);
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
   for (const [seconds, expected] of [[31, 'expired'], [62, 'no_report']]) {
-    await page.clock.fastForward(31000);
+    await page.evaluate(() => window.advancePreviewClock(31000));
+    await page.waitForFunction(state => document.querySelector('[data-snapshot]').dataset.state === state, expected, { timeout: 5000 });
     const observed = await snapshot.evaluate(node => ({
       state: node.dataset.state,
+      ageMs: Date.now() - Number(node.dataset.receivedMs),
       label: node.querySelector('[data-connectivity]').textContent,
       occupancy: node.querySelector('[data-occupancy]').textContent,
       values: ['rr', 'hr', 'lamp'].map(key => node.querySelector(`[data-${key}]`).textContent),
       reasons: [...node.querySelectorAll('[data-metric-note]')].map(note => note.textContent)
     }));
     assert.equal(observed.state, expected);
+    assert.ok(observed.ageMs > 30000 && (expected === 'expired' ? observed.ageMs <= 60000 : observed.ageMs > 60000));
     assert.equal(observed.occupancy, '未知');
     assert.deepEqual(observed.values, ['—', '—', '—']);
     assert.ok(observed.reasons.every(reason => reason === '观测已过期'));

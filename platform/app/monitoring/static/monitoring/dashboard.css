@@ -595,9 +595,16 @@ svg .empty-chart {
   .panel {
     padding:16px
   }
+  .range-form {
+    display:grid;
+    grid-template-columns:auto 1fr
+  }
   .range-form label {
-    flex:1 1 240px;
+    grid-column:1/-1;
     min-width:0
+  }
+  .range-form .button {
+    justify-self:start
   }
   .range-form input {
     width:100%;

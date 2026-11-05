@@ -47,6 +47,7 @@ def context(query, path):
     if "long" in query:
         rows[0]["binding"].location_label_snapshot = "松园试点护理中心 / 东侧观察区二〇一房间 / 靠窗第一床"
         rows[0]["snapshot"]["hr_reason"] = "超出工程门控范围"
+        rows[0]["snapshot"]["hr"] = None
     counts=dict(bound=6, attention=1, not_fresh=4, fresh=2, expired=1, no_report=1, waiting=1, disabled=1)
     if "empty" in query:
         rows=[]
