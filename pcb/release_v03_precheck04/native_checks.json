@@ -1,0 +1,96 @@
+{
+  "project_uuid": "f4312b686e296bdd77a0ad71377a658c7f15b61fee4283ea042b46d776ba0045",
+  "release": "V0.3",
+  "strict": true,
+  "started_at": "2026-11-05T13:02:19.238724+00:00",
+  "exported_at": "2026-11-05T13:02:32.510754+00:00",
+  "schematic": {
+    "saved": true,
+    "details": [],
+    "passed": true
+  },
+  "pcb": {
+    "saved": true,
+    "details": [],
+    "passed": true
+  },
+  "source_sha256": {
+    "Mianguang_V0.3.esch": "19a75fdb22c19aef01568e1ea68b0694a9bfd540a5b8bb7f082c7af50701a158",
+    "Mianguang_V0.3.epcb": "41bd43f9068be79c6358d8010b176b31b3160c33373b3d082d8f9bda8168b380",
+    "Mianguang_V0.3.epro2": "eeda9cb493a761e124751bb28a96701ce67f361e9a53b2b18eefafbfd03e3294"
+  },
+  "native_records_unchanged_since_drc": true,
+  "source_comparison": {
+    "record_header_ignored": [
+      "ticket"
+    ],
+    "document_header_ignored": [
+      "client",
+      "updateTime",
+      "version"
+    ],
+    "records": "Final records keyed by document type/UUID and record type/ID; all payload fields retained",
+    "project_footprint_comparison": "Exclude validated ELE_PLACEHOLDER allocation counters only; project serialization rebuilds these after deletion. All actual records remain exact."
+  },
+  "checked_source_sha256": {
+    "schematic": {
+      "sourceBefore": "d9e8d239e29ae6a2ced4c04061b30e279b9e877c169ece400392310598fd18d0",
+      "sourceAfter": "f7bb0b548436d9705e9afc891f445228cd4e9f3d2bdb1d4cce5a81bafd9b21c0"
+    },
+    "pcb": {
+      "sourceBefore": "6e9068288eb12d1cc5cb1bd43849d4d989c2b21a8e992f9dd03fb24d6b6dabdd",
+      "sourceAfter": "8fbabbc9e1dac578b40a79b1203410017498a7e7ac762447781f4ac2370871fa"
+    }
+  },
+  "component_footprints": {
+    "C1": "c7834434632bce3a",
+    "C2": "8e218b9b60eb881d",
+    "C3": "8e218b9b60eb881d",
+    "C4": "c7834434632bce3a",
+    "C5": "8e218b9b60eb881d",
+    "D1": "8858b5826f676c7f",
+    "D2": "123b258f13e2ed07",
+    "F1": "33e55b16bba0d134",
+    "J1": "65807167f5ccf645",
+    "J2": "58662144f2e820d5",
+    "J3": "65807167f5ccf645",
+    "J4": "65807167f5ccf645",
+    "J5": "58662144f2e820d5",
+    "JP1": "65807167f5ccf645",
+    "JP2": "65807167f5ccf645",
+    "JP3": "65807167f5ccf645",
+    "Q1": "2e4d961459cb1867",
+    "R1": "715f344b6a768106",
+    "R2": "715f344b6a768106",
+    "R3": "715f344b6a768106",
+    "R4": "715f344b6a768106",
+    "R5": "715f344b6a768106",
+    "U1": "d1533a679cd0c852"
+  },
+  "footprint_source_sha256": {
+    "c7834434632bce3a": "4a253fcee45085bc87316300fa646ae66ddb5a1f6cbcc538d32bf97a1a9186dd",
+    "8e218b9b60eb881d": "23f4c5eb9a4768f17147e3255c48297c90a373c935b43827ef8576bd5f416e33",
+    "8858b5826f676c7f": "d98abf246b1785a4020221d61abc3322172af73e78902e895d896d6020dde855",
+    "123b258f13e2ed07": "7e229232102242194be719c1529a8d7c4f7bb6af2e9de820cc23c5109bbb5d3b",
+    "33e55b16bba0d134": "332171f5b7a38913ee2609c6a518265e85775cc3ac5916e8a38f6fe4a0c22694",
+    "65807167f5ccf645": "89593675ee66b623359d707e3cd24f647a4899b48467c17c95b2ca5190e6cd52",
+    "58662144f2e820d5": "922f6fc69e814516d139a89a9c79c77c1b4cecf34eda9b45ccb9bb3f00e02327",
+    "2e4d961459cb1867": "bf50bc659f153dc26e921cf7fe5bd4aab2404865c36372ec916fc6410ef7526e",
+    "715f344b6a768106": "5c96dd40db3f0ce39e98330bbf9a5cd3df0325dcf79ccc54622c3b22a58adaf8",
+    "d1533a679cd0c852": "e6ea36f9c238feb9eeb6341bb866989aa616ae200a51dbc748a88f9010ada2f8"
+  },
+  "footprint_semantic_sha256": {
+    "c7834434632bce3a": "e6bc1fe237bd74271fa6f16110594d6da258027e41b9f107e53d79b8a19c549c",
+    "8e218b9b60eb881d": "207a49c62dc7d96c035e8df9142f96beaa59d10957c408c053c4ea8d7cb7f0ae",
+    "8858b5826f676c7f": "74a510801a92c7f2b1b2e9b3d6f9e9872185eebbef75ae51cbe695d8be3653ef",
+    "123b258f13e2ed07": "238ac724059b360db1bb92404729741236a4f76a82d1168d59f777cb80501927",
+    "33e55b16bba0d134": "215a1f4803d847c557b0b1994a589c4c85f8c3bd4cbc22b048f64d9e5ec4e76d",
+    "65807167f5ccf645": "804ae3bd78ced8fd9225db2909ab436027572b014fcee06634639f1b1db3123c",
+    "58662144f2e820d5": "5a33838315f88c98119053c1b690a7c4db9584fb47a5244abd4ed48374b8409f",
+    "2e4d961459cb1867": "ec19980f929f7a26ac4ccb7551df393b6b6a0d36d0531cbd293fc91a3b060d77",
+    "715f344b6a768106": "4d1a402a0db4603c847ab7ee0aa05b70b828fa0000ef5ee15822614a1df46c4f",
+    "d1533a679cd0c852": "c2d0d8bfc2ad64cc702e17de0c1c3e1ad0e5e5c1ce9df8a8ffdbf5f2ec069ceb"
+  },
+  "project_footprints_match_checked_sources": true,
+  "save_reopen_review": "Required separately before this export; this script does not claim a reopen test"
+}

@@ -1,0 +1,1957 @@
+{
+  "local_geometry_status": "PASS",
+  "online_warning_status": "OPEN_CLASSIFICATION_REVIEW",
+  "recommendation": "Keep the four mechanical NPTH copper-free; confirm platform/CAM NPTH classification and warning scope, without adding copper to suppress a warning.",
+  "checks": [
+    {
+      "id": "frozen_manifest",
+      "status": "PASS",
+      "evidence": {
+        "status": "PASS",
+        "counts": {
+          "PASS": 2
+        },
+        "context": {},
+        "checks": [
+          {
+            "id": "manifest.version",
+            "status": "PASS",
+            "detail": "expected release V0.3; got 'V0.3'"
+          },
+          {
+            "id": "manifest.files",
+            "status": "PASS",
+            "detail": "All exported files must be listed with matching hash and byte count.",
+            "evidence": {
+              "errors": [],
+              "unlisted": [],
+              "file_count": 14
+            }
+          }
+        ],
+        "scope": "Offline consistency and geometry checks; no physical assembly, electrical or EMC validation."
+      }
+    },
+    {
+      "id": "upload_bytes_match",
+      "status": "PASS",
+      "evidence": {
+        "sha256": "8e786b7bfa3eb609b283f079b3bb2ccddcab58149d3979a5f0926bc297206811"
+      }
+    },
+    {
+      "id": "standalone_and_project_pcb_match",
+      "status": "PASS",
+      "evidence": {
+        "status": "PASS",
+        "counts": {
+          "PASS": 1
+        },
+        "context": {},
+        "checks": [
+          {
+            "id": "source.pcb.copies",
+            "status": "PASS",
+            "detail": "2 exported PCB copies must contain the same geometry, electrical and annotation records",
+            "evidence": {
+              "sources": [
+                "Mianguang_V0.3.epcb",
+                "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+              ],
+              "ignored_no_connect_attributes_of_deleted_pins": {}
+            }
+          }
+        ],
+        "scope": "Offline consistency and geometry checks; no physical assembly, electrical or EMC validation."
+      }
+    },
+    {
+      "id": "four_native_unnetted_circle_cutouts",
+      "status": "PASS",
+      "evidence": {
+        "native_npth_count": 4,
+        "fills": [
+          {
+            "id": "31c03fb323285911",
+            "line": 321,
+            "origin": "Mianguang_V0.3.epcb",
+            "source": {
+              "partitionId": "",
+              "groupId": 0,
+              "netName": "",
+              "layerId": 12,
+              "width": 1,
+              "fillStyle": "SOLID",
+              "path": [
+                [
+                  "CIRCLE",
+                  196.8504,
+                  196.8504,
+                  53.1496
+                ]
+              ],
+              "locked": false,
+              "zIndex": -1,
+              "isBridgingCopper": false,
+              "networkList": [],
+              "refs": null
+            },
+            "center_mm": [
+              5.00000016,
+              5.00000016
+            ],
+            "diameter_mm": 2.69999968
+          },
+          {
+            "id": "ec6f753d40c9fd97",
+            "line": 322,
+            "origin": "Mianguang_V0.3.epcb",
+            "source": {
+              "partitionId": "",
+              "groupId": 0,
+              "netName": "",
+              "layerId": 12,
+              "width": 1,
+              "fillStyle": "SOLID",
+              "path": [
+                [
+                  "CIRCLE",
+                  2401.5748,
+                  196.8504,
+                  53.1496
+                ]
+              ],
+              "locked": false,
+              "zIndex": -1,
+              "isBridgingCopper": false,
+              "networkList": [],
+              "refs": null
+            },
+            "center_mm": [
+              60.99999991999999,
+              5.00000016
+            ],
+            "diameter_mm": 2.69999968
+          },
+          {
+            "id": "230333763a563fcf",
+            "line": 323,
+            "origin": "Mianguang_V0.3.epcb",
+            "source": {
+              "partitionId": "",
+              "groupId": 0,
+              "netName": "",
+              "layerId": 12,
+              "width": 1,
+              "fillStyle": "SOLID",
+              "path": [
+                [
+                  "CIRCLE",
+                  196.8504,
+                  2007.874,
+                  53.1496
+                ]
+              ],
+              "locked": false,
+              "zIndex": -1,
+              "isBridgingCopper": false,
+              "networkList": [],
+              "refs": null
+            },
+            "center_mm": [
+              5.00000016,
+              50.999999599999995
+            ],
+            "diameter_mm": 2.69999968
+          },
+          {
+            "id": "706994c78622e5ac",
+            "line": 324,
+            "origin": "Mianguang_V0.3.epcb",
+            "source": {
+              "partitionId": "",
+              "groupId": 0,
+              "netName": "",
+              "layerId": 12,
+              "width": 1,
+              "fillStyle": "SOLID",
+              "path": [
+                [
+                  "CIRCLE",
+                  2401.5748,
+                  2007.874,
+                  53.1496
+                ]
+              ],
+              "locked": false,
+              "zIndex": -1,
+              "isBridgingCopper": false,
+              "networkList": [],
+              "refs": null
+            },
+            "center_mm": [
+              60.99999991999999,
+              50.999999599999995
+            ],
+            "diameter_mm": 2.69999968
+          }
+        ]
+      }
+    },
+    {
+      "id": "four_npth_and_38_pth",
+      "status": "PASS",
+      "evidence": {
+        "npth": [
+          {
+            "x": 5.0,
+            "y": 5.0,
+            "d": 2.7,
+            "plated": false,
+            "file": "Drill_NPTH_Through.DRL"
+          },
+          {
+            "x": 61.0,
+            "y": 5.0,
+            "d": 2.7,
+            "plated": false,
+            "file": "Drill_NPTH_Through.DRL"
+          },
+          {
+            "x": 5.0,
+            "y": 51.0,
+            "d": 2.7,
+            "plated": false,
+            "file": "Drill_NPTH_Through.DRL"
+          },
+          {
+            "x": 61.0,
+            "y": 51.0,
+            "d": 2.7,
+            "plated": false,
+            "file": "Drill_NPTH_Through.DRL"
+          }
+        ],
+        "pth_count": 38,
+        "pth_tool_counts": {
+          "0.29997": 4,
+          "1.10002": 34
+        }
+      }
+    },
+    {
+      "id": "source_to_drill_registration",
+      "status": "PASS",
+      "evidence": {
+        "holes": 42,
+        "translation_mm": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "npth_not_duplicated_as_pth",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "id": "only_primary_drill_files",
+      "status": "PASS",
+      "evidence": [
+        "Drill_PTH_Through.DRL",
+        "Drill_NPTH_Through.DRL"
+      ]
+    },
+    {
+      "id": "content_plating_recognized.Drill_PTH_Through.DRL",
+      "status": "PASS",
+      "evidence": {
+        "controls": [
+          {
+            "comments_removed_in_memory": [],
+            "plating_values": [
+              true
+            ],
+            "hole_count": 38,
+            "parser_warnings": [
+              "neutral_name.drl:13 \"G90\": G90 header statement found after end of header"
+            ]
+          },
+          {
+            "comments_removed_in_memory": [
+              ";TYPE="
+            ],
+            "plating_values": [
+              true
+            ],
+            "hole_count": 38,
+            "parser_warnings": [
+              "neutral_name.drl:12 \"G90\": G90 header statement found after end of header"
+            ]
+          },
+          {
+            "comments_removed_in_memory": [
+              ";Layer:"
+            ],
+            "plating_values": [
+              true
+            ],
+            "hole_count": 38,
+            "parser_warnings": [
+              "neutral_name.drl:12 \"G90\": G90 header statement found after end of header"
+            ]
+          },
+          {
+            "comments_removed_in_memory": [
+              ";TYPE=",
+              ";Layer:"
+            ],
+            "plating_values": [
+              null
+            ],
+            "hole_count": 38,
+            "parser_warnings": [
+              "neutral_name.drl:11 \"G90\": G90 header statement found after end of header"
+            ]
+          }
+        ],
+        "standard_xnc_filefunction": false
+      }
+    },
+    {
+      "id": "content_plating_recognized.Drill_NPTH_Through.DRL",
+      "status": "PASS",
+      "evidence": {
+        "controls": [
+          {
+            "comments_removed_in_memory": [],
+            "plating_values": [
+              false
+            ],
+            "hole_count": 4,
+            "parser_warnings": [
+              "neutral_name.drl:11 \"G90\": G90 header statement found after end of header"
+            ]
+          },
+          {
+            "comments_removed_in_memory": [
+              ";TYPE="
+            ],
+            "plating_values": [
+              false
+            ],
+            "hole_count": 4,
+            "parser_warnings": [
+              "neutral_name.drl:10 \"G90\": G90 header statement found after end of header"
+            ]
+          },
+          {
+            "comments_removed_in_memory": [
+              ";Layer:"
+            ],
+            "plating_values": [
+              false
+            ],
+            "hole_count": 4,
+            "parser_warnings": [
+              "neutral_name.drl:10 \"G90\": G90 header statement found after end of header"
+            ]
+          },
+          {
+            "comments_removed_in_memory": [
+              ";TYPE=",
+              ";Layer:"
+            ],
+            "plating_values": [
+              null
+            ],
+            "hole_count": 4,
+            "parser_warnings": [
+              "neutral_name.drl:9 \"G90\": G90 header statement found after end of header"
+            ]
+          }
+        ],
+        "standard_xnc_filefunction": false
+      }
+    },
+    {
+      "id": "npth_copper_clearance_at_two_resolutions",
+      "status": "PASS",
+      "evidence": {
+        "minimum_mm": 7.348618037066508,
+        "measurements": [
+          {
+            "layer": "top",
+            "curve_error_mm": 0.0005,
+            "center_mm": [
+              5.0,
+              5.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 9.780988275979812,
+            "nearest_copper_point_mm": [
+              16.1,
+              5.83
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "top",
+            "curve_error_mm": 0.0005,
+            "center_mm": [
+              61.0,
+              5.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 9.30076992522137,
+            "nearest_copper_point_mm": [
+              56.9,
+              14.83
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "top",
+            "curve_error_mm": 0.0005,
+            "center_mm": [
+              5.0,
+              51.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 7.348618037066508,
+            "nearest_copper_point_mm": [
+              13.199078216199002,
+              48.09464767034534
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "top",
+            "curve_error_mm": 0.0005,
+            "center_mm": [
+              61.0,
+              51.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 10.83943858380881,
+            "nearest_copper_point_mm": [
+              53.88286420741659,
+              41.10410230962471
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "bottom",
+            "curve_error_mm": 0.0005,
+            "center_mm": [
+              5.0,
+              5.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 9.780988275979812,
+            "nearest_copper_point_mm": [
+              16.1,
+              5.83
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "bottom",
+            "curve_error_mm": 0.0005,
+            "center_mm": [
+              61.0,
+              5.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 9.30076992522137,
+            "nearest_copper_point_mm": [
+              56.9,
+              14.83
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "bottom",
+            "curve_error_mm": 0.0005,
+            "center_mm": [
+              5.0,
+              51.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 7.348618037066508,
+            "nearest_copper_point_mm": [
+              13.199078216199002,
+              48.09464767034534
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "bottom",
+            "curve_error_mm": 0.0005,
+            "center_mm": [
+              61.0,
+              51.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 13.164142400882238,
+            "nearest_copper_point_mm": [
+              49.94665582673108,
+              41.59341123359006
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "top",
+            "curve_error_mm": 0.000125,
+            "center_mm": [
+              5.0,
+              5.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 9.780988275979812,
+            "nearest_copper_point_mm": [
+              16.1,
+              5.83
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "top",
+            "curve_error_mm": 0.000125,
+            "center_mm": [
+              61.0,
+              5.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 9.30076992522137,
+            "nearest_copper_point_mm": [
+              56.9,
+              14.83
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "top",
+            "curve_error_mm": 0.000125,
+            "center_mm": [
+              5.0,
+              51.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 7.348618037066508,
+            "nearest_copper_point_mm": [
+              13.199078216199002,
+              48.09464767034534
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "top",
+            "curve_error_mm": 0.000125,
+            "center_mm": [
+              61.0,
+              51.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 10.839429531712836,
+            "nearest_copper_point_mm": [
+              53.883756566772284,
+              41.103471734611354
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "bottom",
+            "curve_error_mm": 0.000125,
+            "center_mm": [
+              5.0,
+              5.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 9.780988275979812,
+            "nearest_copper_point_mm": [
+              16.1,
+              5.83
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "bottom",
+            "curve_error_mm": 0.000125,
+            "center_mm": [
+              61.0,
+              5.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 9.30076992522137,
+            "nearest_copper_point_mm": [
+              56.9,
+              14.83
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "bottom",
+            "curve_error_mm": 0.000125,
+            "center_mm": [
+              5.0,
+              51.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 7.348618037066508,
+            "nearest_copper_point_mm": [
+              13.199078216199002,
+              48.09464767034534
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          },
+          {
+            "layer": "bottom",
+            "curve_error_mm": 0.000125,
+            "center_mm": [
+              61.0,
+              51.0
+            ],
+            "diameter_mm": 2.7,
+            "hole_edge_to_copper_mm": 13.164142400882238,
+            "nearest_copper_point_mm": [
+              49.94665582673108,
+              41.59341123359006
+            ],
+            "copper_area_inside_drill_mm2": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "all_38_pth_have_copper_land_on_both_sides",
+      "status": "PASS",
+      "evidence": {
+        "hole_layer_pairs": 76,
+        "measurements": [
+          {
+            "layer": "top",
+            "center_mm": [
+              46.18674,
+              25.37276
+            ],
+            "diameter_mm": 0.29997,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.1748858216897025
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              47.51363,
+              30.72071
+            ],
+            "diameter_mm": 0.29997,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.1748858216897025
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              14.50666,
+              27.75044
+            ],
+            "diameter_mm": 0.29997,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.17488582168970349
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              15.00019,
+              32.85405
+            ],
+            "diameter_mm": 0.29997,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.1748858216897022
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              17.0,
+              9.27
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498695241186043
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              17.0,
+              6.73
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999987
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              52.19,
+              35.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.2999900000000014
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              54.73,
+              35.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.29986610822388415
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              57.27,
+              35.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.29986610822388415
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              59.81,
+              35.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.29986610822388415
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              56.0,
+              18.27
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34986952411860306
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              56.0,
+              15.73
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999986
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              12.27,
+              29.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498695241186044
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              9.73,
+              29.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34998999999999847
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              14.0,
+              40.19
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.29998999999999976
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              14.0,
+              42.73
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.2998661082238846
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              14.0,
+              45.27
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.2998661082238846
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              14.0,
+              47.81
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.2998661082238846
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              47.0,
+              9.27
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34986952411860306
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              47.0,
+              6.73
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999987
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              49.27,
+              36.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34986952411860217
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              46.73,
+              36.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999986
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              49.27,
+              41.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34986952411860217
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              46.73,
+              41.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999986
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              25.38003,
+              37.1374
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499599999999963
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              25.38003,
+              34.5974
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              25.38003,
+              32.0574
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              25.38003,
+              29.5174
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              25.38003,
+              26.9774
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              25.38003,
+              24.4374
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              25.38003,
+              21.8974
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              40.61997,
+              21.8974
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              40.61997,
+              24.4374
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              40.61997,
+              26.9774
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              40.61997,
+              29.5174
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              40.61997,
+              32.0574
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              40.61997,
+              34.5974
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "top",
+            "center_mm": [
+              40.61997,
+              37.1374
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              46.18674,
+              25.37276
+            ],
+            "diameter_mm": 0.29997,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.1748858216897025
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              47.51363,
+              30.72071
+            ],
+            "diameter_mm": 0.29997,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.1748858216897025
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              14.50666,
+              27.75044
+            ],
+            "diameter_mm": 0.29997,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.17488582168970349
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              15.00019,
+              32.85405
+            ],
+            "diameter_mm": 0.29997,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.1748858216897022
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              17.0,
+              9.27
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498695241186045
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              17.0,
+              6.73
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999987
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              52.19,
+              35.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.2999900000000014
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              54.73,
+              35.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.29986610822388415
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              57.27,
+              35.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.29986610822388415
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              59.81,
+              35.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.29986610822388415
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              56.0,
+              18.27
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34986952411860306
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              56.0,
+              15.73
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34998999999999836
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              12.27,
+              29.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498695241186044
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              9.73,
+              29.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999987
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              14.0,
+              40.19
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.29998999999999976
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              14.0,
+              42.73
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.2998661082238846
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              14.0,
+              45.27
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.2998661082238846
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              14.0,
+              47.81
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.2998661082238846
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              47.0,
+              9.27
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34986952411860306
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              47.0,
+              6.73
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999987
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              49.27,
+              36.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34986952411860217
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              46.73,
+              36.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999986
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              49.27,
+              41.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.34986952411860217
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              46.73,
+              41.0
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499899999999986
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              25.38003,
+              37.1374
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3499599999999963
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              25.38003,
+              34.5974
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              25.38003,
+              32.0574
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              25.38003,
+              29.5174
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              25.38003,
+              26.9774
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              25.38003,
+              24.4374
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              25.38003,
+              21.8974
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344653
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              40.61997,
+              21.8974
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              40.61997,
+              24.4374
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              40.61997,
+              26.9774
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              40.61997,
+              29.5174
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              40.61997,
+              32.0574
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              40.61997,
+              34.5974
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          },
+          {
+            "layer": "bottom",
+            "center_mm": [
+              40.61997,
+              37.1374
+            ],
+            "diameter_mm": 1.10002,
+            "center_inside_raw_copper": true,
+            "drill_disk_inside_raw_copper": true,
+            "minimum_nominal_annulus_mm": 0.3498395281344725
+          }
+        ]
+      }
+    },
+    {
+      "id": "supported_gerber_geometry",
+      "status": "PASS",
+      "evidence": {
+        "notes": [],
+        "unsupported": []
+      }
+    },
+    {
+      "id": "frozen_inputs_unchanged_during_audit",
+      "status": "PASS",
+      "evidence": {
+        "pcb/release_v03_precheck03/Gerber_Mianguang_V0.3.zip": true,
+        "pcb/qa/v03/online_dfm/PRECHECK_03_report.pdf": true,
+        "pcb/preflight_v03/Mianguang_V0.3_DFM_PRECHECK_03.zip": true,
+        "pcb/release_v03_precheck03/Mianguang_V0.3.epcb": true,
+        "pcb/release_v03_precheck03/Mianguang_V0.3.epro2": true,
+        "pcb/release_v03_precheck03/manifest.json": true,
+        "pcb/qa/check_release.py": true,
+        "pcb/qa/gerber_checks.py": true
+      }
+    }
+  ],
+  "inputs_sha256": {
+    "pcb/release_v03_precheck03/Gerber_Mianguang_V0.3.zip": "8e786b7bfa3eb609b283f079b3bb2ccddcab58149d3979a5f0926bc297206811",
+    "pcb/qa/v03/online_dfm/PRECHECK_03_report.pdf": "d3689c3b8a3cae97806bd7f69210ab852bbf2b0d308eebeef730b48e138e13e3",
+    "pcb/preflight_v03/Mianguang_V0.3_DFM_PRECHECK_03.zip": "8e786b7bfa3eb609b283f079b3bb2ccddcab58149d3979a5f0926bc297206811",
+    "pcb/release_v03_precheck03/Mianguang_V0.3.epcb": "1b005cf1bb2e7d59b4584eca6a2bd83e2b9e46b83c3a32bf83ad4a90f7a16536",
+    "pcb/release_v03_precheck03/Mianguang_V0.3.epro2": "01f43cf3fcebcb7f2e6dfb590aaf878a952d3f6b54837cca8e0f2a40bde66e1f",
+    "pcb/release_v03_precheck03/manifest.json": "b4005dd1d23cf3f2f2d47bcd8de1533c190a3120a7a414f98ee6ad758b45a51f",
+    "pcb/qa/check_release.py": "d9d2fd195fda814dc66cf68e8af6cb49039eb23119ad0beae95d6437f5f72f91",
+    "pcb/qa/gerber_checks.py": "a4e813765c2f1fda8c44c01b058053fbcd3f2c25b78f55d263fb2ddd42ab0ca6"
+  },
+  "raw_drill_files": [
+    {
+      "filename": "Drill_PTH_Through.DRL",
+      "sha256": "589614c0e9b7f40c89acdf511797dc2e8b46036da92270de83f67b535e55c174",
+      "lines": [
+        {
+          "line": 1,
+          "text": ";TYPE=PLATED"
+        },
+        {
+          "line": 2,
+          "text": ";Layer: PTH_Through"
+        },
+        {
+          "line": 3,
+          "text": ";EasyEDA Pro Client v4.1.78, 2026-11-05 20:00:03"
+        },
+        {
+          "line": 4,
+          "text": ";Gerber Generator version 0.3"
+        },
+        {
+          "line": 5,
+          "text": "M48"
+        },
+        {
+          "line": 6,
+          "text": "METRIC,LZ,0000.00000"
+        },
+        {
+          "line": 7,
+          "text": ";Hole size 1 = 0.29997 METRIC"
+        },
+        {
+          "line": 8,
+          "text": "T01C0.29997"
+        },
+        {
+          "line": 9,
+          "text": ";Hole size 2 = 1.10002 METRIC"
+        },
+        {
+          "line": 10,
+          "text": "T02C1.10002"
+        },
+        {
+          "line": 11,
+          "text": "%"
+        },
+        {
+          "line": 12,
+          "text": "G05"
+        },
+        {
+          "line": 13,
+          "text": "G90"
+        },
+        {
+          "line": 14,
+          "text": "T01"
+        },
+        {
+          "line": 15,
+          "text": "X46.18674Y25.37276"
+        },
+        {
+          "line": 16,
+          "text": "X47.51363Y30.72071"
+        },
+        {
+          "line": 17,
+          "text": "X14.50666Y27.75044"
+        },
+        {
+          "line": 18,
+          "text": "X15.00019Y32.85405"
+        },
+        {
+          "line": 19,
+          "text": "T02"
+        },
+        {
+          "line": 20,
+          "text": "X17.0Y9.27"
+        },
+        {
+          "line": 21,
+          "text": "X17.0Y6.73"
+        },
+        {
+          "line": 22,
+          "text": "X52.19Y35.0"
+        },
+        {
+          "line": 23,
+          "text": "X54.73Y35.0"
+        },
+        {
+          "line": 24,
+          "text": "X57.27Y35.0"
+        },
+        {
+          "line": 25,
+          "text": "X59.81Y35.0"
+        },
+        {
+          "line": 26,
+          "text": "X56.0Y18.27"
+        },
+        {
+          "line": 27,
+          "text": "X56.0Y15.73"
+        },
+        {
+          "line": 28,
+          "text": "X12.27Y29.0"
+        },
+        {
+          "line": 29,
+          "text": "X9.73Y29.0"
+        },
+        {
+          "line": 30,
+          "text": "X14.0Y40.19"
+        },
+        {
+          "line": 31,
+          "text": "X14.0Y42.73"
+        },
+        {
+          "line": 32,
+          "text": "X14.0Y45.27"
+        },
+        {
+          "line": 33,
+          "text": "X14.0Y47.81"
+        },
+        {
+          "line": 34,
+          "text": "X47.0Y9.27"
+        },
+        {
+          "line": 35,
+          "text": "X47.0Y6.73"
+        },
+        {
+          "line": 36,
+          "text": "X49.27Y36.0"
+        },
+        {
+          "line": 37,
+          "text": "X46.73Y36.0"
+        },
+        {
+          "line": 38,
+          "text": "X49.27Y41.0"
+        },
+        {
+          "line": 39,
+          "text": "X46.73Y41.0"
+        },
+        {
+          "line": 40,
+          "text": "X25.38003Y37.1374"
+        },
+        {
+          "line": 41,
+          "text": "X25.38003Y34.5974"
+        },
+        {
+          "line": 42,
+          "text": "X25.38003Y32.0574"
+        },
+        {
+          "line": 43,
+          "text": "X25.38003Y29.5174"
+        },
+        {
+          "line": 44,
+          "text": "X25.38003Y26.9774"
+        },
+        {
+          "line": 45,
+          "text": "X25.38003Y24.4374"
+        },
+        {
+          "line": 46,
+          "text": "X25.38003Y21.8974"
+        },
+        {
+          "line": 47,
+          "text": "X40.61997Y21.8974"
+        },
+        {
+          "line": 48,
+          "text": "X40.61997Y24.4374"
+        },
+        {
+          "line": 49,
+          "text": "X40.61997Y26.9774"
+        },
+        {
+          "line": 50,
+          "text": "X40.61997Y29.5174"
+        },
+        {
+          "line": 51,
+          "text": "X40.61997Y32.0574"
+        },
+        {
+          "line": 52,
+          "text": "X40.61997Y34.5974"
+        },
+        {
+          "line": 53,
+          "text": "X40.61997Y37.1374"
+        },
+        {
+          "line": 54,
+          "text": "M30"
+        }
+      ],
+      "type_comment": ";TYPE=PLATED",
+      "layer_comment": ";Layer: PTH_Through",
+      "has_xnc_filefunction_attribute": false,
+      "neutral_filename_parse_controls": [
+        {
+          "comments_removed_in_memory": [],
+          "plating_values": [
+            true
+          ],
+          "hole_count": 38,
+          "parser_warnings": [
+            "neutral_name.drl:13 \"G90\": G90 header statement found after end of header"
+          ]
+        },
+        {
+          "comments_removed_in_memory": [
+            ";TYPE="
+          ],
+          "plating_values": [
+            true
+          ],
+          "hole_count": 38,
+          "parser_warnings": [
+            "neutral_name.drl:12 \"G90\": G90 header statement found after end of header"
+          ]
+        },
+        {
+          "comments_removed_in_memory": [
+            ";Layer:"
+          ],
+          "plating_values": [
+            true
+          ],
+          "hole_count": 38,
+          "parser_warnings": [
+            "neutral_name.drl:12 \"G90\": G90 header statement found after end of header"
+          ]
+        },
+        {
+          "comments_removed_in_memory": [
+            ";TYPE=",
+            ";Layer:"
+          ],
+          "plating_values": [
+            null
+          ],
+          "hole_count": 38,
+          "parser_warnings": [
+            "neutral_name.drl:11 \"G90\": G90 header statement found after end of header"
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "Drill_NPTH_Through.DRL",
+      "sha256": "6461b751f64e498be76334152a95370e2207027c61cb2c92e1a6b3a71370fcff",
+      "lines": [
+        {
+          "line": 1,
+          "text": ";TYPE=NON_PLATED"
+        },
+        {
+          "line": 2,
+          "text": ";Layer: NPTH_Through"
+        },
+        {
+          "line": 3,
+          "text": ";EasyEDA Pro Client v4.1.78, 2026-11-05 20:00:03"
+        },
+        {
+          "line": 4,
+          "text": ";Gerber Generator version 0.3"
+        },
+        {
+          "line": 5,
+          "text": "M48"
+        },
+        {
+          "line": 6,
+          "text": "METRIC,LZ,0000.00000"
+        },
+        {
+          "line": 7,
+          "text": ";Hole size 1 = 2.70000 METRIC"
+        },
+        {
+          "line": 8,
+          "text": "T01C2.70000"
+        },
+        {
+          "line": 9,
+          "text": "%"
+        },
+        {
+          "line": 10,
+          "text": "G05"
+        },
+        {
+          "line": 11,
+          "text": "G90"
+        },
+        {
+          "line": 12,
+          "text": "T01"
+        },
+        {
+          "line": 13,
+          "text": "X5.0Y5.0"
+        },
+        {
+          "line": 14,
+          "text": "X61.0Y5.0"
+        },
+        {
+          "line": 15,
+          "text": "X5.0Y51.0"
+        },
+        {
+          "line": 16,
+          "text": "X61.0Y51.0"
+        },
+        {
+          "line": 17,
+          "text": "M30"
+        }
+      ],
+      "type_comment": ";TYPE=NON_PLATED",
+      "layer_comment": ";Layer: NPTH_Through",
+      "has_xnc_filefunction_attribute": false,
+      "neutral_filename_parse_controls": [
+        {
+          "comments_removed_in_memory": [],
+          "plating_values": [
+            false
+          ],
+          "hole_count": 4,
+          "parser_warnings": [
+            "neutral_name.drl:11 \"G90\": G90 header statement found after end of header"
+          ]
+        },
+        {
+          "comments_removed_in_memory": [
+            ";TYPE="
+          ],
+          "plating_values": [
+            false
+          ],
+          "hole_count": 4,
+          "parser_warnings": [
+            "neutral_name.drl:10 \"G90\": G90 header statement found after end of header"
+          ]
+        },
+        {
+          "comments_removed_in_memory": [
+            ";Layer:"
+          ],
+          "plating_values": [
+            false
+          ],
+          "hole_count": 4,
+          "parser_warnings": [
+            "neutral_name.drl:10 \"G90\": G90 header statement found after end of header"
+          ]
+        },
+        {
+          "comments_removed_in_memory": [
+            ";TYPE=",
+            ";Layer:"
+          ],
+          "plating_values": [
+            null
+          ],
+          "hole_count": 4,
+          "parser_warnings": [
+            "neutral_name.drl:9 \"G90\": G90 header statement found after end of header"
+          ]
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "gerbonara": "1.6.3",
+    "shapely": "2.2.0"
+  },
+  "online_report_observations": {
+    "pdf_page": 1,
+    "report_time": "2026-11-05 20:48:56",
+    "filename_label": "Mianguang_V0.3_DFM_PRECHECK_03",
+    "pcb_dfm_checked": true,
+    "smt_dfm_checked": false,
+    "npth_warning_row": {
+      "label": "Pth无Pad",
+      "layer_column": "Drill_NPTH_Through.DRL",
+      "result": "null",
+      "danger": 0,
+      "warning": 8,
+      "good": 0
+    },
+    "tht_to_smt_warning_count": 8,
+    "pdf_has_input_zip_sha256": false,
+    "association_basis": "User submission, PDF filename label, preview and source/package identity; no server-side cryptographic binding provided."
+  },
+  "inference": {
+    "four_npth_times_two_copper_layers_equals_eight": true,
+    "confidence": "Plausible explanation supported by 4 drill hits, 2 copper layers and PDF layer column; not established server algorithm.",
+    "server_per_item_coordinates_obtained": false,
+    "server_plating_classification_obtained": false
+  },
+  "sources": [
+    {
+      "url": "https://jlcpcb.com/blog/npth-design-guide",
+      "supports": "NPTH mechanical function and no mandatory annular copper ring."
+    },
+    {
+      "url": "https://jlcpcb.com/capabilities/pcb-capabilities",
+      "supports": "Published NPTH-to-track clearance 0.2 mm; pad-annular-ring guidance concerns a pad if one is deliberately present."
+    },
+    {
+      "url": "https://prodocs.lceda.cn/cn/pcb/place-slot-region/index.html",
+      "supports": "Circular slots <=6.5 mm are exported as NPTH drills since v1.9."
+    },
+    {
+      "url": "https://www.ucamco.com/the_xnc_file_format_specification.pdf",
+      "supports": "2019.02.16 section 4.1 uses standardized comment attributes for plating, distinct from vendor TYPE/Layer comments."
+    },
+    {
+      "url": "https://www.jlc.com/portal/server_guide_39122.html",
+      "supports": "The documented software supports VIA/PTH/NPTH attribute editing; does not establish identical UI in current web DFM."
+    }
+  ]
+}

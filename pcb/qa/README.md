@@ -5,15 +5,15 @@
 V0.3 使用以下两项检查。第一项要求原理图和 PCB 原生检查均明确通过、无保留条目，且检查证据绑定同版原理图、PCB 和包含封装库的完整工程。第二项直接复核制造图层，不能代替用户手动上传的在线 DFM 报告。
 
 ```sh
-pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v03_precheck03 --version V0.3 --require-native-clean --output /tmp/mianguang_03_acceptance.json
-pcb/qa/.venv/bin/python pcb/qa/check_fabrication.py pcb/release_v03_precheck03 --profile online-preflight --output /tmp/mianguang_03_fabrication.json
+pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v03_precheck04 --version V0.3 --require-native-clean --output /tmp/mianguang_04_acceptance.json
+pcb/qa/.venv/bin/python pcb/qa/check_fabrication.py pcb/release_v03_precheck04 --profile online-preflight --output /tmp/mianguang_04_fabrication.json
 ```
 
 `check_fabrication.py` 补充检查源文件丝印字高/笔画、Gerber 丝印到焊盘及阻焊窗距离、阻焊覆盖与桥宽、过孔盖油、孔铜环、铜到板边/不镀铜孔、独立铜岛间距、钻孔间距及元件坐标。报告记录输入哈希、依赖版本、阈值和两档几何误差。复杂规则未支持、阈值附近无法稳健判定时标记 `UNVERIFIED`；同一铜岛内部的细间距、完整贴装工艺和板厂专有分析不在其全部覆盖范围内。
 
 阈值依据和适用工艺记录在脚本及报告中，基础来源为[嘉立创 PCB 工艺能力](https://jlcpcb.com/capabilities/pcb-capabilities)。依据PRECHECK02在线报告新增`online-preflight`配置：实际阻焊窗及独立钻孔距丝印均≥0.25 mm、可见描线≥0.20 mm，共40项检查；原基础36项检查未削弱。V0.3必须明确传入`--version V0.3`，否则版本检查仍按默认V0.2执行。
 
-03候选独立验收49/49、制造几何40/40通过，报告位于上级`release_v03_precheck03_*.json`；历史02报告保持原字节。在线02报告含真实问题，不能用历史36项PASS声称线上通过。原生EDA检查、离线检查与平台DFM是不同证据；03在线复检、SMT检查及8条手工焊接工艺提示仍待确认。
+04候选独立验收49/49、制造几何40/40通过，报告位于上级`release_v03_precheck04_*.json`；02/03历史报告保持原字节。03第二份在线报告已执行PCB/SMT，合计0危险17警告；04据此将D1本体内阴极标记外移。04复检及8条手工焊接间距、8条NPTH识别提示和工艺确认仍待完成，不能以离线PASS代替平台结论。原报告见[v03/online_dfm/PRECHECK_03_2_review.md](v03/online_dfm/PRECHECK_03_2_review.md)。
 
 ```sh
 pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v02 --output pcb/qa/release_v02_acceptance.json

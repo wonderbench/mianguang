@@ -1,24 +1,23 @@
-# PCB设计 · V0.3 PRECHECK 03
+# PCB设计 · V0.3 PRECHECK04
 
-最新载板为66 × 56 mm双层PCB，23个元件、18个电气网络，连接C1001雷达、XIAO ESP32C3和外接夜灯。已根据用户提供的PRECHECK02在线DFM报告修正机械孔表达、丝印距阻焊开窗/钻孔的间距和丝印笔画。
+最新载板为66 × 56 mm双层PCB，23个元件、18个电气网络，连接C1001雷达、XIAO ESP32C3和外接夜灯。04只修正D1本体中央的丝印：将阴极竖线移到本体外左侧，保留D1位号及上下轮廓。
 
-**03版在线PCB复检及SMT检查待完成，未制造放行。** 请手动上传[03版Gerber ZIP](preflight_v03/Mianguang_V0.3_DFM_PRECHECK_03.zip)，并使用同版[SMT BOM与坐标](preflight_v03/smt_precheck03/)。01/02上传包均为历史版本。
+**04在线PCB/SMT复检待完成，未制造放行。** 最近收到的[03第二份报告](qa/v03/online_dfm/PRECHECK_03_2_review.md)已经执行PCB及SMT检查，合计0危险、17警告：插件到贴片间距8、NPTH文件上的Pth无Pad 8、D1本体文字1。04修正最后一项，前两项仍待工艺/识别确认。
 
 | 入口 | 内容 |
 |---|---|
-| [release_v03_precheck03/](release_v03_precheck03/) | 最新固定候选：完整工程、原理图/PCB源、完整BOM、Gerber、原生坐标、预览和manifest |
-| [03完整交付包](releases/Mianguang_PCB_V0.3_PRECHECK03_2026-11-05.zip) | 最新工程、SMT文件、检查证据及可复核的历史源；SHA-256见同名`.zip.sha256` |
-| [修订与装配说明](release_v03_precheck03/README_交付与装配.md) | 在线报告逐项处理、装配条件、工艺及接线 |
-| [独立验收](release_v03_precheck03_acceptance.json) | 49/49 PASS：原生零提示、网表、BOM、铜连接、钻孔、锡膏 |
-| [制造几何检查](release_v03_precheck03_fabrication.json) | 40/40 PASS：新增实际阻焊窗/钻孔避让≥0.25 mm、描线≥0.20 mm门槛，绑定冻结输入 |
-| [03版独立复核](qa/v03/precheck03/) | 48项电气/机械差异、22项导出复核、极性表、孔转换及钻孔去重证据 |
-| [02版在线报告与分析](qa/v03/online_dfm/) | 用户上传的原PDF、问题汇总及几何复现；不冒充03版结果 |
-| [qa/](qa/) / [scripts/](scripts/) | 离线检查器、37项检查器回归、6项导出比对回归及受保护的导出流程 |
-| [release_v03/](release_v03/) / [release_v02/](release_v02/) | PRECHECK02与V0.2历史冻结源，保持原字节和历史报告 |
-| [LATEST.json](LATEST.json) | 最新候选、归档位置、哈希与状态 |
+| [04完整工程](release_v03_precheck04/Mianguang_V0.3.epro2) / [交付目录](release_v03_precheck04/) | 同版SCH/PCB源、23件完整BOM、Gerber、原生坐标、预览、冻结清单及装配说明 |
+| [04在线上传包](preflight_v03/Mianguang_V0.3_DFM_PRECHECK_04.zip) / [04 SMT文件](preflight_v03/smt_precheck04/) | 用于人工上传PCB和SMT分析，不与03候选混用 |
+| [04独立验收](release_v03_precheck04_acceptance.json) | 49/49 PASS：严格原生检查、网表/BOM、铜连接、钻孔、锡膏 |
+| [04制造检查](release_v03_precheck04_fabrication.json) | 40/40 PASS：online-preflight配置，含实际阻焊窗/钻孔避让和笔画门槛 |
+| [04独立复核](qa/v03/precheck04/) | 03→04差异、D1标记位置、导出一致性、极性与保存重开证据 |
+| [在线报告归档](qa/v03/online_dfm/) | 02、03首次、03第二份原PDF及各自复核；最新已含SMT |
+| [04完整交付ZIP](releases/Mianguang_PCB_V0.3_PRECHECK04_2026-11-05.zip) | 统一工程与检查证据；SHA-256见同名`.zip.sha256` |
+| [LATEST.json](LATEST.json) | 当前候选与上一份在线报告分开记录，含哈希和未完成项 |
+| [检查程序](qa/) / [导出程序](scripts/) | 冻结保护、检查器及回归；本次未改程序 |
 
-导入[Mianguang_V0.3.epro2](release_v03_precheck03/Mianguang_V0.3.epro2)查看和继续设计。当前原理图、PCB严格DRC均返回`true` / `[]`，检查记录绑定完整工程和源快照。后续修改应建立新候选，不能单独替换冻结目录内的文件。
+03→04仅有D1顶丝印的设计变化，其他制造文件可能因导出时间戳改变字节；差异复核区分实际制造指令和元数据。孔位、63个物理焊盘、23个器件放置、全部引脚网络维持，既有[V0.2外壳](../models/v0.2/)仍按原孔位与接口几何适用。
 
-四个Ø2.7 mm机械孔由非镀铜PAD改为圆形挖槽，消除孔内虚拟铜盘。原始铜层因此变化，但扣除钻孔后的实际顶/底铜图形与V0.2、PRECHECK02均相同；42个独立孔、63个物理焊盘、23个器件位置及全部引脚网络不变。[V0.2外壳](../models/v0.2/)的孔位和接口几何依据仍适用，固件维持V0.2.0。
+剩余处置：四个安装孔保持Ø2.7 mm NPTH，文件明确NON_PLATED，需DFM/CAM确认分类；14件SMT先回流、9件通孔/模块后手工焊接，8条间距提示需装配方确认。03报告仍为有铅喷锡，与目标无铅喷锡不一致。还需核对14个位号、选料、封装与极性、D2实物色带、工艺边/定位点。数字检查不代替首件电气、热、射频和实物装配测试。
 
-8条插件到SMT焊盘间距提示是真实工艺条件：14件SMT先回流，9件通孔/模块后手工装配。本版未按波峰焊设计，尚需贴片方确认手工焊接空间、工艺边/定位点和极性预览。D2实物色带标识仍需供方包装图确认。数字检查不代替首件电气、热、射频和实物装配测试。
+历史冻结源[PRECHECK03](release_v03_precheck03/)、[PRECHECK02](release_v03/)和[V0.2](release_v02/)保持原字节；其中“等待报告”等文字是导出时状态，最新进展以当前索引为准。

@@ -1,34 +1,75 @@
 {
   "release": "V0.3",
-  "candidate": "DFM_PRECHECK_03",
-  "status": "PENDING_ONLINE_RECHECK",
-  "archive": "releases/Mianguang_PCB_V0.3_PRECHECK03_2026-11-05.zip",
-  "archive_sha256": "bf2c7aec32850bd82995842012bb057f3255fff24d34aab17f87dca06895f202",
-  "payload": "release_v03_precheck03",
-  "manifest_sha256": "b4005dd1d23cf3f2f2d47bcd8de1533c190a3120a7a414f98ee6ad758b45a51f",
-  "acceptance": "release_v03_precheck03_acceptance.json",
+  "candidate": "DFM_PRECHECK_04",
+  "status": "PENDING_ONLINE_PCB_AND_SMT_RECHECK",
+  "payload": "release_v03_precheck04",
+  "manifest_sha256": "57910fa4b40b576a59391743c86d29fb2a9ba85b9b0b9f3758dbd2dfa23601c3",
+  "acceptance": "release_v03_precheck04_acceptance.json",
   "acceptance_status": "49/49 PASS",
-  "fabrication": "release_v03_precheck03_fabrication.json",
+  "fabrication": "release_v03_precheck04_fabrication.json",
   "fabrication_profile": "online-preflight",
   "fabrication_status": "40/40 PASS",
-  "upload_gerber": "preflight_v03/Mianguang_V0.3_DFM_PRECHECK_03.zip",
-  "upload_gerber_sha256": "8e786b7bfa3eb609b283f079b3bb2ccddcab58149d3979a5f0926bc297206811",
-  "smt_files": "preflight_v03/smt_precheck03",
-  "online_dfm": "PRECHECK_02_REPORT_RECEIVED_PRECHECK_03_RECHECK_PENDING",
-  "online_smt": "NOT_RUN",
+  "upload_gerber": "preflight_v03/Mianguang_V0.3_DFM_PRECHECK_04.zip",
+  "upload_gerber_sha256": "915296951145847c9b6e229feffacc6bc4edb3c42af815d3ca696ad4964370c0",
+  "smt_files": "preflight_v03/smt_precheck04",
+  "online_dfm": "PRECHECK_04_NOT_RUN",
+  "online_smt": "PRECHECK_04_NOT_RUN",
   "manufacturing_released": false,
-  "retained_warning": {
-    "count": 8,
-    "type": "THT_TO_SMT_PAD_CLEARANCE",
-    "assembly_condition": "SMT_REFLOW_FIRST_THEN_MANUAL_THT",
-    "factory_confirmed": false
-  },
   "physical_hardware_validation": false,
+  "target_finish": "LEAD_FREE_HASL",
+  "latest_received_report": {
+    "candidate": "DFM_PRECHECK_03",
+    "report_revision": 2,
+    "report_time_local": "2026-11-05 20:56:16 Asia/Shanghai",
+    "file": "qa/v03/online_dfm/PRECHECK_03_2_report.pdf",
+    "sha256": "ea74515b35dcdc8e53dbcbce50c5f0469a792dcea27879627973c660e80364fe",
+    "review": "qa/v03/online_dfm/PRECHECK_03_2_review.md",
+    "summary": "qa/v03/online_dfm/PRECHECK_03_2_summary.json",
+    "pcb_dfm_selected": true,
+    "smt_dfm_selected": true,
+    "pcb_counts": {
+      "danger": 0,
+      "warning": 16
+    },
+    "smt_counts": {
+      "danger": 0,
+      "warning": 1
+    },
+    "total_counts": {
+      "danger": 0,
+      "warning": 17
+    },
+    "reported_finish": "LEADED_HASL",
+    "finish_matches_target": false
+  },
+  "open_conditions": [
+    {
+      "type": "D1_BODY_SILKSCREEN",
+      "source_corrected_in": "DFM_PRECHECK_04",
+      "online_closure_confirmed": false
+    },
+    {
+      "type": "THT_TO_SMT_PAD_CLEARANCE",
+      "prior_report_count": 8,
+      "assembly_condition": "SMT_REFLOW_FIRST_THEN_MANUAL_THT",
+      "factory_confirmed": false
+    },
+    {
+      "type": "PTH_WITHOUT_PAD_ON_NPTH_FILE",
+      "prior_report_count": 8,
+      "dfm_cam_classification_confirmed": false
+    },
+    {
+      "type": "FINISH_MATCH_AND_FULL_SMT_MATCH_ORIENTATION",
+      "confirmed": false
+    }
+  ],
   "previous_candidate": {
-    "name": "DFM_PRECHECK_02",
-    "payload": "release_v03",
-    "manifest_sha256": "02c33a16c6746ba5823d8a69402dd65959790b5c33e8810d4365d3c025e81973",
-    "online_report": "qa/v03/online_dfm/PRECHECK_02_report.pdf"
+    "name": "DFM_PRECHECK_03",
+    "payload": "release_v03_precheck03",
+    "manifest_sha256": "b4005dd1d23cf3f2f2d47bcd8de1533c190a3120a7a414f98ee6ad758b45a51f",
+    "archive": "releases/Mianguang_PCB_V0.3_PRECHECK03_2026-11-05.zip",
+    "archive_sha256": "bf2c7aec32850bd82995842012bb057f3255fff24d34aab17f87dca06895f202"
   },
   "previous_release": {
     "release": "V0.2",
@@ -36,5 +77,7 @@
     "manifest_sha256": "fd4339bd425b36fa923e9319b0f9c951d6cbc97a1826351783002f241a004e31",
     "archive": "releases/眠光雷达_PCB_V0.2_2026-11-04.zip",
     "archive_sha256": "042a2bbeab79de3b09fc9665539ff2e633e581ce381f8a3a80deaf75e17bc7d6"
-  }
+  },
+  "archive": "releases/Mianguang_PCB_V0.3_PRECHECK04_2026-11-05.zip",
+  "archive_sha256": "9391bd38acc56b138da5b3de5fb8418f9e71a55665ba272aa7a1f3e60e1b89a2"
 }

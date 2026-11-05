@@ -1,0 +1,131 @@
+{
+  "candidate": "V0.3 DFM_PRECHECK_03",
+  "report_revision": "second_user_supplied_report",
+  "report_title_filename": "Mianguang_V0.3_DFM_PRECHECK_03",
+  "report_time_local": "2026-11-05 20:56:16 Asia/Shanghai",
+  "report_file": "PRECHECK_03_2_report.pdf",
+  "report_sha256": "ea74515b35dcdc8e53dbcbce50c5f0469a792dcea27879627973c660e80364fe",
+  "report_bytes": 4816409,
+  "report_pages": 1,
+  "archive_byte_identical_to_user_file": true,
+  "previous_report_file": "PRECHECK_03_report.pdf",
+  "previous_report_sha256": "d3689c3b8a3cae97806bd7f69210ab852bbf2b0d308eebeef730b48e138e13e3",
+  "previous_report_preserved": true,
+  "gerber_file": "../../../preflight_v03/Mianguang_V0.3_DFM_PRECHECK_03.zip",
+  "gerber_sha256": "8e786b7bfa3eb609b283f079b3bb2ccddcab58149d3979a5f0926bc297206811",
+  "association": "User-supplied report filename/title, board dimensions and matching preview; PDF has no source ZIP hash and does not cryptographically bind the Gerber, BOM or CPL",
+  "pcb_dfm_selected": true,
+  "smt_dfm_selected": true,
+  "smt_section_present": true,
+  "smt_section_label": "SMT DFM>元件组装分析",
+  "board_layers": 2,
+  "board_mm": [66, 56],
+  "reported_finish": "leaded HASL, green mask, white silkscreen",
+  "target_finish": "lead-free HASL, green mask, white silkscreen",
+  "finish_matches_target": false,
+  "findings": [
+    {
+      "scope": "PCB",
+      "rule": "tht_pad_to_smt_pad",
+      "label": "插件焊盘距贴片焊盘",
+      "reported_min_mm": 2.32,
+      "layer": "Gerber_TopLayer.GTL",
+      "danger": 0,
+      "warning": 8,
+      "good": 28,
+      "previous_danger": 0,
+      "previous_warning": 8,
+      "disposition": "SMT reflow followed by manual THT assembly remains the intended process; factory acceptance of this condition is still pending"
+    },
+    {
+      "scope": "PCB",
+      "rule": "pth_without_pad",
+      "label": "Pth无Pad",
+      "reported_result": "null",
+      "layer": "Drill_NPTH_Through.DRL",
+      "danger": 0,
+      "warning": 8,
+      "good": 0,
+      "previous_danger": 0,
+      "previous_warning": 8,
+      "disposition": "Confirm mechanical NPTH classification with DFM/CAM; no waiver or factory confirmation is established by this PDF"
+    },
+    {
+      "scope": "SMT",
+      "rule": "component_body_text_warning",
+      "label": "元件本体文字预警",
+      "reported_result": "null",
+      "layer": "component_+_top",
+      "danger": 0,
+      "warning": 1,
+      "good": 0,
+      "identified_component_from_screenshot": "D1",
+      "observed_warning_location": "Cyan highlight at the center of the D1 component body; the external D1 reference label above the body is outside the highlight",
+      "visual_interpretation": "The highlighted center contains a diode graphic / small lettering overlay. The PDF alone does not resolve the exact text string or source primitive ID",
+      "previous_scope_executed": false,
+      "disposition": "D1 center-body silkscreen requires revision in the planned PRECHECK_04 candidate, followed by re-export and repeat checks; no correction is claimed in this archive"
+    }
+  ],
+  "additional_observed_results": [
+    {
+      "scope": "PCB",
+      "rule": "pad_annular_ring",
+      "label": "焊盘孔环",
+      "reported_min_mm": 0.18,
+      "danger": 0,
+      "warning": 0,
+      "good": 8
+    },
+    {
+      "scope": "PCB",
+      "rules": ["silkscreen_to_pad", "silkscreen_to_hole", "silkscreen_stroke"],
+      "labels": ["丝印距焊盘", "丝印距孔", "丝印线条宽度"],
+      "reported_result_each": "无",
+      "danger_each": 0,
+      "warning_each": 0,
+      "good_each": 0
+    },
+    {
+      "scope": "SMT",
+      "rule": "component_to_component",
+      "label": "元件距元件",
+      "reported_min_mm": 1.98,
+      "layer": "component_+_top",
+      "danger": 0,
+      "warning": 0,
+      "good": 15,
+      "note": "The count 15 is a reported result count, not proof that all 14 intended SMT references were imported or checked"
+    }
+  ],
+  "aggregate": {
+    "pcb": {"danger": 0, "warning": 16},
+    "smt": {"danger": 0, "warning": 1},
+    "total": {"danger": 0, "warning": 17},
+    "method": "Manual visual sum of every row in the complete one-page PDF; findings contains all nonzero danger/warning groups",
+    "previous_total": {"danger": 0, "warning": 16},
+    "comparison": "PCB warning groups and counts are unchanged from the first PRECHECK_03 report. The added SMT section reports one D1 body-text warning. SMT was not executed in the first report"
+  },
+  "pending_process_conditions": [
+    "DFM/CAM confirmation of four mechanical NON_PLATED holes and disposition of the eight Pth-without-pad warnings",
+    "Assembler acceptance of SMT reflow followed by manual through-hole/module assembly for the eight THT-to-SMT spacing warnings",
+    "Align the reported leaded HASL setting with the project's lead-free HASL target and confirm the final manufacturing process"
+  ],
+  "smt_evidence_limits": {
+    "smt_analysis_executed": true,
+    "selected_parts_formally_confirmed_by_pdf": false,
+    "all_14_intended_smt_references_proven_by_pdf": false,
+    "package_rotation_and_polarity_formally_confirmed_by_pdf": false,
+    "bom_cpl_hashes_present_in_pdf": false
+  },
+  "status": "ZERO_DANGER_D1_SILK_REVISION_AND_PROCESS_CONFIRMATION_PENDING",
+  "not_a_manufacturing_release": true,
+  "source_files_changed": false,
+  "notes": [
+    "SMT is checked and has actual result rows, so it must not be described as unexecuted for this second report.",
+    "This does not prove the full intended placement list, part selection, orientation or production approval.",
+    "The three silkscreen rows report no findings; this report does not provide their numeric clearance or stroke minima.",
+    "The NPTH file is still named by the Pth-without-pad warning. Four holes times two outer copper layers is a plausible explanation of eight warnings, not proof of the platform's classification or a waiver.",
+    "The literal null values are not numeric distances.",
+    "This archive preserves the first report and frozen PRECHECK_03 payload; PRECHECK_04 correction remains future work at the time of this review."
+  ]
+}

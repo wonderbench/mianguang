@@ -1,6 +1,6 @@
 # EDA导出脚本
 
-当前工程入口为`../release_v03_precheck03/Mianguang_V0.3.epro2`。这里记录已复核工程的导出流程，不从零建图或重新布线。以下V0.2脚本为历史流程，不能用来覆盖已冻结目录。
+当前工程入口为`../release_v03_precheck04/Mianguang_V0.3.epro2`。这里记录已复核工程的导出流程，不从零建图或重新布线。以下V0.2脚本为历史流程，不能用来覆盖已冻结目录。
 
 - `eda_release_bridge.py`发现本机EDA窗口并核对项目UUID、项目名与文档UUID，拒绝写入其他工程。
 - `export_release_v02.py`导出源、网表、BOM、坐标、Gerber、完整工程、图纸及原生检查记录；CSV转换为UTF-8标准逗号格式，PDF使用`pypdf`提取装配和图层页。
@@ -30,3 +30,5 @@ python3 pcb/scripts/prepare_smt_preflight_v03.py --release pcb/release_v03_prech
 ```
 
 输出9组14件SMT BOM、14位号CPL及9件手工项。来源manifest、位号、数量、焊盘类别和坐标均核对；已存在目录不能混入另一来源。输出仍须交由用户手动上传平台进行SMT匹配及方向确认。
+
+PRECHECK04复用同一导出流程，OUT设为新的`release_v03_precheck04/`；该目录现已冻结。SMT派生应对应`--release pcb/release_v03_precheck04 --output pcb/preflight_v03/smt_precheck04`。03第二份报告已包含SMT，04复测结果不得沿用03记录。

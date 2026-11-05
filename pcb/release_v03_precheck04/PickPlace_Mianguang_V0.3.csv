@@ -1,0 +1,24 @@
+﻿Designator,Device,Footprint,Mid X,Mid Y,Ref X,Ref Y,Pad X,Pad Y,Pins,Layer,Rotation,SMD,Comment,Value,Type,Supplier,Datasheet
+C1,CL21A106KAYNNNE,C0805,31mm,14mm,31mm,14mm,29.999mm,14mm,2,T,0,Yes,10uF,10uF,,LCSC,https://item.szlcsc.com/datasheet/CL21A106KAYNNNE/16532.html
+C2,CC0603KRX7R9BB104,C0603,37mm,14mm,37mm,14mm,36.3mm,14mm,2,T,0,Yes,100nF,100nF,,LCSC,https://item.szlcsc.com/datasheet/CC0603KRX7R9BB104/15331.html
+C3,CC0603KRX7R9BB104,C0603,17mm,34mm,17mm,34mm,17mm,33.3mm,2,T,90,Yes,100nF,100nF,,LCSC,https://item.szlcsc.com/datasheet/CC0603KRX7R9BB104/15331.html
+C4,CL21A106KAYNNNE,C0805,54mm,28mm,54mm,28mm,52.999mm,28mm,2,T,0,Yes,10uF,10uF,,LCSC,https://item.szlcsc.com/datasheet/CL21A106KAYNNNE/16532.html
+C5,CC0603KRX7R9BB104,C0603,54mm,31mm,54mm,31mm,53.3mm,31mm,2,T,0,Yes,100nF,100nF,,LCSC,https://item.szlcsc.com/datasheet/CC0603KRX7R9BB104/15331.html
+D1,SS14_C2480,SMA_L4.2-W2.6-LS5.0-RD_1,37mm,8mm,37mm,8mm,35.035mm,8mm,2,T,0,Yes,SS14,,,LCSC,https://item.szlcsc.com/datasheet/SS14/2857.html
+D2,SMF5.0A,SOD-123FL_L2.8-W1.7-LS3.6-RD,24mm,14mm,24mm,14mm,24mm,12.415mm,2,T,90,Yes,SMF5.0A,,TVS,LCSC,https://item.szlcsc.com/datasheet/SMF5.0A/3402139.html
+F1,1206L110/16WR,F1206,25mm,8mm,25mm,8mm,23.555mm,8mm,2,T,0,Yes,1206L110/16WR,,,LCSC,https://item.szlcsc.com/datasheet/1206L110%252F16WR/4329216.html
+J1,HDR-M_2.54_1x2P,HDR-TH_2P-P2.54-V-M-1,17mm,8mm,17mm,8mm,17mm,6.73mm,2,T,90,No,B-2100S02P-A110,,,LCSC,
+J2,HDR-M_2.54_1x4P,HDR-TH_4P-P2.54-V-M,56mm,35mm,56mm,35mm,52.19mm,35mm,4,T,0,No,PZ254V-11-04P,,,LCSC,
+J3,HDR-M_2.54_1x2P,HDR-TH_2P-P2.54-V-M-1,56mm,17mm,56mm,17mm,56mm,15.73mm,2,T,90,No,B-2100S02P-A110,,,LCSC,
+J4,HDR-M_2.54_1x2P,HDR-TH_2P-P2.54-V-M-1,11mm,29mm,11mm,29mm,9.73mm,29mm,2,T,0,No,B-2100S02P-A110,,,LCSC,
+J5,HDR-M_2.54_1x4P,HDR-TH_4P-P2.54-V-M,14mm,44mm,14mm,44mm,14mm,40.19mm,4,T,90,No,PZ254V-11-04P,,,LCSC,
+JP1,HDR-M_2.54_1x2P,HDR-TH_2P-P2.54-V-M-1,47mm,8mm,47mm,8mm,47mm,6.73mm,2,T,90,No,B-2100S02P-A110,,,LCSC,
+JP2,HDR-M_2.54_1x2P,HDR-TH_2P-P2.54-V-M-1,48mm,36mm,48mm,36mm,46.73mm,36mm,2,T,0,No,B-2100S02P-A110,,,LCSC,
+JP3,HDR-M_2.54_1x2P,HDR-TH_2P-P2.54-V-M-1,48mm,41mm,48mm,41mm,46.73mm,41mm,2,T,0,No,B-2100S02P-A110,,,LCSC,
+Q1,AO3400A_C20917,SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR,49mm,17mm,49mm,17mm,50mm,16.05mm,3,T,0,Yes,AO3400A,,N沟道,LCSC,https://item.szlcsc.com/datasheet/AO3400A/21629.html
+R1,0603WAF1000T5E,R0603,45mm,24mm,45mm,24mm,44.246mm,24mm,2,T,0,Yes,100Ω,100Ω,厚膜电阻,LCSC,https://atta.szlcsc.com/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf
+R2,0603WAF1003T5E,R0603,49mm,22mm,49mm,22mm,49mm,21.246mm,2,T,90,Yes,100kΩ,100kΩ,厚膜电阻,LCSC,https://item.szlcsc.com/datasheet/0603WAF1003T5E/26546.html
+R3,0603WAF1002T5E,R0603,17mm,29mm,17mm,29mm,16.246mm,29mm,2,T,0,Yes,10kΩ,10kΩ,厚膜电阻,LCSC,https://item.szlcsc.com/datasheet/0603WAF1002T5E/26547.html
+R4,0603WAF1000T5E,R0603,49mm,27mm,49mm,27mm,48.246mm,27mm,2,T,0,Yes,100Ω,100Ω,厚膜电阻,LCSC,https://atta.szlcsc.com/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf
+R5,0603WAF1000T5E,R0603,49mm,31mm,49mm,31mm,48.246mm,31mm,2,T,0,Yes,100Ω,100Ω,厚膜电阻,LCSC,https://atta.szlcsc.com/upload/public/pdf/source/20200306/C422600_1E6D84923E4A46A82E41ADD87F860B5C.pdf
+U1,XIAO ESP32C3,XIAO_ESP32C3_SOCKET_2x7_P2.54,33mm,29.517mm,33mm,30mm,25.38mm,37.137mm,14,T,0,No,XIAO ESP32C3,,,Seeed Studio / authorized reseller,

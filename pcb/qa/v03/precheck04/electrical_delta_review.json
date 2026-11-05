@@ -1,0 +1,1129 @@
+{
+  "geometry_electrical_status": "PASS",
+  "raw_bytes_identical_except_top_silkscreen": false,
+  "raw_byte_difference_explanation": "Fresh export timestamps, unused aperture definitions and aperture D-code renumbering differ. All resolved Gerber primitives outside GTO are exactly identical. XLSX core timestamps and native DOCHEAD storage metadata differ.",
+  "checks": [
+    {
+      "id": "source_copies",
+      "status": "PASS",
+      "evidence": {
+        "status": "PASS",
+        "counts": {
+          "PASS": 2
+        },
+        "context": {},
+        "checks": [
+          {
+            "id": "source.pcb.copies",
+            "status": "PASS",
+            "detail": "2 exported PCB copies must contain the same geometry, electrical and annotation records",
+            "evidence": {
+              "sources": [
+                "Mianguang_V0.3.epcb",
+                "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+              ],
+              "ignored_no_connect_attributes_of_deleted_pins": {}
+            }
+          },
+          {
+            "id": "source.sch_page.copies",
+            "status": "PASS",
+            "detail": "2 exported SCH_PAGE copies must contain the same geometry, electrical and annotation records",
+            "evidence": {
+              "sources": [
+                "Mianguang_V0.3.esch",
+                "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+              ],
+              "ignored_no_connect_attributes_of_deleted_pins": {
+                "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru": [
+                  "8af6d1b1b7cbda88-e3",
+                  "8af6d1b1b7cbda88-e7",
+                  "8af6d1b1b7cbda88-e11",
+                  "8af6d1b1b7cbda88-e19",
+                  "8af6d1b1b7cbda88-e23",
+                  "8af6d1b1b7cbda88-e27",
+                  "8af6d1b1b7cbda88-e31",
+                  "8af6d1b1b7cbda88-e35",
+                  "8af6d1b1b7cbda88-e15"
+                ]
+              }
+            }
+          }
+        ],
+        "scope": "Offline consistency and geometry checks; no physical assembly, electrical or EMC validation."
+      }
+    },
+    {
+      "id": "native_clean_bound_to_full_project",
+      "status": "PASS",
+      "evidence": {
+        "status": "PASS",
+        "counts": {
+          "PASS": 5
+        },
+        "context": {
+          "native_checks_sha256": "789663deb4585f66d5e9c9ea9f31f2e42adb70290f5bbae1ff5e51080f2571fc"
+        },
+        "checks": [
+          {
+            "id": "native.version",
+            "status": "PASS",
+            "detail": "Native check release must match the requested release",
+            "evidence": "V0.3"
+          },
+          {
+            "id": "native.strict",
+            "status": "PASS",
+            "detail": "The native run must explicitly record strict=true",
+            "evidence": true
+          },
+          {
+            "id": "native.schematic.clean",
+            "status": "PASS",
+            "detail": "Native strict DRC must return boolean true and an empty detailed error list",
+            "evidence": {
+              "saved": true,
+              "details": [],
+              "passed": true
+            }
+          },
+          {
+            "id": "native.pcb.clean",
+            "status": "PASS",
+            "detail": "Native strict DRC must return boolean true and an empty detailed error list",
+            "evidence": {
+              "saved": true,
+              "details": [],
+              "passed": true
+            }
+          },
+          {
+            "id": "native.source_binding",
+            "status": "PASS",
+            "detail": "Native check evidence must bind final schematic, PCB and complete project sources by SHA-256",
+            "evidence": {
+              "expected": {
+                "Mianguang_V0.3.epcb": "41bd43f9068be79c6358d8010b176b31b3160c33373b3d082d8f9bda8168b380",
+                "Mianguang_V0.3.epro2": "eeda9cb493a761e124751bb28a96701ce67f361e9a53b2b18eefafbfd03e3294",
+                "Mianguang_V0.3.esch": "19a75fdb22c19aef01568e1ea68b0694a9bfd540a5b8bb7f082c7af50701a158"
+              },
+              "reported": {
+                "Mianguang_V0.3.esch": "19a75fdb22c19aef01568e1ea68b0694a9bfd540a5b8bb7f082c7af50701a158",
+                "Mianguang_V0.3.epcb": "41bd43f9068be79c6358d8010b176b31b3160c33373b3d082d8f9bda8168b380",
+                "Mianguang_V0.3.epro2": "eeda9cb493a761e124751bb28a96701ce67f361e9a53b2b18eefafbfd03e3294"
+              }
+            }
+          }
+        ],
+        "scope": "Offline consistency and geometry checks; no physical assembly, electrical or EMC validation."
+      }
+    },
+    {
+      "id": "pcb_records_unchanged",
+      "status": "PASS",
+      "evidence": {
+        "records": 496,
+        "header_before": {
+          "docType": "PCB",
+          "client": "5caef480cedf7f7f",
+          "uuid": "d1f2f1e2dbed9b60",
+          "updateTime": 1793880003256,
+          "version": "1793880003256"
+        },
+        "header_after": {
+          "docType": "PCB",
+          "client": "a52dacaad2453562",
+          "uuid": "d1f2f1e2dbed9b60",
+          "updateTime": 1793883748234,
+          "version": "1793883748234"
+        },
+        "raw_source_bytes_equal": false
+      }
+    },
+    {
+      "id": "sch_records_unchanged",
+      "status": "PASS",
+      "evidence": {
+        "records": 1128,
+        "header_before": {
+          "docType": "SCH_PAGE",
+          "client": "5322e28c600986ef",
+          "uuid": "a83dc430db547724",
+          "updateTime": 1793880001668,
+          "version": "1793880001668",
+          "editVersion": "4.1.78"
+        },
+        "header_after": {
+          "docType": "SCH_PAGE",
+          "client": "e9a198d93b1def71",
+          "uuid": "a83dc430db547724",
+          "updateTime": 1793883746639,
+          "version": "1793883746639",
+          "editVersion": "4.1.78"
+        },
+        "raw_source_bytes_equal": false
+      }
+    },
+    {
+      "id": "23_placements_and_instance_attributes",
+      "status": "PASS",
+      "evidence": {
+        "components": 23
+      }
+    },
+    {
+      "id": "63_physical_pads_and_nets",
+      "status": "PASS",
+      "evidence": {
+        "pads": 63
+      }
+    },
+    {
+      "id": "42_native_holes",
+      "status": "PASS",
+      "evidence": {
+        "plated": 38,
+        "nonplated": 4
+      }
+    },
+    {
+      "id": "all_pad_net_references",
+      "status": "PASS",
+      "evidence": {
+        "records": 63
+      }
+    },
+    {
+      "id": "bytes.schematic_netlist.json",
+      "status": "PASS",
+      "evidence": {
+        "before_sha256": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657",
+        "after_sha256": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657"
+      }
+    },
+    {
+      "id": "bytes.pcb_netlist.json",
+      "status": "PASS",
+      "evidence": {
+        "before_sha256": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994",
+        "after_sha256": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994"
+      }
+    },
+    {
+      "id": "bytes.BOM_Mianguang_V0.3.csv",
+      "status": "PASS",
+      "evidence": {
+        "before_sha256": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2",
+        "after_sha256": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2"
+      }
+    },
+    {
+      "id": "bytes.PickPlace_Mianguang_V0.3.csv",
+      "status": "PASS",
+      "evidence": {
+        "before_sha256": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704",
+        "after_sha256": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704"
+      }
+    },
+    {
+      "id": "xlsx_cells_and_all_nondate_content_unchanged",
+      "status": "PASS",
+      "evidence": {
+        "raw_xlsx_bytes_equal": false,
+        "changed_members": [
+          {
+            "member": "docProps/core.xml",
+            "only_creation_modification_dates": true,
+            "before": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><dc:creator>jlceda</dc:creator><dc:title></dc:title><dc:subject></dc:subject><dc:description></dc:description><cp:keywords></cp:keywords><cp:category></cp:category><cp:lastModifiedBy>jlceda</cp:lastModifiedBy><dcterms:created xsi:type=\"dcterms:W3CDTF\">2026-11-05T12:00:03Z</dcterms:created><dcterms:modified xsi:type=\"dcterms:W3CDTF\">2026-11-05T12:00:03Z</dcterms:modified></cp:coreProperties>",
+            "after": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><dc:creator>jlceda</dc:creator><dc:title></dc:title><dc:subject></dc:subject><dc:description></dc:description><cp:keywords></cp:keywords><cp:category></cp:category><cp:lastModifiedBy>jlceda</cp:lastModifiedBy><dcterms:created xsi:type=\"dcterms:W3CDTF\">2026-11-05T13:02:28Z</dcterms:created><dcterms:modified xsi:type=\"dcterms:W3CDTF\">2026-11-05T13:02:28Z</dcterms:modified></cp:coreProperties>"
+          }
+        ]
+      }
+    },
+    {
+      "id": "only_d1_footprint_records_changed",
+      "status": "PASS",
+      "evidence": {
+        "changed_uuids": [
+          "8858b5826f676c7f"
+        ],
+        "d1_uuid": "8858b5826f676c7f"
+      }
+    },
+    {
+      "id": "d1_exact_requested_silk_edit",
+      "status": "PASS",
+      "evidence": {
+        "changes": [
+          {
+            "kind": "ELE_PLACEHOLDER",
+            "id": "placeholder4",
+            "before": {
+              "dataType": "POLY",
+              "max": 2
+            },
+            "after": {
+              "dataType": "POLY",
+              "max": 3
+            }
+          },
+          {
+            "kind": "ELE_PLACEHOLDER",
+            "id": "placeholder5",
+            "before": {
+              "dataType": "POLY",
+              "max": 2
+            },
+            "after": {
+              "dataType": "POLY",
+              "max": 5
+            }
+          },
+          {
+            "kind": "POLY",
+            "id": "e10",
+            "before": {
+              "groupId": 0,
+              "netName": "",
+              "layerId": 3,
+              "width": 8,
+              "path": [
+                -9.842,
+                0,
+                "L",
+                9.843,
+                -19.685
+              ],
+              "locked": false,
+              "zIndex": 10,
+              "polyType": "NORMAL"
+            },
+            "after": null
+          },
+          {
+            "kind": "POLY",
+            "id": "e11",
+            "before": {
+              "groupId": 0,
+              "netName": "",
+              "layerId": 3,
+              "width": 8,
+              "path": [
+                9.843,
+                -19.685,
+                "L",
+                9.843,
+                19.685
+              ],
+              "locked": false,
+              "zIndex": 11,
+              "polyType": "NORMAL"
+            },
+            "after": null
+          },
+          {
+            "kind": "POLY",
+            "id": "e7",
+            "before": {
+              "groupId": 0,
+              "netName": "",
+              "layerId": 3,
+              "width": 8,
+              "path": [
+                -28.499,
+                0,
+                "L",
+                29.528,
+                0
+              ],
+              "locked": false,
+              "zIndex": 7,
+              "polyType": "NORMAL"
+            },
+            "after": null
+          },
+          {
+            "kind": "POLY",
+            "id": "e8",
+            "before": {
+              "groupId": 0,
+              "netName": "",
+              "layerId": 3,
+              "width": 8,
+              "path": [
+                -9.842,
+                19.685,
+                "L",
+                -9.842,
+                -19.685
+              ],
+              "locked": false,
+              "zIndex": 8,
+              "polyType": "NORMAL"
+            },
+            "after": {
+              "groupId": 0,
+              "netName": "",
+              "layerId": 3,
+              "width": 8,
+              "path": [
+                -149.6063,
+                -23.622,
+                "L",
+                -149.6063,
+                23.622
+              ],
+              "locked": false,
+              "zIndex": -1,
+              "polyType": "NORMAL"
+            }
+          },
+          {
+            "kind": "POLY",
+            "id": "e9",
+            "before": {
+              "groupId": 0,
+              "netName": "",
+              "layerId": 3,
+              "width": 8,
+              "path": [
+                9.843,
+                19.685,
+                "L",
+                -9.842,
+                0
+              ],
+              "locked": false,
+              "zIndex": 9,
+              "polyType": "NORMAL"
+            },
+            "after": null
+          }
+        ],
+        "e14_e17_unchanged": true,
+        "metadata_only": [
+          [
+            "ELE_PLACEHOLDER",
+            "placeholder4"
+          ],
+          [
+            "ELE_PLACEHOLDER",
+            "placeholder5"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "d1_marker_outside_source_body_reference",
+      "status": "PASS",
+      "evidence": {
+        "body_reference": "D1 footprint POLY e4, layer48, shell/body reference; includes stroke width",
+        "body_reference_bounds_local_mm": [
+          -2.1254212,
+          -1.325372,
+          2.1253704,
+          1.3254228000000001
+        ],
+        "marker_bounds_local_mm": [
+          -3.90160002,
+          -0.7015988,
+          -3.6984000200000002,
+          0.7015988
+        ],
+        "minimum_gap_mm": 1.5729788200000006,
+        "marker_centerline_board_mm": [
+          [
+            33.2,
+            7.4
+          ],
+          [
+            33.2,
+            8.6
+          ]
+        ],
+        "boundary": "Tests embedded source reference, not an unavailable remote 3D binary or real assembled part."
+      }
+    },
+    {
+      "id": "gerber_member_names",
+      "status": "PASS",
+      "evidence": [
+        "Drill_NPTH_Through.DRL",
+        "Drill_PTH_Through.DRL",
+        "FlyingProbeTesting.json",
+        "Gerber_BoardOutlineLayer.GKO",
+        "Gerber_BottomLayer.GBL",
+        "Gerber_BottomSilkscreenLayer.GBO",
+        "Gerber_BottomSolderMaskLayer.GBS",
+        "Gerber_DocumentLayer.GDL",
+        "Gerber_DrillDrawingLayer.GDD",
+        "Gerber_TopLayer.GTL",
+        "Gerber_TopPasteMaskLayer.GTP",
+        "Gerber_TopSilkscreenLayer.GTO",
+        "Gerber_TopSolderMaskLayer.GTS",
+        "PCB下单必读.txt"
+      ]
+    },
+    {
+      "id": "drill_commands.Drill_NPTH_Through.DRL",
+      "status": "PASS",
+      "evidence": {
+        "member": "Drill_NPTH_Through.DRL",
+        "before_sha256": "6461b751f64e498be76334152a95370e2207027c61cb2c92e1a6b3a71370fcff",
+        "after_sha256": "9a2ba012652f79d04d61bea6d5024a0db9b64c883318399ff56d8432d2aff1ec",
+        "raw_bytes_equal": false,
+        "identical_except_export_timestamp": true
+      }
+    },
+    {
+      "id": "drill_commands.Drill_PTH_Through.DRL",
+      "status": "PASS",
+      "evidence": {
+        "member": "Drill_PTH_Through.DRL",
+        "before_sha256": "589614c0e9b7f40c89acdf511797dc2e8b46036da92270de83f67b535e55c174",
+        "after_sha256": "c74128f24ab4a2edae79d76a6e6734e7cb888ecdf53a712fe7c70233a6c0328c",
+        "raw_bytes_equal": false,
+        "identical_except_export_timestamp": true
+      }
+    },
+    {
+      "id": "unchanged_archive_member.FlyingProbeTesting.json",
+      "status": "PASS",
+      "evidence": {
+        "member": "FlyingProbeTesting.json",
+        "before_sha256": "2f0e13f50d8e02f945807338d214959f09a23df7263112d30e81ba3539fb3dfb",
+        "after_sha256": "2f0e13f50d8e02f945807338d214959f09a23df7263112d30e81ba3539fb3dfb",
+        "raw_bytes_equal": true
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_BoardOutlineLayer.GKO",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_BoardOutlineLayer.GKO",
+        "before_sha256": "93abc6f12cf6eb88112c9080a92622a0bc6f57d2a8180ccc1913fd41fc2dd0aa",
+        "after_sha256": "675d98deaa4d541e0aad350cc857209e18bfeae62105c52c69f52323fc976bad",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          4,
+          4
+        ],
+        "resolved_sequence_sha256": [
+          "06ce4626d00819a971f476b74a5e983410a19e6f24af64f48e435b28b42c3577",
+          "06ce4626d00819a971f476b74a5e983410a19e6f24af64f48e435b28b42c3577"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_BottomLayer.GBL",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_BottomLayer.GBL",
+        "before_sha256": "15ac702ba4c00f2a9d77a5918984d3a6586659889e2c54952f245137ca7d847e",
+        "after_sha256": "4b7c09576fb1b1aa9b43a0dd99aeaf6df127a9ae4ff54c54eea7375d430b891b",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          69,
+          69
+        ],
+        "resolved_sequence_sha256": [
+          "755849e2a0abdb67b1a6e6ea08d705577ad0c914a079bd79242e32136492c567",
+          "755849e2a0abdb67b1a6e6ea08d705577ad0c914a079bd79242e32136492c567"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_BottomSilkscreenLayer.GBO",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_BottomSilkscreenLayer.GBO",
+        "before_sha256": "40fccdcd6959613a199bed28cd6a6d023e7007e15ef4b415ddd493ea8a03d0d1",
+        "after_sha256": "42bf69200190a8502ea0bf960bbd4493064b832dd18a3422a6e453360055e62b",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          0,
+          0
+        ],
+        "resolved_sequence_sha256": [
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_BottomSolderMaskLayer.GBS",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_BottomSolderMaskLayer.GBS",
+        "before_sha256": "10444615b84e7f5c22cd30b9a189b55b43c23b4ddd30c89747d2c87346506133",
+        "after_sha256": "66f4fb6ce55ecda6a0099aacf3e303cddd07c0bc0fa8228c73d5f062ce8f8926",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          106,
+          106
+        ],
+        "resolved_sequence_sha256": [
+          "35c41137d34d0e667527c577886eca0eed9423cff8fb1b3ded45e2ac918be53c",
+          "35c41137d34d0e667527c577886eca0eed9423cff8fb1b3ded45e2ac918be53c"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_DocumentLayer.GDL",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_DocumentLayer.GDL",
+        "before_sha256": "48c6c04bac39d4b8c59bef8e30e5c19be3670f364da9d77c7f3c583fc5452a03",
+        "after_sha256": "3a4c9cdeb7abcff212fc052f767e36eb91f4148aa291a361c5219574028b8c7b",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          12,
+          12
+        ],
+        "resolved_sequence_sha256": [
+          "d6c6b16d4721d3cc9921cc20c3ca955e33df0895b0c8059933f3a81fd286212d",
+          "d6c6b16d4721d3cc9921cc20c3ca955e33df0895b0c8059933f3a81fd286212d"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_DrillDrawingLayer.GDD",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_DrillDrawingLayer.GDD",
+        "before_sha256": "8cb752746c95e92f4f19774c31287c786caf33f3f1ec28917479fed324f09834",
+        "after_sha256": "40cea8cfb421dff37b32ffba2f543029c0f5dd0f8de4e26e38d223499ddba31d",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          2109,
+          2109
+        ],
+        "resolved_sequence_sha256": [
+          "b06f25ebf670ac131afa4ab1ed7bb7fa6147c0efe6c28b6a3e60f1168bf0cc37",
+          "b06f25ebf670ac131afa4ab1ed7bb7fa6147c0efe6c28b6a3e60f1168bf0cc37"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_TopLayer.GTL",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_TopLayer.GTL",
+        "before_sha256": "6337961b360a4b8afca48d73d131f968a3258cb4b96b37357d01a5c3a21f5a7d",
+        "after_sha256": "5e90c9c15dd807a619bb18aa214c77d1ed8679f5fa3c2767657cf0b36bb72bd3",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          168,
+          168
+        ],
+        "resolved_sequence_sha256": [
+          "e570d0942828475686e565b110a90562935299291abfb2923d8cc024f5ce9757",
+          "e570d0942828475686e565b110a90562935299291abfb2923d8cc024f5ce9757"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_TopPasteMaskLayer.GTP",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_TopPasteMaskLayer.GTP",
+        "before_sha256": "f6796b1703cf6636e543a324e990449a470a5086bf2eccf5064c4fe0c480df0a",
+        "after_sha256": "c2d2d4c280842dc462e878dc22f4d599d301fba1e7dad93d31b26cb7db839450",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          29,
+          29
+        ],
+        "resolved_sequence_sha256": [
+          "bb017aeb76f47238797d523b216f86192cd8bd16473e8ded739c6b523987662c",
+          "bb017aeb76f47238797d523b216f86192cd8bd16473e8ded739c6b523987662c"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "resolved_gerber.Gerber_TopSolderMaskLayer.GTS",
+      "status": "PASS",
+      "evidence": {
+        "member": "Gerber_TopSolderMaskLayer.GTS",
+        "before_sha256": "83be81b1e06abd4c0bfedd39cd1babf7a84c2431406ea115a26d883ed7b9eb06",
+        "after_sha256": "0e550776a628bc46baacd3135293ad6cf61c826d3275896068b0b51fe5c99e05",
+        "raw_bytes_equal": false,
+        "primitive_sequence_equal": true,
+        "primitive_counts": [
+          367,
+          367
+        ],
+        "resolved_sequence_sha256": [
+          "c1e3276d7cba18821c1b4b61b11d07f70e40e55bd2ea8632fa8558148dcea77a",
+          "c1e3276d7cba18821c1b4b61b11d07f70e40e55bd2ea8632fa8558148dcea77a"
+        ],
+        "parser_notes": []
+      }
+    },
+    {
+      "id": "unchanged_archive_member.PCB下单必读.txt",
+      "status": "PASS",
+      "evidence": {
+        "member": "PCB下单必读.txt",
+        "before_sha256": "dcb3ee1c645c17a009d70726ad9ab708b68a074556fabcf75a4a059d3b43ec59",
+        "after_sha256": "dcb3ee1c645c17a009d70726ad9ab708b68a074556fabcf75a4a059d3b43ec59",
+        "raw_bytes_equal": true
+      }
+    },
+    {
+      "id": "top_silk_only_five_old_strokes_to_one_external_bar",
+      "status": "PASS",
+      "evidence": {
+        "removed": [
+          {
+            "kind": "Line",
+            "polarity_dark": true,
+            "width": 0.2032,
+            "x1": 36.27613,
+            "x2": 37.75001,
+            "y1": 8.0,
+            "y2": 8.0
+          },
+          {
+            "kind": "Line",
+            "polarity_dark": true,
+            "width": 0.2032,
+            "x1": 36.75001,
+            "x2": 36.75001,
+            "y1": 8.5,
+            "y2": 7.5
+          },
+          {
+            "kind": "Line",
+            "polarity_dark": true,
+            "width": 0.2032,
+            "x1": 37.25001,
+            "x2": 36.75001,
+            "y1": 8.5,
+            "y2": 8.0
+          },
+          {
+            "kind": "Line",
+            "polarity_dark": true,
+            "width": 0.2032,
+            "x1": 36.75001,
+            "x2": 37.25001,
+            "y1": 8.0,
+            "y2": 7.5
+          },
+          {
+            "kind": "Line",
+            "polarity_dark": true,
+            "width": 0.2032,
+            "x1": 37.25001,
+            "x2": 37.25001,
+            "y1": 7.5,
+            "y2": 8.5
+          }
+        ],
+        "added": [
+          {
+            "kind": "Line",
+            "polarity_dark": true,
+            "width": 0.2032,
+            "x1": 33.2,
+            "x2": 33.2,
+            "y1": 7.4,
+            "y2": 8.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "raw_copper_top_0.0005",
+      "status": "PASS",
+      "evidence": {
+        "curve_error_mm": 0.0005,
+        "symmetric_difference_mm2": 0.0
+      }
+    },
+    {
+      "id": "raw_copper_bottom_0.0005",
+      "status": "PASS",
+      "evidence": {
+        "curve_error_mm": 0.0005,
+        "symmetric_difference_mm2": 0.0
+      }
+    },
+    {
+      "id": "raw_copper_top_0.000125",
+      "status": "PASS",
+      "evidence": {
+        "curve_error_mm": 0.000125,
+        "symmetric_difference_mm2": 0.0
+      }
+    },
+    {
+      "id": "raw_copper_bottom_0.000125",
+      "status": "PASS",
+      "evidence": {
+        "curve_error_mm": 0.000125,
+        "symmetric_difference_mm2": 0.0
+      }
+    },
+    {
+      "id": "seven_polarity_pads_unchanged",
+      "status": "PASS",
+      "evidence": [
+        {
+          "x": 38.96494366,
+          "y": 7.999999239999999,
+          "d": 0.0,
+          "r": 0.7599933999999999,
+          "net": "5V_SYS",
+          "ref": "D1",
+          "pin": "2",
+          "layers": [
+            1
+          ],
+          "land_shape": "RECT",
+          "width": 1.5199867999999999,
+          "height": 1.6800068,
+          "land_angle": 0,
+          "land_radius": 0
+        },
+        {
+          "x": 35.03505566,
+          "y": 7.999999239999999,
+          "d": 0.0,
+          "r": 0.7599933999999999,
+          "net": "5V_ISO",
+          "ref": "D1",
+          "pin": "1",
+          "layers": [
+            1
+          ],
+          "land_shape": "RECT",
+          "width": 1.5199867999999999,
+          "height": 1.6800068,
+          "land_angle": 0,
+          "land_radius": 0
+        },
+        {
+          "x": 24.000000259999997,
+          "y": 12.41503994,
+          "d": 0.0,
+          "r": 0.46499779999999996,
+          "net": "5V_SYS",
+          "ref": "D2",
+          "pin": "1",
+          "layers": [
+            1
+          ],
+          "land_shape": "RECT",
+          "width": 0.9299955999999999,
+          "height": 0.959993,
+          "land_angle": 270,
+          "land_radius": 0
+        },
+        {
+          "x": 24.000000259999997,
+          "y": 15.584959940000001,
+          "d": 0.0,
+          "r": 0.46499779999999996,
+          "net": "GND",
+          "ref": "D2",
+          "pin": "2",
+          "layers": [
+            1
+          ],
+          "land_shape": "RECT",
+          "width": 0.9299955999999999,
+          "height": 0.959993,
+          "land_angle": 270,
+          "land_radius": 0
+        },
+        {
+          "x": 49.99999906,
+          "y": 16.050039019999996,
+          "d": 0.0,
+          "r": 0.3250057,
+          "net": "LED_GATE",
+          "ref": "Q1",
+          "pin": "1",
+          "layers": [
+            1
+          ],
+          "land_shape": "RECT",
+          "width": 0.9999979999999999,
+          "height": 0.6500114,
+          "land_angle": 0,
+          "land_radius": 0
+        },
+        {
+          "x": 49.99999906,
+          "y": 17.949959019999998,
+          "d": 0.0,
+          "r": 0.3250057,
+          "net": "GND",
+          "ref": "Q1",
+          "pin": "2",
+          "layers": [
+            1
+          ],
+          "land_shape": "RECT",
+          "width": 0.9999979999999999,
+          "height": 0.6500114,
+          "land_angle": 0,
+          "land_radius": 0
+        },
+        {
+          "x": 48.000003060000004,
+          "y": 16.999999019999997,
+          "d": 0.0,
+          "r": 0.3250057,
+          "net": "LED_LOW",
+          "ref": "Q1",
+          "pin": "3",
+          "layers": [
+            1
+          ],
+          "land_shape": "RECT",
+          "width": 0.9999979999999999,
+          "height": 0.6500114,
+          "land_angle": 0,
+          "land_radius": 0
+        }
+      ]
+    },
+    {
+      "id": "inputs_stable_during_review",
+      "status": "PASS",
+      "evidence": []
+    }
+  ],
+  "inputs_sha256": {
+    "pcb/release_v03_precheck03/BOM_Mianguang_V0.3.xlsx": "4b9f30e2a9533bea1e8843452db8aa468a9356eceb18ca69ece156a24f128f93",
+    "pcb/release_v03_precheck03/Mianguang_V0.3.epro2": "01f43cf3fcebcb7f2e6dfb590aaf878a952d3f6b54837cca8e0f2a40bde66e1f",
+    "pcb/release_v03_precheck03/schematic_netlist.json": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657",
+    "pcb/release_v03_precheck03/Mianguang_V0.3.epcb": "1b005cf1bb2e7d59b4584eca6a2bd83e2b9e46b83c3a32bf83ad4a90f7a16536",
+    "pcb/release_v03_precheck03/BOM_Mianguang_V0.3.csv": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2",
+    "pcb/release_v03_precheck03/pcb_netlist.json": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994",
+    "pcb/release_v03_precheck03/外接件与装配BOM.csv": "dfe77b837808215f7fc68af2dea061c7a1951a799cb918a04fd0437475089316",
+    "pcb/release_v03_precheck03/PickPlace_Mianguang_V0.3.csv": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704",
+    "pcb/release_v03_precheck03/Gerber_Mianguang_V0.3.zip": "8e786b7bfa3eb609b283f079b3bb2ccddcab58149d3979a5f0926bc297206811",
+    "pcb/release_v03_precheck03/Mianguang_V0.3.esch": "b494a8e15ba99069df280d1bf1b303a56567f9630c81d65edbb9577ea9c99854",
+    "pcb/release_v03_precheck03/native_checks.json": "d019784048903375f49939a4a7d1bb6c6f5b3694c9f70d5bb6e448294f4fa198",
+    "pcb/release_v03_precheck04/BOM_Mianguang_V0.3.xlsx": "ec28a664978c3c468505a8eb6e4f761bc5818bd4ad6a16b2f8e3563fe805fcce",
+    "pcb/release_v03_precheck04/Mianguang_V0.3.epro2": "eeda9cb493a761e124751bb28a96701ce67f361e9a53b2b18eefafbfd03e3294",
+    "pcb/release_v03_precheck04/schematic_netlist.json": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657",
+    "pcb/release_v03_precheck04/Mianguang_V0.3.epcb": "41bd43f9068be79c6358d8010b176b31b3160c33373b3d082d8f9bda8168b380",
+    "pcb/release_v03_precheck04/BOM_Mianguang_V0.3.csv": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2",
+    "pcb/release_v03_precheck04/pcb_netlist.json": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994",
+    "pcb/release_v03_precheck04/外接件与装配BOM.csv": "dfe77b837808215f7fc68af2dea061c7a1951a799cb918a04fd0437475089316",
+    "pcb/release_v03_precheck04/PickPlace_Mianguang_V0.3.csv": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704",
+    "pcb/release_v03_precheck04/Gerber_Mianguang_V0.3.zip": "915296951145847c9b6e229feffacc6bc4edb3c42af815d3ca696ad4964370c0",
+    "pcb/release_v03_precheck04/Mianguang_V0.3.esch": "19a75fdb22c19aef01568e1ea68b0694a9bfd540a5b8bb7f082c7af50701a158",
+    "pcb/release_v03_precheck04/native_checks.json": "789663deb4585f66d5e9c9ea9f31f2e42adb70290f5bbae1ff5e51080f2571fc"
+  },
+  "gerber_member_comparison": [
+    {
+      "member": "Drill_NPTH_Through.DRL",
+      "before_sha256": "6461b751f64e498be76334152a95370e2207027c61cb2c92e1a6b3a71370fcff",
+      "after_sha256": "9a2ba012652f79d04d61bea6d5024a0db9b64c883318399ff56d8432d2aff1ec",
+      "raw_bytes_equal": false,
+      "identical_except_export_timestamp": true
+    },
+    {
+      "member": "Drill_PTH_Through.DRL",
+      "before_sha256": "589614c0e9b7f40c89acdf511797dc2e8b46036da92270de83f67b535e55c174",
+      "after_sha256": "c74128f24ab4a2edae79d76a6e6734e7cb888ecdf53a712fe7c70233a6c0328c",
+      "raw_bytes_equal": false,
+      "identical_except_export_timestamp": true
+    },
+    {
+      "member": "FlyingProbeTesting.json",
+      "before_sha256": "2f0e13f50d8e02f945807338d214959f09a23df7263112d30e81ba3539fb3dfb",
+      "after_sha256": "2f0e13f50d8e02f945807338d214959f09a23df7263112d30e81ba3539fb3dfb",
+      "raw_bytes_equal": true
+    },
+    {
+      "member": "Gerber_BoardOutlineLayer.GKO",
+      "before_sha256": "93abc6f12cf6eb88112c9080a92622a0bc6f57d2a8180ccc1913fd41fc2dd0aa",
+      "after_sha256": "675d98deaa4d541e0aad350cc857209e18bfeae62105c52c69f52323fc976bad",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        4,
+        4
+      ],
+      "resolved_sequence_sha256": [
+        "06ce4626d00819a971f476b74a5e983410a19e6f24af64f48e435b28b42c3577",
+        "06ce4626d00819a971f476b74a5e983410a19e6f24af64f48e435b28b42c3577"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_BottomLayer.GBL",
+      "before_sha256": "15ac702ba4c00f2a9d77a5918984d3a6586659889e2c54952f245137ca7d847e",
+      "after_sha256": "4b7c09576fb1b1aa9b43a0dd99aeaf6df127a9ae4ff54c54eea7375d430b891b",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        69,
+        69
+      ],
+      "resolved_sequence_sha256": [
+        "755849e2a0abdb67b1a6e6ea08d705577ad0c914a079bd79242e32136492c567",
+        "755849e2a0abdb67b1a6e6ea08d705577ad0c914a079bd79242e32136492c567"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_BottomSilkscreenLayer.GBO",
+      "before_sha256": "40fccdcd6959613a199bed28cd6a6d023e7007e15ef4b415ddd493ea8a03d0d1",
+      "after_sha256": "42bf69200190a8502ea0bf960bbd4493064b832dd18a3422a6e453360055e62b",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        0,
+        0
+      ],
+      "resolved_sequence_sha256": [
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_BottomSolderMaskLayer.GBS",
+      "before_sha256": "10444615b84e7f5c22cd30b9a189b55b43c23b4ddd30c89747d2c87346506133",
+      "after_sha256": "66f4fb6ce55ecda6a0099aacf3e303cddd07c0bc0fa8228c73d5f062ce8f8926",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        106,
+        106
+      ],
+      "resolved_sequence_sha256": [
+        "35c41137d34d0e667527c577886eca0eed9423cff8fb1b3ded45e2ac918be53c",
+        "35c41137d34d0e667527c577886eca0eed9423cff8fb1b3ded45e2ac918be53c"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_DocumentLayer.GDL",
+      "before_sha256": "48c6c04bac39d4b8c59bef8e30e5c19be3670f364da9d77c7f3c583fc5452a03",
+      "after_sha256": "3a4c9cdeb7abcff212fc052f767e36eb91f4148aa291a361c5219574028b8c7b",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        12,
+        12
+      ],
+      "resolved_sequence_sha256": [
+        "d6c6b16d4721d3cc9921cc20c3ca955e33df0895b0c8059933f3a81fd286212d",
+        "d6c6b16d4721d3cc9921cc20c3ca955e33df0895b0c8059933f3a81fd286212d"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_DrillDrawingLayer.GDD",
+      "before_sha256": "8cb752746c95e92f4f19774c31287c786caf33f3f1ec28917479fed324f09834",
+      "after_sha256": "40cea8cfb421dff37b32ffba2f543029c0f5dd0f8de4e26e38d223499ddba31d",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        2109,
+        2109
+      ],
+      "resolved_sequence_sha256": [
+        "b06f25ebf670ac131afa4ab1ed7bb7fa6147c0efe6c28b6a3e60f1168bf0cc37",
+        "b06f25ebf670ac131afa4ab1ed7bb7fa6147c0efe6c28b6a3e60f1168bf0cc37"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_TopLayer.GTL",
+      "before_sha256": "6337961b360a4b8afca48d73d131f968a3258cb4b96b37357d01a5c3a21f5a7d",
+      "after_sha256": "5e90c9c15dd807a619bb18aa214c77d1ed8679f5fa3c2767657cf0b36bb72bd3",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        168,
+        168
+      ],
+      "resolved_sequence_sha256": [
+        "e570d0942828475686e565b110a90562935299291abfb2923d8cc024f5ce9757",
+        "e570d0942828475686e565b110a90562935299291abfb2923d8cc024f5ce9757"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_TopPasteMaskLayer.GTP",
+      "before_sha256": "f6796b1703cf6636e543a324e990449a470a5086bf2eccf5064c4fe0c480df0a",
+      "after_sha256": "c2d2d4c280842dc462e878dc22f4d599d301fba1e7dad93d31b26cb7db839450",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        29,
+        29
+      ],
+      "resolved_sequence_sha256": [
+        "bb017aeb76f47238797d523b216f86192cd8bd16473e8ded739c6b523987662c",
+        "bb017aeb76f47238797d523b216f86192cd8bd16473e8ded739c6b523987662c"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_TopSilkscreenLayer.GTO",
+      "before_sha256": "727ad214c866078211d7e72612318a23f0ba82f3f899b52d4ed53c8b750092db",
+      "after_sha256": "11820145c96ebfee79cb49e9a271ddf5cfc8f4559d2e14438fdda0958c0b32d7",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": false,
+      "primitive_counts": [
+        1654,
+        1650
+      ],
+      "resolved_sequence_sha256": [
+        "12683aa5f5b8e34c6b9cf508484a847bb406cb4eb22f72594c0f3cc43f44decc",
+        "b11fc46dd072edb71421dcad695234cdfb1d0b50bbda9f59b4a984e1bc22344f"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "Gerber_TopSolderMaskLayer.GTS",
+      "before_sha256": "83be81b1e06abd4c0bfedd39cd1babf7a84c2431406ea115a26d883ed7b9eb06",
+      "after_sha256": "0e550776a628bc46baacd3135293ad6cf61c826d3275896068b0b51fe5c99e05",
+      "raw_bytes_equal": false,
+      "primitive_sequence_equal": true,
+      "primitive_counts": [
+        367,
+        367
+      ],
+      "resolved_sequence_sha256": [
+        "c1e3276d7cba18821c1b4b61b11d07f70e40e55bd2ea8632fa8558148dcea77a",
+        "c1e3276d7cba18821c1b4b61b11d07f70e40e55bd2ea8632fa8558148dcea77a"
+      ],
+      "parser_notes": []
+    },
+    {
+      "member": "PCB下单必读.txt",
+      "before_sha256": "dcb3ee1c645c17a009d70726ad9ab708b68a074556fabcf75a4a059d3b43ec59",
+      "after_sha256": "dcb3ee1c645c17a009d70726ad9ab708b68a074556fabcf75a4a059d3b43ec59",
+      "raw_bytes_equal": true
+    }
+  ],
+  "scope": "Only PRECHECK03 to PRECHECK04. No source, QA scripts, frozen release or manufacturing file modified by this review."
+}

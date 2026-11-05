@@ -1,0 +1,110 @@
+{
+  "release": "V0.3",
+  "candidate": "DFM_PRECHECK_04",
+  "created_at": "2026-11-05T13:04:39.628721+00:00",
+  "project_name": "Mianguang V0.3",
+  "project_uuid": "f4312b686e296bdd77a0ad71377a658c7f15b61fee4283ea042b46d776ba0045",
+  "eda_version": "EasyEDA Pro 4.1.78",
+  "status": "PENDING_ONLINE_RECHECK",
+  "online_dfm": "PRECHECK_03_2_REPORT_RECEIVED_PRECHECK_04_RECHECK_PENDING",
+  "online_smt": "PRECHECK_03_2_EXECUTED_ONE_WARNING_PRECHECK_04_RECHECK_PENDING",
+  "manufacturing_released": false,
+  "pcb_drc_passed": true,
+  "schematic_drc_passed": true,
+  "revision": "D1 top silkscreen central symbol replaced by external cathode bar only",
+  "prior_online_warning_conditions": [
+    {
+      "type": "THT_TO_SMT_PAD_CLEARANCE",
+      "count": 8,
+      "factory_confirmed": false
+    },
+    {
+      "type": "PTH_WITHOUT_PAD_ON_NPTH_FILE",
+      "count": 8,
+      "classification_confirmed_by_platform": false
+    },
+    {
+      "type": "D1_BODY_SILKSCREEN",
+      "count": 1,
+      "source_corrected": true,
+      "online_closed": false
+    }
+  ],
+  "target_finish": "LEAD_FREE_HASL",
+  "previous_report_finish": "LEADED_HASL",
+  "physical_hardware_validation": false,
+  "previous_candidate_manifest_sha256": "b4005dd1d23cf3f2f2d47bcd8de1533c190a3120a7a414f98ee6ad758b45a51f",
+  "previous_online_report_sha256": "ea74515b35dcdc8e53dbcbce50c5f0469a792dcea27879627973c660e80364fe",
+  "files": [
+    {
+      "path": "BOM_Mianguang_V0.3.csv",
+      "bytes": 1122,
+      "sha256": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2"
+    },
+    {
+      "path": "BOM_Mianguang_V0.3.xlsx",
+      "bytes": 7770,
+      "sha256": "ec28a664978c3c468505a8eb6e4f761bc5818bd4ad6a16b2f8e3563fe805fcce"
+    },
+    {
+      "path": "Gerber_Mianguang_V0.3.zip",
+      "bytes": 35424,
+      "sha256": "915296951145847c9b6e229feffacc6bc4edb3c42af815d3ca696ad4964370c0"
+    },
+    {
+      "path": "Mianguang_V0.3.epcb",
+      "bytes": 131945,
+      "sha256": "41bd43f9068be79c6358d8010b176b31b3160c33373b3d082d8f9bda8168b380"
+    },
+    {
+      "path": "Mianguang_V0.3.epro2",
+      "bytes": 98365,
+      "sha256": "eeda9cb493a761e124751bb28a96701ce67f361e9a53b2b18eefafbfd03e3294"
+    },
+    {
+      "path": "Mianguang_V0.3.esch",
+      "bytes": 366016,
+      "sha256": "19a75fdb22c19aef01568e1ea68b0694a9bfd540a5b8bb7f082c7af50701a158"
+    },
+    {
+      "path": "PCB_Review_V0.3.pdf",
+      "bytes": 252470,
+      "sha256": "7d49eca290e764055f8f0f1a2f5aa3757828bb9f4a556e95ebaecf8c46fd862a"
+    },
+    {
+      "path": "PickPlace_Mianguang_V0.3.csv",
+      "bytes": 3433,
+      "sha256": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704"
+    },
+    {
+      "path": "README_交付与装配.md",
+      "bytes": 3710,
+      "sha256": "e928812e58b1661f2af700345c6b3933ddeb6bc7a640d42fab0dd63025edcc06"
+    },
+    {
+      "path": "Schematic_V0.3.png",
+      "bytes": 1323033,
+      "sha256": "e0d0a667c04023e8adba78e8f62e906eca843c9afe17c9dfa1639e0e8032f7c3"
+    },
+    {
+      "path": "native_checks.json",
+      "bytes": 4441,
+      "sha256": "789663deb4585f66d5e9c9ea9f31f2e42adb70290f5bbae1ff5e51080f2571fc"
+    },
+    {
+      "path": "pcb_netlist.json",
+      "bytes": 46378,
+      "sha256": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994"
+    },
+    {
+      "path": "schematic_netlist.json",
+      "bytes": 63787,
+      "sha256": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657"
+    },
+    {
+      "path": "外接件与装配BOM.csv",
+      "bytes": 5467,
+      "sha256": "dfe77b837808215f7fc68af2dea061c7a1951a799cb918a04fd0437475089316"
+    }
+  ]
+}

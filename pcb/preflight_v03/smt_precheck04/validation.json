@@ -1,0 +1,308 @@
+{
+  "status": "PASS",
+  "release": "V0.3",
+  "source": "pcb/release_v03_precheck04",
+  "source_candidate": "release_v03_precheck04",
+  "project_uuid": "f4312b686e296bdd77a0ad71377a658c7f15b61fee4283ea042b46d776ba0045",
+  "source_sha256": {
+    "BOM_Mianguang_V0.3.csv": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2",
+    "BOM_Mianguang_V0.3.xlsx": "ec28a664978c3c468505a8eb6e4f761bc5818bd4ad6a16b2f8e3563fe805fcce",
+    "Gerber_Mianguang_V0.3.zip": "915296951145847c9b6e229feffacc6bc4edb3c42af815d3ca696ad4964370c0",
+    "Mianguang_V0.3.epcb": "41bd43f9068be79c6358d8010b176b31b3160c33373b3d082d8f9bda8168b380",
+    "Mianguang_V0.3.epro2": "eeda9cb493a761e124751bb28a96701ce67f361e9a53b2b18eefafbfd03e3294",
+    "Mianguang_V0.3.esch": "19a75fdb22c19aef01568e1ea68b0694a9bfd540a5b8bb7f082c7af50701a158",
+    "PCB_Review_V0.3.pdf": "7d49eca290e764055f8f0f1a2f5aa3757828bb9f4a556e95ebaecf8c46fd862a",
+    "PickPlace_Mianguang_V0.3.csv": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704",
+    "README_交付与装配.md": "e928812e58b1661f2af700345c6b3933ddeb6bc7a640d42fab0dd63025edcc06",
+    "Schematic_V0.3.png": "e0d0a667c04023e8adba78e8f62e906eca843c9afe17c9dfa1639e0e8032f7c3",
+    "native_checks.json": "789663deb4585f66d5e9c9ea9f31f2e42adb70290f5bbae1ff5e51080f2571fc",
+    "pcb_netlist.json": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994",
+    "schematic_netlist.json": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657",
+    "外接件与装配BOM.csv": "dfe77b837808215f7fc68af2dea061c7a1951a799cb918a04fd0437475089316",
+    "manifest.json": "57910fa4b40b576a59391743c86d29fb2a9ba85b9b0b9f3758dbd2dfa23601c3"
+  },
+  "output_sha256": {
+    "BOM_SMT_Mianguang_V0.3.csv": "5f8363204ad5262a5d722759e05ad190f148effef9d304bc2f321f79169b5439",
+    "CPL_SMT_Mianguang_V0.3.csv": "626ff404745ff5867f0f95e78a7db6690ad0f06e6e67684cbb07699269c41701",
+    "manual_assembly.csv": "565ce30db99b8e8b4d200c181724e1dd1184bcec1e9f459b1189f8c178106080"
+  },
+  "counts": {
+    "bom_groups": 9,
+    "smt_components": 14,
+    "manual_components": 9,
+    "total_components": 23,
+    "smt_pads": 29
+  },
+  "checks": {
+    "frozen_manifest_verified": true,
+    "source_unchanged": true,
+    "csv_roundtrip_exact": true,
+    "bom_cpl_references_equal": true,
+    "quantity_matches_designators": true,
+    "physical_pad_classification": true,
+    "native_centroids_layer_rotation_preserved": true
+  },
+  "components": [
+    {
+      "designator": "C1",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "31mm",
+      "Mid Y": "14mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "C2",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "37mm",
+      "Mid Y": "14mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "C3",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "17mm",
+      "Mid Y": "34mm",
+      "Layer": "T",
+      "Rotation": "90"
+    },
+    {
+      "designator": "C4",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "54mm",
+      "Mid Y": "28mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "C5",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "54mm",
+      "Mid Y": "31mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "D1",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "37mm",
+      "Mid Y": "8mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "D2",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "24mm",
+      "Mid Y": "14mm",
+      "Layer": "T",
+      "Rotation": "90"
+    },
+    {
+      "designator": "F1",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "25mm",
+      "Mid Y": "8mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "Q1",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 3,
+      "Mid X": "49mm",
+      "Mid Y": "17mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "R1",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "45mm",
+      "Mid Y": "24mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "R2",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "49mm",
+      "Mid Y": "22mm",
+      "Layer": "T",
+      "Rotation": "90"
+    },
+    {
+      "designator": "R3",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "17mm",
+      "Mid Y": "29mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "R4",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "49mm",
+      "Mid Y": "27mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "R5",
+      "assembly": "SMT",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "49mm",
+      "Mid Y": "31mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "J1",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "17mm",
+      "Mid Y": "8mm",
+      "Layer": "T",
+      "Rotation": "90"
+    },
+    {
+      "designator": "J2",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 4,
+      "Mid X": "56mm",
+      "Mid Y": "35mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "J3",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "56mm",
+      "Mid Y": "17mm",
+      "Layer": "T",
+      "Rotation": "90"
+    },
+    {
+      "designator": "J4",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "11mm",
+      "Mid Y": "29mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "J5",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 4,
+      "Mid X": "14mm",
+      "Mid Y": "44mm",
+      "Layer": "T",
+      "Rotation": "90"
+    },
+    {
+      "designator": "JP1",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "47mm",
+      "Mid Y": "8mm",
+      "Layer": "T",
+      "Rotation": "90"
+    },
+    {
+      "designator": "JP2",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "48mm",
+      "Mid Y": "36mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "JP3",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 2,
+      "Mid X": "48mm",
+      "Mid Y": "41mm",
+      "Layer": "T",
+      "Rotation": "0"
+    },
+    {
+      "designator": "U1",
+      "assembly": "manual",
+      "coordinates_equal_to_native_cpl": true,
+      "bom_fields_equal_to_native_bom": true,
+      "physical_pads": 14,
+      "Mid X": "33mm",
+      "Mid Y": "29.517mm",
+      "Layer": "T",
+      "Rotation": "0"
+    }
+  ],
+  "format_guides": [
+    "https://www.jlc.com/portal/server_guide_48022.html",
+    "https://jlcpcb.com/help/article/pick-place-file-for-pcb-assembly",
+    "https://jlcpcb.com/help/article/bill-of-materials-for-pcb-assembly"
+  ],
+  "platform_smt_check": "NOT_RUN",
+  "platform_rotation_corrections": "NONE",
+  "scope": "Local file consistency only; platform matching, stock, polarity and placement preview remain pending."
+}

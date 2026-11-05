@@ -1,0 +1,100 @@
+{
+  "candidate": "V0.3 DFM_PRECHECK_03",
+  "report_time_local": "2026-11-05 20:48:56 Asia/Shanghai",
+  "report_file": "PRECHECK_03_report.pdf",
+  "report_sha256": "d3689c3b8a3cae97806bd7f69210ab852bbf2b0d308eebeef730b48e138e13e3",
+  "gerber_file": "../../../preflight_v03/Mianguang_V0.3_DFM_PRECHECK_03.zip",
+  "gerber_sha256": "8e786b7bfa3eb609b283f079b3bb2ccddcab58149d3979a5f0926bc297206811",
+  "association": "User-supplied report filename/title, board dimensions and matching preview; PDF has no source ZIP hash",
+  "pcb_dfm_selected": true,
+  "smt_dfm_selected": false,
+  "board_layers": 2,
+  "board_mm": [
+    66,
+    56
+  ],
+  "reported_finish": "leaded HASL, green mask, white silkscreen",
+  "target_finish": "lead-free HASL, green mask, white silkscreen",
+  "finish_matches_target": false,
+  "findings": [
+    {
+      "rule": "pad_annular_ring",
+      "label": "焊盘孔环",
+      "reported_min_mm": 0.18,
+      "danger": 0,
+      "warning": 0,
+      "good": 8,
+      "previous_danger": 8,
+      "previous_warning": 0
+    },
+    {
+      "rule": "silkscreen_to_pad",
+      "label": "丝印距焊盘",
+      "reported_result": "无",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "previous_danger": 50,
+      "previous_warning": 0
+    },
+    {
+      "rule": "silkscreen_to_hole",
+      "label": "丝印距孔",
+      "reported_result": "无",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "previous_danger": 16,
+      "previous_warning": 4
+    },
+    {
+      "rule": "silkscreen_stroke",
+      "label": "丝印线条宽度",
+      "reported_result": "无",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "previous_danger": 0,
+      "previous_warning": 49
+    },
+    {
+      "rule": "tht_pad_to_smt_pad",
+      "label": "插件焊盘距贴片焊盘",
+      "reported_min_mm": 2.32,
+      "danger": 0,
+      "warning": 8,
+      "good": 28,
+      "previous_danger": 0,
+      "previous_warning": 8,
+      "disposition": "Manual THT after SMT; factory acceptance remains pending"
+    },
+    {
+      "rule": "pth_without_pad",
+      "label": "Pth无Pad",
+      "reported_result": "null",
+      "layer": "Drill_NPTH_Through.DRL",
+      "danger": 0,
+      "warning": 8,
+      "good": 0,
+      "previous_danger": 0,
+      "previous_warning": 0,
+      "disposition": "Check NPTH interpretation with DFM/CAM; four mechanical holes have explicit NON_PLATED source intent; not waived"
+    }
+  ],
+  "aggregate": {
+    "danger": 0,
+    "warning": 16,
+    "method": "Manual visual sum of the full one-page report; all nonzero groups are included above",
+    "previous_danger": 74,
+    "previous_warning": 61
+  },
+  "status": "ZERO_DANGER_WARNINGS_PENDING_REVIEW_AND_SMT",
+  "not_a_manufacturing_release": true,
+  "source_files_changed": false,
+  "notes": [
+    "Silkscreen rows show no findings and 0/0/0; no online minimum clearance or stroke value is invented.",
+    "4 NPTH x 2 outer layers matches 8 warnings but server counting logic is not proven.",
+    "Reported null for Pth without pad is not interpreted as a numeric clearance.",
+    "Prior frozen manifest and delivery ZIP retain export-time status; current status is recorded externally."
+  ]
+}

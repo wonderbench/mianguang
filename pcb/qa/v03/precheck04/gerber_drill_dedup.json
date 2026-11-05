@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "native_zip_sha256": "6b498573aa2939dd5b4abec2f770409c8894808815b099fde9459b37bac71857",
+  "upload_zip_sha256": "915296951145847c9b6e229feffacc6bc4edb3c42af815d3ca696ad4964370c0",
+  "removed": [
+    {
+      "path": "Drill_PTH_Through_Via.DRL",
+      "sha256": "32cf115ffdd08238f4cc4a439c2683fe0a65b8b8721f7d9af4a8ad37ba788345",
+      "reason": "Exact geometric subset of the primary PTH drill file"
+    }
+  ],
+  "retained_members_sha256": {
+    "Gerber_TopLayer.GTL": "5e90c9c15dd807a619bb18aa214c77d1ed8679f5fa3c2767657cf0b36bb72bd3",
+    "Gerber_BottomLayer.GBL": "4b7c09576fb1b1aa9b43a0dd99aeaf6df127a9ae4ff54c54eea7375d430b891b",
+    "Gerber_TopSilkscreenLayer.GTO": "11820145c96ebfee79cb49e9a271ddf5cfc8f4559d2e14438fdda0958c0b32d7",
+    "Gerber_BottomSilkscreenLayer.GBO": "42bf69200190a8502ea0bf960bbd4493064b832dd18a3422a6e453360055e62b",
+    "Gerber_TopSolderMaskLayer.GTS": "0e550776a628bc46baacd3135293ad6cf61c826d3275896068b0b51fe5c99e05",
+    "Gerber_BottomSolderMaskLayer.GBS": "66f4fb6ce55ecda6a0099aacf3e303cddd07c0bc0fa8228c73d5f062ce8f8926",
+    "Gerber_TopPasteMaskLayer.GTP": "c2d2d4c280842dc462e878dc22f4d599d301fba1e7dad93d31b26cb7db839450",
+    "Gerber_BoardOutlineLayer.GKO": "675d98deaa4d541e0aad350cc857209e18bfeae62105c52c69f52323fc976bad",
+    "Gerber_DocumentLayer.GDL": "3a4c9cdeb7abcff212fc052f767e36eb91f4148aa291a361c5219574028b8c7b",
+    "Gerber_DrillDrawingLayer.GDD": "40cea8cfb421dff37b32ffba2f543029c0f5dd0f8de4e26e38d223499ddba31d",
+    "Drill_PTH_Through.DRL": "c74128f24ab4a2edae79d76a6e6734e7cb888ecdf53a712fe7c70233a6c0328c",
+    "Drill_NPTH_Through.DRL": "9a2ba012652f79d04d61bea6d5024a0db9b64c883318399ff56d8432d2aff1ec",
+    "FlyingProbeTesting.json": "2f0e13f50d8e02f945807338d214959f09a23df7263112d30e81ba3539fb3dfb",
+    "PCB\u4e0b\u5355\u5fc5\u8bfb.txt": "dcb3ee1c645c17a009d70726ad9ab708b68a074556fabcf75a4a059d3b43ec59"
+  },
+  "all_retained_member_bytes_identical": true,
+  "independent_drills_unchanged": true,
+  "pth": 38,
+  "npth": 4
+}

@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "candidate": "PRECHECK04",
+  "reviewed_at": "2026-11-05T13:06:03.651252+00:00",
+  "inputs_sha256": {
+    "pcb/release_v03_precheck04/Gerber_Mianguang_V0.3.zip": "915296951145847c9b6e229feffacc6bc4edb3c42af815d3ca696ad4964370c0",
+    "pcb/release_v03_precheck04/Mianguang_V0.3.epro2": "eeda9cb493a761e124751bb28a96701ce67f361e9a53b2b18eefafbfd03e3294",
+    "pcb/release_v03_precheck04/Mianguang_V0.3.epcb": "41bd43f9068be79c6358d8010b176b31b3160c33373b3d082d8f9bda8168b380",
+    "pcb/release_v03_precheck04/pcb_netlist.json": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994",
+    "pcb/release_v03_precheck03/Mianguang_V0.3.epro2": "01f43cf3fcebcb7f2e6dfb590aaf878a952d3f6b54837cca8e0f2a40bde66e1f"
+  },
+  "curve_error_mm": 0.000125,
+  "source_changes": {
+    "removed": [
+      [
+        "POLY",
+        "e10"
+      ],
+      [
+        "POLY",
+        "e11"
+      ],
+      [
+        "POLY",
+        "e7"
+      ],
+      [
+        "POLY",
+        "e9"
+      ]
+    ],
+    "changed": [
+      [
+        "POLY",
+        "e8"
+      ]
+    ],
+    "added": []
+  },
+  "metrics": {
+    "actual_bar_endpoints_mm": [
+      [
+        33.2,
+        7.4
+      ],
+      [
+        33.2,
+        8.6
+      ]
+    ],
+    "actual_bar_stroke_mm": 0.2032,
+    "actual_bar_ink_bounds_mm": [
+      33.098400000000005,
+      7.298400000000003,
+      33.3016,
+      8.701599999999997
+    ],
+    "design_body_bounds_mm": [
+      34.89997846,
+      6.700027239999999,
+      39.099970060000004,
+      9.30002204
+    ],
+    "body_gap_mm": 1.5983784599999993,
+    "pad_min_gap_mm": 0.973462259999998,
+    "nearest_pad": "D1.1",
+    "mask_min_gap_mm": 0.9226699999999964,
+    "drill_min_gap_mm": 13.164655438085525,
+    "other_silk_min_gap_mm": 1.6352781310038267,
+    "outside_board_area_mm2": 0.0
+  },
+  "checks": [
+    {
+      "id": "minimal_d1_design_change",
+      "status": "PASS"
+    },
+    {
+      "id": "remaining_d1_silk",
+      "status": "PASS"
+    },
+    {
+      "id": "native_bar_path_and_width",
+      "status": "PASS"
+    },
+    {
+      "id": "gerber_parse",
+      "status": "PASS"
+    },
+    {
+      "id": "one_actual_gerber_bar_at_planned_position",
+      "status": "PASS"
+    },
+    {
+      "id": "actual_gerber_stroke",
+      "status": "PASS"
+    },
+    {
+      "id": "native_gerber_registration",
+      "status": "PASS"
+    },
+    {
+      "id": "mask_min_gap_mm",
+      "status": "PASS"
+    },
+    {
+      "id": "drill_min_gap_mm",
+      "status": "PASS"
+    },
+    {
+      "id": "pad_min_gap_mm",
+      "status": "PASS"
+    },
+    {
+      "id": "outside_body_on_cathode_side",
+      "status": "PASS"
+    },
+    {
+      "id": "no_silk_collision",
+      "status": "PASS"
+    },
+    {
+      "id": "inside_board",
+      "status": "PASS"
+    },
+    {
+      "id": "former_central_symbol_absent_in_gerber",
+      "status": "PASS"
+    },
+    {
+      "id": "inputs_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Read-only final native and Gerber geometry verification; does not assert platform SMT acceptance or physical body tolerances."
+}

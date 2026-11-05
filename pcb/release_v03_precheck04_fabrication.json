@@ -1,0 +1,1611 @@
+{
+  "status": "PASS",
+  "counts": {
+    "PASS": 40
+  },
+  "context": {
+    "release_directory": "/Users/wuben/程序/EDA/mianguang-github/pcb/release_v03_precheck04",
+    "inputs": [
+      {
+        "path": "BOM_Mianguang_V0.3.csv",
+        "bytes": 1122,
+        "sha256": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2"
+      },
+      {
+        "path": "BOM_Mianguang_V0.3.xlsx",
+        "bytes": 7770,
+        "sha256": "ec28a664978c3c468505a8eb6e4f761bc5818bd4ad6a16b2f8e3563fe805fcce"
+      },
+      {
+        "path": "Gerber_Mianguang_V0.3.zip",
+        "bytes": 35424,
+        "sha256": "915296951145847c9b6e229feffacc6bc4edb3c42af815d3ca696ad4964370c0"
+      },
+      {
+        "path": "Mianguang_V0.3.epcb",
+        "bytes": 131945,
+        "sha256": "41bd43f9068be79c6358d8010b176b31b3160c33373b3d082d8f9bda8168b380"
+      },
+      {
+        "path": "Mianguang_V0.3.epro2",
+        "bytes": 98365,
+        "sha256": "eeda9cb493a761e124751bb28a96701ce67f361e9a53b2b18eefafbfd03e3294"
+      },
+      {
+        "path": "Mianguang_V0.3.esch",
+        "bytes": 366016,
+        "sha256": "19a75fdb22c19aef01568e1ea68b0694a9bfd540a5b8bb7f082c7af50701a158"
+      },
+      {
+        "path": "PCB_Review_V0.3.pdf",
+        "bytes": 252470,
+        "sha256": "7d49eca290e764055f8f0f1a2f5aa3757828bb9f4a556e95ebaecf8c46fd862a"
+      },
+      {
+        "path": "PickPlace_Mianguang_V0.3.csv",
+        "bytes": 3433,
+        "sha256": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704"
+      },
+      {
+        "path": "README_交付与装配.md",
+        "bytes": 3710,
+        "sha256": "e928812e58b1661f2af700345c6b3933ddeb6bc7a640d42fab0dd63025edcc06"
+      },
+      {
+        "path": "Schematic_V0.3.png",
+        "bytes": 1323033,
+        "sha256": "e0d0a667c04023e8adba78e8f62e906eca843c9afe17c9dfa1639e0e8032f7c3"
+      },
+      {
+        "path": "manifest.json",
+        "bytes": 3606,
+        "sha256": "57910fa4b40b576a59391743c86d29fb2a9ba85b9b0b9f3758dbd2dfa23601c3"
+      },
+      {
+        "path": "native_checks.json",
+        "bytes": 4441,
+        "sha256": "789663deb4585f66d5e9c9ea9f31f2e42adb70290f5bbae1ff5e51080f2571fc"
+      },
+      {
+        "path": "pcb_netlist.json",
+        "bytes": 46378,
+        "sha256": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994"
+      },
+      {
+        "path": "schematic_netlist.json",
+        "bytes": 63787,
+        "sha256": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657"
+      },
+      {
+        "path": "外接件与装配BOM.csv",
+        "bytes": 5467,
+        "sha256": "dfe77b837808215f7fc68af2dea061c7a1951a799cb918a04fd0437475089316"
+      }
+    ],
+    "checker_hashes": {
+      "check_fabrication.py": "8a5eb2760a4dc297b774ef8957a2e0a5ad9d5413b6da1b44290eef46c1f71816",
+      "check_release.py": "d9d2fd195fda814dc66cf68e8af6cb49039eb23119ad0beae95d6437f5f72f91",
+      "gerber_checks.py": "a4e813765c2f1fda8c44c01b058053fbcd3f2c25b78f55d263fb2ddd42ab0ca6"
+    },
+    "profile": "online-preflight",
+    "limits": {
+      "silk_text_height_mm": 1.0,
+      "silk_stroke_mm": 0.2,
+      "silk_to_pad_mm": 0.15,
+      "mask_bridge_mm": 0.1,
+      "mask_to_other_copper_island_mm": 0.09,
+      "different_copper_islands_mm": 0.2,
+      "copper_to_routed_edge_mm": 0.2,
+      "npth_to_copper_mm": 0.2,
+      "pth_annular_ring_mm": 0.25,
+      "via_annular_ring_mm": 0.15,
+      "via_drill_mm": 0.2,
+      "independent_hole_edge_gap_mm": 0.45,
+      "native_track_width_mm": 0.2032,
+      "silk_to_mask_mm": 0.25,
+      "silk_to_all_drill_mm": 0.25
+    },
+    "sources": [
+      {
+        "url": "https://jlcpcb.com/capabilities/pcb-capabilities",
+        "retrieved": "2026-11-05",
+        "applies_to": "2-layer FR-4, 1 oz, green solder mask, routed outline",
+        "note": "Silk 1 mm / 0.15 mm / pad gap 0.15 mm; mask bridge 0.10 mm; mask-to-neighbor trace 0.09 mm; routed-edge copper 0.20 mm. PTH ring 0.25 mm follows recommendation. Other project gates may be more conservative than the absolute factory limits."
+      }
+    ],
+    "curve_errors_mm": [
+      0.0005,
+      0.000125
+    ],
+    "profile_note": "online-preflight is a local corrective profile, not an online-service verdict. Its 0.25 mm silk-to-mask/drill and 0.20 mm silk-width targets respond to PRECHECK_02. It does not waive the original gates or assess the 3 mm through-hole-to-SMT assembly advisory.",
+    "dependency_versions": {
+      "gerbonara": "1.6.3",
+      "shapely": "2.2.0"
+    }
+  },
+  "checks": [
+    {
+      "id": "source.pcb.copies",
+      "status": "PASS",
+      "detail": "2 exported PCB copies must contain the same geometry, electrical and annotation records",
+      "evidence": {
+        "sources": [
+          "Mianguang_V0.3.epcb",
+          "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+        ],
+        "ignored_no_connect_attributes_of_deleted_pins": {}
+      }
+    },
+    {
+      "id": "fabrication.source_silk_interpretation",
+      "status": "PASS",
+      "detail": "PCB text, visible instance ATTR, and resolved footprint text/strokes inspected",
+      "evidence": {
+        "unresolved": [],
+        "visible_text_count": 39,
+        "stroke_count": 47
+      }
+    },
+    {
+      "id": "fabrication.source_silk_text_height",
+      "status": "PASS",
+      "detail": "Every resolved visible silk text has nominal source height >= 1.0 mm",
+      "evidence": {
+        "minimum_mm": 1.016,
+        "violations": []
+      }
+    },
+    {
+      "id": "fabrication.source_silk_stroke",
+      "status": "PASS",
+      "detail": "Resolved silk text and line/arc/poly strokes are >= 0.20 mm",
+      "evidence": {
+        "violations": [],
+        "text_count": 39,
+        "stroke_count": 47
+      }
+    },
+    {
+      "id": "fabrication.cpl",
+      "status": "PASS",
+      "detail": "CPL designators, reference coordinates, rotation, side, pin count and SMD/hand-insert class match native source; placement-machine origin calibration is not tested",
+      "evidence": {
+        "file": "PickPlace_Mianguang_V0.3.csv",
+        "count": 23,
+        "problems": [],
+        "measurements": [
+          {
+            "ref": "C1",
+            "ref_xy_mm": [
+              31.0,
+              14.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "C2",
+            "ref_xy_mm": [
+              37.0,
+              14.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "C3",
+            "ref_xy_mm": [
+              17.0,
+              34.0
+            ],
+            "rotation": 90.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "C4",
+            "ref_xy_mm": [
+              54.0,
+              28.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "C5",
+            "ref_xy_mm": [
+              54.0,
+              31.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "D1",
+            "ref_xy_mm": [
+              37.0,
+              8.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "D2",
+            "ref_xy_mm": [
+              24.0,
+              14.0
+            ],
+            "rotation": 90.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "F1",
+            "ref_xy_mm": [
+              25.0,
+              8.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "J1",
+            "ref_xy_mm": [
+              17.0,
+              8.0
+            ],
+            "rotation": 90.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "J2",
+            "ref_xy_mm": [
+              56.0,
+              35.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 4,
+            "layer": "T"
+          },
+          {
+            "ref": "J3",
+            "ref_xy_mm": [
+              56.0,
+              17.0
+            ],
+            "rotation": 90.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "J4",
+            "ref_xy_mm": [
+              11.0,
+              29.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "J5",
+            "ref_xy_mm": [
+              14.0,
+              44.0
+            ],
+            "rotation": 90.0,
+            "smd": "No",
+            "pins": 4,
+            "layer": "T"
+          },
+          {
+            "ref": "JP1",
+            "ref_xy_mm": [
+              47.0,
+              8.0
+            ],
+            "rotation": 90.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "JP2",
+            "ref_xy_mm": [
+              48.0,
+              36.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "JP3",
+            "ref_xy_mm": [
+              48.0,
+              41.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "Q1",
+            "ref_xy_mm": [
+              49.0,
+              17.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 3,
+            "layer": "T"
+          },
+          {
+            "ref": "R1",
+            "ref_xy_mm": [
+              45.0,
+              24.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "R2",
+            "ref_xy_mm": [
+              49.0,
+              22.0
+            ],
+            "rotation": 90.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "R3",
+            "ref_xy_mm": [
+              17.0,
+              29.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "R4",
+            "ref_xy_mm": [
+              49.0,
+              27.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "R5",
+            "ref_xy_mm": [
+              49.0,
+              31.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "U1",
+            "ref_xy_mm": [
+              33.0,
+              30.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 14,
+            "layer": "T"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fabrication.layer_inventory",
+      "status": "PASS",
+      "detail": "Exactly one top/bottom mask and silk parsed without warnings",
+      "evidence": {
+        "top_silk": "Gerber_TopSilkscreenLayer.GTO",
+        "bottom_silk": "Gerber_BottomSilkscreenLayer.GBO",
+        "top_mask": "Gerber_TopSolderMaskLayer.GTS",
+        "bottom_mask": "Gerber_BottomSolderMaskLayer.GBS"
+      }
+    },
+    {
+      "id": "fabrication.registration",
+      "status": "PASS",
+      "detail": "All native holes match actual independent drill positions, sizes and plating",
+      "evidence": {
+        "translation_mm": [
+          0.0,
+          0.0
+        ],
+        "holes": 42
+      }
+    },
+    {
+      "id": "fabrication.pth_ring",
+      "status": "PASS",
+      "detail": "Resolved concentric PTH lands have >= 0.25 mm nominal annular ring; manufacturing eccentricity not simulated",
+      "evidence": {
+        "minimum_mm": 0.29998670000000005,
+        "pads": [
+          {
+            "pad": "J1.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J1.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J2.1",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J2.2",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J2.3",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J2.4",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J3.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J3.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J4.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J4.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J5.1",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J5.2",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J5.3",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J5.4",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "JP1.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP1.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP2.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP2.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP3.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP3.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.3",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.4",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.5",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.6",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.7",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.8",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.9",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.10",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.11",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.12",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.13",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.14",
+            "ring_mm": 0.34998660000000004
+          }
+        ]
+      }
+    },
+    {
+      "id": "fabrication.via_ring_drill",
+      "status": "PASS",
+      "detail": "Native through vias have nominal ring >= 0.15 mm and drill >= 0.20 mm",
+      "evidence": [
+        {
+          "id": "c327d7060307c7b6",
+          "drill_mm": 0.299974,
+          "ring_mm": 0.17500473
+        },
+        {
+          "id": "07a52d824079dc75",
+          "drill_mm": 0.299974,
+          "ring_mm": 0.17500473
+        },
+        {
+          "id": "48f9856a35363ecb",
+          "drill_mm": 0.299974,
+          "ring_mm": 0.17500473
+        },
+        {
+          "id": "72f521cd780d23ba",
+          "drill_mm": 0.299974,
+          "ring_mm": 0.17500473
+        }
+      ]
+    },
+    {
+      "id": "fabrication.hole_spacing",
+      "status": "PASS",
+      "detail": "All independent drill edges are >= 0.45 mm apart",
+      "evidence": {
+        "minimum_mm": 1.4399799999999991
+      }
+    },
+    {
+      "id": "fabrication.native_track_width",
+      "status": "PASS",
+      "detail": "Native copper LINE/ARC/POLY widths >= 8 mil; not a local-neck analysis of arbitrary filled copper",
+      "evidence": {
+        "3V3": [
+          0.254
+        ],
+        "5V_IN": [
+          0.59994546
+        ],
+        "5V_ISO": [
+          0.59994546
+        ],
+        "5V_MCU": [
+          0.59994546
+        ],
+        "5V_SYS": [
+          0.59994546
+        ],
+        "BUTTON_N": [
+          0.254
+        ],
+        "GND": [
+          0.50799746
+        ],
+        "I2C_SCL": [
+          0.254
+        ],
+        "I2C_SDA": [
+          0.254
+        ],
+        "LED_GATE": [
+          0.254
+        ],
+        "LED_LOW": [
+          0.58470546
+        ],
+        "LED_PWM": [
+          0.254
+        ],
+        "MCU_RX": [
+          0.254
+        ],
+        "MCU_TX": [
+          0.254
+        ],
+        "RADAR_RX": [
+          0.254
+        ],
+        "RADAR_TX": [
+          0.254
+        ],
+        "UART_RX_LINK": [
+          0.254
+        ],
+        "UART_TX_LINK": [
+          0.254
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.exported_silk_stroke",
+      "status": "PASS",
+      "detail": "Actual circular-aperture strokes/dots and simple filled rectangles are >= 0.20 mm wide; empty bottom silk is allowed",
+      "evidence": {
+        "widths_mm_counts": {
+          "0.2032": 1577,
+          "0.254": 72,
+          "0.40508": 1
+        },
+        "filled_rectangles": [],
+        "unresolved": []
+      }
+    },
+    {
+      "id": "fabrication.top.mask_pad_coverage",
+      "status": "PASS",
+      "detail": "Every resolved physical land has >= 99.999% opening area coverage at both curve resolutions",
+      "evidence": {
+        "minimum_fraction": 0.9999999999999993,
+        "pads": [
+          {
+            "pad": "C1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C2.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C3.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C4.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C4.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C5.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C5.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "D1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "D1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "D2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "D2.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "F1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "F1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J1.2",
+            "area_fraction": 0.9999999999999998
+          },
+          {
+            "pad": "J1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J2.2",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J2.3",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J2.4",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J3.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "J3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J4.2",
+            "area_fraction": 1.0000000000000002
+          },
+          {
+            "pad": "J4.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J5.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J5.2",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "J5.3",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "J5.4",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "JP1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP2.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "JP2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP3.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "JP3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "Q1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "Q1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "Q1.3",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R2.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R3.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R4.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R4.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R5.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R5.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "U1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "U1.2",
+            "area_fraction": 0.9999999999999993
+          },
+          {
+            "pad": "U1.3",
+            "area_fraction": 0.9999999999999998
+          },
+          {
+            "pad": "U1.4",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.5",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.6",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.7",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.8",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.9",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.10",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.11",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.12",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.13",
+            "area_fraction": 1.0000000000000002
+          },
+          {
+            "pad": "U1.14",
+            "area_fraction": 1.0000000000000004
+          }
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.silk_mask_overlap",
+      "status": "PASS",
+      "detail": "Actual silk does not overlap soldermask openings at either curve resolution",
+      "evidence": {
+        "overlap_area_mm2": [
+          0.0,
+          0.0
+        ],
+        "minimum_gap_mm": 0.3075999999999999
+      }
+    },
+    {
+      "id": "fabrication.top.separate_pad_windows",
+      "status": "PASS",
+      "detail": "No soldermask opening merges multiple distinct physical pads in this separate-window design",
+      "evidence": []
+    },
+    {
+      "id": "fabrication.top.outside_board",
+      "status": "PASS",
+      "detail": "Copper and silk have no off-board geometry",
+      "evidence": {
+        "copper_mm2": 0.0,
+        "silk_mm2": 0.0
+      }
+    },
+    {
+      "id": "fabrication.top.copper_edge_gap_mm",
+      "status": "PASS",
+      "detail": "Copper-to-routed-outline clearance",
+      "evidence": {
+        "minimum_mm": 5.339999999999996,
+        "coarse_mm": 5.339999999999996,
+        "limit_mm": 0.2,
+        "distance_bounds_mm": [
+          [
+            5.338999999999996,
+            5.340999999999997
+          ],
+          [
+            5.339749999999996,
+            5.340249999999997
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          5.339749999999996,
+          5.340249999999997
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.copper_island_gap_mm",
+      "status": "PASS",
+      "detail": "Separate same-layer copper islands clearance; not same-island internal geometry",
+      "evidence": {
+        "minimum_mm": 0.20501935426071774,
+        "coarse_mm": 0.20501935426071774,
+        "limit_mm": 0.2,
+        "distance_bounds_mm": [
+          [
+            0.20401935426071774,
+            0.20601935426071774
+          ],
+          [
+            0.20476935426071774,
+            0.20526935426071774
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.20476935426071774,
+          0.20526935426071774
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.mask_window_gap_mm",
+      "status": "PASS",
+      "detail": "Separate soldermask opening clearance for green mask",
+      "evidence": {
+        "minimum_mm": 0.49021999999999366,
+        "coarse_mm": 0.49021999999999366,
+        "limit_mm": 0.1,
+        "distance_bounds_mm": [
+          [
+            0.48921999999999366,
+            0.49121999999999366
+          ],
+          [
+            0.4899699999999937,
+            0.49046999999999363
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.4899699999999937,
+          0.49046999999999363
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.silk_pad_gaps",
+      "status": "PASS",
+      "detail": "Actual silk-to-physical-pad copper clearance",
+      "evidence": {
+        "minimum_mm": 0.3583958399999991,
+        "limit_mm": 0.15,
+        "near_limit": [],
+        "count": 63,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            0.3573958399999991,
+            0.3593958399999991
+          ],
+          [
+            0.3581458399999991,
+            0.35864583999999905
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.3581458399999991,
+          0.35864583999999905
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.mask_other_island_gaps",
+      "status": "PASS",
+      "detail": "Mask opening to other copper islands; excludes same-island internal geometry",
+      "evidence": {
+        "minimum_mm": 0.15421935426980093,
+        "limit_mm": 0.09,
+        "near_limit": [],
+        "count": 63,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            0.15321935426980093,
+            0.15521935426980094
+          ],
+          [
+            0.15396935426980093,
+            0.15446935426980093
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.15396935426980093,
+          0.15446935426980093
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.npth_copper_gaps",
+      "status": "PASS",
+      "detail": "NPTH edge to remaining copper; only exactly coincident isolated NPTH disks removed",
+      "evidence": {
+        "minimum_mm": 7.348618037066508,
+        "limit_mm": 0.2,
+        "near_limit": [],
+        "count": 4,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            7.347618037066508,
+            7.3496180370665085
+          ],
+          [
+            7.348368037066508,
+            7.3488680370665085
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          7.348368037066508,
+          7.3488680370665085
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.silk_window_gaps",
+      "status": "PASS",
+      "detail": "Actual silk to every soldermask opening, including openings not assigned to component pads",
+      "evidence": {
+        "minimum_mm": 0.3075999999999999,
+        "limit_mm": 0.25,
+        "near_limit": [],
+        "count": 63,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            0.3065999999999999,
+            0.3085999999999999
+          ],
+          [
+            0.3073499999999999,
+            0.30784999999999985
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.3073499999999999,
+          0.30784999999999985
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.silk_all_drill_gaps",
+      "status": "PASS",
+      "detail": "Actual silk to every independent PTH/via/NPTH drill edge, including tented vias",
+      "evidence": {
+        "minimum_mm": 0.5596250000000005,
+        "limit_mm": 0.25,
+        "near_limit": [],
+        "count": 42,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            0.5586250000000005,
+            0.5606250000000005
+          ],
+          [
+            0.5593750000000005,
+            0.5598750000000005
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.5593750000000005,
+          0.5598750000000005
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.via_tenting",
+      "status": "PASS",
+      "detail": "All identified small plated drill locations have no mask opening (nominal tenting, not a guarantee of filled holes)",
+      "evidence": [
+        {
+          "xy_mm": [
+            46.18674,
+            25.37276
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            47.51363,
+            30.72071
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            14.50666,
+            27.75044
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            15.00019,
+            32.85405
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "fabrication.bottom.exported_silk_stroke",
+      "status": "PASS",
+      "detail": "Actual circular-aperture strokes/dots and simple filled rectangles are >= 0.20 mm wide; empty bottom silk is allowed",
+      "evidence": {
+        "widths_mm_counts": {},
+        "filled_rectangles": [],
+        "unresolved": []
+      }
+    },
+    {
+      "id": "fabrication.bottom.mask_pad_coverage",
+      "status": "PASS",
+      "detail": "Every resolved physical land has >= 99.999% opening area coverage at both curve resolutions",
+      "evidence": {
+        "minimum_fraction": 0.9999999999999993,
+        "pads": [
+          {
+            "pad": "J1.2",
+            "area_fraction": 0.9999999999999998
+          },
+          {
+            "pad": "J1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J2.2",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J2.3",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J2.4",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J3.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "J3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J4.2",
+            "area_fraction": 1.0000000000000002
+          },
+          {
+            "pad": "J4.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J5.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J5.2",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "J5.3",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "J5.4",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "JP1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP2.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "JP2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP3.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "JP3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "U1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "U1.2",
+            "area_fraction": 0.9999999999999993
+          },
+          {
+            "pad": "U1.3",
+            "area_fraction": 0.9999999999999998
+          },
+          {
+            "pad": "U1.4",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.5",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.6",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.7",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.8",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.9",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.10",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.11",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.12",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.13",
+            "area_fraction": 1.0000000000000002
+          },
+          {
+            "pad": "U1.14",
+            "area_fraction": 1.0000000000000004
+          }
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.silk_mask_overlap",
+      "status": "PASS",
+      "detail": "Actual silk does not overlap soldermask openings at either curve resolution",
+      "evidence": {
+        "overlap_area_mm2": [
+          0.0,
+          0.0
+        ],
+        "minimum_gap_mm": null
+      }
+    },
+    {
+      "id": "fabrication.bottom.separate_pad_windows",
+      "status": "PASS",
+      "detail": "No soldermask opening merges multiple distinct physical pads in this separate-window design",
+      "evidence": []
+    },
+    {
+      "id": "fabrication.bottom.outside_board",
+      "status": "PASS",
+      "detail": "Copper and silk have no off-board geometry",
+      "evidence": {
+        "copper_mm2": 0.0,
+        "silk_mm2": 0.0
+      }
+    },
+    {
+      "id": "fabrication.bottom.copper_edge_gap_mm",
+      "status": "PASS",
+      "detail": "Copper-to-routed-outline clearance",
+      "evidence": {
+        "minimum_mm": 5.339999999999996,
+        "coarse_mm": 5.339999999999996,
+        "limit_mm": 0.2,
+        "distance_bounds_mm": [
+          [
+            5.338999999999996,
+            5.340999999999997
+          ],
+          [
+            5.339749999999996,
+            5.340249999999997
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          5.339749999999996,
+          5.340249999999997
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.copper_island_gap_mm",
+      "status": "PASS",
+      "detail": "Separate same-layer copper islands clearance; not same-island internal geometry",
+      "evidence": {
+        "minimum_mm": 0.2057800000000043,
+        "coarse_mm": 0.2057800000000043,
+        "limit_mm": 0.2,
+        "distance_bounds_mm": [
+          [
+            0.2047800000000043,
+            0.2067800000000043
+          ],
+          [
+            0.2055300000000043,
+            0.2060300000000043
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.2055300000000043,
+          0.2060300000000043
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.mask_window_gap_mm",
+      "status": "PASS",
+      "detail": "Separate soldermask opening clearance for green mask",
+      "evidence": {
+        "minimum_mm": 0.6383999999999972,
+        "coarse_mm": 0.6383999999999972,
+        "limit_mm": 0.1,
+        "distance_bounds_mm": [
+          [
+            0.6373999999999972,
+            0.6393999999999972
+          ],
+          [
+            0.6381499999999972,
+            0.6386499999999972
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.6381499999999972,
+          0.6386499999999972
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.silk_pad_gaps",
+      "status": "PASS",
+      "detail": "No silk objects on this side; no silk clearance conflict",
+      "evidence": {
+        "count": 0
+      }
+    },
+    {
+      "id": "fabrication.bottom.mask_other_island_gaps",
+      "status": "PASS",
+      "detail": "Mask opening to other copper islands; excludes same-island internal geometry",
+      "evidence": {
+        "minimum_mm": 0.15498000000000187,
+        "limit_mm": 0.09,
+        "near_limit": [],
+        "count": 34,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            0.15398000000000187,
+            0.15598000000000187
+          ],
+          [
+            0.15473000000000187,
+            0.15523000000000187
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.15473000000000187,
+          0.15523000000000187
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.npth_copper_gaps",
+      "status": "PASS",
+      "detail": "NPTH edge to remaining copper; only exactly coincident isolated NPTH disks removed",
+      "evidence": {
+        "minimum_mm": 7.348618037066508,
+        "limit_mm": 0.2,
+        "near_limit": [],
+        "count": 4,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            7.347618037066508,
+            7.3496180370665085
+          ],
+          [
+            7.348368037066508,
+            7.3488680370665085
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          7.348368037066508,
+          7.3488680370665085
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.silk_window_gaps",
+      "status": "PASS",
+      "detail": "No silk objects on this side; no silk clearance conflict",
+      "evidence": {
+        "count": 0
+      }
+    },
+    {
+      "id": "fabrication.bottom.silk_all_drill_gaps",
+      "status": "PASS",
+      "detail": "No silk objects on this side; no silk clearance conflict",
+      "evidence": {
+        "count": 0
+      }
+    },
+    {
+      "id": "fabrication.bottom.via_tenting",
+      "status": "PASS",
+      "detail": "All identified small plated drill locations have no mask opening (nominal tenting, not a guarantee of filled holes)",
+      "evidence": [
+        {
+          "xy_mm": [
+            46.18674,
+            25.37276
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            47.51363,
+            30.72071
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            14.50666,
+            27.75044
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            15.00019,
+            32.85405
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "fabrication.inputs_stable",
+      "status": "PASS",
+      "detail": "Release file set, byte sizes and SHA-256 hashes stayed unchanged during checks"
+    }
+  ],
+  "scope": "Supplementary nominal 2-layer green-mask fabrication checks only. Not native EDA DRC, CAM acceptance, fabrication approval or physical verification. Island gaps exclude internal geometry of one connected copper island; no arbitrary copper neck analysis, stencil process qualification, placement-machine rotation calibration, component-body collision, thermal or EMC validation."
+}

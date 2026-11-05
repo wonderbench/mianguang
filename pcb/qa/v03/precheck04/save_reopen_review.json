@@ -1,0 +1,35 @@
+{
+  "footprint": {
+    "saved": true,
+    "reopened": true,
+    "native_records_unchanged": true,
+    "removed": [
+      "e7",
+      "e9",
+      "e10",
+      "e11"
+    ],
+    "modified": "e8",
+    "cathode_bar_mm": [
+      [
+        33.2,
+        7.4
+      ],
+      [
+        33.2,
+        8.6
+      ]
+    ],
+    "stroke_mm": 0.2032
+  },
+  "sch": {
+    "saved": true,
+    "reopened": true,
+    "native_records_unchanged": true
+  },
+  "pcb": {
+    "saved": true,
+    "reopened": true,
+    "native_records_unchanged": true
+  }
+}
