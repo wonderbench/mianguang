@@ -85,6 +85,8 @@
     let requestNumber = 0;
     let pending = false;
     let lastGoodQuery = "";
+    let lastBuckets = null;
+    let chartWidth = 0;
 
     function selectQuick(hours) {
       rollingHours = hours;
@@ -98,6 +100,8 @@
 
     function drawChart(svg, buckets, key) {
       const namespace = "http://www.w3.org/2000/svg";
+      const width = svg.clientWidth;
+      svg.setAttribute("viewBox", `0 0 ${width} 200`);
       svg.replaceChildren();
       const add = (tag, attributes, text) => {
         const element = document.createElementNS(namespace, tag);
@@ -108,13 +112,13 @@
       const min = key === "rr_bpm" ? 10 : 60;
       const max = key === "rr_bpm" ? 25 : 100;
       const ticks = key === "rr_bpm" ? [10, 15, 20, 25] : [60, 80, 100];
-      const x = index => 52 + index / Math.max(1, buckets.length - 1) * 888;
+      const x = index => 52 + index / Math.max(1, buckets.length - 1) * (width - 72);
       const y = value => 158 - (value - min) / (max - min) * 136;
       ticks.forEach(value => {
-        add("line", { x1: 52, x2: 940, y1: y(value), y2: y(value), class: "grid" });
+        add("line", { x1: 52, x2: width - 20, y1: y(value), y2: y(value), class: "grid" });
         add("text", { x: 40, y: y(value) + 4, "text-anchor": "end" }, value);
       });
-      const indexes = [...new Set([0, Math.floor((buckets.length - 1) / 2), buckets.length - 1])];
+      const indexes = [...new Set(width < 480 ? [0, buckets.length - 1] : [0, Math.floor((buckets.length - 1) / 2), buckets.length - 1])];
       indexes.forEach(index => {
         add("text", { x: x(index), y: 186, "text-anchor": index === 0 ? "start" : index === buckets.length - 1 ? "end" : "middle" }, readable(buckets[index].minute).slice(5, 16));
       });
@@ -130,9 +134,19 @@
         else { points.push([x(index), y(bucket[key])]); valid += 1; }
       });
       finish();
-      if (!valid) add("text", { x: 496, y: 90, "text-anchor": "middle", class: "empty-chart" }, "此窗口没有完整且有效的分钟点");
+      if (!valid) add("text", { x: width / 2 + 16, y: 90, "text-anchor": "middle", class: "empty-chart" }, "此窗口没有完整且有效的分钟点");
       add("title", {}, `共 ${buckets.length} 分钟，${valid} 个完整有效点；缺测或无效分钟断线。时间为 UTC。`);
     }
+
+    function drawCharts() {
+      if (result.hidden || !lastBuckets) return;
+      history.querySelectorAll("[data-chart]").forEach(svg => drawChart(svg, lastBuckets, svg.dataset.chart));
+    }
+    new ResizeObserver(([entry]) => {
+      if (entry.contentRect.width === chartWidth) return;
+      chartWidth = entry.contentRect.width;
+      drawCharts();
+    }).observe(result);
 
     async function loadSeries() {
       const number = ++requestNumber;
@@ -155,10 +169,11 @@
         history.querySelector('[data-slot-count="rr"]').textContent = `${summary.rr_valid_slots} / ${summary.received_slots} 个已收到时隙`;
         history.querySelector('[data-slot-count="hr"]').textContent = `${summary.hr_valid_slots} / ${summary.received_slots} 个已收到时隙`;
         history.querySelector("[data-effective-range]").textContent = `有效范围：${readable(data.effective_range.from)} — ${readable(data.effective_range.to)} UTC。更新：${readable(data.server_time)} UTC。`;
-        history.querySelectorAll("[data-chart]").forEach(svg => drawChart(svg, data.buckets, svg.dataset.chart));
+        lastBuckets = data.buckets;
         if (exportLink) { exportLink.href = `${history.dataset.exportUrl}?${query}`; exportLink.hidden = false; }
         lastGoodQuery = query;
         result.hidden = false;
+        drawCharts();
         showError(historyError, "");
         expireSnapshots();
       } catch (error) {
