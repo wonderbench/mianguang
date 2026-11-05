@@ -3,9 +3,9 @@ name: Firmware
 on:
   push:
     branches: [main]
-    paths: ["firmware/**", "platform/firmware/**", "platform/tools/provision_device.py", ".github/workflows/firmware.yml"]
+    paths: ["firmware/**", "platform/firmware/**", "platform/tools/provision_device.py", "platform/contracts/**", "platform/app/monitoring/services/ingestion.py", "platform/requirements.txt", ".github/workflows/firmware.yml"]
   pull_request:
-    paths: ["firmware/**", "platform/firmware/**", "platform/tools/provision_device.py", ".github/workflows/firmware.yml"]
+    paths: ["firmware/**", "platform/firmware/**", "platform/tools/provision_device.py", "platform/contracts/**", "platform/app/monitoring/services/ingestion.py", "platform/requirements.txt", ".github/workflows/firmware.yml"]
 
 permissions:
   contents: read
