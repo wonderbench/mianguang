@@ -13,7 +13,7 @@ pcb/qa/.venv/bin/python pcb/qa/check_fabrication.py pcb/release_v03_precheck04 -
 
 阈值依据和适用工艺记录在脚本及报告中，基础来源为[嘉立创 PCB 工艺能力](https://jlcpcb.com/capabilities/pcb-capabilities)。依据PRECHECK02在线报告新增`online-preflight`配置：实际阻焊窗及独立钻孔距丝印均≥0.25 mm、可见描线≥0.20 mm，共40项检查；原基础36项检查未削弱。V0.3必须明确传入`--version V0.3`，否则版本检查仍按默认V0.2执行。
 
-04候选独立验收49/49、制造几何40/40通过，报告位于上级`release_v03_precheck04_*.json`；02/03历史报告保持原字节。03第二份在线报告已执行PCB/SMT，合计0危险17警告；04据此将D1本体内阴极标记外移。04复检及8条手工焊接间距、8条NPTH识别提示和工艺确认仍待完成，不能以离线PASS代替平台结论。原报告见[v03/online_dfm/PRECHECK_03_2_review.md](v03/online_dfm/PRECHECK_03_2_review.md)。
+04候选独立验收49/49、制造几何40/40通过，报告位于上级`release_v03_precheck04_*.json`；02/03历史报告保持原字节。04在线报告已执行PCB/SMT，结果PCB 0危险/16警告、SMT 0危险/0警告，D1本体丝印项关闭。剩余8条手工焊接间距、8条NPTH识别提示和工艺确认仍待完成，未制造放行。最新报告见[v03/online_dfm/PRECHECK_04_review.md](v03/online_dfm/PRECHECK_04_review.md)；本轮仅归档与更新状态，不覆盖冻结源或历史检查报告。
 
 ```sh
 pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v02 --output pcb/qa/release_v02_acceptance.json

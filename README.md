@@ -18,7 +18,7 @@
 
 ## 当前交付
 
-- **PCB V0.3 PRECHECK04，2026-11-05：** [在线DFM上传ZIP](pcb/preflight_v03/Mianguang_V0.3_DFM_PRECHECK_04.zip)、[完整工程](pcb/release_v03_precheck04/Mianguang_V0.3.epro2)、[完整BOM](pcb/release_v03_precheck04/BOM_Mianguang_V0.3.xlsx)、[SMT BOM与坐标](pcb/preflight_v03/smt_precheck04/)、[装配说明](pcb/release_v03_precheck04/README_交付与装配.md)。[03第二份报告](pcb/qa/v03/online_dfm/PRECHECK_03_2_review.md)已包含PCB和SMT分析：0危险、17警告（PCB16、SMT1）。04仅将D1阴极丝印移到本体外；孔位、器件位置和电路不变。原生DRC零提示，[独立验收49/49](pcb/release_v03_precheck04_acceptance.json)、[制造检查40/40](pcb/release_v03_precheck04_fabrication.json)通过。**04在线复检待完成；NPTH识别、手工焊接间距、表面工艺及正式贴装匹配仍待确认，未制造放行。**
+- **PCB V0.3 PRECHECK04，2026-11-05：** [在线DFM上传ZIP](pcb/preflight_v03/Mianguang_V0.3_DFM_PRECHECK_04.zip)、[完整工程](pcb/release_v03_precheck04/Mianguang_V0.3.epro2)、[完整BOM](pcb/release_v03_precheck04/BOM_Mianguang_V0.3.xlsx)、[SMT BOM与坐标](pcb/preflight_v03/smt_precheck04/)、[装配说明](pcb/release_v03_precheck04/README_交付与装配.md)。[04在线报告](pcb/qa/v03/online_dfm/PRECHECK_04_review.md)已完成PCB和SMT分析：PCB 0危险/16警告、SMT 0危险/0警告，D1本体丝印警告已关闭。04仅调整D1丝印；孔位、器件位置和电路不变。原生DRC零提示，[独立验收49/49](pcb/release_v03_precheck04_acceptance.json)、[制造检查40/40](pcb/release_v03_precheck04_fabrication.json)通过。**NPTH识别、手工焊接间距、无铅表面工艺及正式贴装匹配仍待确认，未制造放行。**
 - **PCB V0.2 历史冻结版，2026-11-04：** [原完整交付ZIP](pcb/releases/眠光雷达_PCB_V0.2_2026-11-04.zip)保持字节不变。该版PCB DRC零错误、独立验收44/44通过；原理图保留的排针属性警告已在 V0.3 关闭。
 - **固件 V0.2.0：** [源码](firmware/src/)、[固定构建配置](firmware/platformio.ini)、[编译产物及校验](firmware/releases/v0.2.0/)。已完成目标板编译和模拟测试，未烧录实机。
 - **外壳 V0.2，2026-11-04：** [Blender模型](models/v0.2/Mianguang_Enclosure_V0.2.blend)、[11个STL](models/v0.2/stl/)、[壁挂预览](models/v0.2/renders/03_wall_45deg.png)、[爆炸预览](models/v0.2/renders/04_exploded.png)。按冻结PCB对齐四孔和23个元件，补充雷达固定、按钮、灯板、USB压条及共用转轴；桌面0–30°、壁挂0–45°。数字几何检查见[检查记录](models/v0.2/geometry_checks.json)，采购尺寸约束和实物待验项见[装配说明](models/mechanical/assembly_v02.md)。
@@ -26,7 +26,7 @@
 
 首次接线请阅读[交付与装配说明](pcb/release_v03_precheck04/README_交付与装配.md)。USB烧录前断开外部5 V，取下JP1、JP2和JP3。夜灯使用5 V自带限流、功率不超过0.5 W的灯板。当前雷达通信需确认供电后人工执行 `radar on`；自动掉电禁能、脱机自动启动和整夜实测尚未完成。
 
-V0.3的两域原生检查已没有保留提示；03第二份已经执行SMT，新增D1本体丝印警告已据此修订为04。当前04复检、剩余工艺确认及首件实测尚待完成。软件回放采用合成数据；当前输出用于有效测量区间内的趋势观察，未建立医疗诊断有效性。
+V0.3的两域原生检查已没有保留提示；04在线复检已关闭D1本体丝印警告，SMT零危险零警告。当前PCB仍有16条警告，剩余工艺确认及首件实测尚待完成。软件回放采用合成数据；当前输出用于有效测量区间内的趋势观察，未建立医疗诊断有效性。
 
 ## 版本与校验
 

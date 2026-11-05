@@ -7,10 +7,10 @@
 - `manual_assembly.csv`：J1–J5、JP1–JP3、U1共9件手工项，不混入贴片文件。
 - `validation.json`：来源清单、输出哈希、位号、数量、坐标和29个SMT焊盘检查。
 
-03第二份报告已包含SMT分析，报D1本体中央丝印警告1项；04已在源中修正，**04在线PCB/SMT复检尚未执行**。使用同版04三文件复测，不将03报告作为04通过记录。
+[04在线报告](../../qa/v03/online_dfm/PRECHECK_04_review.md)已经执行PCB和SMT分析，**SMT为0危险、0警告，原D1本体中央丝印警告已关闭**。PCB仍为0危险、16警告。当前三份CSV与验证记录保持原字节；报告不能代替全部14位号的正式选料和方向确认。
 
 在平台核对全部14个位号、物料匹配、封装及实际引脚方向，见[04极性表](../../qa/v03/precheck04/smt_polarity_reference.md)。D1阴极在左侧，新竖线位于本体外；D2阴极设计向下、实物色带仍需供方包装图确认；Q1单脚D在左。原生角度不等于贴片库零度。
 
-还应确认NPTH识别、后续手工焊接、工艺边/定位点及目标无铅喷锡。03的PCB 16条警告不因本地检查通过自动关闭。
+还应确认NPTH识别、后续手工焊接、工艺边/定位点及目标无铅喷锡。04仍有PCB 16条警告，不因SMT零警告或本地检查通过自动关闭。
 
 重建命令：`python3 pcb/scripts/prepare_smt_preflight_v03.py --release pcb/release_v03_precheck04 --output pcb/preflight_v03/smt_precheck04`。

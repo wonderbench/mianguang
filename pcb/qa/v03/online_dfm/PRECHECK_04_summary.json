@@ -1,0 +1,159 @@
+{
+  "candidate": "V0.3 DFM_PRECHECK_04",
+  "report_revision": "first_user_supplied_report",
+  "report_title_filename": "Mianguang_V0.3_DFM_PRECHECK_04",
+  "report_time_local": "2026-11-05 21:23:52 Asia/Shanghai",
+  "report_file": "PRECHECK_04_report.pdf",
+  "report_sha256": "7515256d264090277eda905bf22e0db700d14e062ea99e92811acb70e21ae9ca",
+  "report_bytes": 4762485,
+  "report_pages": 1,
+  "archive_byte_identical_to_user_file": true,
+  "previous_report_file": "PRECHECK_03_2_report.pdf",
+  "previous_report_sha256": "ea74515b35dcdc8e53dbcbce50c5f0469a792dcea27879627973c660e80364fe",
+  "previous_report_preserved": true,
+  "gerber_file": "../../../preflight_v03/Mianguang_V0.3_DFM_PRECHECK_04.zip",
+  "gerber_sha256": "915296951145847c9b6e229feffacc6bc4edb3c42af815d3ca696ad4964370c0",
+  "association": "User-supplied report filename/title, board dimensions and matching preview; PDF has no source ZIP hash and does not cryptographically bind the Gerber, BOM or CPL",
+  "pcb_dfm_selected": true,
+  "smt_dfm_selected": true,
+  "smt_section_present": true,
+  "smt_section_label": "SMT DFM>元件组装分析",
+  "board_layers": 2,
+  "board_mm": [
+    66,
+    56
+  ],
+  "reported_finish": "leaded HASL, green mask, white silkscreen",
+  "target_finish": "lead-free HASL, green mask, white silkscreen",
+  "finish_matches_target": false,
+  "pending_process_conditions": [
+    "DFM/CAM confirmation of four mechanical NON_PLATED holes and disposition of the eight Pth-without-pad warnings",
+    "Assembler acceptance of SMT reflow followed by manual through-hole/module assembly for the eight THT-to-SMT spacing warnings",
+    "Align the reported leaded HASL setting with the project's lead-free HASL target and confirm the final manufacturing process"
+  ],
+  "smt_evidence_limits": {
+    "smt_analysis_executed": true,
+    "selected_parts_formally_confirmed_by_pdf": false,
+    "all_14_intended_smt_references_proven_by_pdf": false,
+    "package_rotation_and_polarity_formally_confirmed_by_pdf": false,
+    "bom_cpl_hashes_present_in_pdf": false
+  },
+  "not_a_manufacturing_release": true,
+  "source_files_changed": false,
+  "findings": [
+    {
+      "scope": "PCB",
+      "rule": "tht_pad_to_smt_pad",
+      "label": "插件焊盘距贴片焊盘",
+      "reported_min_mm": 2.32,
+      "layer": "Gerber_TopLayer.GTL",
+      "danger": 0,
+      "warning": 8,
+      "good": 28,
+      "previous_danger": 0,
+      "previous_warning": 8,
+      "disposition": "SMT reflow followed by manual THT assembly remains the intended process; factory acceptance of this condition is still pending"
+    },
+    {
+      "scope": "PCB",
+      "rule": "pth_without_pad",
+      "label": "Pth无Pad",
+      "reported_result": "null",
+      "layer": "Drill_NPTH_Through.DRL",
+      "danger": 0,
+      "warning": 8,
+      "good": 0,
+      "previous_danger": 0,
+      "previous_warning": 8,
+      "disposition": "Confirm mechanical NPTH classification with DFM/CAM; no waiver or factory confirmation is established by this PDF"
+    }
+  ],
+  "additional_observed_results": [
+    {
+      "scope": "PCB",
+      "rule": "pad_annular_ring",
+      "label": "焊盘孔环",
+      "reported_min_mm": 0.18,
+      "danger": 0,
+      "warning": 0,
+      "good": 8
+    },
+    {
+      "scope": "PCB",
+      "rules": [
+        "silkscreen_to_pad",
+        "silkscreen_to_hole",
+        "silkscreen_stroke"
+      ],
+      "labels": [
+        "丝印距焊盘",
+        "丝印距孔",
+        "丝印线条宽度"
+      ],
+      "reported_result_each": "无",
+      "danger_each": 0,
+      "warning_each": 0,
+      "good_each": 0
+    },
+    {
+      "scope": "SMT",
+      "rule": "component_to_component",
+      "label": "元件距元件",
+      "reported_min_mm": 1.98,
+      "layer": "component_+_top",
+      "danger": 0,
+      "warning": 0,
+      "good": 15,
+      "note": "The count 15 is a reported result count, not proof that all 14 intended SMT references were imported or checked"
+    }
+  ],
+  "closed_findings": [
+    {
+      "scope": "SMT",
+      "rule": "component_body_text_warning",
+      "label": "元件本体文字预警",
+      "reported_result": "无",
+      "layer": "无",
+      "danger": 0,
+      "warning": 0,
+      "good": 0,
+      "previous_danger": 0,
+      "previous_warning": 1,
+      "previous_component": "D1",
+      "source_corrected_in": "DFM_PRECHECK_04",
+      "online_closure_confirmed": true,
+      "disposition": "The prior D1 body-silkscreen finding is closed in this report; manufacturing and full SMT matching approval remain separate"
+    }
+  ],
+  "aggregate": {
+    "pcb": {
+      "danger": 0,
+      "warning": 16
+    },
+    "smt": {
+      "danger": 0,
+      "warning": 0
+    },
+    "total": {
+      "danger": 0,
+      "warning": 16
+    },
+    "method": "Manual visual sum of every row in the complete one-page PDF, independently cross-checked; findings contains every nonzero danger/warning group",
+    "previous_total": {
+      "danger": 0,
+      "warning": 17
+    },
+    "comparison": "Compared with the second PRECHECK_03 report, the D1 SMT body-text warning falls from 1 to 0. Both PCB warning groups remain at 8 each."
+  },
+  "status": "ZERO_DANGER_ZERO_SMT_WARNINGS_PROCESS_CONFIRMATION_PENDING",
+  "notes": [
+    "PCB and SMT are both selected and have actual result sections. SMT was executed and has zero reported danger/warning findings.",
+    "All other report rows show zero danger and zero warning. No new source correction is required by the observed report findings; PRECHECK_04 source and exports remain unchanged.",
+    "The D1 finding is closed at report level. This does not prove the complete intended placement list, part selection, orientation or factory acceptance.",
+    "The three PCB silkscreen rows report no findings, not numeric clearance or stroke minima.",
+    "The NPTH file is still named by the Pth-without-pad warning. Four holes times two outer copper layers plausibly explains eight warnings but does not prove the platform classification or waive them.",
+    "The literal null result is not a numeric distance.",
+    "Report-visible time is 21:23:52; PDF metadata creation time is 21:23:53. The report-visible time is used for indexing.",
+    "Frozen PRECHECK_04 payload and its existing complete ZIP predate this received PDF. They retain export-time status; current status is recorded in pcb/LATEST.json and this supplemental review."
+  ]
+}
