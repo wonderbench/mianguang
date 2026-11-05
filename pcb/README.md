@@ -11,6 +11,7 @@
 | [04独立验收](release_v03_precheck04_acceptance.json) | 49/49 PASS：严格原生检查、网表/BOM、铜连接、钻孔、锡膏 |
 | [04制造检查](release_v03_precheck04_fabrication.json) | 40/40 PASS：online-preflight配置，含实际阻焊窗/钻孔避让和笔画门槛 |
 | [04独立复核](qa/v03/precheck04/) | 03→04差异、D1标记位置、导出一致性、极性与保存重开证据 |
+| [安装孔与装配间隙处置](qa/v03/mounting_and_clearance_review.md) | 16条警告的处置判断、下单确认文字、M3螺钉头与焊脚等外壳补充要求 |
 | [在线报告归档](qa/v03/online_dfm/) | 02、03两份及04原PDF与各自复核；04的SMT已零危险零警告 |
 | [04完整交付ZIP](releases/Mianguang_PCB_V0.3_PRECHECK04_2026-11-05.zip) | 统一工程与检查证据；SHA-256见同名`.zip.sha256` |
 | [LATEST.json](LATEST.json) | 当前候选、最新04报告及上一份03报告，含哈希和未完成项 |
