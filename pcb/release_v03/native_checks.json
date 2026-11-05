@@ -1,0 +1,95 @@
+{
+  "project_uuid": "f4312b686e296bdd77a0ad71377a658c7f15b61fee4283ea042b46d776ba0045",
+  "release": "V0.3",
+  "strict": true,
+  "started_at": "2026-11-05T11:33:01.247957+00:00",
+  "exported_at": "2026-11-05T11:33:12.813135+00:00",
+  "schematic": {
+    "saved": true,
+    "details": [],
+    "passed": true
+  },
+  "pcb": {
+    "saved": true,
+    "details": [],
+    "passed": true
+  },
+  "source_sha256": {
+    "Mianguang_V0.3.esch": "e43a957914daab10c4ec3bebc63ef6d03275203df494689074c16c7a080ac48e",
+    "Mianguang_V0.3.epcb": "200b3fc2ca770b7cc3fd2840e700f6460abe523b08d7c7ee190cc76aea959b04",
+    "Mianguang_V0.3.epro2": "e99b49c640c06d2a1bd36213682fdc1fc56e33b7090c582f66813078a78bd13e"
+  },
+  "native_records_unchanged_since_drc": true,
+  "source_comparison": {
+    "record_header_ignored": [
+      "ticket"
+    ],
+    "document_header_ignored": [
+      "client",
+      "updateTime",
+      "version"
+    ],
+    "records": "Final records keyed by document type/UUID and record type/ID; all payload fields retained"
+  },
+  "checked_source_sha256": {
+    "schematic": {
+      "sourceBefore": "477288c0f4bdd40b7b40f5f3d0d5ab31f978884bb16acfd29ac79f7538cd6c05",
+      "sourceAfter": "e2b66cc049a2583e901a7d43e073f8b79a8c95e277f67645a8c0318da63d9d82"
+    },
+    "pcb": {
+      "sourceBefore": "f5b2759336bc0a8d615333c568bbd39b98e7c8f0e1ff5fea2eb3befe13c71eb7",
+      "sourceAfter": "517181ac74900245ae88bdf504bf577a1c9c795dc04e0728f0dfccced0d89b84"
+    }
+  },
+  "component_footprints": {
+    "C1": "c7834434632bce3a",
+    "C2": "8e218b9b60eb881d",
+    "C3": "8e218b9b60eb881d",
+    "C4": "c7834434632bce3a",
+    "C5": "8e218b9b60eb881d",
+    "D1": "8858b5826f676c7f",
+    "D2": "123b258f13e2ed07",
+    "F1": "33e55b16bba0d134",
+    "J1": "65807167f5ccf645",
+    "J2": "58662144f2e820d5",
+    "J3": "65807167f5ccf645",
+    "J4": "65807167f5ccf645",
+    "J5": "58662144f2e820d5",
+    "JP1": "65807167f5ccf645",
+    "JP2": "65807167f5ccf645",
+    "JP3": "65807167f5ccf645",
+    "Q1": "2e4d961459cb1867",
+    "R1": "715f344b6a768106",
+    "R2": "715f344b6a768106",
+    "R3": "715f344b6a768106",
+    "R4": "715f344b6a768106",
+    "R5": "715f344b6a768106",
+    "U1": "d1533a679cd0c852"
+  },
+  "footprint_source_sha256": {
+    "c7834434632bce3a": "38ef30aac4b4bffc86145560350b160b1ca752d0881afa662401454a19b05820",
+    "8e218b9b60eb881d": "a5b0e246130c20775a13bf13efd7e95367d1575249b5ccb72f9e5736c828dbec",
+    "8858b5826f676c7f": "c8a7417b030b9ab44d1e9747b3e09b6be4c67aeb55ac1f91125c766b27cd7f97",
+    "123b258f13e2ed07": "a0354dbe015e537d18260cb7287398406c795fdda53cb4f4924d2412ab4aaaad",
+    "33e55b16bba0d134": "ef537f73f86402c9cca1217c5bea0a5dd87b67fec5c5c459034331acedda93e7",
+    "65807167f5ccf645": "127829bdd28bb14e5f84f9f2e6564dbc0204dfa7431bbe084435488d7081c534",
+    "58662144f2e820d5": "894888c44e42718e83a2b203101ff639b2f558d5d8d4aa5867f2b1e4439931d3",
+    "2e4d961459cb1867": "c04f9313a563c4dc28ca7c091f92486d64dd540103c6e206d400de45fcc242eb",
+    "715f344b6a768106": "8afc1eb446dec15b6335dd7239d4fdc473f109bbef2df12a047efeb78d15072e",
+    "d1533a679cd0c852": "7550b25f761d2b48af11c4393e8b54f254a3d149a0e3291c819729ddbbf2e4b6"
+  },
+  "footprint_semantic_sha256": {
+    "c7834434632bce3a": "3f511f727c11f8ec0d9ce494b278616de80818d095022c388476b6209d8d3f5e",
+    "8e218b9b60eb881d": "d493fa9cde1f9c56b6464319e7dafb499ef488e81bbe7087dbda2289624e957a",
+    "8858b5826f676c7f": "302f3146089007530ec22fe926b8d61f1b3f00517e0c62168576b6a1fab39450",
+    "123b258f13e2ed07": "221b8a7b397dad0e8813ec3d75c8526e428da79e06d9fc0be4e9cfba02d1cf71",
+    "33e55b16bba0d134": "e9833f68f08add69b8739f757d0a313c8fa32a78774f462d18bae839c3416c6d",
+    "65807167f5ccf645": "e7f9a19bc8ffd861011fcc0e814fa04501303dd1bc11adcd3731e9f248dbc196",
+    "58662144f2e820d5": "16d24fc945cf0ea99821a1e006d64094ac00f03e2bed0f96a2ba2e9d904ebecd",
+    "2e4d961459cb1867": "e6adc7a3e7bf40f807fb1ae951f5da9340b6f932deca9169b0a4493ec5194f81",
+    "715f344b6a768106": "44425ed87c8e2e4b0e969645c9940600502958748eab25b3bd4de67215eccca1",
+    "d1533a679cd0c852": "1f3ccf8c3a5e78395ffa4b66f09a2c5e1dc2047ece58062bdb961af1733ccd57"
+  },
+  "project_footprints_match_checked_sources": true,
+  "save_reopen_review": "Required separately before this export; this script does not claim a reopen test"
+}

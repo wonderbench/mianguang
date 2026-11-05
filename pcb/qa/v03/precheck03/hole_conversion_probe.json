@@ -1,0 +1,1117 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "native_board_geometry",
+      "status": "PASS",
+      "evidence": {
+        "status": "PASS",
+        "counts": {
+          "PASS": 2
+        },
+        "context": {},
+        "checks": [
+          {
+            "id": "board.outline",
+            "status": "PASS",
+            "detail": "Closed 66 × 56 mm rectangular outline",
+            "evidence": {
+              "bounds_mm": [
+                0.0,
+                0.0,
+                66.0,
+                56.0
+              ],
+              "segments": 4
+            }
+          },
+          {
+            "id": "board.npth",
+            "status": "PASS",
+            "detail": "Four 2.7 mm NPTH mounting holes at (5,5), (61,5), (5,51), (61,51)",
+            "evidence": {
+              "holes_mm": [
+                [
+                  5.00000016,
+                  5.00000016,
+                  2.69999968
+                ],
+                [
+                  60.99999991999999,
+                  5.00000016,
+                  2.69999968
+                ],
+                [
+                  5.00000016,
+                  50.999999599999995,
+                  2.69999968
+                ],
+                [
+                  60.99999991999999,
+                  50.999999599999995,
+                  2.69999968
+                ]
+              ],
+              "missing": []
+            }
+          }
+        ],
+        "scope": "Offline consistency and geometry checks; no physical assembly, electrical or EMC validation."
+      }
+    },
+    {
+      "id": "native_hole_geometry_plating",
+      "status": "PASS",
+      "evidence": {
+        "before": {
+          "True": 38,
+          "False": 4
+        },
+        "after": {
+          "True": 38,
+          "False": 4
+        },
+        "mounting_holes": [
+          {
+            "x": 5.00000016,
+            "y": 5.00000016,
+            "d": 2.69999968,
+            "plated": false
+          },
+          {
+            "x": 5.00000016,
+            "y": 50.999999599999995,
+            "d": 2.69999968,
+            "plated": false
+          },
+          {
+            "x": 60.99999991999999,
+            "y": 5.00000016,
+            "d": 2.69999968,
+            "plated": false
+          },
+          {
+            "x": 60.99999991999999,
+            "y": 50.999999599999995,
+            "d": 2.69999968,
+            "plated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "native_components_and_pad_nets",
+      "status": "PASS",
+      "evidence": {
+        "components": 23,
+        "pad_net_records": 63
+      }
+    },
+    {
+      "id": "native_physical_pads",
+      "status": "PASS",
+      "evidence": {
+        "anchors": 63
+      }
+    },
+    {
+      "id": "native_all_other_records",
+      "status": "PASS",
+      "evidence": {
+        "before_count": 492,
+        "after_count": 492
+      }
+    },
+    {
+      "id": "four_pad_to_circle_conversion",
+      "status": "PASS",
+      "evidence": {
+        "removed_pad_ids": [
+          "ff6a7d7b8a9320ce",
+          "749c5d2691233666",
+          "411879da1f3b8e9a",
+          "413360139b720b58"
+        ],
+        "added_circle_fills": [
+          {
+            "id": "31c03fb323285911",
+            "path": [
+              [
+                "CIRCLE",
+                196.8504,
+                196.8504,
+                53.1496
+              ]
+            ],
+            "line": 321
+          },
+          {
+            "id": "ec6f753d40c9fd97",
+            "path": [
+              [
+                "CIRCLE",
+                2401.5748,
+                196.8504,
+                53.1496
+              ]
+            ],
+            "line": 322
+          },
+          {
+            "id": "230333763a563fcf",
+            "path": [
+              [
+                "CIRCLE",
+                196.8504,
+                2007.874,
+                53.1496
+              ]
+            ],
+            "line": 323
+          },
+          {
+            "id": "706994c78622e5ac",
+            "path": [
+              [
+                "CIRCLE",
+                2401.5748,
+                2007.874,
+                53.1496
+              ]
+            ],
+            "line": 324
+          }
+        ]
+      }
+    },
+    {
+      "id": "gerber_parser",
+      "status": "PASS",
+      "evidence": {
+        "before": [],
+        "after": []
+      }
+    },
+    {
+      "id": "exported_42_holes_unchanged",
+      "status": "PASS",
+      "evidence": {
+        "holes": 42,
+        "plated": 38,
+        "nonplated": 4,
+        "holes_geometry": [
+          {
+            "x": 14.50666,
+            "y": 27.75044,
+            "d": 0.29997,
+            "plated": true
+          },
+          {
+            "x": 15.00019,
+            "y": 32.85405,
+            "d": 0.29997,
+            "plated": true
+          },
+          {
+            "x": 46.18674,
+            "y": 25.37276,
+            "d": 0.29997,
+            "plated": true
+          },
+          {
+            "x": 47.51363,
+            "y": 30.72071,
+            "d": 0.29997,
+            "plated": true
+          },
+          {
+            "x": 12.27,
+            "y": 29.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 14.0,
+            "y": 40.19,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 14.0,
+            "y": 42.73,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 14.0,
+            "y": 45.27,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 14.0,
+            "y": 47.81,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 17.0,
+            "y": 6.73,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 17.0,
+            "y": 9.27,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 25.38003,
+            "y": 21.8974,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 25.38003,
+            "y": 24.4374,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 25.38003,
+            "y": 26.9774,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 25.38003,
+            "y": 29.5174,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 25.38003,
+            "y": 32.0574,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 25.38003,
+            "y": 34.5974,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 25.38003,
+            "y": 37.1374,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 40.61997,
+            "y": 21.8974,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 40.61997,
+            "y": 24.4374,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 40.61997,
+            "y": 26.9774,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 40.61997,
+            "y": 29.5174,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 40.61997,
+            "y": 32.0574,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 40.61997,
+            "y": 34.5974,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 40.61997,
+            "y": 37.1374,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 46.73,
+            "y": 36.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 46.73,
+            "y": 41.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 47.0,
+            "y": 6.73,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 47.0,
+            "y": 9.27,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 49.27,
+            "y": 36.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 49.27,
+            "y": 41.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 52.19,
+            "y": 35.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 54.73,
+            "y": 35.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 56.0,
+            "y": 15.73,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 56.0,
+            "y": 18.27,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 57.27,
+            "y": 35.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 59.81,
+            "y": 35.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 9.73,
+            "y": 29.0,
+            "d": 1.10002,
+            "plated": true
+          },
+          {
+            "x": 5.0,
+            "y": 5.0,
+            "d": 2.7,
+            "plated": false
+          },
+          {
+            "x": 5.0,
+            "y": 51.0,
+            "d": 2.7,
+            "plated": false
+          },
+          {
+            "x": 61.0,
+            "y": 5.0,
+            "d": 2.7,
+            "plated": false
+          },
+          {
+            "x": 61.0,
+            "y": 51.0,
+            "d": 2.7,
+            "plated": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "native_to_export_registration",
+      "status": "PASS",
+      "evidence": {
+        "translation_mm": [
+          0,
+          0
+        ],
+        "holes": 42
+      }
+    },
+    {
+      "id": "exported_outline_unchanged",
+      "status": "PASS",
+      "evidence": {
+        "bounds_mm": [
+          0.0,
+          0.0,
+          66.0,
+          56.0
+        ]
+      }
+    },
+    {
+      "id": "top_copper_after_drilling_0.0005",
+      "status": "PASS",
+      "evidence": {
+        "arc_approximation_error_mm": 0.0005,
+        "raw_difference_area_mm2": 22.891013328086245,
+        "added_area_mm2": 0.0,
+        "removed_area_mm2": 22.891013328086245,
+        "difference_outside_npth_mm2": 0.0,
+        "effective_copper_difference_mm2": 0.0
+      }
+    },
+    {
+      "id": "bottom_copper_after_drilling_0.0005",
+      "status": "PASS",
+      "evidence": {
+        "arc_approximation_error_mm": 0.0005,
+        "raw_difference_area_mm2": 22.891013328086245,
+        "added_area_mm2": 0.0,
+        "removed_area_mm2": 22.891013328086245,
+        "difference_outside_npth_mm2": 0.0,
+        "effective_copper_difference_mm2": 0.0
+      }
+    },
+    {
+      "id": "top_copper_after_drilling_0.000125",
+      "status": "PASS",
+      "evidence": {
+        "arc_approximation_error_mm": 0.000125,
+        "raw_difference_area_mm2": 22.899410857526377,
+        "added_area_mm2": 0.0,
+        "removed_area_mm2": 22.899410857526377,
+        "difference_outside_npth_mm2": 0.0,
+        "effective_copper_difference_mm2": 0.0
+      }
+    },
+    {
+      "id": "bottom_copper_after_drilling_0.000125",
+      "status": "PASS",
+      "evidence": {
+        "arc_approximation_error_mm": 0.000125,
+        "raw_difference_area_mm2": 22.899410857526377,
+        "added_area_mm2": 0.0,
+        "removed_area_mm2": 22.899410857526377,
+        "difference_outside_npth_mm2": 0.0,
+        "effective_copper_difference_mm2": 0.0
+      }
+    },
+    {
+      "id": "probe_electrical_geometry_checks",
+      "status": "PASS",
+      "evidence": [
+        {
+          "id": "gerber.npth",
+          "status": "PASS",
+          "detail": "Four 2.7 mm NPTH mounting holes at required board-relative coordinates",
+          "evidence": [
+            [
+              5.0,
+              5.0,
+              2.7
+            ],
+            [
+              61.0,
+              5.0,
+              2.7
+            ],
+            [
+              5.0,
+              51.0,
+              2.7
+            ],
+            [
+              61.0,
+              51.0,
+              2.7
+            ]
+          ]
+        },
+        {
+          "id": "gerber.registration",
+          "status": "PASS",
+          "detail": "All native and exported drill centers, diameters and plating match one-to-one",
+          "evidence": {
+            "translation_mm": [
+              0.0,
+              0.0
+            ],
+            "holes": 42
+          }
+        },
+        {
+          "id": "gerber.xiao_14_tht",
+          "status": "PASS",
+          "detail": "Exactly 14 XIAO plated holes match the resolved native footprint",
+          "evidence": [
+            {
+              "x": 25.380000040000002,
+              "y": 37.137400959999994,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "1"
+            },
+            {
+              "x": 25.380000040000002,
+              "y": 34.597400959999995,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "2"
+            },
+            {
+              "x": 25.380000040000002,
+              "y": 32.057400959999995,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "3"
+            },
+            {
+              "x": 25.380000040000002,
+              "y": 29.517400959999996,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "4"
+            },
+            {
+              "x": 25.380000040000002,
+              "y": 26.977400959999997,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "5"
+            },
+            {
+              "x": 25.380000040000002,
+              "y": 24.437400959999998,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "6"
+            },
+            {
+              "x": 25.380000040000002,
+              "y": 21.89740096,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "7"
+            },
+            {
+              "x": 40.62000004,
+              "y": 21.89740096,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "8"
+            },
+            {
+              "x": 40.62000004,
+              "y": 24.437400959999998,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "9"
+            },
+            {
+              "x": 40.62000004,
+              "y": 26.977400959999997,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "10"
+            },
+            {
+              "x": 40.62000004,
+              "y": 29.517400959999996,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "11"
+            },
+            {
+              "x": 40.62000004,
+              "y": 32.057400959999995,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "12"
+            },
+            {
+              "x": 40.62000004,
+              "y": 34.597400959999995,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "13"
+            },
+            {
+              "x": 40.62000004,
+              "y": 37.137400959999994,
+              "d": 1.1000231999999999,
+              "plated": true,
+              "ref": "U1",
+              "pin": "14"
+            }
+          ]
+        },
+        {
+          "id": "gerber.actual_copper",
+          "status": "PASS",
+          "detail": "Actual copper islands and plated barrels checked against every resolved pad net at two curve resolutions",
+          "evidence": {
+            "missing_pad_copper": [],
+            "opens": {},
+            "shorts": {},
+            "islands": 61,
+            "anchors": 63,
+            "unanchored_components": [],
+            "net_count": 23
+          }
+        }
+      ]
+    }
+  ],
+  "inputs_sha256": {
+    "pcb/qa/v03/precheck03/hole_conversion_probe_inputs/before_cutout.epcb": "de0ef8f856bd6c5eaccb1fd8561e39b82bf6af3581dac94d972dadad82e2a78e",
+    "pcb/qa/v03/precheck03/hole_conversion_probe_inputs/after_cutout.epcb": "f566c9c4b3accf840f25207ca9e930c29dd4d70cafe357832f90cf08e0bcdbc1",
+    "pcb/preflight_v03/Mianguang_V0.3_DFM_PRECHECK_02.zip": "b245381b710547aec874be0bb3018a74e3dfb0aaf2f7b20015833cee4b0f3a61",
+    "pcb/qa/v03/precheck03/hole_conversion_probe_inputs/holes_only_gerber.zip": "564446269e21dd818b87e0eeeeabee02ec293297a11442d2e4c7c62e7f5cbf65",
+    "pcb/release_v03/Mianguang_V0.3.epro2": "e99b49c640c06d2a1bd36213682fdc1fc56e33b7090c582f66813078a78bd13e",
+    "pcb/qa/check_release.py": "d9d2fd195fda814dc66cf68e8af6cb49039eb23119ad0beae95d6437f5f72f91",
+    "pcb/qa/gerber_checks.py": "a4e813765c2f1fda8c44c01b058053fbcd3f2c25b78f55d263fb2ddd42ab0ca6"
+  },
+  "probe_all_checks": {
+    "status": "PASS",
+    "counts": {
+      "PASS": 10
+    },
+    "context": {},
+    "checks": [
+      {
+        "id": "gerber.parser",
+        "status": "PASS",
+        "detail": "Parsed Gerber and drill data with fixed parser versions",
+        "evidence": {
+          "versions": {
+            "gerbonara": "1.6.3",
+            "shapely": "2.2.0"
+          },
+          "layers": {
+            "top": "Gerber_TopLayer.GTL",
+            "bottom": "Gerber_BottomLayer.GBL",
+            "top_paste": "Gerber_TopPasteMaskLayer.GTP",
+            "outline": "Gerber_BoardOutlineLayer.GKO"
+          },
+          "warnings": [],
+          "unsupported": []
+        }
+      },
+      {
+        "id": "gerber.outline",
+        "status": "PASS",
+        "detail": "Gerber centerline outline is one closed 66 × 56 mm rectangle",
+        "evidence": {
+          "bounds_mm": [
+            0.0,
+            0.0,
+            66.0,
+            56.0
+          ]
+        }
+      },
+      {
+        "id": "gerber.npth",
+        "status": "PASS",
+        "detail": "Four 2.7 mm NPTH mounting holes at required board-relative coordinates",
+        "evidence": [
+          [
+            5.0,
+            5.0,
+            2.7
+          ],
+          [
+            61.0,
+            5.0,
+            2.7
+          ],
+          [
+            5.0,
+            51.0,
+            2.7
+          ],
+          [
+            61.0,
+            51.0,
+            2.7
+          ]
+        ]
+      },
+      {
+        "id": "gerber.registration",
+        "status": "PASS",
+        "detail": "All native and exported drill centers, diameters and plating match one-to-one",
+        "evidence": {
+          "translation_mm": [
+            0.0,
+            0.0
+          ],
+          "holes": 42
+        }
+      },
+      {
+        "id": "gerber.paste_smt",
+        "status": "PASS",
+        "detail": "Every top SMT pad has paste at its center and positive paste area within its land; reduced/notched apertures accepted",
+        "evidence": {
+          "missing": [],
+          "smt_pad_count": 29,
+          "coverage": [
+            {
+              "pad": "C1.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999999
+            },
+            {
+              "pad": "C1.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999999
+            },
+            {
+              "pad": "C2.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999996
+            },
+            {
+              "pad": "C2.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999996
+            },
+            {
+              "pad": "C3.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999995
+            },
+            {
+              "pad": "C3.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            },
+            {
+              "pad": "C4.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999999
+            },
+            {
+              "pad": "C4.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999999
+            },
+            {
+              "pad": "C5.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999995
+            },
+            {
+              "pad": "C5.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            },
+            {
+              "pad": "D1.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999999
+            },
+            {
+              "pad": "D1.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "D2.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            },
+            {
+              "pad": "D2.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            },
+            {
+              "pad": "F1.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999995
+            },
+            {
+              "pad": "F1.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            },
+            {
+              "pad": "Q1.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            },
+            {
+              "pad": "Q1.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            },
+            {
+              "pad": "Q1.3",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999995
+            },
+            {
+              "pad": "R1.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "R1.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "R2.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "R2.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "R3.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "R3.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "R4.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "R4.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999998
+            },
+            {
+              "pad": "R5.2",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            },
+            {
+              "pad": "R5.1",
+              "center_has_paste": true,
+              "paste_land_area_fraction": 0.999997
+            }
+          ]
+        }
+      },
+      {
+        "id": "gerber.paste_tht",
+        "status": "PASS",
+        "detail": "No top paste overlaps any through-hole copper land",
+        "evidence": []
+      },
+      {
+        "id": "gerber.paste_full_pad",
+        "status": "PASS",
+        "detail": "Requested full-window stencil: paste covers at least 98% of every complete SMT land; reduced apertures are distinct from missing apertures",
+        "evidence": {
+          "minimum_fraction": 0.999995,
+          "below_98_percent": []
+        }
+      },
+      {
+        "id": "gerber.paste_extent",
+        "status": "PASS",
+        "detail": "Paste stays within SMT land envelopes plus 0.02 mm tolerance and every paste component belongs to an SMT land",
+        "evidence": {
+          "outside_area_mm2": 0.0,
+          "outside_bounds_mm": [],
+          "unassigned_aperture_bounds_mm": []
+        }
+      },
+      {
+        "id": "gerber.xiao_14_tht",
+        "status": "PASS",
+        "detail": "Exactly 14 XIAO plated holes match the resolved native footprint",
+        "evidence": [
+          {
+            "x": 25.380000040000002,
+            "y": 37.137400959999994,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "1"
+          },
+          {
+            "x": 25.380000040000002,
+            "y": 34.597400959999995,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "2"
+          },
+          {
+            "x": 25.380000040000002,
+            "y": 32.057400959999995,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "3"
+          },
+          {
+            "x": 25.380000040000002,
+            "y": 29.517400959999996,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "4"
+          },
+          {
+            "x": 25.380000040000002,
+            "y": 26.977400959999997,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "5"
+          },
+          {
+            "x": 25.380000040000002,
+            "y": 24.437400959999998,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "6"
+          },
+          {
+            "x": 25.380000040000002,
+            "y": 21.89740096,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "7"
+          },
+          {
+            "x": 40.62000004,
+            "y": 21.89740096,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "8"
+          },
+          {
+            "x": 40.62000004,
+            "y": 24.437400959999998,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "9"
+          },
+          {
+            "x": 40.62000004,
+            "y": 26.977400959999997,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "10"
+          },
+          {
+            "x": 40.62000004,
+            "y": 29.517400959999996,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "11"
+          },
+          {
+            "x": 40.62000004,
+            "y": 32.057400959999995,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "12"
+          },
+          {
+            "x": 40.62000004,
+            "y": 34.597400959999995,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "13"
+          },
+          {
+            "x": 40.62000004,
+            "y": 37.137400959999994,
+            "d": 1.1000231999999999,
+            "plated": true,
+            "ref": "U1",
+            "pin": "14"
+          }
+        ]
+      },
+      {
+        "id": "gerber.actual_copper",
+        "status": "PASS",
+        "detail": "Actual copper islands and plated barrels checked against every resolved pad net at two curve resolutions",
+        "evidence": {
+          "missing_pad_copper": [],
+          "opens": {},
+          "shorts": {},
+          "islands": 61,
+          "anchors": 63,
+          "unanchored_components": [],
+          "net_count": 23
+        }
+      }
+    ],
+    "scope": "Offline consistency and geometry checks; no physical assembly, electrical or EMC validation."
+  },
+  "scope": "Candidate hole conversion probe only; frozen release_v03 was not modified. Physical pad definitions resolved from frozen V0.3 project; no claim of refreshed full-project export.",
+  "archive": {
+    "source_report_sha256": "4a66bfa7c258e275279bb9582055c4cf870e34c3466fd1e61869308df2c78e27",
+    "note": "Historical hole-only transition probe, not the complete final PRECHECK_03 release. Geometry and checks are unchanged. Temporary inputs were copied byte-for-byte and input paths normalized to repository-relative archives. Script hashes are historical identities, not an assertion that current scripts still have these hashes."
+  }
+}

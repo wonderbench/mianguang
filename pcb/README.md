@@ -1,20 +1,24 @@
-# PCB设计 · V0.2
+# PCB设计 · V0.3 PRECHECK 03
 
-载板为66 × 56 mm双面PCB，使用C1001雷达外接接口和XIAO ESP32C3插座。V0.2已统一F1选料、保留XIAO的14个通孔、增加JP2/JP3串口断开跳线与C4/C5去耦，并完成重新布线和检查。
+最新载板为66 × 56 mm双层PCB，23个元件、18个电气网络，连接C1001雷达、XIAO ESP32C3和外接夜灯。已根据用户提供的PRECHECK02在线DFM报告修正机械孔表达、丝印距阻焊开窗/钻孔的间距和丝印笔画。
 
-| 目录或文件 | 用途 |
+**03版在线PCB复检及SMT检查待完成，未制造放行。** 请手动上传[03版Gerber ZIP](preflight_v03/Mianguang_V0.3_DFM_PRECHECK_03.zip)，并使用同版[SMT BOM与坐标](preflight_v03/smt_precheck03/)。01/02上传包均为历史版本。
+
+| 入口 | 内容 |
 |---|---|
-| [release_v02/](release_v02/) | 已冻结工程、原理图/PCB源、BOM、Gerber、坐标、预览、装配说明及manifest |
-| [releases/](releases/) | 完整交付ZIP及SHA-256 |
-| [release_v02_acceptance.json](release_v02_acceptance.json) | 44/44通过的独立验收报告，绑定发布manifest |
-| [qa/](qa/) | 网表、铜连接、钻孔、锡膏和哈希检查程序 |
-| [scripts/](scripts/) | 本版导出过程脚本及适用范围 |
-| [LATEST.json](LATEST.json) | 最新版本与归档位置 |
+| [release_v03_precheck03/](release_v03_precheck03/) | 最新固定候选：完整工程、原理图/PCB源、完整BOM、Gerber、原生坐标、预览和manifest |
+| [03完整交付包](releases/Mianguang_PCB_V0.3_PRECHECK03_2026-11-05.zip) | 最新工程、SMT文件、检查证据及可复核的历史源；SHA-256见同名`.zip.sha256` |
+| [修订与装配说明](release_v03_precheck03/README_交付与装配.md) | 在线报告逐项处理、装配条件、工艺及接线 |
+| [独立验收](release_v03_precheck03_acceptance.json) | 49/49 PASS：原生零提示、网表、BOM、铜连接、钻孔、锡膏 |
+| [制造几何检查](release_v03_precheck03_fabrication.json) | 40/40 PASS：新增实际阻焊窗/钻孔避让≥0.25 mm、描线≥0.20 mm门槛，绑定冻结输入 |
+| [03版独立复核](qa/v03/precheck03/) | 48项电气/机械差异、22项导出复核、极性表、孔转换及钻孔去重证据 |
+| [02版在线报告与分析](qa/v03/online_dfm/) | 用户上传的原PDF、问题汇总及几何复现；不冒充03版结果 |
+| [qa/](qa/) / [scripts/](scripts/) | 离线检查器、37项检查器回归、6项导出比对回归及受保护的导出流程 |
+| [release_v03/](release_v03/) / [release_v02/](release_v02/) | PRECHECK02与V0.2历史冻结源，保持原字节和历史报告 |
+| [LATEST.json](LATEST.json) | 最新候选、归档位置、哈希与状态 |
 
-在嘉立创EDA专业版导入[Mianguang_V0.2.epro2](release_v02/Mianguang_V0.2.epro2)。后续修改先另存新版本，再统一更新工程、BOM、Gerber和检查清单。原始`release_v02/`与ZIP保持字节不变，不在冻结目录中直接修订说明或覆盖文件。
+导入[Mianguang_V0.3.epro2](release_v03_precheck03/Mianguang_V0.3.epro2)查看和继续设计。当前原理图、PCB严格DRC均返回`true` / `[]`，检查记录绑定完整工程和源快照。后续修改应建立新候选，不能单独替换冻结目录内的文件。
 
-[原理图预览](release_v02/Schematic_V0.2.png) · [PCB四页查看文件](release_v02/PCB_Review_V0.2.pdf) · [装配和上电步骤](release_v02/README_交付与装配.md)
+四个Ø2.7 mm机械孔由非镀铜PAD改为圆形挖槽，消除孔内虚拟铜盘。原始铜层因此变化，但扣除钻孔后的实际顶/底铜图形与V0.2、PRECHECK02均相同；42个独立孔、63个物理焊盘、23个器件位置及全部引脚网络不变。[V0.2外壳](../models/v0.2/)的孔位和接口几何依据仍适用，固件维持V0.2.0。
 
-PCB DRC为0错误。原理图无致命/电气错误，保留一组涉及8个排针的采购属性警告，因此原理图检查布尔值仍为false。独立校验覆盖实际铜连通、42个独立钻孔、29个SMT锡膏开窗、14个XIAO通孔及同版文件一致性；不代替实物验证。
-
-冻结说明中的`hardware/`、历史脚本及旧版路径来自原工作区：本仓库分类后对应`pcb/`，历史V0.1工程和中间补丁未作为当前制造文件上传。PCB与固件版本分别为V0.2和V0.2.0。
+8条插件到SMT焊盘间距提示是真实工艺条件：14件SMT先回流，9件通孔/模块后手工装配。本版未按波峰焊设计，尚需贴片方确认手工焊接空间、工艺边/定位点和极性预览。D2实物色带标识仍需供方包装图确认。数字检查不代替首件电气、热、射频和实物装配测试。

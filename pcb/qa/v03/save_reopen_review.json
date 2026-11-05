@@ -1,0 +1,24 @@
+{
+  "release": "V0.3",
+  "scope": "Save/close/reopen and compare all native records; ignores only record header ticket and DOCHEAD client/updateTime/version bookkeeping",
+  "documents": {
+    "sch": {
+      "saved": true,
+      "closed": true,
+      "details": [],
+      "passed": true,
+      "exported_source": "Mianguang_V0.3.esch",
+      "exported_source_sha256": "e43a957914daab10c4ec3bebc63ef6d03275203df494689074c16c7a080ac48e",
+      "matches_export_before_and_after": true
+    },
+    "pcb": {
+      "saved": true,
+      "closed": true,
+      "details": [],
+      "passed": true,
+      "exported_source": "Mianguang_V0.3.epcb",
+      "exported_source_sha256": "200b3fc2ca770b7cc3fd2840e700f6460abe523b08d7c7ee190cc76aea959b04",
+      "matches_export_before_and_after": true
+    }
+  }
+}

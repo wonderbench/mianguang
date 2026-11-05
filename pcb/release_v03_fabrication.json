@@ -1,0 +1,1814 @@
+{
+  "status": "PASS",
+  "counts": {
+    "PASS": 36
+  },
+  "context": {
+    "release_directory": "/Users/wuben/程序/EDA/mianguang-github/pcb/release_v03",
+    "inputs": [
+      {
+        "path": "BOM_Mianguang_V0.3.csv",
+        "bytes": 1122,
+        "sha256": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2"
+      },
+      {
+        "path": "BOM_Mianguang_V0.3.xlsx",
+        "bytes": 7770,
+        "sha256": "8070003f546c49c988eb4fd74010b170edd8749693d06d72b209e78d9fcbac12"
+      },
+      {
+        "path": "Gerber_Mianguang_V0.3.zip",
+        "bytes": 39862,
+        "sha256": "b245381b710547aec874be0bb3018a74e3dfb0aaf2f7b20015833cee4b0f3a61"
+      },
+      {
+        "path": "Mianguang_V0.3.epcb",
+        "bytes": 133682,
+        "sha256": "200b3fc2ca770b7cc3fd2840e700f6460abe523b08d7c7ee190cc76aea959b04"
+      },
+      {
+        "path": "Mianguang_V0.3.epro2",
+        "bytes": 99543,
+        "sha256": "e99b49c640c06d2a1bd36213682fdc1fc56e33b7090c582f66813078a78bd13e"
+      },
+      {
+        "path": "Mianguang_V0.3.esch",
+        "bytes": 366016,
+        "sha256": "e43a957914daab10c4ec3bebc63ef6d03275203df494689074c16c7a080ac48e"
+      },
+      {
+        "path": "PCB_Review_V0.3.pdf",
+        "bytes": 266762,
+        "sha256": "d6d8b65760e7ab43ddaa0efa0e7d2da225924e87ecf8736326131c0e627d9327"
+      },
+      {
+        "path": "PickPlace_Mianguang_V0.3.csv",
+        "bytes": 3433,
+        "sha256": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704"
+      },
+      {
+        "path": "README_交付与装配.md",
+        "bytes": 5000,
+        "sha256": "88dc87bb543a945975915cd4007681c6982e91daf8877cc128838499b44b30a6"
+      },
+      {
+        "path": "Schematic_V0.3.png",
+        "bytes": 1323033,
+        "sha256": "e0d0a667c04023e8adba78e8f62e906eca843c9afe17c9dfa1639e0e8032f7c3"
+      },
+      {
+        "path": "manifest.json",
+        "bytes": 2706,
+        "sha256": "02c33a16c6746ba5823d8a69402dd65959790b5c33e8810d4365d3c025e81973"
+      },
+      {
+        "path": "native_checks.json",
+        "bytes": 4256,
+        "sha256": "cdf61439f287a588daf470513f563a08151a5116e0ca45241d3777d3dc98e87e"
+      },
+      {
+        "path": "pcb_netlist.json",
+        "bytes": 46378,
+        "sha256": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994"
+      },
+      {
+        "path": "schematic_netlist.json",
+        "bytes": 63787,
+        "sha256": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657"
+      },
+      {
+        "path": "外接件与装配BOM.csv",
+        "bytes": 5467,
+        "sha256": "dfe77b837808215f7fc68af2dea061c7a1951a799cb918a04fd0437475089316"
+      }
+    ],
+    "checker_hashes": {
+      "check_fabrication.py": "a72dc58a4bea5492f256a7c7d27c5fe9029a8d2b9078313f835387be4d9c28cf",
+      "check_release.py": "502ddc21c929afae4a91ce94bcc9a1ed36c99baa66ddad6184803e117ab0de3c",
+      "gerber_checks.py": "fd93a8ea3b6fce344bae7b58002b987ddb003bca1e04e42c8774812cfd0ceba1"
+    },
+    "limits": {
+      "silk_text_height_mm": 1.0,
+      "silk_stroke_mm": 0.15,
+      "silk_to_pad_mm": 0.15,
+      "mask_bridge_mm": 0.1,
+      "mask_to_other_copper_island_mm": 0.09,
+      "different_copper_islands_mm": 0.2,
+      "copper_to_routed_edge_mm": 0.2,
+      "npth_to_copper_mm": 0.2,
+      "pth_annular_ring_mm": 0.25,
+      "via_annular_ring_mm": 0.15,
+      "via_drill_mm": 0.2,
+      "independent_hole_edge_gap_mm": 0.45,
+      "native_track_width_mm": 0.2032
+    },
+    "sources": [
+      {
+        "url": "https://jlcpcb.com/capabilities/pcb-capabilities",
+        "retrieved": "2026-11-05",
+        "applies_to": "2-layer FR-4, 1 oz, green solder mask, routed outline",
+        "note": "Silk 1 mm / 0.15 mm / pad gap 0.15 mm; mask bridge 0.10 mm; mask-to-neighbor trace 0.09 mm; routed-edge copper 0.20 mm. PTH ring 0.25 mm follows recommendation. Other project gates may be more conservative than the absolute factory limits."
+      }
+    ],
+    "curve_errors_mm": [
+      0.0005,
+      0.000125
+    ],
+    "dependency_versions": {
+      "gerbonara": "1.6.3",
+      "shapely": "2.2.0"
+    }
+  },
+  "checks": [
+    {
+      "id": "source.pcb.copies",
+      "status": "PASS",
+      "detail": "2 exported PCB copies must contain the same geometry, electrical and annotation records",
+      "evidence": {
+        "sources": [
+          "Mianguang_V0.3.epcb",
+          "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+        ],
+        "ignored_no_connect_attributes_of_deleted_pins": {}
+      }
+    },
+    {
+      "id": "fabrication.source_silk_interpretation",
+      "status": "PASS",
+      "detail": "PCB text, visible instance ATTR, and resolved footprint text/strokes inspected",
+      "evidence": {
+        "unresolved": [],
+        "visible_text_count": 39,
+        "stroke_count": 153
+      }
+    },
+    {
+      "id": "fabrication.source_silk_text_height",
+      "status": "PASS",
+      "detail": "Every resolved visible silk text has nominal source height >= 1.0 mm",
+      "evidence": {
+        "minimum_mm": 1.016,
+        "violations": []
+      }
+    },
+    {
+      "id": "fabrication.source_silk_stroke",
+      "status": "PASS",
+      "detail": "Resolved silk text and line/arc/poly strokes are >= 0.15 mm",
+      "evidence": {
+        "violations": [],
+        "text_count": 39,
+        "stroke_count": 153
+      }
+    },
+    {
+      "id": "fabrication.cpl",
+      "status": "PASS",
+      "detail": "CPL designators, reference coordinates, rotation, side, pin count and SMD/hand-insert class match native source; placement-machine origin calibration is not tested",
+      "evidence": {
+        "file": "PickPlace_Mianguang_V0.3.csv",
+        "count": 23,
+        "problems": [],
+        "measurements": [
+          {
+            "ref": "C1",
+            "ref_xy_mm": [
+              31.0,
+              14.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "C2",
+            "ref_xy_mm": [
+              37.0,
+              14.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "C3",
+            "ref_xy_mm": [
+              17.0,
+              34.0
+            ],
+            "rotation": 90.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "C4",
+            "ref_xy_mm": [
+              54.0,
+              28.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "C5",
+            "ref_xy_mm": [
+              54.0,
+              31.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "D1",
+            "ref_xy_mm": [
+              37.0,
+              8.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "D2",
+            "ref_xy_mm": [
+              24.0,
+              14.0
+            ],
+            "rotation": 90.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "F1",
+            "ref_xy_mm": [
+              25.0,
+              8.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "J1",
+            "ref_xy_mm": [
+              17.0,
+              8.0
+            ],
+            "rotation": 90.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "J2",
+            "ref_xy_mm": [
+              56.0,
+              35.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 4,
+            "layer": "T"
+          },
+          {
+            "ref": "J3",
+            "ref_xy_mm": [
+              56.0,
+              17.0
+            ],
+            "rotation": 90.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "J4",
+            "ref_xy_mm": [
+              11.0,
+              29.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "J5",
+            "ref_xy_mm": [
+              14.0,
+              44.0
+            ],
+            "rotation": 90.0,
+            "smd": "No",
+            "pins": 4,
+            "layer": "T"
+          },
+          {
+            "ref": "JP1",
+            "ref_xy_mm": [
+              47.0,
+              8.0
+            ],
+            "rotation": 90.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "JP2",
+            "ref_xy_mm": [
+              48.0,
+              36.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "JP3",
+            "ref_xy_mm": [
+              48.0,
+              41.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "Q1",
+            "ref_xy_mm": [
+              49.0,
+              17.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 3,
+            "layer": "T"
+          },
+          {
+            "ref": "R1",
+            "ref_xy_mm": [
+              45.0,
+              24.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "R2",
+            "ref_xy_mm": [
+              49.0,
+              22.0
+            ],
+            "rotation": 90.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "R3",
+            "ref_xy_mm": [
+              17.0,
+              29.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "R4",
+            "ref_xy_mm": [
+              49.0,
+              27.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "R5",
+            "ref_xy_mm": [
+              49.0,
+              31.0
+            ],
+            "rotation": 0.0,
+            "smd": "Yes",
+            "pins": 2,
+            "layer": "T"
+          },
+          {
+            "ref": "U1",
+            "ref_xy_mm": [
+              33.0,
+              30.0
+            ],
+            "rotation": 0.0,
+            "smd": "No",
+            "pins": 14,
+            "layer": "T"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fabrication.layer_inventory",
+      "status": "PASS",
+      "detail": "Exactly one top/bottom mask and silk parsed without warnings",
+      "evidence": {
+        "top_silk": "Gerber_TopSilkscreenLayer.GTO",
+        "bottom_silk": "Gerber_BottomSilkscreenLayer.GBO",
+        "top_mask": "Gerber_TopSolderMaskLayer.GTS",
+        "bottom_mask": "Gerber_BottomSolderMaskLayer.GBS"
+      }
+    },
+    {
+      "id": "fabrication.registration",
+      "status": "PASS",
+      "detail": "All native holes match actual independent drill positions, sizes and plating",
+      "evidence": {
+        "translation_mm": [
+          0.0,
+          0.0
+        ],
+        "holes": 42
+      }
+    },
+    {
+      "id": "fabrication.pth_ring",
+      "status": "PASS",
+      "detail": "Resolved concentric PTH lands have >= 0.25 mm nominal annular ring; manufacturing eccentricity not simulated",
+      "evidence": {
+        "minimum_mm": 0.29998670000000005,
+        "pads": [
+          {
+            "pad": "J1.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J1.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J2.1",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J2.2",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J2.3",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J2.4",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J3.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J3.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J4.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J4.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "J5.1",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J5.2",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J5.3",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "J5.4",
+            "ring_mm": 0.29998670000000005
+          },
+          {
+            "pad": "JP1.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP1.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP2.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP2.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP3.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "JP3.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.1",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.2",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.3",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.4",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.5",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.6",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.7",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.8",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.9",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.10",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.11",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.12",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.13",
+            "ring_mm": 0.34998660000000004
+          },
+          {
+            "pad": "U1.14",
+            "ring_mm": 0.34998660000000004
+          }
+        ]
+      }
+    },
+    {
+      "id": "fabrication.via_ring_drill",
+      "status": "PASS",
+      "detail": "Native through vias have nominal ring >= 0.15 mm and drill >= 0.20 mm",
+      "evidence": [
+        {
+          "id": "c327d7060307c7b6",
+          "drill_mm": 0.299974,
+          "ring_mm": 0.17500473
+        },
+        {
+          "id": "07a52d824079dc75",
+          "drill_mm": 0.299974,
+          "ring_mm": 0.17500473
+        },
+        {
+          "id": "48f9856a35363ecb",
+          "drill_mm": 0.299974,
+          "ring_mm": 0.17500473
+        },
+        {
+          "id": "72f521cd780d23ba",
+          "drill_mm": 0.299974,
+          "ring_mm": 0.17500473
+        }
+      ]
+    },
+    {
+      "id": "fabrication.hole_spacing",
+      "status": "PASS",
+      "detail": "All independent drill edges are >= 0.45 mm apart",
+      "evidence": {
+        "minimum_mm": 1.4399799999999991
+      }
+    },
+    {
+      "id": "fabrication.native_track_width",
+      "status": "PASS",
+      "detail": "Native copper LINE/ARC/POLY widths >= 8 mil; not a local-neck analysis of arbitrary filled copper",
+      "evidence": {
+        "3V3": [
+          0.254
+        ],
+        "5V_IN": [
+          0.59994546
+        ],
+        "5V_ISO": [
+          0.59994546
+        ],
+        "5V_MCU": [
+          0.59994546
+        ],
+        "5V_SYS": [
+          0.59994546
+        ],
+        "BUTTON_N": [
+          0.254
+        ],
+        "GND": [
+          0.50799746
+        ],
+        "I2C_SCL": [
+          0.254
+        ],
+        "I2C_SDA": [
+          0.254
+        ],
+        "LED_GATE": [
+          0.254
+        ],
+        "LED_LOW": [
+          0.58470546
+        ],
+        "LED_PWM": [
+          0.254
+        ],
+        "MCU_RX": [
+          0.254
+        ],
+        "MCU_TX": [
+          0.254
+        ],
+        "RADAR_RX": [
+          0.254
+        ],
+        "RADAR_TX": [
+          0.254
+        ],
+        "UART_RX_LINK": [
+          0.254
+        ],
+        "UART_TX_LINK": [
+          0.254
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.exported_silk_stroke",
+      "status": "PASS",
+      "detail": "Actual circular-aperture strokes/dots and simple filled rectangles are >= 0.15 mm wide; empty bottom silk is allowed",
+      "evidence": {
+        "widths_mm_counts": {
+          "0.1524": 1680,
+          "0.254": 75
+        },
+        "filled_rectangles": [
+          {
+            "object": 1637,
+            "minimum_dimension_mm": 0.2666000000000004
+          },
+          {
+            "object": 1638,
+            "minimum_dimension_mm": 0.2666000000000004
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "id": "fabrication.top.mask_pad_coverage",
+      "status": "PASS",
+      "detail": "Every resolved physical land has >= 99.999% opening area coverage at both curve resolutions",
+      "evidence": {
+        "minimum_fraction": 0.9999999999999993,
+        "pads": [
+          {
+            "pad": "C1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C2.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C3.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C4.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C4.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C5.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "C5.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "D1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "D1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "D2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "D2.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "F1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "F1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J1.2",
+            "area_fraction": 0.9999999999999998
+          },
+          {
+            "pad": "J1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J2.2",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J2.3",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J2.4",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J3.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "J3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J4.2",
+            "area_fraction": 1.0000000000000002
+          },
+          {
+            "pad": "J4.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J5.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J5.2",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "J5.3",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "J5.4",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "JP1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP2.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "JP2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP3.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "JP3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "Q1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "Q1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "Q1.3",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R2.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R3.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R4.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R4.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R5.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "R5.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "U1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "U1.2",
+            "area_fraction": 0.9999999999999993
+          },
+          {
+            "pad": "U1.3",
+            "area_fraction": 0.9999999999999998
+          },
+          {
+            "pad": "U1.4",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.5",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.6",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.7",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.8",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.9",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.10",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.11",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.12",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.13",
+            "area_fraction": 1.0000000000000002
+          },
+          {
+            "pad": "U1.14",
+            "area_fraction": 1.0000000000000004
+          }
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.silk_mask_overlap",
+      "status": "PASS",
+      "detail": "Actual silk does not overlap soldermask openings at either curve resolution",
+      "evidence": {
+        "overlap_area_mm2": [
+          0.0,
+          0.0
+        ],
+        "minimum_gap_mm": 0.09984999999999643
+      }
+    },
+    {
+      "id": "fabrication.top.separate_pad_windows",
+      "status": "PASS",
+      "detail": "No soldermask opening merges multiple distinct physical pads in this separate-window design",
+      "evidence": []
+    },
+    {
+      "id": "fabrication.top.outside_board",
+      "status": "PASS",
+      "detail": "Copper and silk have no off-board geometry",
+      "evidence": {
+        "copper_mm2": 0.0,
+        "silk_mm2": 0.0
+      }
+    },
+    {
+      "id": "fabrication.top.copper_edge_gap_mm",
+      "status": "PASS",
+      "detail": "Copper-to-routed-outline clearance",
+      "evidence": {
+        "minimum_mm": 5.339999999999996,
+        "coarse_mm": 5.339999999999996,
+        "limit_mm": 0.2,
+        "distance_bounds_mm": [
+          [
+            5.338999999999996,
+            5.340999999999997
+          ],
+          [
+            5.339749999999996,
+            5.340249999999997
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          5.339749999999996,
+          5.340249999999997
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.copper_island_gap_mm",
+      "status": "PASS",
+      "detail": "Separate same-layer copper islands clearance; not same-island internal geometry",
+      "evidence": {
+        "minimum_mm": 0.20501935426071774,
+        "coarse_mm": 0.20501935426071774,
+        "limit_mm": 0.2,
+        "distance_bounds_mm": [
+          [
+            0.20401935426071774,
+            0.20601935426071774
+          ],
+          [
+            0.20476935426071774,
+            0.20526935426071774
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.20476935426071774,
+          0.20526935426071774
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.mask_window_gap_mm",
+      "status": "PASS",
+      "detail": "Separate soldermask opening clearance for green mask",
+      "evidence": {
+        "minimum_mm": 0.49021999999999366,
+        "coarse_mm": 0.49021999999999366,
+        "limit_mm": 0.1,
+        "distance_bounds_mm": [
+          [
+            0.48921999999999366,
+            0.49121999999999366
+          ],
+          [
+            0.4899699999999937,
+            0.49046999999999363
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.4899699999999937,
+          0.49046999999999363
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.silk_pad_gaps",
+      "status": "PASS",
+      "detail": "Actual silk-to-physical-pad copper clearance",
+      "evidence": {
+        "minimum_mm": 0.15064889999999306,
+        "limit_mm": 0.15,
+        "near_limit": [
+          {
+            "pad": "C1.2",
+            "gap_mm": 0.15303006000000074,
+            "nearest_points_mm": [
+              [
+                32.705608960000006,
+                14.8274
+              ],
+              [
+                32.705608960000006,
+                14.67436994
+              ]
+            ]
+          },
+          {
+            "pad": "C1.1",
+            "gap_mm": 0.15303006000000074,
+            "nearest_points_mm": [
+              [
+                30.59881,
+                14.8274
+              ],
+              [
+                30.59881,
+                14.67436994
+              ]
+            ]
+          },
+          {
+            "pad": "C4.2",
+            "gap_mm": 0.15303012000000038,
+            "nearest_points_mm": [
+              [
+                55.70561122,
+                28.8274
+              ],
+              [
+                55.70561122,
+                28.67436988
+              ]
+            ]
+          },
+          {
+            "pad": "C4.1",
+            "gap_mm": 0.15303012000000038,
+            "nearest_points_mm": [
+              [
+                53.59881,
+                28.8274
+              ],
+              [
+                53.59881,
+                28.67436988
+              ]
+            ]
+          },
+          {
+            "pad": "F1.1",
+            "gap_mm": 0.15241553999999888,
+            "nearest_points_mm": [
+              [
+                22.959948999999998,
+                6.98359
+              ],
+              [
+                22.959948999999998,
+                7.136005539999999
+              ]
+            ]
+          },
+          {
+            "pad": "F1.2",
+            "gap_mm": 0.1524155399999989,
+            "nearest_points_mm": [
+              [
+                27.0400526,
+                6.98359
+              ],
+              [
+                27.0400526,
+                7.136005539999999
+              ]
+            ]
+          },
+          {
+            "pad": "R1.2",
+            "gap_mm": 0.1506511000000046,
+            "nearest_points_mm": [
+              [
+                46.30889,
+                23.568200259999998
+              ],
+              [
+                46.15823889999999,
+                23.568200259999998
+              ]
+            ]
+          },
+          {
+            "pad": "R1.1",
+            "gap_mm": 0.15064889999999306,
+            "nearest_points_mm": [
+              [
+                43.69111,
+                24.431800259999996
+              ],
+              [
+                43.841758899999995,
+                24.431800259999996
+              ]
+            ]
+          },
+          {
+            "pad": "R2.2",
+            "gap_mm": 0.15065081999999919,
+            "nearest_points_mm": [
+              [
+                49.431801060000005,
+                23.30889
+              ],
+              [
+                49.431801060000005,
+                23.158239180000002
+              ]
+            ]
+          },
+          {
+            "pad": "R2.1",
+            "gap_mm": 0.15064917999999852,
+            "nearest_points_mm": [
+              [
+                48.56820106,
+                20.69111
+              ],
+              [
+                48.56820106,
+                20.841759179999997
+              ]
+            ]
+          },
+          {
+            "pad": "R3.2",
+            "gap_mm": 0.15065098000000174,
+            "nearest_points_mm": [
+              [
+                18.30889,
+                28.568200419999997
+              ],
+              [
+                18.15823902,
+                28.568200419999997
+              ]
+            ]
+          },
+          {
+            "pad": "R3.1",
+            "gap_mm": 0.15064901999999591,
+            "nearest_points_mm": [
+              [
+                15.69111,
+                29.431800419999995
+              ],
+              [
+                15.841759019999996,
+                29.431800419999995
+              ]
+            ]
+          },
+          {
+            "pad": "R4.2",
+            "gap_mm": 0.1506489399999964,
+            "nearest_points_mm": [
+              [
+                50.30889,
+                26.56819934
+              ],
+              [
+                50.15824106,
+                26.56819934
+              ]
+            ]
+          },
+          {
+            "pad": "R4.1",
+            "gap_mm": 0.15065106000000125,
+            "nearest_points_mm": [
+              [
+                47.69111,
+                27.431799339999998
+              ],
+              [
+                47.84176106,
+                27.431799339999998
+              ]
+            ]
+          },
+          {
+            "pad": "R5.2",
+            "gap_mm": 0.1506489399999964,
+            "nearest_points_mm": [
+              [
+                50.30889,
+                30.568198960000004
+              ],
+              [
+                50.15824106,
+                30.568198960000004
+              ]
+            ]
+          },
+          {
+            "pad": "R5.1",
+            "gap_mm": 0.15065106000000125,
+            "nearest_points_mm": [
+              [
+                47.69111,
+                31.431798960000002
+              ],
+              [
+                47.84176106,
+                31.431798960000002
+              ]
+            ]
+          }
+        ],
+        "count": 63,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            0.14964889999999306,
+            0.15164889999999306
+          ],
+          [
+            0.15039889999999306,
+            0.15089889999999306
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.15039889999999306,
+          0.15089889999999306
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.mask_other_island_gaps",
+      "status": "PASS",
+      "detail": "Mask opening to other copper islands; excludes same-island internal geometry",
+      "evidence": {
+        "minimum_mm": 0.15421935426980093,
+        "limit_mm": 0.09,
+        "near_limit": [],
+        "count": 63,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            0.15321935426980093,
+            0.15521935426980094
+          ],
+          [
+            0.15396935426980093,
+            0.15446935426980093
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.15396935426980093,
+          0.15446935426980093
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.npth_copper_gaps",
+      "status": "PASS",
+      "detail": "NPTH edge to remaining copper; only exactly coincident isolated NPTH disks removed",
+      "evidence": {
+        "minimum_mm": 7.348618037066508,
+        "limit_mm": 0.2,
+        "near_limit": [],
+        "count": 4,
+        "removed_drilled_npth_disks": [
+          {
+            "x": 5.0,
+            "y": 5.0,
+            "d": 2.7
+          },
+          {
+            "x": 61.0,
+            "y": 5.0,
+            "d": 2.7
+          },
+          {
+            "x": 5.0,
+            "y": 51.0,
+            "d": 2.7
+          },
+          {
+            "x": 61.0,
+            "y": 51.0,
+            "d": 2.7
+          }
+        ],
+        "distance_bounds_mm": [
+          [
+            7.347618037066508,
+            7.3496180370665085
+          ],
+          [
+            7.348368037066508,
+            7.3488680370665085
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          7.348368037066508,
+          7.3488680370665085
+        ]
+      }
+    },
+    {
+      "id": "fabrication.top.via_tenting",
+      "status": "PASS",
+      "detail": "All identified small plated drill locations have no mask opening (nominal tenting, not a guarantee of filled holes)",
+      "evidence": [
+        {
+          "xy_mm": [
+            46.18674,
+            25.37276
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            47.51363,
+            30.72071
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            14.50666,
+            27.75044
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            15.00019,
+            32.85405
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "fabrication.bottom.exported_silk_stroke",
+      "status": "PASS",
+      "detail": "Actual circular-aperture strokes/dots and simple filled rectangles are >= 0.15 mm wide; empty bottom silk is allowed",
+      "evidence": {
+        "widths_mm_counts": {},
+        "filled_rectangles": [],
+        "unresolved": []
+      }
+    },
+    {
+      "id": "fabrication.bottom.mask_pad_coverage",
+      "status": "PASS",
+      "detail": "Every resolved physical land has >= 99.999% opening area coverage at both curve resolutions",
+      "evidence": {
+        "minimum_fraction": 0.9999999999999993,
+        "pads": [
+          {
+            "pad": "J1.2",
+            "area_fraction": 0.9999999999999998
+          },
+          {
+            "pad": "J1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J2.2",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J2.3",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J2.4",
+            "area_fraction": 1.0000000000000007
+          },
+          {
+            "pad": "J3.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "J3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J4.2",
+            "area_fraction": 1.0000000000000002
+          },
+          {
+            "pad": "J4.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J5.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "J5.2",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "J5.3",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "J5.4",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "JP1.2",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP2.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "JP2.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "JP3.2",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "JP3.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "U1.1",
+            "area_fraction": 1.0
+          },
+          {
+            "pad": "U1.2",
+            "area_fraction": 0.9999999999999993
+          },
+          {
+            "pad": "U1.3",
+            "area_fraction": 0.9999999999999998
+          },
+          {
+            "pad": "U1.4",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.5",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.6",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.7",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.8",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.9",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.10",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.11",
+            "area_fraction": 1.000000000000001
+          },
+          {
+            "pad": "U1.12",
+            "area_fraction": 1.0000000000000004
+          },
+          {
+            "pad": "U1.13",
+            "area_fraction": 1.0000000000000002
+          },
+          {
+            "pad": "U1.14",
+            "area_fraction": 1.0000000000000004
+          }
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.silk_mask_overlap",
+      "status": "PASS",
+      "detail": "Actual silk does not overlap soldermask openings at either curve resolution",
+      "evidence": {
+        "overlap_area_mm2": [
+          0.0,
+          0.0
+        ],
+        "minimum_gap_mm": null
+      }
+    },
+    {
+      "id": "fabrication.bottom.separate_pad_windows",
+      "status": "PASS",
+      "detail": "No soldermask opening merges multiple distinct physical pads in this separate-window design",
+      "evidence": []
+    },
+    {
+      "id": "fabrication.bottom.outside_board",
+      "status": "PASS",
+      "detail": "Copper and silk have no off-board geometry",
+      "evidence": {
+        "copper_mm2": 0.0,
+        "silk_mm2": 0.0
+      }
+    },
+    {
+      "id": "fabrication.bottom.copper_edge_gap_mm",
+      "status": "PASS",
+      "detail": "Copper-to-routed-outline clearance",
+      "evidence": {
+        "minimum_mm": 5.339999999999996,
+        "coarse_mm": 5.339999999999996,
+        "limit_mm": 0.2,
+        "distance_bounds_mm": [
+          [
+            5.338999999999996,
+            5.340999999999997
+          ],
+          [
+            5.339749999999996,
+            5.340249999999997
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          5.339749999999996,
+          5.340249999999997
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.copper_island_gap_mm",
+      "status": "PASS",
+      "detail": "Separate same-layer copper islands clearance; not same-island internal geometry",
+      "evidence": {
+        "minimum_mm": 0.2057800000000043,
+        "coarse_mm": 0.2057800000000043,
+        "limit_mm": 0.2,
+        "distance_bounds_mm": [
+          [
+            0.2047800000000043,
+            0.2067800000000043
+          ],
+          [
+            0.2055300000000043,
+            0.2060300000000043
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.2055300000000043,
+          0.2060300000000043
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.mask_window_gap_mm",
+      "status": "PASS",
+      "detail": "Separate soldermask opening clearance for green mask",
+      "evidence": {
+        "minimum_mm": 0.6383999999999972,
+        "coarse_mm": 0.6383999999999972,
+        "limit_mm": 0.1,
+        "distance_bounds_mm": [
+          [
+            0.6373999999999972,
+            0.6393999999999972
+          ],
+          [
+            0.6381499999999972,
+            0.6386499999999972
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.6381499999999972,
+          0.6386499999999972
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.silk_pad_gaps",
+      "status": "PASS",
+      "detail": "No silk objects on this side; no silk-to-pad conflict",
+      "evidence": {
+        "count": 0
+      }
+    },
+    {
+      "id": "fabrication.bottom.mask_other_island_gaps",
+      "status": "PASS",
+      "detail": "Mask opening to other copper islands; excludes same-island internal geometry",
+      "evidence": {
+        "minimum_mm": 0.15498000000000187,
+        "limit_mm": 0.09,
+        "near_limit": [],
+        "count": 34,
+        "removed_drilled_npth_disks": [],
+        "distance_bounds_mm": [
+          [
+            0.15398000000000187,
+            0.15598000000000187
+          ],
+          [
+            0.15473000000000187,
+            0.15523000000000187
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          0.15473000000000187,
+          0.15523000000000187
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.npth_copper_gaps",
+      "status": "PASS",
+      "detail": "NPTH edge to remaining copper; only exactly coincident isolated NPTH disks removed",
+      "evidence": {
+        "minimum_mm": 7.348618037066508,
+        "limit_mm": 0.2,
+        "near_limit": [],
+        "count": 4,
+        "removed_drilled_npth_disks": [
+          {
+            "x": 5.0,
+            "y": 5.0,
+            "d": 2.7
+          },
+          {
+            "x": 61.0,
+            "y": 5.0,
+            "d": 2.7
+          },
+          {
+            "x": 5.0,
+            "y": 51.0,
+            "d": 2.7
+          },
+          {
+            "x": 61.0,
+            "y": 51.0,
+            "d": 2.7
+          }
+        ],
+        "distance_bounds_mm": [
+          [
+            7.347618037066508,
+            7.3496180370665085
+          ],
+          [
+            7.348368037066508,
+            7.3488680370665085
+          ]
+        ],
+        "combined_distance_bounds_mm": [
+          7.348368037066508,
+          7.3488680370665085
+        ]
+      }
+    },
+    {
+      "id": "fabrication.bottom.via_tenting",
+      "status": "PASS",
+      "detail": "All identified small plated drill locations have no mask opening (nominal tenting, not a guarantee of filled holes)",
+      "evidence": [
+        {
+          "xy_mm": [
+            46.18674,
+            25.37276
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            47.51363,
+            30.72071
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            14.50666,
+            27.75044
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            15.00019,
+            32.85405
+          ],
+          "drill_mask_overlap_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "fabrication.inputs_stable",
+      "status": "PASS",
+      "detail": "Release file set, byte sizes and SHA-256 hashes stayed unchanged during checks"
+    }
+  ],
+  "scope": "Supplementary nominal 2-layer green-mask fabrication checks only. Not native EDA DRC, CAM acceptance, fabrication approval or physical verification. Island gaps exclude internal geometry of one connected copper island; no arbitrary copper neck analysis, stencil process qualification, placement-machine rotation calibration, component-body collision, thermal or EMC validation."
+}

@@ -1,0 +1,927 @@
+{
+  "status": "PASS",
+  "counts": {
+    "PASS": 49
+  },
+  "context": {
+    "release_directory": "/Users/wuben/程序/EDA/mianguang-github/pcb/release_v03_precheck03",
+    "expected_version": "V0.3",
+    "require_native_clean": true,
+    "manifest_sha256": "b4005dd1d23cf3f2f2d47bcd8de1533c190a3120a7a414f98ee6ad758b45a51f",
+    "native_checks_sha256": "d019784048903375f49939a4a7d1bb6c6f5b3694c9f70d5bb6e448294f4fa198"
+  },
+  "checks": [
+    {
+      "id": "manifest.version",
+      "status": "PASS",
+      "detail": "expected release V0.3; got 'V0.3'"
+    },
+    {
+      "id": "manifest.files",
+      "status": "PASS",
+      "detail": "All exported files must be listed with matching hash and byte count.",
+      "evidence": {
+        "errors": [],
+        "unlisted": [],
+        "file_count": 14
+      }
+    },
+    {
+      "id": "native.version",
+      "status": "PASS",
+      "detail": "Native check release must match the requested release",
+      "evidence": "V0.3"
+    },
+    {
+      "id": "native.strict",
+      "status": "PASS",
+      "detail": "The native run must explicitly record strict=true",
+      "evidence": true
+    },
+    {
+      "id": "native.schematic.clean",
+      "status": "PASS",
+      "detail": "Native strict DRC must return boolean true and an empty detailed error list",
+      "evidence": {
+        "saved": true,
+        "details": [],
+        "passed": true
+      }
+    },
+    {
+      "id": "native.pcb.clean",
+      "status": "PASS",
+      "detail": "Native strict DRC must return boolean true and an empty detailed error list",
+      "evidence": {
+        "saved": true,
+        "details": [],
+        "passed": true
+      }
+    },
+    {
+      "id": "native.source_binding",
+      "status": "PASS",
+      "detail": "Native check evidence must bind final schematic, PCB and complete project sources by SHA-256",
+      "evidence": {
+        "expected": {
+          "Mianguang_V0.3.epcb": "1b005cf1bb2e7d59b4584eca6a2bd83e2b9e46b83c3a32bf83ad4a90f7a16536",
+          "Mianguang_V0.3.epro2": "01f43cf3fcebcb7f2e6dfb590aaf878a952d3f6b54837cca8e0f2a40bde66e1f",
+          "Mianguang_V0.3.esch": "b494a8e15ba99069df280d1bf1b303a56567f9630c81d65edbb9577ea9c99854"
+        },
+        "reported": {
+          "Mianguang_V0.3.esch": "b494a8e15ba99069df280d1bf1b303a56567f9630c81d65edbb9577ea9c99854",
+          "Mianguang_V0.3.epcb": "1b005cf1bb2e7d59b4584eca6a2bd83e2b9e46b83c3a32bf83ad4a90f7a16536",
+          "Mianguang_V0.3.epro2": "01f43cf3fcebcb7f2e6dfb590aaf878a952d3f6b54837cca8e0f2a40bde66e1f"
+        }
+      }
+    },
+    {
+      "id": "source.sch_page.copies",
+      "status": "PASS",
+      "detail": "2 exported SCH_PAGE copies must contain the same geometry, electrical and annotation records",
+      "evidence": {
+        "sources": [
+          "Mianguang_V0.3.esch",
+          "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+        ],
+        "ignored_no_connect_attributes_of_deleted_pins": {
+          "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru": [
+            "8af6d1b1b7cbda88-e3",
+            "8af6d1b1b7cbda88-e7",
+            "8af6d1b1b7cbda88-e11",
+            "8af6d1b1b7cbda88-e19",
+            "8af6d1b1b7cbda88-e23",
+            "8af6d1b1b7cbda88-e27",
+            "8af6d1b1b7cbda88-e31",
+            "8af6d1b1b7cbda88-e35",
+            "8af6d1b1b7cbda88-e15"
+          ]
+        }
+      }
+    },
+    {
+      "id": "source.pcb.copies",
+      "status": "PASS",
+      "detail": "2 exported PCB copies must contain the same geometry, electrical and annotation records",
+      "evidence": {
+        "sources": [
+          "Mianguang_V0.3.epcb",
+          "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+        ],
+        "ignored_no_connect_attributes_of_deleted_pins": {}
+      }
+    },
+    {
+      "id": "netlist.present",
+      "status": "PASS",
+      "detail": "At least one exported schematic netlist JSON is required"
+    },
+    {
+      "id": "netlist.copies.pcb_netlist.json",
+      "status": "PASS",
+      "detail": "SCH/PCB netlists agree after display-formula and placement-default normalization",
+      "evidence": {
+        "sources": [
+          "schematic_netlist.json",
+          "pcb_netlist.json"
+        ],
+        "different_designators": []
+      }
+    },
+    {
+      "id": "netlist.core",
+      "status": "PASS",
+      "detail": "Core power, radar, lamp, button and I2C pin assignments",
+      "evidence": []
+    },
+    {
+      "id": "netlist.jp2",
+      "status": "PASS",
+      "detail": "R4.2 -- JP2 -- RADAR_RX; removing the shunt must separate the two segments",
+      "evidence": {
+        "near": "UART_TX_LINK",
+        "jumper": {
+          "1": "UART_TX_LINK",
+          "2": "RADAR_RX"
+        },
+        "unexpected_core_pins": []
+      }
+    },
+    {
+      "id": "netlist.jp3",
+      "status": "PASS",
+      "detail": "R5.2 -- JP3 -- RADAR_TX; removing the shunt must separate the two segments",
+      "evidence": {
+        "near": "UART_RX_LINK",
+        "jumper": {
+          "1": "UART_RX_LINK",
+          "2": "RADAR_TX"
+        },
+        "unexpected_core_pins": []
+      }
+    },
+    {
+      "id": "netlist.xiao_bottom_nc",
+      "status": "PASS",
+      "detail": "U1 pins above 14 must be absent or NC",
+      "evidence": {}
+    },
+    {
+      "id": "netlist.named_domains",
+      "status": "PASS",
+      "detail": "Power and UART segments must remain distinct named nets"
+    },
+    {
+      "id": "parts.F1.netlist",
+      "status": "PASS",
+      "detail": "F1 must be 1206L110/16WR / C3761685",
+      "evidence": {
+        "Manufacturer Part": "1206L110/16WR",
+        "Supplier Part": "C3761685"
+      }
+    },
+    {
+      "id": "parts.F1.schematic",
+      "status": "PASS",
+      "detail": "F1 must be 1206L110/16WR / C3761685",
+      "evidence": {
+        "Manufacturer Part": "1206L110/16WR",
+        "Supplier Part": "C3761685"
+      }
+    },
+    {
+      "id": "parts.F1.pcb_device",
+      "status": "PASS",
+      "detail": "PCB Device ID must match the final schematic netlist",
+      "evidence": {
+        "pcb": "636b9034bcc5e0f5",
+        "netlist": "636b9034bcc5e0f5"
+      }
+    },
+    {
+      "id": "parts.D1.netlist",
+      "status": "PASS",
+      "detail": "D1 must be SS14 / C2480",
+      "evidence": {
+        "Manufacturer Part": "SS14",
+        "Supplier Part": "C2480"
+      }
+    },
+    {
+      "id": "parts.D1.schematic",
+      "status": "PASS",
+      "detail": "D1 must be SS14 / C2480",
+      "evidence": {
+        "Manufacturer Part": "SS14",
+        "Supplier Part": "C2480"
+      }
+    },
+    {
+      "id": "parts.D1.pcb_device",
+      "status": "PASS",
+      "detail": "PCB Device ID must match the final schematic netlist",
+      "evidence": {
+        "pcb": "5cf483758be8ddb3",
+        "netlist": "5cf483758be8ddb3"
+      }
+    },
+    {
+      "id": "parts.Q1.netlist",
+      "status": "PASS",
+      "detail": "Q1 must be AO3400A / C20917",
+      "evidence": {
+        "Manufacturer Part": "AO3400A",
+        "Supplier Part": "C20917"
+      }
+    },
+    {
+      "id": "parts.Q1.schematic",
+      "status": "PASS",
+      "detail": "Q1 must be AO3400A / C20917",
+      "evidence": {
+        "Manufacturer Part": "AO3400A",
+        "Supplier Part": "C20917"
+      }
+    },
+    {
+      "id": "parts.Q1.pcb_device",
+      "status": "PASS",
+      "detail": "PCB Device ID must match the final schematic netlist",
+      "evidence": {
+        "pcb": "ed9593aa5520dad4",
+        "netlist": "ed9593aa5520dad4"
+      }
+    },
+    {
+      "id": "bom.present",
+      "status": "PASS",
+      "detail": "At least one BOM CSV/TSV is required"
+    },
+    {
+      "id": "bom.parts.BOM_Mianguang_V0.3.csv",
+      "status": "PASS",
+      "detail": "BOM quantities, references and all value/purchase/footprint fields match the final netlist",
+      "evidence": []
+    },
+    {
+      "id": "parts.xiao_metadata",
+      "status": "PASS",
+      "detail": "XIAO module must not retain QFN chip-package supplier metadata"
+    },
+    {
+      "id": "pcb.pad_primitive_references",
+      "status": "PASS",
+      "detail": "PAD_NET primitive IDs must resolve to the final physical footprint pads",
+      "evidence": []
+    },
+    {
+      "id": "pcb.footprint_sources",
+      "status": "PASS",
+      "detail": "All component footprint sources are needed for independent physical copper verification",
+      "evidence": []
+    },
+    {
+      "id": "pcb.netlist_matches",
+      "status": "PASS",
+      "detail": "Every physical PCB PAD_NET must agree with schematic pin net",
+      "evidence": []
+    },
+    {
+      "id": "xiao.only_14_tht",
+      "status": "PASS",
+      "detail": "Exactly 14 uniquely numbered plated through-hole pads; no underside/SMD duplicates",
+      "evidence": {
+        "source": "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru",
+        "footprint": "d1533a679cd0c852",
+        "pad_count": 14,
+        "pads": [
+          {
+            "num": "1",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "2",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "3",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "4",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "5",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "6",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "7",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "8",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "9",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "10",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "11",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "12",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "13",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          },
+          {
+            "num": "14",
+            "layerId": 12,
+            "plated": true,
+            "hole": {
+              "holeType": "ROUND",
+              "width": 43.308,
+              "height": 43.308,
+              "cornerRadius": 11.811
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "xiao.no_removed_pad_nets",
+      "status": "PASS",
+      "detail": "PCB must not retain PAD_NET entries for removed pad numbers",
+      "evidence": {}
+    },
+    {
+      "id": "xiao.pitch_drills",
+      "status": "PASS",
+      "detail": "15.24 mm rows, 2.54 mm pitch, conservative drill/ring bounds",
+      "evidence": []
+    },
+    {
+      "id": "board.outline",
+      "status": "PASS",
+      "detail": "Closed 66 × 56 mm rectangular outline",
+      "evidence": {
+        "bounds_mm": [
+          0.0,
+          0.0,
+          66.0,
+          56.0
+        ],
+        "segments": 4
+      }
+    },
+    {
+      "id": "board.npth",
+      "status": "PASS",
+      "detail": "Four 2.7 mm NPTH mounting holes at (5,5), (61,5), (5,51), (61,51)",
+      "evidence": {
+        "holes_mm": [
+          [
+            5.00000016,
+            5.00000016,
+            2.69999968
+          ],
+          [
+            60.99999991999999,
+            5.00000016,
+            2.69999968
+          ],
+          [
+            5.00000016,
+            50.999999599999995,
+            2.69999968
+          ],
+          [
+            60.99999991999999,
+            50.999999599999995,
+            2.69999968
+          ]
+        ],
+        "missing": []
+      }
+    },
+    {
+      "id": "version.schematic",
+      "status": "PASS",
+      "detail": "Schematic title and drawing annotations must use V0.3",
+      "evidence": {
+        "title_block": [
+          "V0.3"
+        ],
+        "annotations": [
+          "0.3"
+        ]
+      }
+    },
+    {
+      "id": "version.pcb",
+      "status": "PASS",
+      "detail": "PCB version silkscreen must be V0.3",
+      "evidence": [
+        "0.3"
+      ]
+    },
+    {
+      "id": "gerber.present",
+      "status": "PASS",
+      "detail": "Exactly one Gerber manufacturing ZIP is required",
+      "evidence": [
+        "Gerber_Mianguang_V0.3.zip"
+      ]
+    },
+    {
+      "id": "gerber.parser",
+      "status": "PASS",
+      "detail": "Parsed Gerber and drill data with fixed parser versions",
+      "evidence": {
+        "versions": {
+          "gerbonara": "1.6.3",
+          "shapely": "2.2.0"
+        },
+        "layers": {
+          "top": "Gerber_TopLayer.GTL",
+          "bottom": "Gerber_BottomLayer.GBL",
+          "top_paste": "Gerber_TopPasteMaskLayer.GTP",
+          "outline": "Gerber_BoardOutlineLayer.GKO"
+        },
+        "warnings": [],
+        "unsupported": []
+      }
+    },
+    {
+      "id": "gerber.outline",
+      "status": "PASS",
+      "detail": "Gerber centerline outline is one closed 66 × 56 mm rectangle",
+      "evidence": {
+        "bounds_mm": [
+          0.0,
+          0.0,
+          66.0,
+          56.0
+        ]
+      }
+    },
+    {
+      "id": "gerber.npth",
+      "status": "PASS",
+      "detail": "Four 2.7 mm NPTH mounting holes at required board-relative coordinates",
+      "evidence": [
+        [
+          5.0,
+          5.0,
+          2.7
+        ],
+        [
+          61.0,
+          5.0,
+          2.7
+        ],
+        [
+          5.0,
+          51.0,
+          2.7
+        ],
+        [
+          61.0,
+          51.0,
+          2.7
+        ]
+      ]
+    },
+    {
+      "id": "gerber.registration",
+      "status": "PASS",
+      "detail": "All native and exported drill centers, diameters and plating match one-to-one",
+      "evidence": {
+        "translation_mm": [
+          0.0,
+          0.0
+        ],
+        "holes": 42
+      }
+    },
+    {
+      "id": "gerber.paste_smt",
+      "status": "PASS",
+      "detail": "Every top SMT pad has paste at its center and positive paste area within its land; reduced/notched apertures accepted",
+      "evidence": {
+        "missing": [],
+        "smt_pad_count": 29,
+        "coverage": [
+          {
+            "pad": "C1.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999999
+          },
+          {
+            "pad": "C1.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999999
+          },
+          {
+            "pad": "C2.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999996
+          },
+          {
+            "pad": "C2.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999996
+          },
+          {
+            "pad": "C3.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999995
+          },
+          {
+            "pad": "C3.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          },
+          {
+            "pad": "C4.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999999
+          },
+          {
+            "pad": "C4.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999999
+          },
+          {
+            "pad": "C5.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999995
+          },
+          {
+            "pad": "C5.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          },
+          {
+            "pad": "D1.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999999
+          },
+          {
+            "pad": "D1.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "D2.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          },
+          {
+            "pad": "D2.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          },
+          {
+            "pad": "F1.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999995
+          },
+          {
+            "pad": "F1.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          },
+          {
+            "pad": "Q1.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          },
+          {
+            "pad": "Q1.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          },
+          {
+            "pad": "Q1.3",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999995
+          },
+          {
+            "pad": "R1.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "R1.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "R2.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "R2.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "R3.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "R3.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "R4.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "R4.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999998
+          },
+          {
+            "pad": "R5.2",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          },
+          {
+            "pad": "R5.1",
+            "center_has_paste": true,
+            "paste_land_area_fraction": 0.999997
+          }
+        ]
+      }
+    },
+    {
+      "id": "gerber.paste_tht",
+      "status": "PASS",
+      "detail": "No top paste overlaps any through-hole copper land",
+      "evidence": []
+    },
+    {
+      "id": "gerber.paste_full_pad",
+      "status": "PASS",
+      "detail": "Requested full-window stencil: paste covers at least 98% of every complete SMT land; reduced apertures are distinct from missing apertures",
+      "evidence": {
+        "minimum_fraction": 0.999995,
+        "below_98_percent": []
+      }
+    },
+    {
+      "id": "gerber.paste_extent",
+      "status": "PASS",
+      "detail": "Paste stays within SMT land envelopes plus 0.02 mm tolerance and every paste component belongs to an SMT land",
+      "evidence": {
+        "outside_area_mm2": 0.0,
+        "outside_bounds_mm": [],
+        "unassigned_aperture_bounds_mm": []
+      }
+    },
+    {
+      "id": "gerber.xiao_14_tht",
+      "status": "PASS",
+      "detail": "Exactly 14 XIAO plated holes match the resolved native footprint",
+      "evidence": [
+        {
+          "x": 25.380000040000002,
+          "y": 37.137400959999994,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "1"
+        },
+        {
+          "x": 25.380000040000002,
+          "y": 34.597400959999995,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "2"
+        },
+        {
+          "x": 25.380000040000002,
+          "y": 32.057400959999995,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "3"
+        },
+        {
+          "x": 25.380000040000002,
+          "y": 29.517400959999996,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "4"
+        },
+        {
+          "x": 25.380000040000002,
+          "y": 26.977400959999997,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "5"
+        },
+        {
+          "x": 25.380000040000002,
+          "y": 24.437400959999998,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "6"
+        },
+        {
+          "x": 25.380000040000002,
+          "y": 21.89740096,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "7"
+        },
+        {
+          "x": 40.62000004,
+          "y": 21.89740096,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "8"
+        },
+        {
+          "x": 40.62000004,
+          "y": 24.437400959999998,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "9"
+        },
+        {
+          "x": 40.62000004,
+          "y": 26.977400959999997,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "10"
+        },
+        {
+          "x": 40.62000004,
+          "y": 29.517400959999996,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "11"
+        },
+        {
+          "x": 40.62000004,
+          "y": 32.057400959999995,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "12"
+        },
+        {
+          "x": 40.62000004,
+          "y": 34.597400959999995,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "13"
+        },
+        {
+          "x": 40.62000004,
+          "y": 37.137400959999994,
+          "d": 1.1000231999999999,
+          "plated": true,
+          "ref": "U1",
+          "pin": "14"
+        }
+      ]
+    },
+    {
+      "id": "gerber.actual_copper",
+      "status": "PASS",
+      "detail": "Actual copper islands and plated barrels checked against every resolved pad net at two curve resolutions",
+      "evidence": {
+        "missing_pad_copper": [],
+        "opens": {},
+        "shorts": {},
+        "islands": 61,
+        "anchors": 63,
+        "unanchored_components": [],
+        "net_count": 23
+      }
+    }
+  ],
+  "scope": "Offline consistency and geometry checks; no physical assembly, electrical or EMC validation."
+}

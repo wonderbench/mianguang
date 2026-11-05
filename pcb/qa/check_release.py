@@ -374,7 +374,23 @@ def check_parts(comps, sch, pcb, boms, report):
         if set(refs)!=expected:
             errors.append('Reference set mismatch: missing '+str(sorted(expected-set(refs)))+
                           '; unexpected '+str(sorted(set(refs)-expected)))
-        report.test('bom.parts.'+origin,not errors,'BOM final parts and jumpers',errors)
+        fields={'Value':'Value','Manufacturer Part':'Manufacturer Part',
+                'Manufacturer':'Manufacturer','Supplier Part':'Supplier Part',
+                'Supplier':'Supplier','Footprint':'FootprintName'}
+        for ref in sorted(expected & refs.keys()):
+            row,props=refs[ref],comps[ref]['props']
+            if not str(props.get('FootprintName') or '').strip():
+                errors.append(ref+' missing resolved FootprintName in netlist')
+            for column,prop in fields.items():
+                if column not in row:
+                    errors.append(f'{ref} missing BOM column {column}')
+                    continue
+                actual='' if row[column] is None else str(row[column]).strip()
+                wanted='' if props.get(prop) is None else str(props[prop]).strip()
+                if actual!=wanted:
+                    errors.append(f'{ref} {column}: BOM {actual!r}, netlist {wanted!r}')
+        report.test('bom.parts.'+origin,not errors,
+                    'BOM quantities, references and all value/purchase/footprint fields match the final netlist',errors)
     uprops = comps.get('U1',{}).get('props',{})
     report.test('parts.xiao_metadata','QFN' not in str(uprops.get('Supplier Footprint','')).upper(),
                 'XIAO module must not retain QFN chip-package supplier metadata')
@@ -475,6 +491,31 @@ def outline_geometry(pcb_doc):
     return bounds,paths,degree
 
 
+def round_slot_hole(data):
+    """Return (x, y, diameter) mm for a native, drill-exportable round cutout.
+
+    EasyEDA Pro >=1.9 exports multi-layer circular slot regions <=6.5 mm
+    to NPTH drills. Other paths remain unsupported; outline stroke width
+    is not part of the cutout diameter.
+    https://prodocs.lceda.cn/cn/pcb/place-slot-region/index.html
+    """
+    path=data.get('path')
+    if (data.get('layerId')!=12 or data.get('fillStyle')!='SOLID'
+            or data.get('netName') or data.get('networkList')
+            or data.get('isBridgingCopper')
+            or not isinstance(path,list) or len(path)!=1
+            or not isinstance(path[0],list) or len(path[0])!=4
+            or path[0][0]!='CIRCLE'):
+        raise ValueError('Unsupported mechanical cutout: requires one unnetted solid multi-layer CIRCLE')
+    x,y,r=path[0][1:]
+    if not all(type(v) in (int,float) and math.isfinite(v) for v in (x,y,r)):
+        raise ValueError('Non-finite/non-numeric circular cutout geometry')
+    diameter=2*r*MIL
+    if not 0<diameter<=6.5:
+        raise ValueError('Circular cutout outside supported NPTH drill diameter (0, 6.5] mm')
+    return x*MIL,y*MIL,diameter
+
+
 def check_board(pcb_doc,report):
     try:
         bounds,paths,degree=outline_geometry(pcb_doc)
@@ -498,10 +539,19 @@ def check_board(pcb_doc,report):
         report.test('board.outline',ok,'Closed 66 × 56 mm rectangular outline',{'bounds_mm':bounds,'segments':len(paths)})
     except ValueError as exc:
         report.add('board.outline','UNVERIFIED',str(exc));return None
-    holes=[]
+    holes=[];unsupported=[]
     for h,d,_ in pcb_doc['records']:
         if h['type']=='PAD' and d.get('plated') is False and dimension(d.get('hole'),'width')>0:
             holes.append((d['centerX']*MIL-x0,d['centerY']*MIL-y0,dimension(d['hole'],'width')))
+        elif h['type']=='FILL' and d.get('layerId')==12:
+            try:
+                x,y,dia=round_slot_hole(d)
+                holes.append((x-x0,y-y0,dia))
+            except ValueError as exc:
+                unsupported.append({'id':h['id'],'reason':str(exc)})
+    if unsupported:
+        report.add('board.npth','UNVERIFIED','Unsupported native mechanical cutout geometry',unsupported)
+        return bounds
     expected=[(5,5,2.7),(61,5,2.7),(5,51,2.7),(61,51,2.7)]
     missing=[p for p in expected if not any(max(abs(a-b) for a,b in zip(p,q))<.02 for q in holes)]
     report.test('board.npth',not missing and len(holes)==4,'Four 2.7 mm NPTH mounting holes at (5,5), (61,5), (5,51), (61,51)',
@@ -512,16 +562,66 @@ def check_board(pcb_doc,report):
 def check_version(sch_doc,pcb_doc,report,version):
     target=version.lower().lstrip('v')
     sch_versions=[str(d.get('value')) for h,d,_ in sch_doc['records'] if h['type']=='ATTR' and d.get('key')=='Version']
-    report.test('version.schematic',bool(sch_versions) and all(v.lower().lstrip('v')==target for v in sch_versions),
-                f'Schematic drawing version must be {version}',sch_versions)
+    sch_labels=[str(d.get('text',d.get('value',''))) for h,d,_ in sch_doc['records'] if h['type'] in ('STRING','TEXT')]
+    sch_text_versions=[v for s in sch_labels for v in re.findall(r'\bV(\d+\.\d+(?:\.\d+)?)\b',s,re.I)]
+    report.test('version.schematic',bool(sch_versions) and
+                all(v.lower().lstrip('v')==target for v in sch_versions) and
+                all(v==target for v in sch_text_versions),
+                f'Schematic title and drawing annotations must use {version}',
+                {'title_block':sch_versions,'annotations':sch_text_versions})
     labels=[str(d.get('text',d.get('value',''))) for h,d,_ in pcb_doc['records'] if h['type'] in ('STRING','TEXT')]
     versions=[v for s in labels for v in re.findall(r'\bV(\d+\.\d+(?:\.\d+)?)\b',s,re.I)]
     report.test('version.pcb',bool(versions) and all(v==target for v in versions),
                 f'PCB version silkscreen must be {version}',versions)
 
 
-def run(root,version='V0.2'):
-    context={'release_directory':str(root),'expected_version':version}
+def check_native_checks(root,report,version):
+    """Require fresh, strict, warning-free EDA evidence bound to exported sources.
+
+    This checks the recorded evidence, not EDA itself. The final export must
+    record strict=true and source_sha256 mapping every .esch/.epcb/.epro2
+    relative path to SHA-256. The full project binds embedded library geometry
+    that can change without changing a standalone PCB's footprint UUID.
+    Older releases intentionally retaining warnings use the default offline
+    mode; they cannot pass this opt-in pre-fabrication gate.
+    """
+    path=root/'native_checks.json'
+    if not path.is_file():
+        report.add('native.present','FAIL','native_checks.json is required for a clean native EDA release')
+        return
+    try:
+        raw=path.read_bytes()
+        native=json.loads(raw.decode('utf-8-sig'))
+        if not isinstance(native,dict):
+            raise ValueError('native check record must be an object')
+    except (UnicodeDecodeError,ValueError) as exc:
+        report.add('native.parse','FAIL',f'Invalid native check record: {exc}')
+        return
+    report.context['native_checks_sha256']=hashlib.sha256(raw).hexdigest()
+    report.test('native.version',str(native.get('release','')).lower().lstrip('v')==version.lower().lstrip('v'),
+                'Native check release must match the requested release',native.get('release'))
+    report.test('native.strict',native.get('strict') is True,
+                'The native run must explicitly record strict=true',native.get('strict'))
+    for domain in ('schematic','pcb'):
+        result=native.get(domain)
+        clean=(isinstance(result,dict) and result.get('passed') is True and
+               isinstance(result.get('details'),list) and result['details']==[])
+        report.test('native.'+domain+'.clean',clean,
+                    'Native strict DRC must return boolean true and an empty detailed error list',result)
+    source_types={'.esch','.epcb','.epro2'}
+    sources=sorted(p for p in root.rglob('*') if p.is_file() and p.suffix.lower() in source_types)
+    expected={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
+    kinds={p.suffix.lower() for p in sources}
+    reported=native.get('source_sha256')
+    report.test('native.source_binding',kinds==source_types and
+                isinstance(reported,dict) and reported==expected,
+                'Native check evidence must bind final schematic, PCB and complete project sources by SHA-256',
+                {'expected':expected,'reported':reported})
+
+
+def run(root,version='V0.2',require_native_clean=False):
+    context={'release_directory':str(root),'expected_version':version,
+             'require_native_clean':require_native_clean}
     if (root/'manifest.json').is_file():
         context['manifest_sha256']=hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest()
     report=Report(context)
@@ -529,6 +629,8 @@ def run(root,version='V0.2'):
         report.add('release.present','FAIL',f'Release directory missing: {root}')
         return report.result()
     check_manifest(root,report,version)
+    if require_native_clean:
+        check_native_checks(root,report,version)
     docs,nets,boms,gerbers=inventory(root)
     sch_doc=select_document(docs,'SCH_PAGE',report)
     pcb_doc=select_document(docs,'PCB',report)
@@ -593,10 +695,12 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('release',nargs='?',default=str(Path(__file__).resolve().parents[1]/'release_v02'))
     parser.add_argument('--version',default='V0.2')
+    parser.add_argument('--require-native-clean',action='store_true',
+                        help='Require strict, warning-free SCH/PCB native checks bound to final source hashes')
     parser.add_argument('--output',type=Path,help='Write JSON report (default: stdout only)')
     args=parser.parse_args()
     try:
-        result=run(Path(args.release).resolve(),args.version)
+        result=run(Path(args.release).resolve(),args.version,args.require_native_clean)
     except Exception as exc:
         result={'status':'FAIL','checks':[{'id':'input.parse','status':'FAIL','detail':f'{type(exc).__name__}: {exc}'}]}
     text=json.dumps(result,ensure_ascii=False,indent=2)

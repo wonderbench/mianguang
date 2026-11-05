@@ -1,10 +1,40 @@
 {
-  "release": "V0.2",
-  "archive": "releases/眠光雷达_PCB_V0.2_2026-11-04.zip",
-  "archive_sha256": "042a2bbeab79de3b09fc9665539ff2e633e581ce381f8a3a80deaf75e17bc7d6",
-  "payload": "release_v02",
-  "manifest_sha256": "fd4339bd425b36fa923e9319b0f9c951d6cbc97a1826351783002f241a004e31",
-  "acceptance": "release_v02_acceptance.json",
-  "acceptance_status": "44/44 PASS",
-  "physical_hardware_validation": false
+  "release": "V0.3",
+  "candidate": "DFM_PRECHECK_03",
+  "status": "PENDING_ONLINE_RECHECK",
+  "archive": "releases/Mianguang_PCB_V0.3_PRECHECK03_2026-11-05.zip",
+  "archive_sha256": "bf2c7aec32850bd82995842012bb057f3255fff24d34aab17f87dca06895f202",
+  "payload": "release_v03_precheck03",
+  "manifest_sha256": "b4005dd1d23cf3f2f2d47bcd8de1533c190a3120a7a414f98ee6ad758b45a51f",
+  "acceptance": "release_v03_precheck03_acceptance.json",
+  "acceptance_status": "49/49 PASS",
+  "fabrication": "release_v03_precheck03_fabrication.json",
+  "fabrication_profile": "online-preflight",
+  "fabrication_status": "40/40 PASS",
+  "upload_gerber": "preflight_v03/Mianguang_V0.3_DFM_PRECHECK_03.zip",
+  "upload_gerber_sha256": "8e786b7bfa3eb609b283f079b3bb2ccddcab58149d3979a5f0926bc297206811",
+  "smt_files": "preflight_v03/smt_precheck03",
+  "online_dfm": "PRECHECK_02_REPORT_RECEIVED_PRECHECK_03_RECHECK_PENDING",
+  "online_smt": "NOT_RUN",
+  "manufacturing_released": false,
+  "retained_warning": {
+    "count": 8,
+    "type": "THT_TO_SMT_PAD_CLEARANCE",
+    "assembly_condition": "SMT_REFLOW_FIRST_THEN_MANUAL_THT",
+    "factory_confirmed": false
+  },
+  "physical_hardware_validation": false,
+  "previous_candidate": {
+    "name": "DFM_PRECHECK_02",
+    "payload": "release_v03",
+    "manifest_sha256": "02c33a16c6746ba5823d8a69402dd65959790b5c33e8810d4365d3c025e81973",
+    "online_report": "qa/v03/online_dfm/PRECHECK_02_report.pdf"
+  },
+  "previous_release": {
+    "release": "V0.2",
+    "payload": "release_v02",
+    "manifest_sha256": "fd4339bd425b36fa923e9319b0f9c951d6cbc97a1826351783002f241a004e31",
+    "archive": "releases/眠光雷达_PCB_V0.2_2026-11-04.zip",
+    "archive_sha256": "042a2bbeab79de3b09fc9665539ff2e633e581ce381f8a3a80deaf75e17bc7d6"
+  }
 }

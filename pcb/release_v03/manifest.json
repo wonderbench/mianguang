@@ -1,0 +1,86 @@
+{
+  "release": "V0.3",
+  "created_at": "2026-11-05T11:35:03.132759+00:00",
+  "project_name": "Mianguang V0.3",
+  "project_uuid": "f4312b686e296bdd77a0ad71377a658c7f15b61fee4283ea042b46d776ba0045",
+  "eda_version": "EasyEDA Pro 4.1.78",
+  "status": "DFM_PRECHECK_CANDIDATE",
+  "online_dfm": "PENDING_USER_UPLOAD_AND_REPORT",
+  "manufacturing_released": false,
+  "pcb_drc_passed": true,
+  "schematic_drc_passed": true,
+  "retained_warning": null,
+  "physical_hardware_validation": false,
+  "files": [
+    {
+      "path": "BOM_Mianguang_V0.3.csv",
+      "bytes": 1122,
+      "sha256": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2"
+    },
+    {
+      "path": "BOM_Mianguang_V0.3.xlsx",
+      "bytes": 7770,
+      "sha256": "8070003f546c49c988eb4fd74010b170edd8749693d06d72b209e78d9fcbac12"
+    },
+    {
+      "path": "Gerber_Mianguang_V0.3.zip",
+      "bytes": 39862,
+      "sha256": "b245381b710547aec874be0bb3018a74e3dfb0aaf2f7b20015833cee4b0f3a61"
+    },
+    {
+      "path": "Mianguang_V0.3.epcb",
+      "bytes": 133682,
+      "sha256": "200b3fc2ca770b7cc3fd2840e700f6460abe523b08d7c7ee190cc76aea959b04"
+    },
+    {
+      "path": "Mianguang_V0.3.epro2",
+      "bytes": 99543,
+      "sha256": "e99b49c640c06d2a1bd36213682fdc1fc56e33b7090c582f66813078a78bd13e"
+    },
+    {
+      "path": "Mianguang_V0.3.esch",
+      "bytes": 366016,
+      "sha256": "e43a957914daab10c4ec3bebc63ef6d03275203df494689074c16c7a080ac48e"
+    },
+    {
+      "path": "PCB_Review_V0.3.pdf",
+      "bytes": 266762,
+      "sha256": "d6d8b65760e7ab43ddaa0efa0e7d2da225924e87ecf8736326131c0e627d9327"
+    },
+    {
+      "path": "PickPlace_Mianguang_V0.3.csv",
+      "bytes": 3433,
+      "sha256": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704"
+    },
+    {
+      "path": "README_交付与装配.md",
+      "bytes": 5000,
+      "sha256": "88dc87bb543a945975915cd4007681c6982e91daf8877cc128838499b44b30a6"
+    },
+    {
+      "path": "Schematic_V0.3.png",
+      "bytes": 1323033,
+      "sha256": "e0d0a667c04023e8adba78e8f62e906eca843c9afe17c9dfa1639e0e8032f7c3"
+    },
+    {
+      "path": "native_checks.json",
+      "bytes": 4256,
+      "sha256": "cdf61439f287a588daf470513f563a08151a5116e0ca45241d3777d3dc98e87e"
+    },
+    {
+      "path": "pcb_netlist.json",
+      "bytes": 46378,
+      "sha256": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994"
+    },
+    {
+      "path": "schematic_netlist.json",
+      "bytes": 63787,
+      "sha256": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657"
+    },
+    {
+      "path": "外接件与装配BOM.csv",
+      "bytes": 5467,
+      "sha256": "dfe77b837808215f7fc68af2dea061c7a1951a799cb918a04fd0437475089316"
+    }
+  ]
+}

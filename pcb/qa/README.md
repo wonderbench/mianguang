@@ -1,6 +1,19 @@
-# V0.2 离线验收
+# PCB 离线验收
 
-本目录只读取发布文件，不连接 EDA。最终验收结果应写到本目录，避免修改被 `manifest.json` 冻结的发布目录。
+本目录只读取发布文件，不连接 EDA。验收结果应写到被检查目录之外，避免修改被 `manifest.json` 冻结的文件。V0.2 历史报告保持不变；新增严格门禁用于 V0.3 候选。
+
+V0.3 使用以下两项检查。第一项要求原理图和 PCB 原生检查均明确通过、无保留条目，且检查证据绑定同版原理图、PCB 和包含封装库的完整工程。第二项直接复核制造图层，不能代替用户手动上传的在线 DFM 报告。
+
+```sh
+pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v03_precheck03 --version V0.3 --require-native-clean --output /tmp/mianguang_03_acceptance.json
+pcb/qa/.venv/bin/python pcb/qa/check_fabrication.py pcb/release_v03_precheck03 --profile online-preflight --output /tmp/mianguang_03_fabrication.json
+```
+
+`check_fabrication.py` 补充检查源文件丝印字高/笔画、Gerber 丝印到焊盘及阻焊窗距离、阻焊覆盖与桥宽、过孔盖油、孔铜环、铜到板边/不镀铜孔、独立铜岛间距、钻孔间距及元件坐标。报告记录输入哈希、依赖版本、阈值和两档几何误差。复杂规则未支持、阈值附近无法稳健判定时标记 `UNVERIFIED`；同一铜岛内部的细间距、完整贴装工艺和板厂专有分析不在其全部覆盖范围内。
+
+阈值依据和适用工艺记录在脚本及报告中，基础来源为[嘉立创 PCB 工艺能力](https://jlcpcb.com/capabilities/pcb-capabilities)。依据PRECHECK02在线报告新增`online-preflight`配置：实际阻焊窗及独立钻孔距丝印均≥0.25 mm、可见描线≥0.20 mm，共40项检查；原基础36项检查未削弱。V0.3必须明确传入`--version V0.3`，否则版本检查仍按默认V0.2执行。
+
+03候选独立验收49/49、制造几何40/40通过，报告位于上级`release_v03_precheck03_*.json`；历史02报告保持原字节。在线02报告含真实问题，不能用历史36项PASS声称线上通过。原生EDA检查、离线检查与平台DFM是不同证据；03在线复检、SMT检查及8条手工焊接工艺提示仍待确认。
 
 ```sh
 pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v02 --output pcb/qa/release_v02_acceptance.json
@@ -10,7 +23,7 @@ pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v02 --output pcb/qa/
 
 ## 输入约定
 
-`pcb/release_v02` 应包含：
+每个冻结候选目录应包含：
 
 - 本次最终原理图 `.esch` 和 PCB `.epcb`。
 - 最终完整工程 `.epro2`，其中应包含所有元件的实际封装源；也接受逐个 `.efoo` / `.epru` 封装源。只提供 U1 封装不足以独立归属所有铜层焊盘。
@@ -41,7 +54,7 @@ pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v02 --output pcb/qa/
 - U1 超过第 14 脚的底部引脚不再接网；物理封装恰有 14 个独立 PTH，没有残留 SMD pad primitive。排距 15.24 mm、针距 2.54 mm，孔径和环宽在约定范围内。
 - F1 为 `1206L110/16WR / C3761685`，D1 为 `SS14 / C2480`，Q1 为 `AO3400A / C20917`；原理图、网表、BOM 和 PCB Device ID 相符。
 - 所有物理 PAD_NET primitive 均能解析到最终封装，原理图与 PCB 引脚网络一致，BOM 位号集合一致。
-- 原生 66 × 56 mm 闭合矩形板框、四个 2.7 mm 安装孔及其位置；图纸与 PCB 标注为 V0.2。
+- 原生66 × 56 mm闭合矩形板框、四个2.7 mm安装孔及其位置；图纸与PCB标注须匹配`--version`。机械孔支持既有NPTH PAD和03的精确圆形FILL挖槽，其他形状不会直接判定通过。
 
 `gerber_checks.py` 独立检查实际制造几何：
 
@@ -60,11 +73,12 @@ pcb/qa/.venv/bin/python pcb/qa/check_release.py pcb/release_v02 --output pcb/qa/
 已有隔离环境 `.venv` 使用 Python 3.12。重建时可用 Python 3.12+ 创建虚拟环境，再安装 `requirements.txt` 中固定的两个版本；不要把未知版本的几何运算结果直接当作已验证结果。
 
 ```sh
-pcb/qa/.venv/bin/python -m unittest discover -s pcb/qa -p 'test_release_checks.py' -v
+pcb/qa/.venv/bin/python -m unittest discover -s pcb/qa -p 'test_*checks.py' -v
+pcb/qa/.venv/bin/python -m unittest discover -s pcb/scripts -p 'test_export_release_v03.py' -v
 ```
 
 回归包含旧保险丝、UART 跳线旁路、XIAO 多余 SMD 焊盘/旧 primitive、旧底部 GND、被修改的发布文件、错误板框等失效案例。
 
-最终44项验收报告在`../release_v02_acceptance.json`，与`../release_v02/manifest.json`绑定。本仓库不包含早期中间预检数据。重新检查输出另存到本地报告文件，不覆盖冻结交付文件。
+当前37项检查器回归及6项导出比对回归通过。历史44项验收报告在`../release_v02_acceptance.json`，与`../release_v02/manifest.json`绑定；02/03资料分目录保留。重新检查输出另存到本地报告文件，不覆盖冻结交付文件或历史报告。
 
 几何库来源：[Gerbonara](https://gerbolyze.gitlab.io/gerbonara/)、[Shapely](https://shapely.readthedocs.io/)。

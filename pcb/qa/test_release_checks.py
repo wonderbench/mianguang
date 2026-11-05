@@ -45,6 +45,22 @@ def status(report,key):
     return next(c['status'] for c in report.checks if c['id']==key)
 
 
+def mounting_board(kind='FILL'):
+    edge=[0,0,'L',0,56/q.MIL,66/q.MIL,56/q.MIL,66/q.MIL,0,0,0]
+    records=[record('POLY','edge',{'layerId':11,'path':edge,'width':20})]
+    for number,(x,y) in enumerate(((5,5),(61,5),(5,51),(61,51))):
+        if kind=='FILL':
+            data={'layerId':12,'fillStyle':'SOLID','width':1,
+                  'path':[['CIRCLE',x/q.MIL,y/q.MIL,1.35/q.MIL]],
+                  'netName':'','networkList':[],'isBridgingCopper':False}
+        else:
+            data={'layerId':12,'plated':False,'num':str(number),
+                  'centerX':x/q.MIL,'centerY':y/q.MIL,
+                  'hole':{'holeType':'ROUND','width':2.7/q.MIL,'height':2.7/q.MIL}}
+        records.append(record(kind,'mount'+str(number),data))
+    return doc(records,'PCB')
+
+
 class ReleaseMutations(unittest.TestCase):
     def test_netlist_formula_normalization_preserves_part_identity(self):
         sch={'F1':{'pins':{'1':'5V_IN'},'props':{
@@ -153,14 +169,39 @@ class ReleaseMutations(unittest.TestCase):
         comps=networks();sch={};pcb={};rows=[]
         for ref,c in comps.items():
             part,supplier=q.PARTS.get(ref,('',''))
-            c['props']={'Manufacturer Part':part,'Supplier Part':supplier,'Device':'device-'+ref}
+            c['props']={'Manufacturer Part':part,'Supplier Part':supplier,'Device':'device-'+ref,
+                        'Value':'','Manufacturer':'','Supplier':'','FootprintName':'fixture-'+ref}
             sch[ref]={'props':dict(c['props'])};pcb[ref]={'props':dict(c['props'])}
-            rows.append(dict(c['props'],Designator=ref,Quantity='1'))
+            rows.append(dict(c['props'],Designator=ref,Quantity='1',Footprint=c['props']['FootprintName']))
         r=q.Report();q.check_parts(comps,sch,pcb,[('PCB_BOM.csv',rows)],r)
         self.assertEqual(status(r,'bom.parts.PCB_BOM.csv'),'PASS')
         next(row for row in rows if row['Designator']=='F1')['Quantity']='2'
         r=q.Report();q.check_parts(comps,sch,pcb,[('PCB_BOM.csv',rows)],r)
         self.assertEqual(status(r,'bom.parts.PCB_BOM.csv'),'FAIL')
+
+    def test_every_component_bom_value_purchase_and_footprint_field_is_bound(self):
+        root=QA.parent/'release_v02'
+        docs,nets,boms,_=q.inventory(root)
+        report=q.Report()
+        sch=q.attributes(q.select_document(docs,'SCH_PAGE',report))
+        pcb=q.attributes(q.select_document(docs,'PCB',report))
+        comps=q.net_components(next(net for name,net in nets if name=='schematic_netlist.json'))
+        origin,rows=next((name,rows) for name,rows in boms if name=='BOM_Mianguang_V0.2.csv')
+        r=q.Report();q.check_parts(comps,sch,pcb,[(origin,rows)],r)
+        self.assertEqual(status(r,'bom.parts.'+origin),'PASS')
+        self.assertEqual(len(comps),23)
+        for ref in sorted(comps):
+            for field in ('Value','Manufacturer Part','Manufacturer','Supplier Part','Supplier','Footprint'):
+                with self.subTest(reference=ref,field=field):
+                    changed=copy.deepcopy(rows)
+                    row=next(row for row in changed if ref in row['Designator'].split(','))
+                    row[field]='incorrect value or stale procurement metadata'
+                    r=q.Report();q.check_parts(comps,sch,pcb,[(origin,changed)],r)
+                    self.assertEqual(status(r,'bom.parts.'+origin),'FAIL')
+        changed=copy.deepcopy(rows)
+        for row in changed:row.pop('Value')
+        r=q.Report();q.check_parts(comps,sch,pcb,[(origin,changed)],r)
+        self.assertEqual(status(r,'bom.parts.'+origin),'FAIL')
 
     def test_external_parts_list_does_not_replace_electrical_bom(self):
         with tempfile.TemporaryDirectory(prefix='test_',dir=QA) as temp:
@@ -179,6 +220,149 @@ class ReleaseMutations(unittest.TestCase):
         board['records'].append(record('POLY','extra',{'layerId':11,'path':[10,10,'L',20,10,20,20,10,20,10,10]}))
         r=q.Report();q.check_board(board,r)
         self.assertEqual(status(r,'board.outline'),'FAIL')
+
+    def test_round_cutouts_and_legacy_npth_pads_agree(self):
+        import gerber_checks as g
+        holes=[]
+        for kind in ('PAD','FILL'):
+            board=mounting_board(kind)
+            r=q.Report();q.check_board(board,r)
+            self.assertEqual(r.result()['status'],'PASS')
+            anchors,found=g._native_points(board,{}, {}, {})
+            self.assertEqual(anchors,[])
+            self.assertEqual(len(found),4)
+            self.assertTrue(all(p['plated'] is False and p['ref']=='BOARD' for p in found))
+            holes.append(found)
+        self.assertIsNotNone(g._match_holes(holes[0],holes[1],0,0))
+        # Slot stroke width is display metadata, not additional drill radius.
+        board['records'][1][1]['width']=40
+        self.assertEqual(g._native_points(board,{}, {}, {})[1],holes[1])
+
+    def test_round_cutout_wrong_position_or_diameter_is_rejected(self):
+        import gerber_checks as g
+        for coordinate in (1,2,3):
+            with self.subTest(path_index=coordinate):
+                board=mounting_board()
+                board['records'][1][1]['path'][0][coordinate]+=.1/q.MIL
+                r=q.Report();q.check_board(board,r)
+                self.assertEqual(status(r,'board.npth'),'FAIL')
+        expected=g._native_points(mounting_board(),{}, {}, {})[1]
+        for field in ('x','y','d','plated'):
+            with self.subTest(export_field=field):
+                changed=copy.deepcopy(expected)
+                changed[0][field]=True if field=='plated' else changed[0][field]+.1
+                self.assertIsNone(g._match_holes(expected,changed,0,0))
+
+    def test_unsupported_cutouts_remain_unverified(self):
+        import gerber_checks as g
+        cases=[{'path':[[0,0,'L',1,0,1,1,0,0]]},
+               {'path':[['CIRCLE',1,1,2],['CIRCLE',3,3,2]]},
+               {'path':[['CIRCLE',1,1,0]]},
+               {'path':[['CIRCLE',1,1,3.3/q.MIL]]},
+               {'path':[['CIRCLE',float('nan'),1,2]]},
+               {'path':[['CIRCLE',1,1,True]]},
+               {'fillStyle':'NONE'},{'netName':'GND'},{'isBridgingCopper':True}]
+        for mutation in cases:
+            with self.subTest(mutation=mutation):
+                board=mounting_board()
+                board['records'][1][1].update(mutation)
+                r=q.Report();q.check_board(board,r)
+                self.assertEqual(status(r,'board.npth'),'UNVERIFIED')
+                with self.assertRaises(g.Unsupported):
+                    g._native_points(board,{}, {}, {})
+
+    def test_v03_cannot_retain_v02_drawing_text(self):
+        sch=doc([record('ATTR','version',{'key':'Version','value':'V0.3'}),
+                 record('TEXT','title',{'text':'MIANGUANG / V0.3'})],'SCH_PAGE')
+        pcb=doc([record('STRING','title',{'text':'MIANGUANG V0.3'})],'PCB')
+        r=q.Report();q.check_version(sch,pcb,r,'V0.3')
+        self.assertEqual(r.result()['status'],'PASS')
+        sch['records'][1][1]['text']='MIANGUANG / V0.2'
+        r=q.Report();q.check_version(sch,pcb,r,'V0.3')
+        self.assertEqual(status(r,'version.schematic'),'FAIL')
+        sch['records'][1][1]['text']='MIANGUANG / V0.3'
+        pcb['records'].append(record('STRING','old',{'text':'V0.2'}))
+        r=q.Report();q.check_version(sch,pcb,r,'V0.3')
+        self.assertEqual(status(r,'version.pcb'),'FAIL')
+
+    def test_native_clean_gate_rejects_missing_report(self):
+        with tempfile.TemporaryDirectory(prefix='test_',dir=QA) as temp:
+            r=q.Report();q.check_native_checks(Path(temp),r,'V0.3')
+            self.assertEqual(status(r,'native.present'),'FAIL')
+
+    def test_native_clean_gate_rejects_warning_false_and_nonboolean_success(self):
+        with tempfile.TemporaryDirectory(prefix='test_',dir=QA) as temp:
+            root=Path(temp)
+            for name in ('board.esch','board.epcb','project.epro2'):
+                (root/name).write_text('final source '+name)
+            good={'release':'V0.3','strict':True,
+                  'schematic':{'passed':True,'details':[]},
+                  'pcb':{'passed':True,'details':[]},
+                  'source_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in root.iterdir()}}
+            path=root/'native_checks.json'
+            path.write_text(json.dumps(good))
+            r=q.Report();q.check_native_checks(root,r,'V0.3')
+            self.assertEqual(r.result()['status'],'PASS')
+            self.assertEqual(r.context['native_checks_sha256'],hashlib.sha256(path.read_bytes()).hexdigest())
+            for domain in ('schematic','pcb'):
+                for result in ({'passed':False,'details':[]},
+                               {'passed':1,'details':[]},
+                               {'passed':'true','details':[]},
+                               {'passed':True,'details':[{'type':'warn','rule':'ATTRMATCHCODE'}]},
+                               {'passed':True,'details':None},
+                               {'passed':True,'details':{}},
+                               {'passed':True},None):
+                    with self.subTest(domain=domain,result=result):
+                        bad=copy.deepcopy(good);bad[domain]=result
+                        path.write_text(json.dumps(bad))
+                        r=q.Report();q.check_native_checks(root,r,'V0.3')
+                        self.assertEqual(status(r,'native.'+domain+'.clean'),'FAIL')
+
+    def test_native_clean_gate_rejects_stale_source_version_and_non_strict_run(self):
+        with tempfile.TemporaryDirectory(prefix='test_',dir=QA) as temp:
+            root=Path(temp)
+            for name in ('board.esch','board.epcb','project.epro2'):
+                (root/name).write_text('final source '+name)
+            good={'release':'V0.3','strict':True,
+                  'schematic':{'passed':True,'details':[]},
+                  'pcb':{'passed':True,'details':[]},
+                  'source_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in root.iterdir()}}
+            path=root/'native_checks.json'
+            for value in (False,1,'true',None):
+                with self.subTest(strict=value):
+                    bad=copy.deepcopy(good);bad['strict']=value;path.write_text(json.dumps(bad))
+                    r=q.Report();q.check_native_checks(root,r,'V0.3')
+                    self.assertEqual(status(r,'native.strict'),'FAIL')
+            bad=copy.deepcopy(good);bad['release']='V0.2';path.write_text(json.dumps(bad))
+            r=q.Report();q.check_native_checks(root,r,'V0.3')
+            self.assertEqual(status(r,'native.version'),'FAIL')
+            path.write_text(json.dumps(good))
+            for name in ('board.esch','board.epcb','project.epro2'):
+                with self.subTest(changed_source=name):
+                    source=root/name;original=source.read_bytes()
+                    source.write_text('edited after EDA check (including embedded library only edits)')
+                    r=q.Report();q.check_native_checks(root,r,'V0.3')
+                    self.assertEqual(status(r,'native.source_binding'),'FAIL')
+                    source.write_bytes(original)
+            bad=copy.deepcopy(good);del bad['source_sha256']['project.epro2']
+            path.write_text(json.dumps(bad))
+            r=q.Report();q.check_native_checks(root,r,'V0.3')
+            self.assertEqual(status(r,'native.source_binding'),'FAIL')
+
+    def test_native_clean_gate_requires_all_source_types_and_valid_json(self):
+        with tempfile.TemporaryDirectory(prefix='test_',dir=QA) as temp:
+            root=Path(temp);path=root/'native_checks.json'
+            good={'release':'V0.3','strict':True,
+                  'schematic':{'passed':True,'details':[]},
+                  'pcb':{'passed':True,'details':[]},'source_sha256':{}}
+            path.write_text(json.dumps(good))
+            r=q.Report();q.check_native_checks(root,r,'V0.3')
+            self.assertEqual(status(r,'native.source_binding'),'FAIL')
+            for text in ('[]','true','{broken'):
+                with self.subTest(text=text):
+                    path.write_text(text)
+                    r=q.Report();q.check_native_checks(root,r,'V0.3')
+                    self.assertEqual(status(r,'native.parse'),'FAIL')
 
 
 if __name__=='__main__':

@@ -230,6 +230,13 @@ def _native_points(pcb_doc, comps, footprints, actual_pins):
                 if hole.get('holeType')!='ROUND' or abs(dia-_size(hole,'height'))>1e-5: raise Unsupported('Unsupported board hole')
                 if d.get('plated') is not False: raise Unsupported('Standalone plated pad requires a net anchor')
                 holes.append(dict(x=d['centerX']*MIL,y=d['centerY']*MIL,d=dia,plated=False,ref='BOARD',pin=d.get('num')))
+        elif h['type']=='FILL' and d.get('layerId')==12:
+            from check_release import round_slot_hole
+            try:
+                x,y,dia=round_slot_hole(d)
+            except ValueError as exc:
+                raise Unsupported(str(exc)) from exc
+            holes.append(dict(x=x,y=y,d=dia,plated=False,ref='BOARD',pin=h['id']))
     return anchors,holes
 
 

@@ -1,0 +1,515 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "source_copies_v03",
+      "status": "PASS",
+      "evidence": {
+        "status": "PASS",
+        "counts": {
+          "PASS": 2
+        },
+        "context": {},
+        "checks": [
+          {
+            "id": "source.pcb.copies",
+            "status": "PASS",
+            "detail": "2 exported PCB copies must contain the same geometry, electrical and annotation records",
+            "evidence": {
+              "sources": [
+                "Mianguang_V0.3.epcb",
+                "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+              ],
+              "ignored_no_connect_attributes_of_deleted_pins": {}
+            }
+          },
+          {
+            "id": "source.sch_page.copies",
+            "status": "PASS",
+            "detail": "2 exported SCH_PAGE copies must contain the same geometry, electrical and annotation records",
+            "evidence": {
+              "sources": [
+                "Mianguang_V0.3.esch",
+                "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+              ],
+              "ignored_no_connect_attributes_of_deleted_pins": {
+                "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru": [
+                  "8af6d1b1b7cbda88-e3",
+                  "8af6d1b1b7cbda88-e7",
+                  "8af6d1b1b7cbda88-e11",
+                  "8af6d1b1b7cbda88-e19",
+                  "8af6d1b1b7cbda88-e23",
+                  "8af6d1b1b7cbda88-e27",
+                  "8af6d1b1b7cbda88-e31",
+                  "8af6d1b1b7cbda88-e35",
+                  "8af6d1b1b7cbda88-e15"
+                ]
+              }
+            }
+          }
+        ],
+        "scope": "Offline consistency and geometry checks; no physical assembly, electrical or EMC validation."
+      }
+    },
+    {
+      "check": "component_reference_set",
+      "status": "PASS",
+      "evidence": {
+        "before": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "D1",
+          "D2",
+          "F1",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5",
+          "JP1",
+          "JP2",
+          "JP3",
+          "Q1",
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "U1"
+        ],
+        "after": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "D1",
+          "D2",
+          "F1",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5",
+          "JP1",
+          "JP2",
+          "JP3",
+          "Q1",
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "U1"
+        ]
+      }
+    },
+    {
+      "check": "component_position_rotation_layer",
+      "status": "PASS",
+      "evidence": {
+        "count": 23,
+        "changes": {}
+      }
+    },
+    {
+      "check": "global_physical_pad_geometry_and_nets",
+      "status": "PASS",
+      "evidence": {
+        "before_count": 63,
+        "after_count": 63
+      }
+    },
+    {
+      "check": "native_holes",
+      "status": "PASS",
+      "evidence": {
+        "before_count": 42,
+        "after_count": 42
+      }
+    },
+    {
+      "check": "pcb_pad_net_primitives",
+      "status": "PASS",
+      "evidence": {
+        "before_count": 63,
+        "after_count": 63
+      }
+    },
+    {
+      "check": "schematic_pin_networks",
+      "status": "PASS",
+      "evidence": {
+        "before_components": 23,
+        "after_components": 23,
+        "changed": []
+      }
+    },
+    {
+      "check": "pcb_pin_networks",
+      "status": "PASS",
+      "evidence": {
+        "before_components": 23,
+        "after_components": 23,
+        "changed": []
+      }
+    },
+    {
+      "check": "gerber_top_copper",
+      "status": "PASS",
+      "evidence": {
+        "symmetric_difference_mm2": 0.0,
+        "before_area_mm2": 261.4687202154541,
+        "after_area_mm2": 261.46872021545414
+      }
+    },
+    {
+      "check": "gerber_bottom_copper",
+      "status": "PASS",
+      "evidence": {
+        "symmetric_difference_mm2": 0.0,
+        "before_area_mm2": 185.77088760233784,
+        "after_area_mm2": 185.7708876023379
+      }
+    },
+    {
+      "check": "gerber_outline",
+      "status": "PASS",
+      "evidence": {
+        "before_bounds_mm": [
+          0.0,
+          0.0,
+          66.0,
+          56.0
+        ],
+        "after_bounds_mm": [
+          0.0,
+          0.0,
+          66.0,
+          56.0
+        ]
+      }
+    },
+    {
+      "check": "gerber_drill_positions_diameters_plating",
+      "status": "PASS",
+      "evidence": {
+        "before_count": 42,
+        "after_count": 42
+      }
+    },
+    {
+      "check": "gerber_parser_supported",
+      "status": "PASS",
+      "evidence": {
+        "warnings": [],
+        "unsupported": []
+      }
+    },
+    {
+      "check": "C1_procurement_update_without_electrical_geometry_change",
+      "status": "PASS",
+      "evidence": {
+        "properties": {
+          "before": {
+            "Manufacturer Part": "CL21A106KAYNNNE",
+            "Supplier Part": "C2980800",
+            "Footprint": "c7834434632bce3a",
+            "Value": null,
+            "Manufacturer": "",
+            "Voltage Rating": null,
+            "Temperature Coefficient": null
+          },
+          "after": {
+            "Manufacturer Part": "CL21A106KAYNNNE",
+            "Supplier Part": "C15850",
+            "Footprint": "c7834434632bce3a",
+            "Value": "10uF",
+            "Manufacturer": "SAMSUNG(三星)",
+            "Voltage Rating": "25V",
+            "Temperature Coefficient": "X5R"
+          }
+        },
+        "pad_geometry_equal": true,
+        "pin_nets_equal": true,
+        "position_equal": true,
+        "pad_count": 2
+      }
+    },
+    {
+      "check": "C4_procurement_update_without_electrical_geometry_change",
+      "status": "PASS",
+      "evidence": {
+        "properties": {
+          "before": {
+            "Manufacturer Part": "CL21A106KAYNNNE",
+            "Supplier Part": "C2980800",
+            "Footprint": "c7834434632bce3a",
+            "Value": null,
+            "Manufacturer": "",
+            "Voltage Rating": null,
+            "Temperature Coefficient": null
+          },
+          "after": {
+            "Manufacturer Part": "CL21A106KAYNNNE",
+            "Supplier Part": "C15850",
+            "Footprint": "c7834434632bce3a",
+            "Value": "10uF",
+            "Manufacturer": "SAMSUNG(三星)",
+            "Voltage Rating": "25V",
+            "Temperature Coefficient": "X5R"
+          }
+        },
+        "pad_geometry_equal": true,
+        "pin_nets_equal": true,
+        "position_equal": true,
+        "pad_count": 2
+      }
+    },
+    {
+      "check": "native_copper_outline_drill_stack_records",
+      "status": "PASS",
+      "evidence": {
+        "before_count": 150,
+        "after_count": 150
+      }
+    },
+    {
+      "check": "physical_part_identity_and_model_transforms",
+      "status": "PASS",
+      "evidence": {}
+    }
+  ],
+  "pcb_component_attribute_changes": {
+    "JP3": {
+      "Manufacturer": {
+        "before": "Ckmtw",
+        "after": "Ckmtw(灿科盟)"
+      },
+      "Supplier Footprint": {
+        "before": null,
+        "after": "插件,P=2.54mm"
+      }
+    },
+    "J3": {
+      "Manufacturer": {
+        "before": "Ckmtw",
+        "after": "Ckmtw(灿科盟)"
+      },
+      "Supplier Footprint": {
+        "before": null,
+        "after": "插件,P=2.54mm"
+      }
+    },
+    "C4": {
+      "Name": {
+        "before": null,
+        "after": "={Value}"
+      },
+      "Temperature Coefficient": {
+        "before": null,
+        "after": "X5R"
+      },
+      "Description": {
+        "before": null,
+        "after": "容值:10uF;精度:±10%;额定电压:25V;温度系数:X5R;"
+      },
+      "Supplier Part": {
+        "before": null,
+        "after": "C15850"
+      },
+      "Manufacturer": {
+        "before": null,
+        "after": "SAMSUNG(三星)"
+      },
+      "Datasheet": {
+        "before": null,
+        "after": "https://item.szlcsc.com/datasheet/CL21A106KAYNNNE/16532.html"
+      },
+      "Value": {
+        "before": null,
+        "after": "10uF"
+      },
+      "Dielectric": {
+        "before": null,
+        "after": "X5R"
+      },
+      "Tolerance": {
+        "before": null,
+        "after": "±10%"
+      },
+      "Voltage Rating": {
+        "before": null,
+        "after": "25V"
+      },
+      "LCSC Part Name": {
+        "before": null,
+        "after": "10uF ±10% 25V"
+      },
+      "JLCPCB Part Class": {
+        "before": null,
+        "after": "Basic Part"
+      }
+    },
+    "J4": {
+      "Manufacturer": {
+        "before": "Ckmtw",
+        "after": "Ckmtw(灿科盟)"
+      },
+      "Supplier Footprint": {
+        "before": null,
+        "after": "插件,P=2.54mm"
+      }
+    },
+    "C1": {
+      "Name": {
+        "before": null,
+        "after": "={Value}"
+      },
+      "Temperature Coefficient": {
+        "before": null,
+        "after": "X5R"
+      },
+      "Description": {
+        "before": null,
+        "after": "容值:10uF;精度:±10%;额定电压:25V;温度系数:X5R;"
+      },
+      "Supplier Part": {
+        "before": null,
+        "after": "C15850"
+      },
+      "Manufacturer": {
+        "before": null,
+        "after": "SAMSUNG(三星)"
+      },
+      "Datasheet": {
+        "before": null,
+        "after": "https://item.szlcsc.com/datasheet/CL21A106KAYNNNE/16532.html"
+      },
+      "Value": {
+        "before": null,
+        "after": "10uF"
+      },
+      "Dielectric": {
+        "before": null,
+        "after": "X5R"
+      },
+      "Tolerance": {
+        "before": null,
+        "after": "±10%"
+      },
+      "Voltage Rating": {
+        "before": null,
+        "after": "25V"
+      },
+      "LCSC Part Name": {
+        "before": null,
+        "after": "10uF ±10% 25V"
+      },
+      "JLCPCB Part Class": {
+        "before": null,
+        "after": "Basic Part"
+      }
+    },
+    "J1": {
+      "Manufacturer": {
+        "before": "Ckmtw",
+        "after": "Ckmtw(灿科盟)"
+      },
+      "Supplier Footprint": {
+        "before": null,
+        "after": "插件,P=2.54mm"
+      }
+    },
+    "J5": {
+      "Manufacturer": {
+        "before": "XFCN",
+        "after": "XFCN(兴飞)"
+      },
+      "Supplier Footprint": {
+        "before": null,
+        "after": "插件,P=2.54mm"
+      }
+    },
+    "JP2": {
+      "Manufacturer": {
+        "before": "Ckmtw",
+        "after": "Ckmtw(灿科盟)"
+      },
+      "Supplier Footprint": {
+        "before": null,
+        "after": "插件,P=2.54mm"
+      }
+    },
+    "J2": {
+      "Manufacturer": {
+        "before": "XFCN",
+        "after": "XFCN(兴飞)"
+      },
+      "Supplier Footprint": {
+        "before": null,
+        "after": "插件,P=2.54mm"
+      }
+    },
+    "JP1": {
+      "Manufacturer": {
+        "before": "Ckmtw",
+        "after": "Ckmtw(灿科盟)"
+      },
+      "Supplier Footprint": {
+        "before": null,
+        "after": "插件,P=2.54mm"
+      }
+    }
+  },
+  "changed_3d_library_references": {
+    "JP3": {
+      "before": "79b2e9f2d70a4d68a1b7098f27c6d4c5|0819f05c4eef4c71ace90d822a990e87",
+      "after": "788c0e5786594bdcbc0a523d0d707628|0819f05c4eef4c71ace90d822a990e87"
+    },
+    "J3": {
+      "before": "79b2e9f2d70a4d68a1b7098f27c6d4c5|0819f05c4eef4c71ace90d822a990e87",
+      "after": "788c0e5786594bdcbc0a523d0d707628|0819f05c4eef4c71ace90d822a990e87"
+    },
+    "J4": {
+      "before": "79b2e9f2d70a4d68a1b7098f27c6d4c5|0819f05c4eef4c71ace90d822a990e87",
+      "after": "788c0e5786594bdcbc0a523d0d707628|0819f05c4eef4c71ace90d822a990e87"
+    },
+    "J1": {
+      "before": "79b2e9f2d70a4d68a1b7098f27c6d4c5|0819f05c4eef4c71ace90d822a990e87",
+      "after": "788c0e5786594bdcbc0a523d0d707628|0819f05c4eef4c71ace90d822a990e87"
+    },
+    "D1": {
+      "before": "2ad98c37c5614ad18681cbd22e4725e1|0819f05c4eef4c71ace90d822a990e87",
+      "after": "f3ce51e5b2fb432195ca1e83dc5f9966|0819f05c4eef4c71ace90d822a990e87"
+    },
+    "JP2": {
+      "before": "79b2e9f2d70a4d68a1b7098f27c6d4c5|0819f05c4eef4c71ace90d822a990e87",
+      "after": "788c0e5786594bdcbc0a523d0d707628|0819f05c4eef4c71ace90d822a990e87"
+    },
+    "JP1": {
+      "before": "79b2e9f2d70a4d68a1b7098f27c6d4c5|0819f05c4eef4c71ace90d822a990e87",
+      "after": "788c0e5786594bdcbc0a523d0d707628|0819f05c4eef4c71ace90d822a990e87"
+    }
+  },
+  "inputs_sha256": {
+    "pcb/release_v02/schematic_netlist.json": "0cd507fa019d5437c3fb75870f5d7a938985190fa035250f35e1a46c4da110d5",
+    "pcb/release_v02/Mianguang_V0.2.epcb": "1cc1c4cba7115e438fbd0bac56380e4d36e0445491d1454f6da5bd68f7b3f74f",
+    "pcb/release_v02/pcb_netlist.json": "68414b97785aabda69dd246518c05718599e544622ef9a82384166a21f50df4e",
+    "pcb/release_v02/Mianguang_V0.2.epro2": "4eb70110e04e7c353f97750ac7644401175efcc098e2bfd465b6daf8d8106603",
+    "pcb/release_v02/manifest.json": "fd4339bd425b36fa923e9319b0f9c951d6cbc97a1826351783002f241a004e31",
+    "pcb/release_v02/Gerber_Mianguang_V0.2.zip": "663cf9db40d43defeba6dd79a99d8856211062c604a15fb8657d6bc7a798bc77",
+    "pcb/release_v02/Mianguang_V0.2.esch": "bdcc5f9afaf1f6d79f4eb2cb3bf3876bbd90be94883b1a4bf630049cf22d2376",
+    "pcb/release_v02/native_checks.json": "f40aa0f0b6e3399b6ace8926bb4b43c57da3adef6cc10618d8a8851d0248d4e1",
+    "pcb/release_v03/Mianguang_V0.3.epro2": "e99b49c640c06d2a1bd36213682fdc1fc56e33b7090c582f66813078a78bd13e",
+    "pcb/release_v03/schematic_netlist.json": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657",
+    "pcb/release_v03/Mianguang_V0.3.epcb": "200b3fc2ca770b7cc3fd2840e700f6460abe523b08d7c7ee190cc76aea959b04",
+    "pcb/release_v03/pcb_netlist.json": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994",
+    "pcb/release_v03/Gerber_Mianguang_V0.3.zip": "b245381b710547aec874be0bb3018a74e3dfb0aaf2f7b20015833cee4b0f3a61",
+    "pcb/release_v03/Mianguang_V0.3.esch": "e43a957914daab10c4ec3bebc63ef6d03275203df494689074c16c7a080ac48e",
+    "pcb/release_v03/native_checks.json": "cdf61439f287a588daf470513f563a08151a5116e0ca45241d3777d3dc98e87e"
+  }
+}

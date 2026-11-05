@@ -1,0 +1,419 @@
+{
+  "release": "V0.3",
+  "reviewed_at": "2026-11-05T11:34:34.792434+00:00",
+  "status": "PASS",
+  "counts": {
+    "PASS": 22,
+    "FAIL": 0
+  },
+  "inputs_sha256": {
+    "BOM_Mianguang_V0.3.xlsx": "8070003f546c49c988eb4fd74010b170edd8749693d06d72b209e78d9fcbac12",
+    "Mianguang_V0.3.epro2": "e99b49c640c06d2a1bd36213682fdc1fc56e33b7090c582f66813078a78bd13e",
+    "schematic_netlist.json": "a3bf7b12c05700409c9660422ad78a04a8fccd2f3696976095c76cc3358a5657",
+    "Mianguang_V0.3.epcb": "200b3fc2ca770b7cc3fd2840e700f6460abe523b08d7c7ee190cc76aea959b04",
+    "BOM_Mianguang_V0.3.csv": "a10a7f32590fa48655b40601cbf7aae6ec24c25e8bd399c3bf69880844c56aa2",
+    "pcb_netlist.json": "cb5814a05b2b1d082879ae17e289cbdd2538863a0fce2de213dbf72ffdeaa994",
+    "PCB_Review_V0.3.pdf": "d6d8b65760e7ab43ddaa0efa0e7d2da225924e87ecf8736326131c0e627d9327",
+    "PickPlace_Mianguang_V0.3.csv": "c53d8d2d6d1a3afaca18bf15c87e625e6a3604dd6baf38c3b4521e5a87b64704",
+    "Gerber_Mianguang_V0.3.zip": "b245381b710547aec874be0bb3018a74e3dfb0aaf2f7b20015833cee4b0f3a61",
+    "Mianguang_V0.3.esch": "e43a957914daab10c4ec3bebc63ef6d03275203df494689074c16c7a080ac48e",
+    "native_checks.json": "cdf61439f287a588daf470513f563a08151a5116e0ca45241d3777d3dc98e87e",
+    "Schematic_V0.3.png": "e0d0a667c04023e8adba78e8f62e906eca843c9afe17c9dfa1639e0e8032f7c3"
+  },
+  "checks": [
+    {
+      "id": "xlsx.one_sheet",
+      "status": "PASS",
+      "evidence": [
+        {
+          "sheetId": "1",
+          "name": "BOM_Mianguang_V0.3xlsx",
+          "state": "visible",
+          "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id": "rId4"
+        }
+      ]
+    },
+    {
+      "id": "xlsx.static_quantity_values",
+      "status": "PASS",
+      "evidence": {
+        "formula_cells": [],
+        "quantity_cell_types": [
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n"
+        ]
+      }
+    },
+    {
+      "id": "bom.xlsx_csv_cell_equivalence",
+      "status": "PASS",
+      "evidence": {
+        "rows_including_header": 13,
+        "columns": 10,
+        "xlsx_range": "A1:J14"
+      }
+    },
+    {
+      "id": "bom.23_unique_references_and_quantities",
+      "status": "PASS",
+      "evidence": {
+        "grouped_rows": 12,
+        "expanded_count": 23,
+        "quantity_total": 23,
+        "designators": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "D1",
+          "D2",
+          "F1",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5",
+          "JP1",
+          "JP2",
+          "JP3",
+          "Q1",
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "U1"
+        ],
+        "issues": []
+      }
+    },
+    {
+      "id": "source.sch_page.copies",
+      "status": "PASS",
+      "detail": "2 exported SCH_PAGE copies must contain the same geometry, electrical and annotation records",
+      "evidence": {
+        "sources": [
+          "Mianguang_V0.3.esch",
+          "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+        ],
+        "ignored_no_connect_attributes_of_deleted_pins": {
+          "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru": [
+            "8af6d1b1b7cbda88-e3",
+            "8af6d1b1b7cbda88-e7",
+            "8af6d1b1b7cbda88-e11",
+            "8af6d1b1b7cbda88-e19",
+            "8af6d1b1b7cbda88-e23",
+            "8af6d1b1b7cbda88-e27",
+            "8af6d1b1b7cbda88-e31",
+            "8af6d1b1b7cbda88-e35",
+            "8af6d1b1b7cbda88-e15"
+          ]
+        }
+      }
+    },
+    {
+      "id": "source.pcb.copies",
+      "status": "PASS",
+      "detail": "2 exported PCB copies must contain the same geometry, electrical and annotation records",
+      "evidence": {
+        "sources": [
+          "Mianguang_V0.3.epcb",
+          "Mianguang_V0.3.epro2!眠光 睡眠雷达夜灯 V0.3.epru"
+        ],
+        "ignored_no_connect_attributes_of_deleted_pins": {}
+      }
+    },
+    {
+      "id": "components.standalone_schematic",
+      "status": "PASS",
+      "evidence": {
+        "count": 23,
+        "designators": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "D1",
+          "D2",
+          "F1",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5",
+          "JP1",
+          "JP2",
+          "JP3",
+          "Q1",
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "U1"
+        ]
+      }
+    },
+    {
+      "id": "components.standalone_pcb",
+      "status": "PASS",
+      "evidence": {
+        "count": 23,
+        "designators": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "D1",
+          "D2",
+          "F1",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5",
+          "JP1",
+          "JP2",
+          "JP3",
+          "Q1",
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "U1"
+        ]
+      }
+    },
+    {
+      "id": "components.pcb_netlist.json",
+      "status": "PASS",
+      "evidence": {
+        "count": 23,
+        "designators": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "D1",
+          "D2",
+          "F1",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5",
+          "JP1",
+          "JP2",
+          "JP3",
+          "Q1",
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "U1"
+        ]
+      }
+    },
+    {
+      "id": "components.schematic_netlist.json",
+      "status": "PASS",
+      "evidence": {
+        "count": 23,
+        "designators": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "D1",
+          "D2",
+          "F1",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "J5",
+          "JP1",
+          "JP2",
+          "JP3",
+          "Q1",
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "U1"
+        ]
+      }
+    },
+    {
+      "id": "bom.all_23_identity_value_footprint_fields",
+      "status": "PASS",
+      "evidence": {
+        "fields": [
+          "Value",
+          "Manufacturer Part",
+          "Manufacturer",
+          "Supplier Part",
+          "Supplier",
+          "Footprint",
+          "Comment"
+        ],
+        "compared_against": [
+          "pcb_netlist.json",
+          "schematic_netlist.json"
+        ],
+        "mismatches": []
+      }
+    },
+    {
+      "id": "project.title",
+      "status": "PASS",
+      "evidence": {
+        "title": "眠光 睡眠雷达夜灯 V0.3",
+        "cbb_project": false,
+        "editorVersion": "4.1.78",
+        "introduction": "",
+        "description": "",
+        "custom_tags": ""
+      }
+    },
+    {
+      "id": "project.SCH_PAGE.components",
+      "status": "PASS",
+      "evidence": {
+        "count": 23
+      }
+    },
+    {
+      "id": "project.PCB.components",
+      "status": "PASS",
+      "evidence": {
+        "count": 23
+      }
+    },
+    {
+      "id": "project.used_footprint_inclusion",
+      "status": "PASS",
+      "evidence": {
+        "used_count": 10,
+        "package_count": 10,
+        "component_footprints": {
+          "C1": "c7834434632bce3a",
+          "C2": "8e218b9b60eb881d",
+          "C3": "8e218b9b60eb881d",
+          "C4": "c7834434632bce3a",
+          "C5": "8e218b9b60eb881d",
+          "D1": "8858b5826f676c7f",
+          "D2": "123b258f13e2ed07",
+          "F1": "33e55b16bba0d134",
+          "J1": "65807167f5ccf645",
+          "J2": "58662144f2e820d5",
+          "J3": "65807167f5ccf645",
+          "J4": "65807167f5ccf645",
+          "J5": "58662144f2e820d5",
+          "JP1": "65807167f5ccf645",
+          "JP2": "65807167f5ccf645",
+          "JP3": "65807167f5ccf645",
+          "Q1": "2e4d961459cb1867",
+          "R1": "715f344b6a768106",
+          "R2": "715f344b6a768106",
+          "R3": "715f344b6a768106",
+          "R4": "715f344b6a768106",
+          "R5": "715f344b6a768106",
+          "U1": "d1533a679cd0c852"
+        }
+      }
+    },
+    {
+      "id": "native.clean_record",
+      "status": "PASS",
+      "evidence": {
+        "strict": true,
+        "schematic": {
+          "saved": true,
+          "details": [],
+          "passed": true
+        },
+        "pcb": {
+          "saved": true,
+          "details": [],
+          "passed": true
+        }
+      }
+    },
+    {
+      "id": "native.source_and_full_project_hashes",
+      "status": "PASS",
+      "evidence": {
+        "Mianguang_V0.3.esch": "e43a957914daab10c4ec3bebc63ef6d03275203df494689074c16c7a080ac48e",
+        "Mianguang_V0.3.epcb": "200b3fc2ca770b7cc3fd2840e700f6460abe523b08d7c7ee190cc76aea959b04",
+        "Mianguang_V0.3.epro2": "e99b49c640c06d2a1bd36213682fdc1fc56e33b7090c582f66813078a78bd13e"
+      }
+    },
+    {
+      "id": "native.component_footprint_associations",
+      "status": "PASS",
+      "evidence": {
+        "count": 23
+      }
+    },
+    {
+      "id": "native.raw_footprint_hashes",
+      "status": "PASS",
+      "evidence": {
+        "count": 10
+      }
+    },
+    {
+      "id": "native.canonical_footprint_hashes",
+      "status": "PASS",
+      "evidence": {
+        "count": 10,
+        "normalization": {
+          "record_header_ignored": [
+            "ticket"
+          ],
+          "document_header_ignored": [
+            "client",
+            "updateTime",
+            "version"
+          ],
+          "records": "Final records keyed by document type/UUID and record type/ID; all payload fields retained"
+        }
+      }
+    },
+    {
+      "id": "project.full_used_footprint_records_match_checked_sources",
+      "status": "PASS",
+      "evidence": {
+        "count": 10,
+        "error": null
+      }
+    },
+    {
+      "id": "inputs.unchanged_during_review",
+      "status": "PASS",
+      "evidence": {
+        "count": 12
+      }
+    }
+  ],
+  "scope": "Read-only BOM cell/quantity/identity and native/project/footprint consistency review. No EDA calls, no changes to released files, no PCB electrical/geometry/copper/physical tests."
+}

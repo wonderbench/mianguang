@@ -1,0 +1,55 @@
+{
+  "candidate": "V0.3 DFM_PRECHECK_02",
+  "report_time_local": "2026-11-05 19:40:37 Asia/Shanghai",
+  "report_file": "PRECHECK_02_report.pdf",
+  "report_sha256": "10b7d5c73c5864da864bad16d8fab4e0bcffe7fb39bebef6e0b320dd8abc3111",
+  "gerber_sha256": "b245381b710547aec874be0bb3018a74e3dfb0aaf2f7b20015833cee4b0f3a61",
+  "association": "User-supplied report filename/title and matching board preview; PDF does not contain the source ZIP hash",
+  "pcb_dfm_selected": true,
+  "smt_dfm_selected": false,
+  "board_layers": 2,
+  "board_mm": [
+    66,
+    56
+  ],
+  "reported_finish": "leaded HASL, green mask, white silkscreen",
+  "findings": [
+    {
+      "rule": "pad_annular_ring",
+      "reported_min_mm": 0,
+      "danger": 8,
+      "warning": 0,
+      "good": 16
+    },
+    {
+      "rule": "tht_pad_to_smt_pad",
+      "reported_min_mm": 2.32,
+      "danger": 0,
+      "warning": 8,
+      "good": 28
+    },
+    {
+      "rule": "silkscreen_to_pad",
+      "reported_min_mm": 0.1,
+      "danger": 50,
+      "warning": 0,
+      "good": 0
+    },
+    {
+      "rule": "silkscreen_to_hole",
+      "reported_min_mm": 0,
+      "danger": 16,
+      "warning": 4,
+      "good": 2
+    },
+    {
+      "rule": "silkscreen_stroke",
+      "reported_min_mm": 0.15,
+      "danger": 0,
+      "warning": 49,
+      "good": 1
+    }
+  ],
+  "status": "REQUIRES_CORRECTION",
+  "not_a_manufacturing_release": true
+}
