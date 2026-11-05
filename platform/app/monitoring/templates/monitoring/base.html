@@ -9,18 +9,19 @@
   <script src="{% static 'monitoring/dashboard.js' %}" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
   <header class="site-header">
     <a class="brand" href="{% url 'overview' %}">眠光 <span>观测平台</span></a>
     {% if user.is_authenticated %}
     <nav aria-label="主导航">
-      <a href="{% url 'overview' %}">床位总览</a>
+      <a href="{% url 'overview' %}"{% if request.resolver_match.url_name == 'overview' %} aria-current="page"{% endif %}>床位总览</a>
       {% if can_manage %}<a href="/admin/">平台管理</a>{% endif %}
       <span class="account">{{ user.get_username }}</span>
       <form action="{% url 'logout' %}" method="post">{% csrf_token %}<button class="text-button" type="submit">退出</button></form>
     </nav>
     {% endif %}
   </header>
-  <main class="page">
+  <main class="page" id="main-content" tabindex="-1">
     {% if demo_mode %}<p class="notice">演示模式 · 模拟数据不能作为真实照护观测。</p>{% endif %}
     <noscript><p class="notice">请启用 JavaScript 以查看曲线和定时更新。此页面中的数值只是加载时的快照。</p></noscript>
     {% block content %}{% endblock %}

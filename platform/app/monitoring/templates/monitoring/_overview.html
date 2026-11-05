@@ -1,17 +1,20 @@
 <section data-overview-content data-server-ms="{{ server_ms }}">
-  <div class="summary-grid">
-    <div class="panel summary"><span>已绑定设备</span><strong>{{ counts.bound }}</strong></div>
-    <div class="panel summary"><span>需现场处理</span><strong data-attention-count>{{ counts.attention }}</strong></div>
-    <div class="panel summary"><span>无新鲜观测</span><strong data-not-fresh-count>{{ counts.not_fresh }}</strong></div>
+  <div class="panel summary-grid overview-summary">
+    <div class="summary"><span>已绑定设备</span><strong>{{ counts.bound }}</strong></div>
+    <div class="summary"><span>需现场处理</span><strong data-attention-count>{{ counts.attention }}</strong></div>
+    <div class="summary"><span>无新鲜观测</span><strong data-not-fresh-count>{{ counts.not_fresh }}</strong></div>
   </div>
-  <p class="status-counts">
-    最近有上报 <strong data-count="fresh">{{ counts.fresh }}</strong> ·
-    观测过期 <strong data-count="expired">{{ counts.expired }}</strong> ·
-    超过 60 秒无新上报 <strong data-count="no_report">{{ counts.no_report }}</strong> ·
-    等待首包 <strong data-count="waiting">{{ counts.waiting }}</strong> ·
-    已停用 <strong data-count="disabled">{{ counts.disabled }}</strong>
-  </p>
-  <p class="muted small">连接状态分别计数；需现场处理按最近工作条件计数，可能与连接状态重叠。服务端更新：<time datetime="{{ server_time }}">{{ server_time }}</time></p>
+  <ul class="status-counts" aria-label="连接状态计数">
+    <li>最近有上报 <strong data-count="fresh">{{ counts.fresh }}</strong></li>
+    <li>观测过期 <strong data-count="expired">{{ counts.expired }}</strong></li>
+    <li>超过 60 秒无新上报 <strong data-count="no_report">{{ counts.no_report }}</strong></li>
+    <li>等待首包 <strong data-count="waiting">{{ counts.waiting }}</strong></li>
+    <li>已停用 <strong data-count="disabled">{{ counts.disabled }}</strong></li>
+  </ul>
+  <div class="overview-meta muted small">
+    <p>连接状态分别计数；需现场处理按最近工作条件计数，可能与连接状态重叠。</p>
+    <p>服务端更新：<time datetime="{{ server_time }}">{{ server_time|slice:':10' }} {{ server_time|slice:'11:19' }} UTC</time></p>
+  </div>
   <div class="bed-grid">
   {% for row in rows %}
     <article class="panel bed-card">

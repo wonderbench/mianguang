@@ -11,7 +11,7 @@
     <div class="section-heading"><h2>{% if binding.ended_at %}历史绑定{% else %}最近状态{% endif %}</h2><span class="badge">{% if binding.ended_at %}已结束{% else %}当前绑定{% endif %}</span></div>
     <p class="muted small">绑定期间：{{ binding.started_at|date:'Y-m-d H:i:s T' }} — {% if binding.ended_at %}{{ binding.ended_at|date:'Y-m-d H:i:s T' }}{% else %}至今{% endif %}</p>
     {% if binding.ended_at %}<p>以下趋势仅属于这次绑定。此处不展示设备的当前状态或当前灯状态。</p>{% else %}{% include 'monitoring/_snapshot.html' %}{% endif %}
-    <p class="muted small">绑定 ID：{{ binding.pk }}</p>
+    <p class="muted small binding-id">绑定 ID：{{ binding.pk }}</p>
   </section>
   <section class="panel history-panel">
     <div class="section-heading"><h2>观测趋势</h2><span class="muted small">时间范围以 UTC 填写和显示</span></div>
@@ -29,7 +29,7 @@
     <p class="muted small">可查询最近 7 天内、最多 24 小时的窗口。结束时间截至当前完整分钟；绑定开始后的前 5 秒不参与统计。</p>
     <p class="notice" data-history-error role="status" hidden></p>
     <div data-history-result aria-live="polite">
-      <p class="muted" data-effective-range>正在读取趋势…</p>
+      <p class="muted small" data-effective-range>正在读取趋势…</p>
       <div class="summary-grid quality-summary">
         <div><span>上报完整度</span><strong data-summary="report_completeness">—</strong><small data-slot-count="report"></small></div>
         <div><span>呼吸有效点比例</span><strong data-summary="rr_valid_ratio">—</strong><small data-slot-count="rr"></small></div>
